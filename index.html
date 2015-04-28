@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="jsoneditor/dist/jsoneditor.min.css" rel="stylesheet" type="text/css">
+        <script src="jsoneditor/dist/jsoneditor.min.js"></script>
+    
+    </head>
+    <body>
+        <form action="/demo">
+    <div id="jsoneditor" style="width: 800px; height: 400px;"></div>
+        <br /><br />
+        <input name="textVal" value="myVal">
+        <input type="submit" value="Post">
+        </form>
+    </body>
+    <script>
+        // create the editor
+//        var container = document.getElementById("jsoneditor");
+//        var editor = new JSONEditor(container);
+        // set json
+//        var json = {
+//            "PARIS:FRANCE": 
+//            {
+//                "g187147-d4800782":
+//                {
+//                    "sentiment":"Negative",
+//                    "worddetails":[{"pos":"PRP","word":"I"},{"pos":"VBP","word":"have"},{"pos":"VBN","word":"visited"},{"pos":"NNP","word":"Paris"},{"pos":"RB","word":"just"},{"pos":"IN","word":"for"},{"pos":"DT","word":"a"},{"pos":"JJ","word":"short"},{"pos":"NN","word":"weekend"},{"pos":"NN","word":"break"},{"pos":"IN","word":"before"},{"pos":"NNP","word":"Xmas"},{"pos":"CD","word":"2014"},{"pos":".","word":"."}]
+//                }
+//            }
+//        };
+//        var json = {
+//            "Array": [1, 2, 3],
+//            "Boolean": true,
+//            "Null": null,
+//            "Number": 123,
+//            "Object": {"a": "b", "c": "d"},
+//            "String": "Hello World"
+//        };
+//        editor.set(json);
+
+        // get json
+        var json = editor.get();
+    </script>
+
+</html>

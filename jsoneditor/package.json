@@ -1,0 +1,65 @@
+{
+  "name": "jsoneditor",
+  "version": "4.1.3",
+  "main": "./index",
+  "description": "A web-based tool to view, edit and format JSON",
+  "tags": [
+    "json",
+    "editor",
+    "viewer",
+    "formatter"
+  ],
+  "author": {
+    "name": "Jos de Jong",
+    "email": "wjosdejong@gmail.com"
+  },
+  "homepage": "http://jsoneditoronline.org/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/josdejong/jsoneditor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/josdejong/jsoneditor/issues"
+  },
+  "scripts": {
+    "build": "gulp",
+    "test": "mocha test"
+  },
+  "dependencies": {
+    "brace": "^0.4.1",
+    "jsonlint": "git+https://github.com/josdejong/jsonlint#fb47330"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-concat-css": "^2.0.0",
+    "gulp-minify-css": "^0.4.5",
+    "gulp-shell": "^0.3.0",
+    "gulp-util": "^3.0.3",
+    "mkdirp": "^0.5.0",
+    "mocha": "^2.1.0",
+    "uglify-js": "^2.4.16",
+    "webpack": "^1.5.3"
+  },
+  "gitHead": "053f4f5113ba597bf6bcee69fd31145baf4bb6af",
+  "_id": "jsoneditor@4.1.3",
+  "_shasum": "b7114cde522dfd350647176f96a9a3f66ad3ac51",
+  "_from": "jsoneditor@*",
+  "_npmVersion": "1.4.28",
+  "_npmUser": {
+    "name": "josdejong",
+    "email": "wjosdejong@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "josdejong",
+      "email": "wjosdejong@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "b7114cde522dfd350647176f96a9a3f66ad3ac51",
+    "tarball": "http://registry.npmjs.org/jsoneditor/-/jsoneditor-4.1.3.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/jsoneditor/-/jsoneditor-4.1.3.tgz",
+  "readme": "ERROR: No README data found!"
+}
