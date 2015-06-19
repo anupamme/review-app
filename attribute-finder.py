@@ -9,31 +9,35 @@ import re
 
 foodAssists = ['food', 'ambience', 'taste', 'breakfast', 'lunch', 'dinner', 'drinks']
 
-foodMeta = {'nounList': ["food", "breakfast", "lunch", "dinner", "drinks"], "descList": ["taste", "presentation", "service"]}
+foodMeta = {'nounList': ["food", "lunch", "dinner", "drinks", 'restaurant'], "descList": ["taste", "presentation", "service"]}
 
-breakfastMeta = {'nounList': ['breakfast', 'cereals', 'breads', 'cuts', 'fruits', 'yoghurt', 'coffee', 'buffet', 'eggs'], 'descList': ['cold', 'cheese']}
+breakfastMeta = {'nounList': ['breakfast', 'cereals', 'breads', 'cuts', 'fruits', 'yoghurt', 'coffee', 'buffet', 'eggs', 'sausage', 'bacon', 'spread'], 'descList': ['cold', 'cheese', 'hygienic']}
 
 serviceAssists = ['service', 'politeness', 'accommodating', 'speed', 'friendly']
 
-serviceMeta = {'nounList': ['owner', 'staff', 'service', 'lady', 'gentleman', 'embarrassment', 'service', 'reception', 'desk', 'suggestions', 'things', 'places', 'kind', 'welcome', 'luggage', 'manager', 'members'], 'descList': ['polite', 'friendly', 'accommodating', 'personal', 'welcoming', 'helpful', 'inflexible', 'standard']}
+serviceMeta = {'nounList': ['owner', 'staff', 'service', 'lady', 'gentleman', 'embarrassment', 'service', 'reception', 'desk', 'suggestions', 'welcome', 'luggage', 'manager', 'members', 'rude', 'course', 'english', 'helping', 'front'], 'descList': ['polite', 'friendly', 'accommodating', 'personal', 'welcoming', 'helpful', 'inflexible', 'standard', 'rudely']}
 
 viewAssists = ['view', 'breathtaking', 'vista', 'sea', 'forest', 'skyline', 'desert', 'valley', 'beach', 'sunset']
 
-viewMeta = {'nounList': ['view', 'balcony', 'watch', 'stars', 'nice', 'mountains'], 'descList': ['breathtaking', 'sea', 'forest', 'skyline', 'desert', 'valley', 'beach', 'sunset']}
+viewMeta = {'nounList': ['view', 'balcony', 'balconies', 'watch', 'stars', 'mountains', 'river', 'look'], 'descList': ['breathtaking', 'sea', 'forest', 'skyline', 'desert', 'valley', 'beach', 'sunset', 'rainy']}
 
 roomAssists = ["room", "size", "linen", "furniture", "bathroom"]
 
-roomMeta = {'nounList': ['room', 'balconies', 'bell', 'floor'], 'descList': ['size', 'linen', 'furniture', 'bathroom', 'lovely', 'spacious', 'clean', 'top']}
+roomMeta = {'nounList': ['room', 'balconies', 'bell', 'floor'], 'descList': ['size', 'linen', 'furniture', 'bathroom', 'lovely', 'spacious', 'clean', 'top', 'luxurious', 'comfortable', 'generous']}
 
-bathroomMeta = {'nounList': ['shower', 'cubicle', 'toilet', 'water'], 'descList': ['modern']}
+livingareaMeta = {'nounList': ['living', 'area'], 'descList': ['dining']}
 
-purposeMeta = {'nounList': ['honeymoon', 'business', 'family', 'group'], 'descList': ['business']}
+petMeta = {'nounList': ['pet', 'dog'], 'descList': ['leash']}
 
-overallMeta = {'nounList': ['time', 'hotel', 'experience', 'customer','hotels', 'world', 'impression', 'misfortune', 'home', 'stay', 'chore', 'amenities', 'place', 'stairs', 'complaints', 'building', 'kitchenette', 'apartment', 'annex', 'chalet'], 'descList': ['wonderful', 'fantastic', 'just']}
+bathroomMeta = {'nounList': ['shower', 'cubicle', 'water'], 'descList': ['modern']}
 
-locationMeta = {'nounList': ['location', 'restaurant', 'shops', 'walk', 'range', 'airport', 'train', 'mins', 'station', 'minute', 'door'], 'descList': ['excellent', 'ideal', 'close', 'approachable', 'quiet', 'noisy', 'walkable']}
+purposeMeta = {'nounList': ['honeymoon', 'business', 'family', 'group', 'friends'], 'descList': ['business']}
 
-feelMeta = {'nounList': ["my"], 'descList': ['business', 'romantic', 'family', 'quirky', 'formal', 'casual', 'dated']}
+overallMeta = {'nounList': ['time', 'hotel', 'experience', 'customer','hotels', 'world', 'impression', 'misfortune', 'home', 'stay', 'chore', 'amenities', 'place', 'stairs', 'complaints', 'building', 'annex', 'chalet', 'trip', 'overall', 'charm', 'information', 'welcoming', 'sofa', 'library', 'details', 'attention'], 'descList': ['wonderful', 'fantastic', 'just', 'rustic', 'pet_friendly', 'professional']}
+
+locationMeta = {'nounList': ['location', 'shops', 'walk', 'range', 'airport', 'train', 'mins', 'station', 'minute', 'door', 'place', 'center', 'city', 'grassy', 'walking'], 'descList': ['excellent', 'ideal', 'close', 'approachable', 'quiet', 'noisy', 'walkable', 'next']}
+
+feelMeta = {'nounList': ["feelings"], 'descList': ['business', 'romantic', 'family', 'quirky', 'formal', 'casual', 'dated']}
 
 wifiMeta = {'nounList': ['wifi', 'internet', 'skype', 'movies', 'bandwidth', 'facetime'], 'descList': ['speed', 'fast', 'freely']}
 
@@ -41,9 +45,9 @@ pickupMeta = {'nounList': ['shuttle', 'taxi', 'stop', 'drop'], 'descList': ['fre
 
 sleepMeta = {'nounList': ['sleep'], 'descList': ['quiet']}
 
-priceMeta = {'nounList': ['budget', 'option', 'price'], 'descList': ['expensive', 'cheap', 'high']}
+priceMeta = {'nounList': ['budget', 'option', 'price'], 'descList': ['expensive', 'cheap', 'high', 'quite']}
 
-poolMeta = {'nounList': ['pool', 'swimming', 'spa', 'infinity', 'jacuzzi', 'wet', 'sauna'], 'descList': ['dry']}
+poolMeta = {'nounList': ['pool', 'swimming', 'spa', 'infinity', 'jacuzzi', 'wet', 'sauna', 'temperature', 'gym', 'swim', 'indoor', 'robe'], 'descList': ['dry']}
 
 #reverseMap = {"excellent" : "location", "ideal" : "location", "close" : "location", "approachable" : "location", "wonderful": : "overall", "breathtaking" : "view", "sea" : "view", "forest" : "view", "skyline" : "view", "desert" : "view", "valley" : "view", "beach" : "view", "sunset" : "view", "polite" : "service", "speed" : "service", "friendly" : "service", "accommodating" : "service", "personal" : "service", "taste" : "food", "presentation" : "food", "service" : "food"}
 
@@ -244,23 +248,6 @@ def buildReverseMaps():
 
 if __name__ == "__main__":
     loadModelFile()
-    reviewArr = []
-    reviewData = json.loads(open(sys.argv[1], 'r').read())
-    count = 0
-    for key in reviewData:
-        valArr = reviewData[key]
-        for val in valArr:
-            if 'review' not in val:
-                continue
-            reviewArr =  reviewArr + re.split('\.|!|\?|;', val['review'])
-        count = count + 1
-        if count == 5:
-            break
-#    reviewArr = reviewData['review']
-#    reviewText = open(sys.argv[1], 'r').read()
-#    reviewArr = re.split('\.|!|\?|;', reviewText)
-    # build word clouds:
-    # check for food.
     foodNounCloud = buildWordCloud(foodMeta['nounList'])
     foodAdjCloud = buildWordCloud(foodMeta['descList'])
     serviceNounCloud = buildWordCloud(serviceMeta['nounList'])
@@ -294,19 +281,15 @@ if __name__ == "__main__":
     buildReverseMaps()
 #    serviceCloud = buildWordCloud(serviceAssists)
 #    viewCloud = buildWordCloud(viewAssists)
-    for review in reviewArr:
+    user_input = raw_input("Some input please: ")
+    while user_input != 'stop':
+        review = user_input
         review = review.encode('utf-8')
         tokens = word_tokenize(review)
-        if len(tokens) == 0:
-            continue
-        newTokens = []
-        for tok in tokens:
-            newTokens.append(tok.encode('utf-8'))
         try:
-            pos_tags = nltk.pos_tag(newTokens)
+            pos_tags = nltk.pos_tag(tokens)
         except UnicodeDecodeError:
             print 'cannot decode: ' + str(newTokens)
-        print 'review: ' + review
         print 'pos tags: ' + str(pos_tags)
         res_noun = []
         res_adj = []
@@ -370,12 +353,8 @@ if __name__ == "__main__":
                         continue
                     max_match, max_val = findMaxMatch(word, similar_words, foodAdjCloud)
                     res_adj.append((max_val[0], max_match, max_val[1]))
-#                    print 'max food-adj match: ' + max_match
-#                    print 'max food-adj val: ' + str(max_val)
                     max_match, max_val = findMaxMatch(word, similar_words, serviceAdjCloud)
                     res_adj.append((max_val[0], max_match, max_val[1]))
-    #                print 'max service-adj match: ' + max_match
-    #                print 'max service-adj val: ' + str(max_val)
                     max_match, max_val = findMaxMatch(word, similar_words, viewAdjCloud)
                     res_adj.append((max_val[0], max_match, max_val[1]))
                     max_match, max_val = findMaxMatch(word, similar_words, locAdjCloud)
@@ -402,23 +381,20 @@ if __name__ == "__main__":
                     res_adj.append((max_val[0], max_match, max_val[1]))
                     max_match, max_val = findMaxMatch(word, similar_words, poolAdjCloud)
                     res_adj.append((max_val[0], max_match, max_val[1]))
-#                    print 'max view-adj match: ' + max_match
-#                    print 'max view-adj val: ' + str(max_val)
-        #print 'unsorted: ' + str(res_noun)
+
         sorted_res_noun = sorted(res_noun, key=operator.itemgetter(0), reverse=True)
-#        for val in sorted_res_noun:
-#            print 'noun val: ' + str(val)
-        if len(sorted_res_noun) == 0:
-            continue
+    #    if len(sorted_res_noun) == 0:
+    #        continue
         top_noun_data = sorted_res_noun[0]
         top_noun = top_noun_data[1]
         top_noun_root = reverseNounMap[top_noun]
         print 'top noun root and val: ' + top_noun_root + ' : ' + str(top_noun_data)
         sorted_res_adj = sorted(res_adj, key=operator.itemgetter(0), reverse=True)
         for val in sorted_res_adj:
-            print 'considering adj: ' + str(val)
+    #        print 'considering adj: ' + str(val)
             adj_val = val[1]
             adj_val_root = reverseAdjMap[adj_val]
             if top_noun_root == adj_val_root:
                 print 'Found! adj val: ' + adj_val
                 break
+        user_input = raw_input("Some input please: ")
