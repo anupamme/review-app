@@ -1,0 +1,142 @@
+Key Error for key: centricity
+Key Error for key: Convenient
+Key Error for key: Mac
+Key Error for key: Ivana
+Key Error for key: Fotini
+Key Error for key: DIY
+Key Error for key: Citizen
+Key Error for key: M
+Key Error for key: Amsterdam
+Key Error for key: Yes
+Key Error for key: Zuid
+Key Error for key: Schiphol
+Key Error for key: )
+Key Error for key: Hotel
+Key Error for key: Central
+Key Error for key: Station
+Key Error for key: Sufficient
+Key Error for key: Facetime
+Key Error for key: Skype
+Key Error for key: Room
+Key Error for key: Tip
+Key Error for key: Reviewer
+Key Error for key: Name
+Key Error for key: hopeandfury
+Key Error for key: Place
+Key Error for key: Hong
+Key Error for key: Kong
+Key Error for key: China
+Key Error for key: Badges
+Key Error for key: Reviews
+Key Error for key: Date
+Key Error for key: October
+Key Error for key: Stayed
+Key Error for key: B
+Key Error for key: Tamworth
+Key Error for key: United
+Key Error for key: Kingdom
+Key Error for key: Will
+Key Error for key: See
+Key Error for key: Fred
+Key Error for key: P
+Key Error for key: Hobart
+Key Error for key: Australia
+Key Error for key: citizenM
+Key Error for key: September
+Key Error for key: riglet
+Key Error for key: Oslo
+Key Error for key: Norway
+Key Error for key: Good
+Key Error for key: (
+Key Error for key: Eric_Brasil
+Key Error for key: London
+Key Error for key: Modern
+Key Error for key: Quick
+Key Error for key: Check
+Key Error for key: Get
+Key Error for key: Kate
+Key Error for key: C
+Key Error for key: Overall
+Key Error for key: April
+Key Error for key: Sydney
+Key Error for key: Airport
+Key Error for key: Food
+Key Error for key: TV
+Key Error for key: Recommend
+Key Error for key: kenfolett
+Key Error for key: Lucerne
+Key Error for key: Switzerland
+Key Error for key: February
+Key Error for key: Very
+Key Error for key: tast
+Key Error for key: controll
+Key Error for key: gg_hanami
+Key Error for key: Sao
+Key Error for key: Paulo
+Key Error for key: SP
+Key Error for key: CitizenM
+Key Error for key: Thumbs
+Key Error for key: Starbucks
+Key Error for key: Neighborhood
+Key Error for key: Amsterday
+Key Error for key: Plus
+Key Error for key: Hallways
+Key Error for key: Bitburg
+Key Error for key: Germany
+Key Error for key: citizenfrancisco
+Key Error for key: Manager
+Key Error for key: Hi
+Key Error for key: /
+Key Error for key: Martini
+Key Error for key: GruÃ
+Key Error for key: Francisco
+Key Error for key: Report
+Key Error for key: Thank
+Key Error for key: TripAdvisor
+Key Error for key: LLC
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+num_found: 4811.0
+num_added: 328.0
+percentage val: 0.0
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+num_found: 5147.0
+num_added: 6.0
+percentage val: 0.0
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+num_found: 5128.0
+num_added: 8.0
+percentage val: 0.0
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+num_found: 5155.0
+num_added: 7.0
+percentage val: 0.0
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+Key Error for key: GruÃ
+num_found: 5103.0
+num_added: 7.0
+percentage val: 0.0

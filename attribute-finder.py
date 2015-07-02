@@ -11,7 +11,7 @@ foodAssists = ['food', 'ambience', 'taste', 'breakfast', 'lunch', 'dinner', 'dri
 
 foodMeta = {'nounList': ["food", "lunch", "dinner", "drinks", 'restaurant'], "descList": ["taste", "presentation", "service"]}
 
-breakfastMeta = {'nounList': ['breakfast', 'cereals', 'breads', 'cuts', 'fruits', 'yoghurt', 'coffee', 'buffet', 'eggs', 'sausage', 'bacon', 'spread'], 'descList': ['cold', 'cheese', 'hygienic']}
+breakfastMeta = {'nounList': ['breakfast', 'cereals', 'breads', 'cuts', 'fruits', 'yoghurt', 'coffee', 'buffet', 'eggs', 'sausage', 'bacon', 'spread'], 'descList': ['cold', 'hygienic']}
 
 serviceAssists = ['service', 'politeness', 'accommodating', 'speed', 'friendly']
 
@@ -49,12 +49,10 @@ priceMeta = {'nounList': ['budget', 'option', 'price'], 'descList': ['expensive'
 
 poolMeta = {'nounList': ['pool', 'swimming', 'spa', 'infinity', 'jacuzzi', 'wet', 'sauna', 'temperature', 'gym', 'swim', 'indoor', 'robe'], 'descList': ['dry']}
 
-#reverseMap = {"excellent" : "location", "ideal" : "location", "close" : "location", "approachable" : "location", "wonderful": : "overall", "breathtaking" : "view", "sea" : "view", "forest" : "view", "skyline" : "view", "desert" : "view", "valley" : "view", "beach" : "view", "sunset" : "view", "polite" : "service", "speed" : "service", "friendly" : "service", "accommodating" : "service", "personal" : "service", "taste" : "food", "presentation" : "food", "service" : "food"}
-
 reverseNounMap = {}
 reverseAdjMap = {}
 
-modelFile = "../trunk/vectors-phrase.bin"
+modelFile = "../word2vec-all/word2vec/trunk/vectors-phrase.bin"
 possibleNounTags = ['NN', 'NNP', 'NNS', 'NNPS']
 possibleAdjTags = ['JJ', 'JJR', 'JJS', 'RB', 'RBS', 'RBR']
 
@@ -112,34 +110,6 @@ def findMaxMatch(destination, nounList, prospectiveMap):
     sortedMeta = sorted(sortedResult.items(), key=operator.itemgetter(1), reverse=True)
     return sortedMeta[0][0], sortedMeta[0][1][0]
     
-#if __name__ == "__main__":
-#    loadModelFile()
-#    reviewData = json.loads(open(sys.argv[1], 'r').read())
-#    reviewArr = reviewData['review']
-#    # build word clouds:
-#    # check for food.
-#    foodCloud = buildWordCloud(foodAssists)
-#    serviceCloud = buildWordCloud(serviceAssists)
-#    viewCloud = buildWordCloud(viewAssists)
-#    for review in reviewArr:
-#        tokens = word_tokenize(review)
-#        pos_tags = nltk.pos_tag(tokens)
-#        print 'pos tags: ' + str(pos_tags)
-#        for word,pos in pos_tags:
-#            for nounTag in possibleNounTags:
-#                if nounTag == pos:
-#                    print 'checking for word: ' + word
-#                    similar_words = model.most_similar(word)
-#                    max_match, max_val = findMaxMatch(similar_words, foodCloud)
-#                    print 'max food match: ' + max_match
-#                    print 'max food val: ' + str(max_val)
-#                    max_match, max_val = findMaxMatch(similar_words, serviceCloud)
-#                    print 'max service match: ' + max_match
-#                    print 'max service val: ' + str(max_val)
-#                    max_match, max_val = findMaxMatch(similar_words, viewCloud)
-#                    print 'max view match: ' + max_match
-#                    print 'max view val: ' + str(max_val)
-
 def buildReverseMaps():
     nounArr = foodMeta["nounList"]
     for val in nounArr:
@@ -279,8 +249,6 @@ if __name__ == "__main__":
     poolNounCloud = buildWordCloud(poolMeta['nounList'])
     poolAdjCloud = buildWordCloud(poolMeta['descList'])
     buildReverseMaps()
-#    serviceCloud = buildWordCloud(serviceAssists)
-#    viewCloud = buildWordCloud(viewAssists)
     user_input = raw_input("Some input please: ")
     while user_input != 'stop':
         review = user_input
@@ -301,6 +269,7 @@ if __name__ == "__main__":
                 max_val = [0.4, (word, 'service', 'service')]
                 res_noun.append((max_val[0], max_match, max_val[1]))
                 continue
+            # nounTag is used to determine attribute.
             for nounTag in possibleNounTags:
                 if nounTag == pos:
                     print 'checking for noun word: ' + word
@@ -343,6 +312,7 @@ if __name__ == "__main__":
                     res_noun.append((max_val[0], max_match, max_val[1]))
                     max_match, max_val = findMaxMatch(word, similar_words, poolNounCloud)
                     res_noun.append((max_val[0], max_match, max_val[1]))
+            # adjTag is used to figure why that attribute is selected.
             for adjTag in possibleAdjTags:
                 if adjTag == pos:
                     print 'checking for adj word: ' + word
@@ -395,6 +365,6 @@ if __name__ == "__main__":
             adj_val = val[1]
             adj_val_root = reverseAdjMap[adj_val]
             if top_noun_root == adj_val_root:
-                print 'Found! adj val: ' + adj_val
+                print 'Found! adj val: ' + str(val)
                 break
         user_input = raw_input("Some input please: ")

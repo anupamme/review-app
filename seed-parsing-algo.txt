@@ -1,0 +1,15 @@
+Start with the seed words at the leaves level.
+Percolate the seed words from the leaves to the root.
+At the end of this there will be words at all the nodes.
+
+when parsing a sentence:
+1. do pos tagging of the sentence and extract nouns
+2. for each noun in the sentence:
+    1. find which category the noun belongs to by doing exact match with keywords of that word.
+    2. if it belongs to neither of category then find the best category:
+        1. find avg of top 3 distance. If it is over a threshhold, pick the category which has max of the distance (max means closer match.)
+        2. go down the tree and repeat this process till the noun finds its place in the lowest level.
+        
+        
+Divide the complete dataset into 5 parts.
+Run the seed expansion itertively on parts 1 to 5. Measure accuracy on each part and report. Hypothesis is that accuracy should go up.

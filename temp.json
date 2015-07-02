@@ -1,0 +1,15 @@
+{"root": {
+    "next": {
+        "price-value": {
+            "next": {
+                "discount_rate": {
+                    "next": {}, 
+                    "keywords": ["discounts", "premium", "price", "coupon", "deep_discount"]
+                }
+            },
+            "keywords": []
+        } 
+    },
+    "keywords": []
+}
+}

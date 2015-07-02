@@ -1,0 +1,185 @@
+{"root": {
+    "next": {
+        "price-value": {
+            "next": {
+                "discount_rate": {
+                    "next": {}, 
+                    "keywords": ["discounts", "premium", "price", "coupon", "deep_discount"]
+                }
+            },
+            "keywords": []
+        }, 
+        "overall": {
+            "next": {
+                "cleanliness": {
+                    "next": {},
+                    "keywords": ["hygiene", "sanitary_conditions", "sanitary", "hygiene_standards", "indoor_air", "disinfecting"]
+                },
+                "spacious": {
+                    "next": {},
+                    "keywords": ["space", "airy", "luxurious", "roomy", "vaulted_ceilings", "spaced_tables", "generously_sized", "cramped", "colonial_style", "spacious_rooms", "commodious", "plush", "cathedral_ceilings"]
+                },
+                "aesthetics": {
+                    "next": {},
+                    "keywords": ["aesthetic", "design", "architecture", "conceptual", "wabi_sabi", "geometry", "geometric_forms", "sculptural", "creativity", "style", "midcentury", "visual", "art", "artistic", "sensibility"]
+                },
+                "safety": {
+                    "next": {},
+                    "keywords": ["safety", "safety_measures", "safety_standards", "safety_protocols", "public_safety", "safety_procedures", "safety_concerns", "safety_improvements", "unsafe", "security", "safe", "safety_requirements"]
+                }
+            },
+            "keywords": ["overall"]
+        },
+        "amenities": {
+            "next": {
+                "pre-room": {
+                    "next": {
+                        "welcome": {
+                            "next": {},
+                            "keywords": ["welcoming", "look_forward", "delighted", "invite", "warm_welcome", "greeted", "long_overdue", "pleased", "appreciative", "inviting", "enjoy", "invites", "warmly_welcomed", "applaud", "wholehearted", "heartening", "warmly_welcome", "good_afternoon", "good_evening", "thrilled", "grateful", "welcoming_visitors"]
+                        },
+                        "reception": {
+                            "next": {},
+                            "keywords": []
+                        },
+                        "checkin": {
+                            "next": {},
+                            "keywords": []
+                        }
+                    },
+                    "keywords": []
+                },
+                "in-room": {
+                    "next": {
+                        "housekeeping": {
+                            "next": {},
+                            "keywords": []
+                        },
+                        "medical" :{
+                            "next": {},
+                            "keywords": []
+                        },
+                        "laundry": {
+                            "next": {},
+                            "keywords": []
+                        },
+                        "room-service": {
+                            "next": {},
+                            "keywords": []
+                        }
+                    },
+                    "keywords": []
+                },
+                "post-room": {
+                    "next": {
+                        "checkout": {
+                            "next": {},
+                            "keywords": []
+                        }
+                    },
+                    "keywords": []
+                }
+            },
+            "keywords": []
+        },
+        "room": {
+            "next": {
+                "furniture": {
+                    "next": {},
+                    "keywords": ["bed", "sofa"]
+                },
+                "appliances": {
+                    "next": {},
+                    "keywords": []
+                },
+                "clothing": {
+                    "next": {
+                        "linens": {
+                            "next": {},
+                            "keywords": []
+                        },
+                        "curtains": {
+                            "next": {},
+                            "keywords": []
+                        },
+                        "bathrobe": {
+                            "next": {},
+                            "keywords": []
+                        }
+                    },
+                    "keywords": []
+                },
+                "bathroom": {
+                    "next": {
+                        "bathtub": {
+                            "next": {},
+                            "keywords": []
+                        },
+                        "mirror": {
+                            "next": {},
+                            "keywords": []
+                        },
+                        "shower": {
+                            "next": {},
+                            "keywords": []
+                        }
+                    },
+                    "keywords": []
+                }
+            },
+            "keywords": []
+        },
+        "services": {
+            "next": {},
+            "keywords": []
+        },
+        "others": {
+            "next": {},
+            "keywords": []
+        },
+        "food-beverages": {
+            "next": {
+                "breakfast": {
+                    "next": {},
+                    "keywords": ["breakfast", "cereals", "breads", "cuts", "fruits", "yoghurt", "coffee", "buffet", "eggs", "sausage", "bacon", "spread"]
+                },
+                "drinks": {
+                    "next": {},
+                    "keywords": ["drink", "beer", "cocktails", "snacks", "beverage", "iced_teas", "wine", "bloody_mary", "vodka", "mojito", "coffee", "soda", "soft_drinks", "booze", "fruit_juice", "ounce_bottle", "free_refills", "mixed_drinks", "smoothie", "vitamin_water"]
+                },
+                "restaurant": {
+                    "next": {},
+                    "keywords": []
+                },
+                "bar": {
+                    "next": {},
+                    "keywords": []
+                },
+                "vending_machine": {
+                    "next": {},
+                    "keywords": []
+                }
+            },
+            "keywords": []
+        },
+        "room-experience": {
+            "next": {
+                "noise": {
+                    "next": {},
+                    "keywords": []
+                },
+                "view": {
+                    "next": {},
+                    "keywords": []
+                },
+                "privacy": {
+                    "next": {},
+                    "keywords": []
+                }
+            },
+            "keywords": []
+        }
+    },
+    "keywords": []
+}
+}
