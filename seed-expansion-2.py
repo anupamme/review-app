@@ -82,7 +82,7 @@ def findPositionOfTag(word):
         findNext(word, node, path)
         return path, False
     else:
-        findNextBest(word.encode('utf-8'), node, path)
+        findNextBest(word, node, path)
         return path, True
 
 if __name__ == "__main__":
@@ -102,13 +102,14 @@ if __name__ == "__main__":
             pos_tags = nltk.pos_tag(tokens)
             #print 'pos tags: ' + str(pos_tags)
             for word, tag in pos_tags:
+                word = word.encode('utf-8')
                 if tag in possibleNounTags:
                     #print 'in possible noun tags'
                     path, isNewAddition = findPositionOfTag(word)
                     #print 'res: ' + str(path) + ' : ' + str(isNewAddition)
                     if isNewAddition:
                         num_added += 1
-                        #print 'Added new element: ' + tag + ' -> ' + str(path)
+                        print 'Added new element: ' + word + ' -> ' + str(path)
                     else:
                         num_found += 1
                         #print 'Found existing element: ' + tag + ' -> ' + str(path)
