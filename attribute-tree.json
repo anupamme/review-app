@@ -178,6 +178,39 @@
                 }
             },
             "keywords": []
+        },
+        "hotel-outdoor": {
+            "next": {
+                "patio": {
+                    "next": {},
+                    "keywords": []
+                },
+                "garden": {
+                    "next": {},
+                    "keywords": []
+                },
+                "pool": {
+                    "next": {},
+                    "keywords": []
+                },
+                "beach": {
+                    "next": {},
+                    "keywords": []
+                },
+                "forest": {
+                    "next": {},
+                    "keywords": []
+                },
+                "mountains": {
+                    "next": {},
+                    "keywords": []
+                },
+                "activities": {
+                    "next": {},
+                    "keywords": ["snorkeling", "tour", "city tour", "adventure", "safari"]
+                }
+            },
+            "keywords": []
         }
     },
     "keywords": []

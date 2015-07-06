@@ -1,34 +1,54 @@
+Key Error for key: quirkiness
 Added new element: quirkiness -> ['root', u'services']
+Key Error for key: customer
 Added new element: customer -> ['root', u'services']
 Key Error for key: centricity
 Added new element: centricity -> ['root']
+Key Error for key: hotel
 Added new element: hotel -> ['root', u'services']
+Key Error for key: age
 Added new element: age -> ['root', u'services']
+Key Error for key: bit
 Added new element: bit -> ['root', u'services']
+Key Error for key: business
 Added new element: business -> ['root', u'services']
+Key Error for key: feel
 Added new element: feel -> ['root', u'services']
+Key Error for key: place
 Added new element: place -> ['root', u'services']
 Key Error for key: Convenient
 Added new element: Convenient -> ['root']
+Key Error for key: location
 Added new element: location -> ['root', u'services']
+Key Error for key: co
 Added new element: co -> ['root', u'services']
+Key Error for key: spaces
 Added new element: spaces -> ['root', u'services']
+Key Error for key: bar
 Added new element: bar -> ['root', u'services']
 Key Error for key: Mac
 Added new element: Mac -> ['root']
+Key Error for key: area
 Added new element: area -> ['root', u'services']
+Key Error for key: staff
 Added new element: staff -> ['root', u'services']
+Key Error for key: stay
 Added new element: stay -> ['root', u'services']
+Key Error for key: warm
 Added new element: warm -> ['root', u'services']
+Key Error for key: welcome
 Added new element: welcome -> ['root', u'services']
 Key Error for key: Ivana
 Added new element: Ivana -> ['root']
 Key Error for key: Fotini
 Added new element: Fotini -> ['root']
+Key Error for key: self
 Added new element: self -> ['root', u'services']
+Key Error for key: help
 Added new element: help -> ['root', u'services']
 Key Error for key: DIY
 Added new element: DIY -> ['root']
+Key Error for key: options
 Added new element: options -> ['root', u'services']
 Key Error for key: Citizen
 Added new element: Citizen -> ['root']
@@ -36,28 +56,43 @@ Key Error for key: M
 Added new element: M -> ['root']
 Key Error for key: Amsterdam
 Added new element: Amsterdam -> ['root']
+Key Error for key: wife
 Added new element: wife -> ['root', u'services']
+Key Error for key: recommendation
 Added new element: recommendation -> ['root', u'services']
+Key Error for key: colleague
 Added new element: colleague -> ['root', u'services']
 Key Error for key: Yes
 Added new element: Yes -> ['root']
+Key Error for key: rooms
 Added new element: rooms -> ['root', u'services']
+Key Error for key: everything
 Added new element: everything -> ['root', u'services']
+Key Error for key: areas
 Added new element: areas -> ['root', u'services']
+Key Error for key: loads
 Added new element: loads -> ['root', u'services']
+Key Error for key: interior
 Added new element: interior -> ['root', u'services']
+Key Error for key: time
 Added new element: time -> ['root', u'services']
+Key Error for key: mins
 Added new element: mins -> ['root', u'services']
 Key Error for key: Zuid
 Added new element: Zuid -> ['root']
+Key Error for key: station
 Added new element: station -> ['root', u'services']
+Key Error for key: train
 Added new element: train -> ['root', u'services']
 Key Error for key: Schiphol
 Added new element: Schiphol -> ['root']
 Key Error for key: )
 Added new element: ) -> ['root']
+Key Error for key: excellent
 Added new element: excellent -> ['root', u'services']
+Key Error for key: tram
 Added new element: tram -> ['root', u'services']
+Key Error for key: centre
 Added new element: centre -> ['root', u'services']
 Key Error for key: Hotel
 Added new element: Hotel -> ['root']
@@ -65,26 +100,37 @@ Key Error for key: Central
 Added new element: Central -> ['root']
 Key Error for key: Station
 Added new element: Station -> ['root']
+Key Error for key: passes
 Added new element: passes -> ['root', u'services']
+Key Error for key: attractions
 Added new element: attractions -> ['root', u'services']
+Key Error for key: stag
 Added new element: stag -> ['root', u'services']
+Key Error for key: weekend
 Added new element: weekend -> ['root', u'services']
+Key Error for key: groups
 Added new element: groups -> ['root', u'services']
+Key Error for key: wifi
 Added new element: wifi -> ['root', u'services']
 Key Error for key: Sufficient
 Added new element: Sufficient -> ['root']
+Key Error for key: bandwidth
 Added new element: bandwidth -> ['root', u'services']
 Key Error for key: Facetime
 Added new element: Facetime -> ['root']
 Key Error for key: Skype
 Added new element: Skype -> ['root']
+Key Error for key: movies
 Added new element: movies -> ['root', u'services']
+Key Error for key: credit
 Added new element: credit -> ['root', u'services']
+Key Error for key: company
 Added new element: company -> ['root', u'services']
 Key Error for key: Room
 Added new element: Room -> ['root']
 Key Error for key: Tip
 Added new element: Tip -> ['root']
+Key Error for key: neighbourhood
 Added new element: neighbourhood -> ['root', u'services']
 Key Error for key: Reviewer
 Added new element: Reviewer -> ['root']
@@ -102,24 +148,35 @@ Key Error for key: China
 Added new element: China -> ['root']
 Key Error for key: Badges
 Added new element: Badges -> ['root']
+Key Error for key: reviews
 Added new element: reviews -> ['root', u'services']
 Key Error for key: Reviews
 Added new element: Reviews -> ['root']
+Key Error for key: cities
 Added new element: cities -> ['root', u'services']
+Key Error for key: title
 Added new element: title -> ['root', u'services']
+Key Error for key: rating
 Added new element: rating -> ['root', u'services']
+Key Error for key: stars
 Added new element: stars -> ['root', u'services']
 Key Error for key: Date
 Added new element: Date -> ['root']
 Key Error for key: October
 Added new element: October -> ['root']
+Key Error for key: review
 Added new element: review -> ['root', u'services']
+Key Error for key: room
 Added new element: room -> ['root', u'services']
+Key Error for key: tip
 Added new element: tip -> ['root', u'services']
+Key Error for key: management
 Added new element: management -> ['root', u'services']
+Key Error for key: response
 Added new element: response -> ['root', u'services']
 Key Error for key: Stayed
 Added new element: Stayed -> ['root']
+Key Error for key: family
 Added new element: family -> ['root', u'services']
 Key Error for key: B
 Added new element: B -> ['root']
@@ -131,11 +188,15 @@ Key Error for key: Kingdom
 Added new element: Kingdom -> ['root']
 Key Error for key: Will
 Added new element: Will -> ['root']
+Key Error for key: choice
 Added new element: choice -> ['root', u'services']
+Key Error for key: future
 Added new element: future -> ['root', u'services']
 Key Error for key: See
 Added new element: See -> ['root']
+Key Error for key: tips
 Added new element: tips -> ['root', u'services']
+Key Error for key: couple
 Added new element: couple -> ['root', u'services']
 Key Error for key: Fred
 Added new element: Fred -> ['root']
@@ -145,29 +206,51 @@ Key Error for key: Hobart
 Added new element: Hobart -> ['root']
 Key Error for key: Australia
 Added new element: Australia -> ['root']
+Key Error for key: votes
 Added new element: votes -> ['root', u'services']
+Key Error for key: quirky
 Added new element: quirky -> ['root', u'services']
+Key Error for key: super
 Added new element: super -> ['root', u'services']
+Key Error for key: modern
 Added new element: modern -> ['root', u'services']
+Key Error for key: reception
 Added new element: reception -> ['root', u'services']
+Key Error for key: river
 Added new element: river -> ['root', u'services']
+Key Error for key: trip
 Added new element: trip -> ['root', u'services']
+Key Error for key: cabins
 Added new element: cabins -> ['root', u'services']
 Key Error for key: citizenM
 Added new element: citizenM -> ['root']
+Key Error for key: line
 Added new element: line -> ['root', u'services']
+Key Error for key: shower
 Added new element: shower -> ['root', u'services']
+Key Error for key: see
 Added new element: see -> ['root', u'services']
+Key Error for key: wish
 Added new element: wish -> ['root', u'services']
+Key Error for key: call
 Added new element: call -> ['root', u'services']
+Key Error for key: privacy
 Added new element: privacy -> ['root', u'services']
+Key Error for key: lack
 Added new element: lack -> ['root', u'services']
+Key Error for key: places
 Added new element: places -> ['root', u'services']
+Key Error for key: garments
 Added new element: garments -> ['root', u'services']
+Key Error for key: stow
 Added new element: stow -> ['root', u'services']
+Key Error for key: suitcases
 Added new element: suitcases -> ['root', u'services']
+Key Error for key: overnight
 Added new element: overnight -> ['root', u'services']
+Key Error for key: museums
 Added new element: museums -> ['root', u'services']
+Key Error for key: city
 Added new element: city -> ['root', u'services']
 Key Error for key: September
 Added new element: September -> ['root']
@@ -179,32 +262,57 @@ Key Error for key: Norway
 Added new element: Norway -> ['root']
 Key Error for key: Good
 Added new element: Good -> ['root']
+Key Error for key: value
 Added new element: value -> ['root', u'services']
+Key Error for key: lot
 Added new element: lot -> ['root', u'services']
+Key Error for key: hang
 Added new element: hang -> ['root', u'services']
+Key Error for key: l
 Added new element: l -> ['root', u'services']
+Key Error for key: person
 Added new element: person -> ['root', u'services']
+Key Error for key: lobby
 Added new element: lobby -> ['root', u'services']
+Key Error for key: plenty
 Added new element: plenty -> ['root', u'services']
+Key Error for key: tables
 Added new element: tables -> ['root', u'services']
+Key Error for key: charge
 Added new element: charge -> ['root', u'services']
+Key Error for key: points
 Added new element: points -> ['root', u'services']
+Key Error for key: etc
 Added new element: etc -> ['root', u'services']
+Key Error for key: atmosphere
 Added new element: atmosphere -> ['root', u'services']
+Key Error for key: ease
 Added new element: ease -> ['root', u'services']
+Key Error for key: checking
 Added new element: checking -> ['root', u'services']
+Key Error for key: solo
 Added new element: solo -> ['root', u'services']
+Key Error for key: layouts
 Added new element: layouts -> ['root', u'services']
+Key Error for key: capsules
 Added new element: capsules -> ['root', u'services']
+Key Error for key: glass
 Added new element: glass -> ['root', u'services']
+Key Error for key: zone
 Added new element: zone -> ['root', u'services']
+Key Error for key: solution
 Added new element: solution -> ['root', u'services']
+Key Error for key: everyone
 Added new element: everyone -> ['root', u'services']
 Key Error for key: (
 Added new element: ( -> ['root']
+Key Error for key: surprise
 Added new element: surprise -> ['root', u'services']
+Key Error for key: journey
 Added new element: journey -> ['root', u'services']
+Key Error for key: direction
 Added new element: direction -> ['root', u'services']
+Key Error for key: airport
 Added new element: airport -> ['root', u'services']
 Key Error for key: Eric_Brasil
 Added new element: Eric_Brasil -> ['root']
@@ -212,67 +320,107 @@ Key Error for key: London
 Added new element: London -> ['root']
 Key Error for key: Modern
 Added new element: Modern -> ['root']
+Key Error for key: beds
 Added new element: beds -> ['root', u'services']
+Key Error for key: internet
 Added new element: internet -> ['root', u'services']
 Key Error for key: Quick
 Added new element: Quick -> ['root']
 Key Error for key: Check
 Added new element: Check -> ['root']
+Key Error for key: check
 Added new element: check -> ['root', u'services']
+Key Error for key: stop
 Added new element: stop -> ['root', u'services']
+Key Error for key: n
 Added new element: n -> ['root', u'services']
 Key Error for key: Get
 Added new element: Get -> ['root']
+Key Error for key: tourist
 Added new element: tourist -> ['root', u'services']
+Key Error for key: min
 Added new element: min -> ['root', u'services']
+Key Error for key: temperature
 Added new element: temperature -> ['root', u'services']
 Key Error for key: Kate
 Added new element: Kate -> ['root']
 Key Error for key: C
 Added new element: C -> ['root']
+Key Error for key: leisure
 Added new element: leisure -> ['root', u'services']
+Key Error for key: times
 Added new element: times -> ['root', u'services']
+Key Error for key: toiletries
 Added new element: toiletries -> ['root', u'services']
+Key Error for key: food
 Added new element: food -> ['root', u'services']
+Key Error for key: okay
 Added new element: okay -> ['root', u'services']
+Key Error for key: point
 Added new element: point -> ['root', u'services']
+Key Error for key: night
 Added new element: night -> ['root', u'services']
+Key Error for key: drinks
 Added new element: drinks -> ['root', u'services']
+Key Error for key: soundproofing
 Added new element: soundproofing -> ['root', u'services']
+Key Error for key: wiht
 Added new element: wiht -> ['root', u'services']
+Key Error for key: remote
 Added new element: remote -> ['root', u'services']
+Key Error for key: control
 Added new element: control -> ['root', u'services']
 Key Error for key: Overall
 Added new element: Overall -> ['root']
 Key Error for key: April
 Added new element: April -> ['root']
+Key Error for key: noel
 Added new element: noel -> ['root', u'services']
+Key Error for key: h
 Added new element: h -> ['root', u'services']
 Key Error for key: Sydney
 Added new element: Sydney -> ['root']
 Key Error for key: Airport
 Added new element: Airport -> ['root']
+Key Error for key: hype
 Added new element: hype -> ['root', u'services']
+Key Error for key: reality
 Added new element: reality -> ['root', u'services']
+Key Error for key: features
 Added new element: features -> ['root', u'services']
 Key Error for key: Food
 Added new element: Food -> ['root']
+Key Error for key: sustaining
 Added new element: sustaining -> ['root', u'services']
+Key Error for key: scene
 Added new element: scene -> ['root', u'services']
+Key Error for key: alcohol
 Added new element: alcohol -> ['root', u'services']
+Key Error for key: bedding
 Added new element: bedding -> ['root', u'services']
+Key Error for key: awesome
 Added new element: awesome -> ['root', u'services']
+Key Error for key: offers
 Added new element: offers -> ['root', u'services']
+Key Error for key: number
 Added new element: number -> ['root', u'services']
 Key Error for key: TV
 Added new element: TV -> ['root']
+Key Error for key: choices
 Added new element: choices -> ['root', u'services']
+Key Error for key: win
 Added new element: win -> ['root', u'services']
+Key Error for key: holiday
 Added new element: holiday -> ['root', u'services']
+Key Error for key: families
 Added new element: families -> ['root', u'services']
+Key Error for key: closeness
 Added new element: closeness -> ['root', u'services']
+Key Error for key: minute
 Added new element: minute -> ['root', u'services']
+Key Error for key: walk
 Added new element: walk -> ['root', u'services']
+Key Error for key: cover
 Added new element: cover -> ['root', u'services']
 Key Error for key: Recommend
 Added new element: Recommend -> ['root']
@@ -282,6 +430,7 @@ Key Error for key: Lucerne
 Added new element: Lucerne -> ['root']
 Key Error for key: Switzerland
 Added new element: Switzerland -> ['root']
+Key Error for key: exhibition
 Added new element: exhibition -> ['root', u'services']
 Key Error for key: February
 Added new element: February -> ['root']
@@ -291,6 +440,7 @@ Key Error for key: tast
 Added new element: tast -> ['root']
 Key Error for key: controll
 Added new element: controll -> ['root']
+Key Error for key: others
 Added new element: others -> ['root', u'services']
 Key Error for key: gg_hanami
 Added new element: gg_hanami -> ['root']
@@ -300,109 +450,185 @@ Key Error for key: Paulo
 Added new element: Paulo -> ['root']
 Key Error for key: SP
 Added new element: SP -> ['root']
+Key Error for key: option
 Added new element: option -> ['root', u'services']
+Key Error for key: center
 Added new element: center -> ['root', u'services']
 Key Error for key: CitizenM
 Added new element: CitizenM -> ['root']
+Key Error for key: ones
 Added new element: ones -> ['root', u'services']
+Key Error for key: concept
 Added new element: concept -> ['root', u'services']
+Key Error for key: relies
 Added new element: relies -> ['root', u'services']
+Key Error for key: fun
 Added new element: fun -> ['root', u'services']
+Key Error for key: practicality
 Added new element: practicality -> ['root', u'services']
+Key Error for key: tiny
 Added new element: tiny -> ['root', u'services']
+Key Error for key: desk
 Added new element: desk -> ['root', u'services']
+Key Error for key: chair
 Added new element: chair -> ['root', u'services']
+Key Error for key: sink
 Added new element: sink -> ['root', u'services']
+Key Error for key: square
 Added new element: square -> ['root', u'services']
+Key Error for key: footage
 Added new element: footage -> ['root', u'services']
+Key Error for key: works
 Added new element: works -> ['root', u'services']
+Key Error for key: fine
 Added new element: fine -> ['root', u'services']
+Key Error for key: operating
 Added new element: operating -> ['root', u'services']
+Key Error for key: central
 Added new element: central -> ['root', u'services']
+Key Error for key: color
 Added new element: color -> ['root', u'services']
+Key Error for key: selecting
 Added new element: selecting -> ['root', u'services']
+Key Error for key: traveler
 Added new element: traveler -> ['root', u'services']
+Key Error for key: highlight
 Added new element: highlight -> ['root', u'services']
+Key Error for key: broke
 Added new element: broke -> ['root', u'services']
+Key Error for key: day
 Added new element: day -> ['root', u'services']
+Key Error for key: computer
 Added new element: computer -> ['root', u'services']
+Key Error for key: system
 Added new element: system -> ['root', u'services']
+Key Error for key: smile
 Added new element: smile -> ['root', u'services']
+Key Error for key: faces
 Added new element: faces -> ['root', u'services']
 Key Error for key: Thumbs
 Added new element: Thumbs -> ['root']
+Key Error for key: disappointments
 Added new element: disappointments -> ['root', u'services']
+Key Error for key: nights
 Added new element: nights -> ['root', u'services']
+Key Error for key: row
 Added new element: row -> ['root', u'services']
+Key Error for key: hairdryer
 Added new element: hairdryer -> ['root', u'services']
+Key Error for key: hallway
 Added new element: hallway -> ['root', u'services']
+Key Error for key: underneath
 Added new element: underneath -> ['root', u'services']
+Key Error for key: observations
 Added new element: observations -> ['root', u'services']
+Key Error for key: markets
 Added new element: markets -> ['root', u'services']
+Key Error for key: shops
 Added new element: shops -> ['root', u'services']
+Key Error for key: money
 Added new element: money -> ['root', u'services']
+Key Error for key: downtown
 Added new element: downtown -> ['root', u'services']
+Key Error for key: subway
 Added new element: subway -> ['root', u'services']
 Key Error for key: Starbucks
 Added new element: Starbucks -> ['root']
+Key Error for key: shop
 Added new element: shop -> ['root', u'services']
 Key Error for key: Neighborhood
 Added new element: Neighborhood -> ['root']
 Key Error for key: Amsterday
 Added new element: Amsterday -> ['root']
+Key Error for key: cars
 Added new element: cars -> ['root', u'services']
+Key Error for key: windows
 Added new element: windows -> ['root', u'services']
+Key Error for key: thieves
 Added new element: thieves -> ['root', u'services']
+Key Error for key: stole
 Added new element: stole -> ['root', u'services']
+Key Error for key: inside
 Added new element: inside -> ['root', u'services']
+Key Error for key: neighborhood
 Added new element: neighborhood -> ['root', u'services']
+Key Error for key: bucks
 Added new element: bucks -> ['root', u'services']
 Key Error for key: Plus
 Added new element: Plus -> ['root']
+Key Error for key: manager
 Added new element: manager -> ['root', u'services']
+Key Error for key: idea
 Added new element: idea -> ['root', u'services']
+Key Error for key: shelving
 Added new element: shelving -> ['root', u'services']
+Key Error for key: walls
 Added new element: walls -> ['root', u'services']
+Key Error for key: belongings
 Added new element: belongings -> ['root', u'services']
 Key Error for key: Hallways
 Added new element: Hallways -> ['root']
+Key Error for key: elevator
 Added new element: elevator -> ['root', u'services']
+Key Error for key: jermaine
 Added new element: jermaine -> ['root', u'services']
 Key Error for key: Bitburg
 Added new element: Bitburg -> ['root']
 Key Error for key: Germany
 Added new element: Germany -> ['root']
+Key Error for key: foods
 Added new element: foods -> ['root', u'services']
+Key Error for key: perfect
 Added new element: perfect -> ['root', u'services']
+Key Error for key: ton
 Added new element: ton -> ['root', u'services']
+Key Error for key: adult
 Added new element: adult -> ['root', u'services']
+Key Error for key: metro
 Added new element: metro -> ['root', u'services']
+Key Error for key: ride
 Added new element: ride -> ['root', u'services']
+Key Error for key: nightlife
 Added new element: nightlife -> ['root', u'services']
 Key Error for key: citizenfrancisco
 Added new element: citizenfrancisco -> ['root']
 Key Error for key: Manager
 Added new element: Manager -> ['root']
+Key Error for key: week
 Added new element: week -> ['root', u'services']
 Key Error for key: Hi
 Added new element: Hi -> ['root']
+Key Error for key: thank
 Added new element: thank -> ['root', u'services']
+Key Error for key: kind
 Added new element: kind -> ['root', u'services']
+Key Error for key: comments
 Added new element: comments -> ['root', u'services']
+Key Error for key: availability
 Added new element: availability -> ['root', u'services']
+Key Error for key: decide
 Added new element: decide -> ['root', u'services']
 Key Error for key: /
 Added new element: / -> ['root']
+Key Error for key: barista
 Added new element: barista -> ['root', u'services']
+Key Error for key: espresso
 Added new element: espresso -> ['root', u'services']
 Key Error for key: Martini
 Added new element: Martini -> ['root']
+Key Error for key: fearing
 Added new element: fearing -> ['root', u'services']
+Key Error for key: shots
 Added new element: shots -> ['root', u'services']
+Key Error for key: sushi
 Added new element: sushi -> ['root', u'services']
+Key Error for key: soup
 Added new element: soup -> ['root', u'services']
+Key Error for key: sandwich
 Added new element: sandwich -> ['root', u'services']
+Key Error for key: tummy
 Added new element: tummy -> ['root', u'services']
+Key Error for key: hope
 Added new element: hope -> ['root', u'services']
 Key Error for key: GruÃ
 Added new element: GruÃ -> ['root']
@@ -412,7 +638,9 @@ Key Error for key: Report
 Added new element: Report -> ['root']
 Key Error for key: Thank
 Added new element: Thank -> ['root']
+Key Error for key: input
 Added new element: input -> ['root', u'services']
+Key Error for key: representative
 Added new element: representative -> ['root', u'services']
 Key Error for key: TripAdvisor
 Added new element: TripAdvisor -> ['root']
@@ -424,6 +652,7 @@ percentage val: 0.0
 num_found: 5153.0
 num_added: 0.0
 percentage val: 1.0
+Key Error for key: nature
 Added new element: nature -> ['root', u'services']
 num_found: 5135.0
 num_added: 1.0
