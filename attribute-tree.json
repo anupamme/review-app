@@ -139,13 +139,17 @@
         },
         "food-beverages": {
             "next": {
-                "breakfast": {
+                "meal": {
                     "next": {},
-                    "keywords": ["breakfast", "cereals", "breads", "cuts", "fruits", "yoghurt", "coffee", "buffet", "eggs", "sausage", "bacon", "spread"]
+                    "keywords": ["breakfast", "cereals", "breads", "cuts", "fruits", "yoghurt", "coffee", "buffet", "eggs", "sausage", "bacon", "spread", "apple", "banana", "strawberry", "berry", "produce", "grape", "vegetable", "pot"]
+                },
+                "food-decor": {
+                    "next": {},
+                    "keywords": ["smell", "assortment", "culinary", "gourmet", "homemade"]
                 },
                 "drinks": {
                     "next": {},
-                    "keywords": ["drink", "beer", "cocktails", "snacks", "beverage", "iced_teas", "wine", "bloody_mary", "vodka", "mojito", "coffee", "soda", "soft_drinks", "booze", "fruit_juice", "ounce_bottle", "free_refills", "mixed_drinks", "smoothie", "vitamin_water"]
+                    "keywords": ["drink", "beer", "cocktails", "snacks", "beverage", "iced_teas", "wine", "bloody_mary", "vodka", "mojito", "coffee", "soda", "soft_drinks", "booze", "fruit_juice", "ounce_bottle", "free_refills", "mixed_drinks", "smoothie", "vitamin_water", "milk", "cup"]
                 },
                 "restaurant": {
                     "next": {},
@@ -183,23 +187,23 @@
             "next": {
                 "patio": {
                     "next": {},
-                    "keywords": []
+                    "keywords": ["landscape", "lawn", "yard", "front", "porch", "veranda", "outdoor_dining", "terrace", "dining_room", "courtyard", "picnic_tables", "lounge", "rooftop_deck", "patio"]
                 },
                 "garden": {
                     "next": {},
-                    "keywords": []
+                    "keywords": ["gazebo", "flower", "plant"]
                 },
                 "pool": {
                     "next": {},
-                    "keywords": []
+                    "keywords": ["turquoise", "canal", "lake", "river", "pool", "poolside", "swimming_pool", "swimming", "resort", "reflection"]
                 },
-                "beach": {
+                "sea": {
                     "next": {},
-                    "keywords": []
+                    "keywords": ["sunshine", "summer", "tropical", "beach", "idyllic", "aqua", "sand", "nature", "sun", "tree", "coastline", "ocean", "sea"]
                 },
                 "forest": {
                     "next": {},
-                    "keywords": []
+                    "keywords": ["trees", "forest", "grass"]
                 },
                 "mountains": {
                     "next": {},
@@ -207,7 +211,7 @@
                 },
                 "activities": {
                     "next": {},
-                    "keywords": ["snorkeling", "tour", "city tour", "adventure", "safari"]
+                    "keywords": ["snorkeling", "tour", "adventure", "safari"]
                 }
             },
             "keywords": []

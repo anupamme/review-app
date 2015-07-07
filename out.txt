@@ -1,665 +1,337 @@
-Key Error for key: quirkiness
-Added new element: quirkiness -> ['root', u'services']
-Key Error for key: customer
-Added new element: customer -> ['root', u'services']
-Key Error for key: centricity
-Added new element: centricity -> ['root']
-Key Error for key: hotel
-Added new element: hotel -> ['root', u'services']
-Key Error for key: age
-Added new element: age -> ['root', u'services']
-Key Error for key: bit
-Added new element: bit -> ['root', u'services']
-Key Error for key: business
-Added new element: business -> ['root', u'services']
-Key Error for key: feel
-Added new element: feel -> ['root', u'services']
-Key Error for key: place
-Added new element: place -> ['root', u'services']
-Key Error for key: Convenient
-Added new element: Convenient -> ['root']
-Key Error for key: location
-Added new element: location -> ['root', u'services']
-Key Error for key: co
-Added new element: co -> ['root', u'services']
-Key Error for key: spaces
-Added new element: spaces -> ['root', u'services']
-Key Error for key: bar
-Added new element: bar -> ['root', u'services']
-Key Error for key: Mac
-Added new element: Mac -> ['root']
-Key Error for key: area
-Added new element: area -> ['root', u'services']
-Key Error for key: staff
-Added new element: staff -> ['root', u'services']
-Key Error for key: stay
-Added new element: stay -> ['root', u'services']
-Key Error for key: warm
-Added new element: warm -> ['root', u'services']
-Key Error for key: welcome
-Added new element: welcome -> ['root', u'services']
-Key Error for key: Ivana
-Added new element: Ivana -> ['root']
-Key Error for key: Fotini
-Added new element: Fotini -> ['root']
-Key Error for key: self
-Added new element: self -> ['root', u'services']
-Key Error for key: help
-Added new element: help -> ['root', u'services']
-Key Error for key: DIY
-Added new element: DIY -> ['root']
-Key Error for key: options
-Added new element: options -> ['root', u'services']
-Key Error for key: Citizen
-Added new element: Citizen -> ['root']
-Key Error for key: M
-Added new element: M -> ['root']
-Key Error for key: Amsterdam
-Added new element: Amsterdam -> ['root']
-Key Error for key: wife
-Added new element: wife -> ['root', u'services']
-Key Error for key: recommendation
-Added new element: recommendation -> ['root', u'services']
-Key Error for key: colleague
-Added new element: colleague -> ['root', u'services']
-Key Error for key: Yes
-Added new element: Yes -> ['root']
-Key Error for key: rooms
-Added new element: rooms -> ['root', u'services']
-Key Error for key: everything
-Added new element: everything -> ['root', u'services']
-Key Error for key: areas
-Added new element: areas -> ['root', u'services']
-Key Error for key: loads
-Added new element: loads -> ['root', u'services']
-Key Error for key: interior
-Added new element: interior -> ['root', u'services']
-Key Error for key: time
-Added new element: time -> ['root', u'services']
-Key Error for key: mins
-Added new element: mins -> ['root', u'services']
-Key Error for key: Zuid
-Added new element: Zuid -> ['root']
-Key Error for key: station
-Added new element: station -> ['root', u'services']
-Key Error for key: train
-Added new element: train -> ['root', u'services']
-Key Error for key: Schiphol
-Added new element: Schiphol -> ['root']
-Key Error for key: )
-Added new element: ) -> ['root']
-Key Error for key: excellent
-Added new element: excellent -> ['root', u'services']
-Key Error for key: tram
-Added new element: tram -> ['root', u'services']
-Key Error for key: centre
-Added new element: centre -> ['root', u'services']
-Key Error for key: Hotel
-Added new element: Hotel -> ['root']
-Key Error for key: Central
-Added new element: Central -> ['root']
-Key Error for key: Station
-Added new element: Station -> ['root']
-Key Error for key: passes
-Added new element: passes -> ['root', u'services']
-Key Error for key: attractions
-Added new element: attractions -> ['root', u'services']
-Key Error for key: stag
-Added new element: stag -> ['root', u'services']
-Key Error for key: weekend
-Added new element: weekend -> ['root', u'services']
-Key Error for key: groups
-Added new element: groups -> ['root', u'services']
-Key Error for key: wifi
-Added new element: wifi -> ['root', u'services']
-Key Error for key: Sufficient
-Added new element: Sufficient -> ['root']
-Key Error for key: bandwidth
-Added new element: bandwidth -> ['root', u'services']
-Key Error for key: Facetime
-Added new element: Facetime -> ['root']
-Key Error for key: Skype
-Added new element: Skype -> ['root']
-Key Error for key: movies
-Added new element: movies -> ['root', u'services']
-Key Error for key: credit
-Added new element: credit -> ['root', u'services']
-Key Error for key: company
-Added new element: company -> ['root', u'services']
-Key Error for key: Room
-Added new element: Room -> ['root']
-Key Error for key: Tip
-Added new element: Tip -> ['root']
-Key Error for key: neighbourhood
-Added new element: neighbourhood -> ['root', u'services']
-Key Error for key: Reviewer
-Added new element: Reviewer -> ['root']
-Key Error for key: Name
-Added new element: Name -> ['root']
-Key Error for key: hopeandfury
-Added new element: hopeandfury -> ['root']
-Key Error for key: Place
-Added new element: Place -> ['root']
-Key Error for key: Hong
-Added new element: Hong -> ['root']
-Key Error for key: Kong
-Added new element: Kong -> ['root']
-Key Error for key: China
-Added new element: China -> ['root']
-Key Error for key: Badges
-Added new element: Badges -> ['root']
-Key Error for key: reviews
-Added new element: reviews -> ['root', u'services']
-Key Error for key: Reviews
-Added new element: Reviews -> ['root']
-Key Error for key: cities
-Added new element: cities -> ['root', u'services']
-Key Error for key: title
-Added new element: title -> ['root', u'services']
-Key Error for key: rating
-Added new element: rating -> ['root', u'services']
-Key Error for key: stars
-Added new element: stars -> ['root', u'services']
-Key Error for key: Date
-Added new element: Date -> ['root']
-Key Error for key: October
-Added new element: October -> ['root']
-Key Error for key: review
-Added new element: review -> ['root', u'services']
-Key Error for key: room
-Added new element: room -> ['root', u'services']
-Key Error for key: tip
-Added new element: tip -> ['root', u'services']
-Key Error for key: management
-Added new element: management -> ['root', u'services']
-Key Error for key: response
-Added new element: response -> ['root', u'services']
-Key Error for key: Stayed
-Added new element: Stayed -> ['root']
-Key Error for key: family
-Added new element: family -> ['root', u'services']
-Key Error for key: B
-Added new element: B -> ['root']
-Key Error for key: Tamworth
-Added new element: Tamworth -> ['root']
-Key Error for key: United
-Added new element: United -> ['root']
-Key Error for key: Kingdom
-Added new element: Kingdom -> ['root']
-Key Error for key: Will
-Added new element: Will -> ['root']
-Key Error for key: choice
-Added new element: choice -> ['root', u'services']
-Key Error for key: future
-Added new element: future -> ['root', u'services']
-Key Error for key: See
-Added new element: See -> ['root']
-Key Error for key: tips
-Added new element: tips -> ['root', u'services']
-Key Error for key: couple
-Added new element: couple -> ['root', u'services']
-Key Error for key: Fred
-Added new element: Fred -> ['root']
-Key Error for key: P
-Added new element: P -> ['root']
-Key Error for key: Hobart
-Added new element: Hobart -> ['root']
-Key Error for key: Australia
-Added new element: Australia -> ['root']
-Key Error for key: votes
-Added new element: votes -> ['root', u'services']
-Key Error for key: quirky
-Added new element: quirky -> ['root', u'services']
-Key Error for key: super
-Added new element: super -> ['root', u'services']
-Key Error for key: modern
-Added new element: modern -> ['root', u'services']
-Key Error for key: reception
-Added new element: reception -> ['root', u'services']
-Key Error for key: river
-Added new element: river -> ['root', u'services']
-Key Error for key: trip
-Added new element: trip -> ['root', u'services']
-Key Error for key: cabins
-Added new element: cabins -> ['root', u'services']
-Key Error for key: citizenM
-Added new element: citizenM -> ['root']
-Key Error for key: line
-Added new element: line -> ['root', u'services']
-Key Error for key: shower
-Added new element: shower -> ['root', u'services']
-Key Error for key: see
-Added new element: see -> ['root', u'services']
-Key Error for key: wish
-Added new element: wish -> ['root', u'services']
-Key Error for key: call
-Added new element: call -> ['root', u'services']
-Key Error for key: privacy
-Added new element: privacy -> ['root', u'services']
-Key Error for key: lack
-Added new element: lack -> ['root', u'services']
-Key Error for key: places
-Added new element: places -> ['root', u'services']
-Key Error for key: garments
-Added new element: garments -> ['root', u'services']
-Key Error for key: stow
-Added new element: stow -> ['root', u'services']
-Key Error for key: suitcases
-Added new element: suitcases -> ['root', u'services']
-Key Error for key: overnight
-Added new element: overnight -> ['root', u'services']
-Key Error for key: museums
-Added new element: museums -> ['root', u'services']
-Key Error for key: city
-Added new element: city -> ['root', u'services']
-Key Error for key: September
-Added new element: September -> ['root']
-Key Error for key: riglet
-Added new element: riglet -> ['root']
-Key Error for key: Oslo
-Added new element: Oslo -> ['root']
-Key Error for key: Norway
-Added new element: Norway -> ['root']
-Key Error for key: Good
-Added new element: Good -> ['root']
-Key Error for key: value
-Added new element: value -> ['root', u'services']
-Key Error for key: lot
-Added new element: lot -> ['root', u'services']
-Key Error for key: hang
-Added new element: hang -> ['root', u'services']
-Key Error for key: l
-Added new element: l -> ['root', u'services']
-Key Error for key: person
-Added new element: person -> ['root', u'services']
-Key Error for key: lobby
-Added new element: lobby -> ['root', u'services']
-Key Error for key: plenty
-Added new element: plenty -> ['root', u'services']
-Key Error for key: tables
-Added new element: tables -> ['root', u'services']
-Key Error for key: charge
-Added new element: charge -> ['root', u'services']
-Key Error for key: points
-Added new element: points -> ['root', u'services']
-Key Error for key: etc
-Added new element: etc -> ['root', u'services']
-Key Error for key: atmosphere
-Added new element: atmosphere -> ['root', u'services']
-Key Error for key: ease
-Added new element: ease -> ['root', u'services']
-Key Error for key: checking
-Added new element: checking -> ['root', u'services']
-Key Error for key: solo
-Added new element: solo -> ['root', u'services']
-Key Error for key: layouts
-Added new element: layouts -> ['root', u'services']
-Key Error for key: capsules
-Added new element: capsules -> ['root', u'services']
-Key Error for key: glass
-Added new element: glass -> ['root', u'services']
-Key Error for key: zone
-Added new element: zone -> ['root', u'services']
-Key Error for key: solution
-Added new element: solution -> ['root', u'services']
-Key Error for key: everyone
-Added new element: everyone -> ['root', u'services']
-Key Error for key: (
-Added new element: ( -> ['root']
-Key Error for key: surprise
-Added new element: surprise -> ['root', u'services']
-Key Error for key: journey
-Added new element: journey -> ['root', u'services']
-Key Error for key: direction
-Added new element: direction -> ['root', u'services']
-Key Error for key: airport
-Added new element: airport -> ['root', u'services']
-Key Error for key: Eric_Brasil
-Added new element: Eric_Brasil -> ['root']
-Key Error for key: London
-Added new element: London -> ['root']
-Key Error for key: Modern
-Added new element: Modern -> ['root']
-Key Error for key: beds
-Added new element: beds -> ['root', u'services']
-Key Error for key: internet
-Added new element: internet -> ['root', u'services']
-Key Error for key: Quick
-Added new element: Quick -> ['root']
-Key Error for key: Check
-Added new element: Check -> ['root']
-Key Error for key: check
-Added new element: check -> ['root', u'services']
-Key Error for key: stop
-Added new element: stop -> ['root', u'services']
-Key Error for key: n
-Added new element: n -> ['root', u'services']
-Key Error for key: Get
-Added new element: Get -> ['root']
-Key Error for key: tourist
-Added new element: tourist -> ['root', u'services']
-Key Error for key: min
-Added new element: min -> ['root', u'services']
-Key Error for key: temperature
-Added new element: temperature -> ['root', u'services']
-Key Error for key: Kate
-Added new element: Kate -> ['root']
-Key Error for key: C
-Added new element: C -> ['root']
-Key Error for key: leisure
-Added new element: leisure -> ['root', u'services']
-Key Error for key: times
-Added new element: times -> ['root', u'services']
-Key Error for key: toiletries
-Added new element: toiletries -> ['root', u'services']
-Key Error for key: food
-Added new element: food -> ['root', u'services']
-Key Error for key: okay
-Added new element: okay -> ['root', u'services']
-Key Error for key: point
-Added new element: point -> ['root', u'services']
-Key Error for key: night
-Added new element: night -> ['root', u'services']
-Key Error for key: drinks
-Added new element: drinks -> ['root', u'services']
-Key Error for key: soundproofing
-Added new element: soundproofing -> ['root', u'services']
-Key Error for key: wiht
-Added new element: wiht -> ['root', u'services']
-Key Error for key: remote
-Added new element: remote -> ['root', u'services']
-Key Error for key: control
-Added new element: control -> ['root', u'services']
-Key Error for key: Overall
-Added new element: Overall -> ['root']
-Key Error for key: April
-Added new element: April -> ['root']
-Key Error for key: noel
-Added new element: noel -> ['root', u'services']
-Key Error for key: h
-Added new element: h -> ['root', u'services']
-Key Error for key: Sydney
-Added new element: Sydney -> ['root']
-Key Error for key: Airport
-Added new element: Airport -> ['root']
-Key Error for key: hype
-Added new element: hype -> ['root', u'services']
-Key Error for key: reality
-Added new element: reality -> ['root', u'services']
-Key Error for key: features
-Added new element: features -> ['root', u'services']
-Key Error for key: Food
-Added new element: Food -> ['root']
-Key Error for key: sustaining
-Added new element: sustaining -> ['root', u'services']
-Key Error for key: scene
-Added new element: scene -> ['root', u'services']
-Key Error for key: alcohol
-Added new element: alcohol -> ['root', u'services']
-Key Error for key: bedding
-Added new element: bedding -> ['root', u'services']
-Key Error for key: awesome
-Added new element: awesome -> ['root', u'services']
-Key Error for key: offers
-Added new element: offers -> ['root', u'services']
-Key Error for key: number
-Added new element: number -> ['root', u'services']
-Key Error for key: TV
-Added new element: TV -> ['root']
-Key Error for key: choices
-Added new element: choices -> ['root', u'services']
-Key Error for key: win
-Added new element: win -> ['root', u'services']
-Key Error for key: holiday
-Added new element: holiday -> ['root', u'services']
-Key Error for key: families
-Added new element: families -> ['root', u'services']
-Key Error for key: closeness
-Added new element: closeness -> ['root', u'services']
-Key Error for key: minute
-Added new element: minute -> ['root', u'services']
-Key Error for key: walk
-Added new element: walk -> ['root', u'services']
-Key Error for key: cover
-Added new element: cover -> ['root', u'services']
-Key Error for key: Recommend
-Added new element: Recommend -> ['root']
-Key Error for key: kenfolett
-Added new element: kenfolett -> ['root']
-Key Error for key: Lucerne
-Added new element: Lucerne -> ['root']
-Key Error for key: Switzerland
-Added new element: Switzerland -> ['root']
-Key Error for key: exhibition
-Added new element: exhibition -> ['root', u'services']
-Key Error for key: February
-Added new element: February -> ['root']
-Key Error for key: Very
-Added new element: Very -> ['root']
-Key Error for key: tast
-Added new element: tast -> ['root']
-Key Error for key: controll
-Added new element: controll -> ['root']
-Key Error for key: others
-Added new element: others -> ['root', u'services']
-Key Error for key: gg_hanami
-Added new element: gg_hanami -> ['root']
-Key Error for key: Sao
-Added new element: Sao -> ['root']
-Key Error for key: Paulo
-Added new element: Paulo -> ['root']
-Key Error for key: SP
-Added new element: SP -> ['root']
-Key Error for key: option
-Added new element: option -> ['root', u'services']
-Key Error for key: center
-Added new element: center -> ['root', u'services']
-Key Error for key: CitizenM
-Added new element: CitizenM -> ['root']
-Key Error for key: ones
-Added new element: ones -> ['root', u'services']
-Key Error for key: concept
-Added new element: concept -> ['root', u'services']
-Key Error for key: relies
-Added new element: relies -> ['root', u'services']
-Key Error for key: fun
-Added new element: fun -> ['root', u'services']
-Key Error for key: practicality
-Added new element: practicality -> ['root', u'services']
-Key Error for key: tiny
-Added new element: tiny -> ['root', u'services']
-Key Error for key: desk
-Added new element: desk -> ['root', u'services']
-Key Error for key: chair
-Added new element: chair -> ['root', u'services']
-Key Error for key: sink
-Added new element: sink -> ['root', u'services']
-Key Error for key: square
-Added new element: square -> ['root', u'services']
-Key Error for key: footage
-Added new element: footage -> ['root', u'services']
-Key Error for key: works
-Added new element: works -> ['root', u'services']
-Key Error for key: fine
-Added new element: fine -> ['root', u'services']
-Key Error for key: operating
-Added new element: operating -> ['root', u'services']
-Key Error for key: central
-Added new element: central -> ['root', u'services']
-Key Error for key: color
-Added new element: color -> ['root', u'services']
-Key Error for key: selecting
-Added new element: selecting -> ['root', u'services']
-Key Error for key: traveler
-Added new element: traveler -> ['root', u'services']
-Key Error for key: highlight
-Added new element: highlight -> ['root', u'services']
-Key Error for key: broke
-Added new element: broke -> ['root', u'services']
-Key Error for key: day
-Added new element: day -> ['root', u'services']
-Key Error for key: computer
-Added new element: computer -> ['root', u'services']
-Key Error for key: system
-Added new element: system -> ['root', u'services']
-Key Error for key: smile
-Added new element: smile -> ['root', u'services']
-Key Error for key: faces
-Added new element: faces -> ['root', u'services']
-Key Error for key: Thumbs
-Added new element: Thumbs -> ['root']
-Key Error for key: disappointments
-Added new element: disappointments -> ['root', u'services']
-Key Error for key: nights
-Added new element: nights -> ['root', u'services']
-Key Error for key: row
-Added new element: row -> ['root', u'services']
-Key Error for key: hairdryer
-Added new element: hairdryer -> ['root', u'services']
-Key Error for key: hallway
-Added new element: hallway -> ['root', u'services']
-Key Error for key: underneath
-Added new element: underneath -> ['root', u'services']
-Key Error for key: observations
-Added new element: observations -> ['root', u'services']
-Key Error for key: markets
-Added new element: markets -> ['root', u'services']
-Key Error for key: shops
-Added new element: shops -> ['root', u'services']
-Key Error for key: money
-Added new element: money -> ['root', u'services']
-Key Error for key: downtown
-Added new element: downtown -> ['root', u'services']
-Key Error for key: subway
-Added new element: subway -> ['root', u'services']
-Key Error for key: Starbucks
-Added new element: Starbucks -> ['root']
-Key Error for key: shop
-Added new element: shop -> ['root', u'services']
-Key Error for key: Neighborhood
-Added new element: Neighborhood -> ['root']
-Key Error for key: Amsterday
-Added new element: Amsterday -> ['root']
-Key Error for key: cars
-Added new element: cars -> ['root', u'services']
-Key Error for key: windows
-Added new element: windows -> ['root', u'services']
-Key Error for key: thieves
-Added new element: thieves -> ['root', u'services']
-Key Error for key: stole
-Added new element: stole -> ['root', u'services']
-Key Error for key: inside
-Added new element: inside -> ['root', u'services']
-Key Error for key: neighborhood
-Added new element: neighborhood -> ['root', u'services']
-Key Error for key: bucks
-Added new element: bucks -> ['root', u'services']
-Key Error for key: Plus
-Added new element: Plus -> ['root']
-Key Error for key: manager
-Added new element: manager -> ['root', u'services']
-Key Error for key: idea
-Added new element: idea -> ['root', u'services']
-Key Error for key: shelving
-Added new element: shelving -> ['root', u'services']
-Key Error for key: walls
-Added new element: walls -> ['root', u'services']
-Key Error for key: belongings
-Added new element: belongings -> ['root', u'services']
-Key Error for key: Hallways
-Added new element: Hallways -> ['root']
-Key Error for key: elevator
-Added new element: elevator -> ['root', u'services']
-Key Error for key: jermaine
-Added new element: jermaine -> ['root', u'services']
-Key Error for key: Bitburg
-Added new element: Bitburg -> ['root']
-Key Error for key: Germany
-Added new element: Germany -> ['root']
-Key Error for key: foods
-Added new element: foods -> ['root', u'services']
-Key Error for key: perfect
-Added new element: perfect -> ['root', u'services']
-Key Error for key: ton
-Added new element: ton -> ['root', u'services']
-Key Error for key: adult
-Added new element: adult -> ['root', u'services']
-Key Error for key: metro
-Added new element: metro -> ['root', u'services']
-Key Error for key: ride
-Added new element: ride -> ['root', u'services']
-Key Error for key: nightlife
-Added new element: nightlife -> ['root', u'services']
-Key Error for key: citizenfrancisco
-Added new element: citizenfrancisco -> ['root']
-Key Error for key: Manager
-Added new element: Manager -> ['root']
-Key Error for key: week
-Added new element: week -> ['root', u'services']
-Key Error for key: Hi
-Added new element: Hi -> ['root']
-Key Error for key: thank
-Added new element: thank -> ['root', u'services']
-Key Error for key: kind
-Added new element: kind -> ['root', u'services']
-Key Error for key: comments
-Added new element: comments -> ['root', u'services']
-Key Error for key: availability
-Added new element: availability -> ['root', u'services']
-Key Error for key: decide
-Added new element: decide -> ['root', u'services']
-Key Error for key: /
-Added new element: / -> ['root']
-Key Error for key: barista
-Added new element: barista -> ['root', u'services']
-Key Error for key: espresso
-Added new element: espresso -> ['root', u'services']
-Key Error for key: Martini
-Added new element: Martini -> ['root']
-Key Error for key: fearing
-Added new element: fearing -> ['root', u'services']
-Key Error for key: shots
-Added new element: shots -> ['root', u'services']
-Key Error for key: sushi
-Added new element: sushi -> ['root', u'services']
-Key Error for key: soup
-Added new element: soup -> ['root', u'services']
-Key Error for key: sandwich
-Added new element: sandwich -> ['root', u'services']
-Key Error for key: tummy
-Added new element: tummy -> ['root', u'services']
-Key Error for key: hope
-Added new element: hope -> ['root', u'services']
-Key Error for key: GruÃ
-Added new element: GruÃ -> ['root']
-Key Error for key: Francisco
-Added new element: Francisco -> ['root']
-Key Error for key: Report
-Added new element: Report -> ['root']
-Key Error for key: Thank
-Added new element: Thank -> ['root']
-Key Error for key: input
-Added new element: input -> ['root', u'services']
-Key Error for key: representative
-Added new element: representative -> ['root', u'services']
-Key Error for key: TripAdvisor
-Added new element: TripAdvisor -> ['root']
-Key Error for key: LLC
-Added new element: LLC -> ['root']
-num_found: 4815.0
-num_added: 324.0
-percentage val: 0.0
-num_found: 5153.0
-num_added: 0.0
-percentage val: 1.0
-Key Error for key: nature
-Added new element: nature -> ['root', u'services']
-num_found: 5135.0
-num_added: 1.0
-percentage val: 0.0
-num_found: 5162.0
-num_added: 0.0
-percentage val: 1.0
-num_found: 5110.0
-num_added: 0.0
-percentage val: 1.0
+classes, url, path: [u'girl', u'fashion', u'dress', u'woman', u'jewelry', u'pretty', u'sexy', u'beautiful', u'model', u'portrait', u'travel', u'studio', u'magic', u'wedding', u'glamour', u'culture', u'belt', u'smile', u'exotic', u'people'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10948668_1410212949272809_1047376868_n.jpg ; [(u'room', 1.7015386574996163), (u'clothing', 1.6264805808656542), (u'bathrobe', 1.4887886487588347)]
+classes, url, path: [u'food', u'banana', u'fruit', u'healthy', u'sweet', u'ripe', u'nobody', u'apple', u'variety', u'produce', u'color', u'vitamins', u'berry', u'strawberry', u'grape', u'nutrition', u'diet', u'health', u'background', u'vegetable'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10899303_1606242119599794_1231035885_n.jpg ; [(u'food-beverages', 2.9506175518035889), (u'meal', 2.9506175518035889)]
+classes, url, path: [u'water', u'travel', u'summer', u'sunshine', u'tropical', u'beach', u'idyllic', u'aqua', u'sand', u'nature', u'sun', u'nobody', u'tree', u'sky', u'ocean', u'paradise', u'calm', u'heaven', u'clear', u'coastline'] ; https://scontent.cdninstagram.com/hphotos-xtf1/t51.2885-15/e15/10810033_1577171915837777_1619986588_n.jpg ; [(u'hotel-outdoor', 2.9787384271621713), (u'sea', 2.9787384271621713)]
+classes, url, path: [u'people', u'light', u'hammock', u'water', u'sunset', u'chair', u'sun', u'nobody', u'adult', u'relaxation', u'summer', u'one', u'two', u'music', u'beach', u'leisure', u'vacation', u'romance', u'travel', u'men'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11232685_1435616746739788_1650650070_n.jpg ; [(u'hotel-outdoor', 2.8114712834358224), (u'sea', 2.8114712834358224)]
+classes, url, path: [u'sunset', u'pier', u'sunrise', u'water', u'sea', u'beach', u'sun', u'dusk', u'dawn', u'ocean', u'cloud', u'bridge', u'landscape', u'seascape', u'reflection', u'jetty', u'boat', u'evening', u'sol', u'lake'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10979569_832299450149829_1275657986_n.jpg ; [(u'hotel-outdoor', 2.9062963128089914), (u'sea', 2.9062963128089914)]
+classes, url, path: [u'water', u'beach', u'travel', u'sea', u'coast', u'ocean', u'coastline', u'nobody', u'summer', u'turquoise', u'vacation', u'sun', u'aqua', u'idyllic', u'nature', u'boat', u'bay', u'island', u'clear', u'tropical'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10707190_833936903313491_1763679515_n.jpg ; [(u'hotel-outdoor', 2.9749106764793396), (u'sea', 2.9749106764793396)]
+classes, url, path: [u'sunset', u'sunrise', u'beach', u'dusk', u'water', u'dawn', u'sand', u'sun', u'sea', u'seascape', u'evening', u'ocean', u'landscape', u'cloud', u'calm', u'surf', u'reflection', u'coast', u'nobody', u'summer'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10432044_488536434653878_1517680509_n.jpg ; [(u'hotel-outdoor', 2.9604462385177621), (u'sea', 2.9604462385177621)]
+classes, url, path: [u'sunset', u'sunrise', u'water', u'beach', u'jetty', u'pier', u'evening', u'sun', u'dawn', u'sea', u'reflection', u'vacation', u'light', u'color', u'dusk', u'travel', u'sky', u'morning', u'summer', u'nobody'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10611201_350626438476346_1582991518_n.jpg ; [(u'hotel-outdoor', 2.8886836767196664), (u'sea', 2.8886836767196664)]
+classes, url, path: [u'sunset', u'beach', u'water', u'evening', u'coast', u'sea', u'ocean', u'travel', u'sunrise', u'tree', u'nobody', u'resort', u'island', u'vacation', u'dusk', u'bay', u'landscape', u'morning', u'sun', u'sky'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10995025_335822173282436_850301280_n.jpg ; [(u'hotel-outdoor', 2.9737542271614075), (u'sea', 2.9737542271614075)]
+classes, url, path: [u'nobody', u'water', u'travel', u'island', u'coastline', u'landscape', u'beach', u'coast', u'sea', u'outdoors', u'ocean', u'sky', u'tree', u'nature', u'bay', u'idyllic', u'scenic', u'summer', u'mountain', u'vacation'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10919567_1550924441843618_1100043916_n.jpg ; [(u'hotel-outdoor', 2.9290485382080078), (u'sea', 2.9179483652114877)]
+classes, url, path: [u'water', u'nobody', u'travel', u'tree', u'outdoors', u'canal', u'lake', u'river', u'sea', u'watercraft', u'transportation', u'vehicle', u'house', u'island', u'summer', u'recreation', u'landscape', u'coast', u'nature', u'grass'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10932163_1393130100989994_1068281051_n.jpg ; [(u'hotel-outdoor', 2.9368913769721985), (u'pool', 2.9231171011924744)]
+classes, url, path: [u'island', u'travel', u'water', u'sky', u'sea', u'landscape', u'coast', u'beach', u'people', u'one', u'ocean', u'outdoors', u'architecture', u'summer', u'lighthouse', u'light', u'wedding', u'dream', u'building', u'vacation'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/11049371_1387541238234771_1751050531_n.jpg ; [(u'hotel-outdoor', 2.911845445632935), (u'sea', 2.876868724822998)]
+classes, url, path: [u'water', u'beach', u'ocean', u'sea', u'surf', u'aqua', u'splash', u'spray', u'wave', u'sand', u'coast', u'foam', u'pastel', u'shore', u'tsunami', u'nature', u'summer', u'pacific', u'sun', u'hot'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10860111_684746531645092_911562888_n.jpg ; [(u'hotel-outdoor', 2.9852386116981506), (u'sea', 2.9852386116981506)]
+classes, url, path: [u'coast', u'sea', u'beach', u'ocean', u'water', u'travel', u'sand', u'coastline', u'landscape', u'island', u'seascape', u'surf', u'rock', u'nobody', u'sky', u'summer', u'vacation', u'scenic', u'outdoors', u'recreation'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11283421_1454758288149896_1897431784_n.jpg ; [(u'hotel-outdoor', 2.9916549324989319), (u'sea', 2.9916549324989319)]
+classes, url, path: [u'dog', u'pet', u'animal', u'puppy', u'cat', u'portrait', u'canine', u'cute', u'golden retriever', u'nature', u'funny', u'sun', u'love', u'street', u'summer', u'light', u'bulldog', u'sunglasses', u'beach', u'smile'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/11008205_1556681884603348_245890086_n.jpg ; [(u'hotel-outdoor', 2.8628480434417738), (u'sea', 2.8628480434417738)]
+classes, url, path: [u'travel', u'water', u'summer', u'nature', u'sunshine', u'outdoors', u'relaxation', u'leisure', u'nobody', u'architecture', u'sky', u'traditional', u'collage', u'aqua', u'tropical', u'exotic', u'sun', u'beach', u'sea', u'idyllic'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10995163_724132564366073_160519281_n.jpg ; [(u'hotel-outdoor', 2.9509701132774362), (u'sea', 2.9509701132774362)]
+classes, url, path: [u'water', u'summer', u'sea', u'beach', u'travel', u'coast', u'sand', u'ocean', u'recreation', u'swimming', u'leisure', u'vacation', u'aqua', u'nobody', u'sky', u'tropical', u'coastline', u'sun', u'sunshine', u'cornwall'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10853094_432658856882054_2094118540_n.jpg ; [(u'hotel-outdoor', 2.9839893579483041), (u'sea', 2.9839893579483041)]
+classes, url, path: [u'sea', u'ocean', u'beach', u'water', u'shore', u'coast', u'wave', u'coastline', u'summer', u'boat', u'view', u'nature', u'travel', u'bay', u'river', u'seaside', u'tropical', u'surf', u'ship', u'nobody'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10661033_597311233706490_456994614_n.jpg ; [(u'hotel-outdoor', 2.9960742592811584), (u'sea', 2.9960742592811584)]
+classes, url, path: [u'winter', u'snow', u'beach', u'cold', u'sky', u'ice', u'bridge', u'water', u'frozen', u'outdoors', u'architecture', u'sea', u'nobody', u'landscape', u'coast', u'travel', u'shore', u'snowfall', u'nature', u'ocean'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/11055705_1469951176601257_900802037_n.jpg ; [(u'hotel-outdoor', 2.9077485203742985), (u'sea', 2.8684772253036508)]
+classes, url, path: [u'water', u'nobody', u'travel', u'nature', u'summer', u'architecture', u'pool', u'recreation', u'outdoors', u'rock', u'sunshine', u'calm', u'ancient', u'fountain', u'stone', u'sun', u'relaxation', u'sea', u'arch', u'swimming'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10809635_710274202374201_1440006551_n.jpg ; [(u'hotel-outdoor', 2.9093334674835214), (u'sea', 2.8919850587844858)]
+classes, url, path: [u'sunset', u'sun', u'beach', u'sunrise', u'water', u'dusk', u'ocean', u'sky', u'sea', u'reflection', u'dawn', u'summer', u'landscape', u'nature', u'travel', u'silhouette', u'sunshine', u'surf', u'evening', u'light'] ; https://scontent.cdninstagram.com/hphotos-prn/t51.2885-15/e15/10903598_314101848788746_1681535180_n.jpg ; [(u'hotel-outdoor', 2.9778797030448914), (u'sea', 2.9778797030448914)]
+classes, url, path: [u'farm', u'garden', u'agriculture', u'nature', u'landscape', u'house', u'tree', u'travel', u'nobody', u'country', u'dwelling', u'field', u'grass', u'village', u'water', u'bridge', u'mountain', u'summer', u'sky', u'countryside'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11420707_496373890529086_1221500913_n.jpg ; [(u'hotel-outdoor', 2.9174839258193974), (u'sea', 2.8564817905426034)]
+classes, url, path: [u'landscape', u'house', u'rock', u'hill', u'sea', u'nature', u'travel', u'summer', u'water', u'beach', u'village', u'coast', u'panorama', u'traditional', u'town', u'island', u'ocean', u'city', u'mountain', u'architecture'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/11008176_361637890694277_2010244674_n.jpg ; [(u'hotel-outdoor', 2.9378889799118051), (u'sea', 2.9200723171234144)]
+classes, url, path: [u'pool', u'recreation', u'water', u'leisure', u'beach', u'swimming pool', u'summer', u'resort', u'travel', u'swimming', u'vacation', u'poolside', u'family', u'sunglasses', u'bikini', u'ocean', u'fun', u'sun', u'relaxation', u'love'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10890906_923334877698660_882124558_n.jpg ; [(u'hotel-outdoor', 2.9871290326118469), (u'pool', 2.9817962050437927)]
+classes, url, path: [u'tea', u'coffee', u'nobody', u'glass', u'food', u'cooking', u'traditional', u'breakfast', u'drink', u'beverage', u'cinnamon', u'sugar', u'morning', u'variety', u'salt', u'milk', u'cup', u'taste', u'aroma', u'hot'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11242859_843743088994213_2078320216_n.jpg ; [(u'food-beverages', 2.92444908618927), (u'drinks', 2.9193413853645325)]
+classes, url, path: [u'food', u'healthy', u'wine', u'apple', u'pot', u'diet', u'fruit', u'cooking', u'delicious', u'gourmet', u'traditional', u'decoration', u'cuisine', u'closeup', u'seafood', u'meal', u'restaurant', u'background', u'lemon', u'freshness'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10954777_1586162638295256_1274681182_n.jpg ; [(u'food-beverages', 2.9337776303291325), (u'meal', 2.6872657648135165)]
+classes, url, path: [u'night', u'water', u'evening', u'reflection', u'party', u'travel', u'ice', u'sunset', u'pub', u'celebration', u'river', u'bar', u'skyscraper', u'skyline', u'architecture', u'hotel', u'nightlife', u'beverage', u'dusk', u'mist'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10914366_1549708271942973_1975085744_n.jpg ; [(u'hotel-outdoor', 2.5892674884406905), (u'pool', 2.5484392015788773)]
+classes, url, path: [u'water', u'beach', u'pier', u'jetty', u'sea', u'lake', u'calm', u'dock', u'sand', u'ocean', u'summer', u'recreation', u'coast', u'boardwalk', u'sun', u'relaxation', u'seascape', u'sunshine', u'heaven', u'sky'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10865149_865693426787544_1105073749_n.jpg ; [(u'hotel-outdoor', 2.9844559431076054), (u'sea', 2.9682642221450815)]
+classes, url, path: [u'architecture', u'city', u'roof', u'market', u'urban', u'travel', u'street', u'art', u'house', u'aerial', u'outdoors', u'landscape', u'building', u'nobody', u'old', u'town', u'people', u'water', u'culture', u'castle'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10561161_355376141332804_1283444225_n.jpg ; [(u'overall', 2.5301835119926421), (u'aesthetics', 2.5301835119926421)]
+classes, url, path: [u'shade', u'resort', u'luxury', u'hotel', u'zen', u'pool', u'seat', u'exotic', u'table', u'garden', u'gazebo', u'vacation', u'architecture', u'recreation', u'chair', u'summer', u'swimming pool', u'wood', u'window', u'lounge'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10895105_1528400930770581_863114816_n.jpg ; [(u'hotel-outdoor', 2.9630216360092163), (u'pool', 2.9424946308135982)]
+classes, url, path: [u'summer', u'architecture', u'home', u'real', u'nobody', u'luxury', u'house', u'nature', u'property', u'lawn', u'yard', u'wood', u'exterior', u'garden', u'outdoors', u'front', u'grass', u'door', u'tree', u'flower'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/11049200_358237707718050_740731354_n.jpg ; [(u'hotel-outdoor', 2.940847992897035), (u'sea', 2.9133138060569772)]
+classes, url, path: [u'sunset', u'sun', u'beach', u'sunrise', u'evening', u'water', u'sky', u'landscape', u'nobody', u'night', u'dusk', u'storm', u'rain', u'city', u'nature', u'light', u'dramatic', u'twilight', u'lake', u'dark'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10948651_763232870432943_1895733634_n.jpg ; [(u'hotel-outdoor', 2.9586728811264043), (u'sea', 2.9421186447143564)]
+classes, url, path: [u'vehicle', u'car', u'automobile', u'street', u'transportation', u'road', u'environment', u'accident', u'police', u'weather', u'graffiti', u'urban', u'christmas', u'cemetery', u'city', u'mini', u'landscape', u'classic', u'rally', u'auto'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/11084756_1589235694685940_983453603_n.jpg ; [(u'hotel-outdoor', 1.966947434827063), (u'patio', 1.9332534958692733)]
+classes, url, path: [u'door', u'old', u'gate', u'ornament', u'art', u'detail', u'architecture', u'design', u'iron', u'classic', u'retro', u'background', u'style', u'antique', u'decoration', u'vintage', u'ornate', u'frame', u'lock', u'travel'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/11084791_741700782616330_778530181_n.jpg ; [(u'overall', 2.9612396955490112), (u'aesthetics', 2.9612396955490112)]
+classes, url, path: [u'sunset', u'sun', u'water', u'reflection', u'beach', u'pier', u'sunrise', u'sea', u'ocean', u'evening', u'silhouette', u'lake', u'dusk', u'dawn', u'landscape', u'morning', u'summer', u'sky', u'sunshine', u'nature'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/11093097_1562468540681422_916119051_n.jpg ; [(u'hotel-outdoor', 2.9851070046424875), (u'sea', 2.9662596583366403)]
+classes, url, path: [u'bathroom', u'room', u'mirror', u'toilet', u'bathtub', u'interior', u'interior design', u'house', u'hotel', u'faucet', u'floor', u'wash', u'contemporary', u'indoors', u'tub', u'home', u'shower', u'rug', u'window', u'luxury'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10864790_1542498602634340_1410034644_n.jpg ; [(u'room', 2.9716094732284546), (u'bathroom', 2.9716094732284546), (u'bathtub', 2.7442117332942684)]
+classes, url, path: [u'tropical', u'water', u'tree', u'summer', u'travel', u'nature', u'paradise', u'palm', u'island', u'beautiful', u'beach', u'sun', u'vacation', u'landscape', u'idyllic', u'nobody', u'relaxation', u'peace', u'plant', u'sky'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10963922_881203481939322_98851536_n.jpg ; [(u'hotel-outdoor', 2.9809626340866093), (u'sea', 2.9809626340866093)]
+classes, url, path: [u'sea', u'ocean', u'beach', u'coast', u'island', u'travel', u'water', u'vacation', u'coastline', u'nobody', u'sand', u'resort', u'landscape', u'sky', u'bay', u'seascape', u'lagoon', u'tropical', u'summer', u'chair'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10895362_714840001964242_1509104034_n.jpg ; [(u'hotel-outdoor', 2.9956830143928528), (u'sea', 2.9956830143928528)]
+classes, url, path: [u'beach', u'water', u'sea', u'ocean', u'landscape', u'summer', u'coast', u'sky', u'nature', u'island', u'travel', u'sunset', u'lighthouse', u'sand', u'warm', u'horizon', u'rock', u'boat', u'calm', u'bay'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11356757_1597896070495618_1628759512_n.jpg ; [(u'hotel-outdoor', 2.9687538743019104), (u'sea', 2.9687538743019104)]
+classes, url, path: [u'food', u'meat', u'seafood', u'restaurant', u'dish', u'nobody', u'vegetable', u'pepper', u'lobster', u'dinner', u'tomato', u'fish', u'meal', u'produce', u'lunch', u'sauce', u'dining', u'pork', u'herb', u'slice'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10919735_724210581020201_245944430_n.jpg ; [(u'food-beverages', 2.8685448169708252), (u'meal', 2.5816601437390849)]
+classes, url, path: [u'sea', u'water', u'ocean', u'beach', u'summer', u'sunset', u'sun', u'surf', u'swimming', u'travel', u'island', u'diving', u'sky', u'sand', u'bikini', u'coast', u'vacation', u'horizon', u'sunrise', u'tropical'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10932105_1586389711573381_1791927350_n.jpg ; [(u'hotel-outdoor', 2.9909908771514893), (u'sea', 2.9909908771514893)]
+classes, url, path: [u'beach', u'water', u'pier', u'sea', u'ocean', u'island', u'boat', u'heaven', u'jetty', u'recreation', u'boardwalk', u'travel', u'vacation', u'summer', u'dock', u'sky', u'lagoon', u'sun', u'landscape', u'calm'] ; https://scontent.cdninstagram.com/hphotos-xpt1/t51.2885-15/e15/1538546_803051583101543_84829962_n.jpg ; [(u'hotel-outdoor', 2.9689375162124634), (u'sea', 2.9689375162124634)]
+classes, url, path: [u'pool', u'summer', u'swimming pool', u'travel', u'tropical', u'water', u'poolside', u'swimming', u'beach', u'leisure', u'hotel', u'people', u'tree', u'fun', u'resort', u'vacation', u'bikini', u'island', u'sun', u'recreation'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10860123_923365121020930_944705237_n.jpg ; [(u'hotel-outdoor', 2.9819118380546574), (u'pool', 2.9696808457374573)]
+classes, url, path: [u'food', u'cooking', u'smell', u'assortment', u'selection', u'herb', u'culinary', u'gourmet', u'tray', u'powder', u'chocolate', u'sugar', u'homemade', u'healthy', u'wood', u'bowl', u'variety', u'dessert', u'health', u'sweet'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10598568_951991768185103_1385385572_n.jpg ; [(u'food-beverages', 2.889014184474946), (u'food-decor', 2.889014184474946)]
+classes, url, path: [u'boat', u'water', u'lake', u'nobody', u'sea', u'ocean', u'coast', u'nature', u'travel', u'reflection', u'beach', u'outdoors', u'color', u'leisure', u'people', u'landscape', u'old', u'vacation', u'vintage', u'pollution'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10860099_579293268838145_849802792_n.jpg ; [(u'hotel-outdoor', 2.9157585501670837), (u'sea', 2.8905608654022226)]
+classes, url, path: [u'sea', u'beach', u'water', u'ocean', u'coast', u'island', u'coastline', u'summer', u'landscape', u'travel', u'sand', u'seascape', u'vacation', u'horizon', u'recreation', u'turquoise', u'boat', u'view', u'sky', u'shore'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10724982_269434773266256_603853722_n.jpg ; [(u'hotel-outdoor', 2.9780890941619873), (u'sea', 2.9780890941619873)]
+classes, url, path: [u'beach', u'water', u'sea', u'ocean', u'travel', u'sand', u'vacation', u'island', u'summer', u'bikini', u'sky', u'tropical', u'coast', u'resort', u'romance', u'relaxation', u'idyllic', u'sun', u'landscape', u'exotic'] ; https://scontent.cdninstagram.com/hphotos-xtp1/t51.2885-15/e15/11008263_1553294688281265_192134623_n.jpg ; [(u'hotel-outdoor', 2.9891096949577332), (u'sea', 2.9891096949577332)]
+classes, url, path: [u'water', u'sea', u'coast', u'ocean', u'travel', u'island', u'beach', u'vacation', u'coastline', u'nobody', u'nature', u'summer', u'bay', u'resort', u'seascape', u'landscape', u'tropical', u'paradise', u'tourism', u'beautiful'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10848488_735755926509136_1860232952_n.jpg ; [(u'hotel-outdoor', 2.9837805032730103), (u'sea', 2.9837805032730103)]
+classes, url, path: [u'hotel', u'resort', u'beach', u'ocean', u'villa', u'exotic', u'tropical', u'relaxation', u'boat', u'luxury', u'umbrella', u'paradise', u'travel', u'bungalow', u'vacation', u'romantic', u'swimming', u'island', u'hut', u'sand'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11374350_726104980835238_555223721_n.jpg ; [(u'hotel-outdoor', 2.9915458559989925), (u'sea', 2.9804920554161072)]
+classes, url, path: [u'christmas', u'nobody', u'food', u'variety', u'bowl', u'decoration', u'still life', u'fruit', u'traditional', u'winter', u'wood', u'table', u'tableware', u'group', u'dark', u'chocolate', u'rice', u'ingredients', u'flower', u'tray'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/11137970_1569086480046990_1446358175_n.jpg ; [(u'hotel-outdoor', 2.0626816226572733), (u'garden', 1.7438537826807887)]
+classes, url, path: [u'chair', u'hotel', u'resort', u'tree', u'palm', u'beach', u'travel', u'summer', u'deck', u'garden', u'nobody', u'swimming', u'luxury', u'boat', u'relaxation', u'tropical', u'flower', u'vacation', u'seat', u'swimming pool'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10958538_1397585790545789_748815082_n.jpg ; [(u'hotel-outdoor', 2.915448784828186), (u'sea', 2.8949351310729985)]
+classes, url, path: [u'beach', u'water', u'sea', u'ocean', u'boat', u'hotel', u'island', u'vacation', u'travel', u'tropical', u'coast', u'paradise', u'resort', u'palm', u'summer', u'nature', u'shore', u'chair', u'sun', u'landscape'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10986136_803915986329969_1673366583_n.jpg ; [(u'hotel-outdoor', 2.9908069372177124), (u'sea', 2.9908069372177124)]
+classes, url, path: [u'glass', u'beverage', u'alcohol', u'cocktail', u'tableware', u'drink', u'cold', u'beer', u'ice', u'container', u'nobody', u'cup', u'wood', u'tea', u'still life', u'lime', u'cube', u'cool', u'gold', u'bottle'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10956726_816445178426250_1703503176_n.jpg ; [(u'food-beverages', 2.9819689989089975), (u'drinks', 2.9819689989089975)]
+classes, url, path: [u'sunset', u'sunrise', u'palm', u'tree', u'travel', u'beach', u'color', u'fine art', u'water', u'sun', u'light', u'evening', u'man', u'people', u'sky', u'lake', u'exotic', u'vacation', u'reflection', u'landscape'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10919496_786609171386474_313187322_n.jpg ; [(u'hotel-outdoor', 2.8332833051681523), (u'sea', 2.8332833051681523)]
+classes, url, path: [u'temple', u'people', u'group', u'architecture', u'religion', u'many', u'festival', u'travel', u'tourism', u'sky', u'building', u'theater', u'tourist', u'city', u'traditional', u'worship', u'nobody', u'outdoors', u'performance', u'culture'] ; https://scontent.cdninstagram.com/hphotos-xtf1/t51.2885-15/e15/10963830_1563944100518925_1466605987_n.jpg ; [(u'overall', 1.9278290394739099), (u'aesthetics', 1.9278290394739099)]
+classes, url, path: [u'interior', u'table', u'architecture', u'luxury', u'church', u'indoors', u'wedding', u'art', u'room', u'travel', u'garden', u'people', u'little', u'chair', u'religion', u'hotel', u'house', u'residential', u'child', u'flower'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/11032957_887175047995772_472573460_n.jpg ; [(u'overall', 2.6752893684737584), (u'aesthetics', 2.4632611847423611)]
+classes, url, path: [u'people', u'one', u'night', u'water', u'wedding', u'light', u'dark', u'model', u'girl', u'fashion', u'portrait', u'adult', u'woman', u'wet', u'nude', u'nobody', u'nature', u'women', u'glamour', u'two'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/11208284_991126717598589_2090807451_n.jpg ; [(u'hotel-outdoor', 2.1017745469004967), (u'sea', 2.0944054842561068)]
+classes, url, path: [u'wood', u'wooden', u'leaf', u'background', u'color', u'healthy', u'bowl', u'plate', u'closeup', u'luxury', u'health', u'therapy', u'nobody', u'treatment', u'table', u'traditional', u'nature', u'crystal', u'bath', u'pattern'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/11055682_356397227901647_260485264_n.jpg ; [(u'amenities', 2.5900601188534291), (u'in-room', 2.5900601188534291), (u'medical', 2.5900601188534291)]
+classes, url, path: [u'christmas', u'chandelier', u'decoration', u'hanging', u'lamp', u'light', u'glitter', u'ornament', u'luxury', u'celebration', u'night', u'design', u'glass', u'lantern', u'party', u'nobody', u'gold', u'art', u'reflection', u'illuminated'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10691661_282177178642548_1382439939_n.jpg ; [(u'overall', 2.6468410221776577), (u'aesthetics', 2.478713369064514)]
+classes, url, path: [u'beach', u'sunset', u'water', u'sea', u'ocean', u'sand', u'sun', u'sunrise', u'evening', u'coast', u'travel', u'summer', u'seascape', u'wave', u'surf', u'fisherman', u'people', u'seaside', u'landscape', u'couple'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/11189394_813241705432193_2119906957_n.jpg ; [(u'hotel-outdoor', 2.9874143004417419), (u'sea', 2.9874143004417419)]
+classes, url, path: [u'bed', u'home', u'design', u'bedroom', u'interior', u'house', u'pillow', u'room', u'decoration', u'lifestyle', u'style', u'curtain', u'indoors', u'retro', u'nobody', u'wood', u'vintage', u'furniture', u'hotel', u'luxury'] ; https://scontent.cdninstagram.com/hphotos-xft1/t51.2885-15/e15/11111434_402716093234777_1709559122_n.jpg ; [(u'room', 2.8864231705665593), (u'bathroom', 2.6315469868041168), (u'shower', 2.3617402707983848)]
+classes, url, path: [u'chair', u'sea', u'water', u'beach', u'ocean', u'wood', u'vacation', u'seat', u'travel', u'summer', u'sunshine', u'sun', u'nobody', u'coast', u'leisure', u'exotic', u'idyllic', u'tropical', u'relaxation', u'wooden'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11232866_463880830435389_2109891765_n.jpg ; [(u'hotel-outdoor', 2.9875967502593994), (u'sea', 2.9875967502593994)]
+classes, url, path: [u'wedding', u'architecture', u'nobody', u'travel', u'bride', u'people', u'outdoors', u'dress', u'one', u'pillar', u'dwelling', u'vacation', u'beach', u'column', u'building', u'house', u'adult', u'romance', u'luxury', u'marble'] ; https://scontent.cdninstagram.com/hphotos-xpt1/t51.2885-15/e15/10990625_1611867079033760_1007896889_n.jpg ; [(u'overall', 2.2035732725259032), (u'aesthetics', 1.9557018750903334)]
+classes, url, path: [u'water', u'beach', u'travel', u'vacation', u'summer', u'island', u'coast', u'idyllic', u'sea', u'ocean', u'tropical', u'swimming pool', u'tree', u'relaxation', u'leisure', u'sun', u'sand', u'boat', u'clear', u'resort'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10755718_1520165381565189_2058312803_n.jpg ; [(u'hotel-outdoor', 2.9649816751480111), (u'sea', 2.9649816751480111)]
+classes, url, path: [u'glass', u'beverage', u'juice', u'drink', u'ice', u'cold', u'food', u'straw', u'refreshment', u'fruit', u'summer', u'cocktail', u'alcohol', u'cool', u'party', u'nobody', u'bottle', u'water', u'lemon', u'liquid'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10919626_630533837051189_1351866540_n.jpg ; [(u'food-beverages', 2.7967566990794142), (u'drinks', 2.7967566990794142)]
+classes, url, path: [u'door', u'street', u'house', u'home', u'traditional', u'architecture', u'travel', u'alley', u'village', u'old', u'tuscany', u'doorway', u'entrance', u'window', u'wall', u'art', u'gate', u'colonial', u'tuscan', u'rustic'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10890705_1588234728080329_656001838_n.jpg ; [(u'overall', 2.4894924032798542), (u'aesthetics', 2.4090271211755119)]
+classes, url, path: [u'beach', u'water', u'sand', u'sea', u'ocean', u'coast', u'nature', u'summer', u'texture', u'surf', u'wave', u'shore', u'wedding', u'boat', u'foam', u'travel', u'art', u'abstract', u'love', u'color'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10802854_329254370592953_1835200974_n.jpg ; [(u'hotel-outdoor', 2.9937279820442209), (u'sea', 2.9937279820442209)]
+classes, url, path: [u'bedroom', u'bed', u'furniture', u'interior design', u'mirror', u'indoors', u'room', u'lamp', u'dwelling', u'home', u'cushion', u'sofa', u'reclining', u'rug', u'table', u'relaxation', u'pillow', u'house', u'chair', u'luxury'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10948703_1069528916397052_920454064_n.jpg ; [(u'room', 2.996417462825776), (u'bathroom', 2.6874314661091687), (u'shower', 2.408813595639355)]
+classes, url, path: [u'food', u'meal', u'nobody', u'vegetable', u'salad', u'diet', u'dish', u'meat', u'chicken', u'delicious', u'still life', u'tomato', u'knife', u'dinner', u'healthy', u'tasty', u'nutrition', u'traditional', u'cooking', u'plate'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10983672_427011594120979_549454994_n.jpg ; [(u'food-beverages', 2.3111984251098496), (u'meal', 2.3109831097676397)]
+classes, url, path: [u'nobody', u'water', u'flower', u'garden', u'nature', u'summer', u'leaves', u'river', u'recreation', u'environment', u'wet', u'color', u'swimming', u'outdoors', u'tree', u'two', u'pool', u'landscape', u'lake', u'foliage'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10723759_791277154253625_1457620159_n.jpg ; [(u'hotel-outdoor', 2.9219389557838449), (u'sea', 2.8266081809997567)]
+classes, url, path: [u'water', u'summer', u'sun', u'people', u'travel', u'relaxation', u'swimming', u'sky', u'ocean', u'nature', u'sea', u'portrait', u'beach', u'man', u'fun', u'vacation', u'wet', u'recreation', u'silhouette', u'sunset'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10932341_1597157713838896_2123890091_n.jpg ; [(u'hotel-outdoor', 2.9454716444015516), (u'sea', 2.9443182945251474)]
+classes, url, path: [u'sunset', u'sun', u'water', u'evening', u'beach', u'sky', u'landscape', u'sunrise', u'sea', u'ocean', u'cloud', u'nature', u'light', u'nobody', u'lake', u'morning', u'travel', u'island', u'silhouette', u'mountain'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/1515893_1537544826509675_745188063_n.jpg ; [(u'hotel-outdoor', 2.9498519301414494), (u'sea', 2.9450669288635263)]
+classes, url, path: [u'tree', u'landscape', u'palm', u'sky', u'nature', u'beach', u'summer', u'nobody', u'ocean', u'sunset', u'sun', u'sea', u'water', u'morning', u'beautiful', u'island', u'travel', u'light', u'coast', u'yucca'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10983705_1595877193977990_252763366_n.jpg ; [(u'hotel-outdoor', 2.9711127281188969), (u'sea', 2.9427872300148015)]
+classes, url, path: [u'water', u'nobody', u'coast', u'sea', u'rock', u'travel', u'coastline', u'landscape', u'beach', u'mountain', u'people', u'island', u'ocean', u'recreation', u'vehicle', u'bay', u'boat', u'fisherman', u'architecture', u'summer'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10919486_1594922807394330_295978144_n.jpg ; [(u'hotel-outdoor', 2.9141682982444772), (u'sea', 2.9074427485466012)]
+classes, url, path: [u'beach', u'coast', u'water', u'sea', u'ocean', u'nobody', u'travel', u'coastline', u'bay', u'flower', u'summer', u'island', u'landscape', u'sky', u'vacation', u'cornwall', u'outdoors', u'seaside', u'seascape', u'nature'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10852982_1556119854625673_1356231314_n.jpg ; [(u'hotel-outdoor', 2.9861275553703308), (u'sea', 2.9861275553703308)]
+classes, url, path: [u'flower', u'garden', u'summer', u'lawn', u'nature', u'park', u'tree', u'landscape', u'grass', u'field', u'sun', u'outdoors', u'forest', u'rural', u'pond', u'color', u'meadow', u'nobody', u'floral', u'outside'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11417282_581158685359194_1515984457_n.jpg ; [(u'hotel-outdoor', 2.9671043157577524), (u'sea', 2.948691427707673)]
+classes, url, path: [u'water', u'tropical', u'exotic', u'summer', u'pool', u'aqua', u'relaxation', u'swimming', u'sea', u'nobody', u'travel', u'beach', u'ocean', u'clear', u'vacation', u'sun', u'idyllic', u'nature', u'wet', u'calm'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10520407_526180954182338_1289765546_n.jpg ; [(u'hotel-outdoor', 2.965834498405457), (u'sea', 2.9652298688888559)]
+classes, url, path: [u'water', u'beach', u'sea', u'nature', u'island', u'summer', u'coast', u'nobody', u'landscape', u'travel', u'coastline', u'shore', u'tree', u'tropical', u'seaside', u'sun', u'vacation', u'ocean', u'resort', u'bridge'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10584660_1477840715835192_1391070978_n.jpg ; [(u'hotel-outdoor', 2.9462065696716317), (u'sea', 2.9462065696716317)]
+classes, url, path: [u'water', u'nobody', u'bay', u'coastline', u'sea', u'travel', u'beach', u'island', u'coast', u'ocean', u'outdoors', u'landscape', u'rock', u'tree', u'boat', u'daytime', u'seascape', u'recreation', u'lake', u'hotel'] ; https://scontent.cdninstagram.com/hphotos-xtp1/t51.2885-15/e15/10624369_715536915205600_1031706928_n.jpg ; [(u'hotel-outdoor', 2.9465371370315561), (u'sea', 2.9465371370315561)]
+classes, url, path: [u'interior', u'temple', u'room', u'hotel', u'chair', u'architecture', u'seat', u'travel', u'luxury', u'market', u'house', u'light', u'buddha', u'nobody', u'pool', u'inside', u'museum', u'religion', u'indoors', u'art'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/11018447_925371310826496_1447746569_n.jpg ; [(u'overall', 2.6011933184301586), (u'aesthetics', 2.5040263790846415)]
+classes, url, path: [u'water', u'pool', u'swimming', u'wet', u'summer', u'waterfall', u'relaxation', u'bath', u'painting', u'sea', u'clean', u'dream', u'light', u'fine art', u'boy', u'nude', u'swimming pool', u'ocean', u'beautiful', u'color'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10785097_708808685861496_1791128510_n.jpg ; [(u'hotel-outdoor', 2.9729244709014901), (u'pool', 2.9451736807823186)]
+classes, url, path: [u'beach', u'summer', u'travel', u'tropical', u'water', u'sand', u'sea', u'vacation', u'relaxation', u'leisure', u'idyllic', u'sun', u'ocean', u'tan', u'sunglasses', u'sunshine', u'coast', u'bikini', u'sky', u'resort'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11376456_1396688983994729_961337908_n.jpg ; [(u'hotel-outdoor', 2.9966204166412358), (u'sea', 2.9966204166412358)]
+classes, url, path: [u'water', u'nature', u'girl', u'summer', u'lake', u'man', u'sky', u'relaxation', u'people', u'model', u'portrait', u'reflection', u'yoga', u'picnic', u'woman', u'human', u'wedding', u'cloud', u'travel', u'solitude'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/11049297_707381469382824_1161317201_n.jpg ; [(u'hotel-outdoor', 2.9648551940917978), (u'sea', 2.64631559106054)]
+classes, url, path: [u'nature', u'beach', u'summer', u'flower', u'love', u'water', u'color', u'floral', u'landscape', u'sea', u'travel', u'tree', u'wedding', u'sky', u'hibiscus', u'tropical', u'rose', u'sun', u'beautiful', u'decoration'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/11008074_787560841279239_1405753265_n.jpg ; [(u'hotel-outdoor', 2.9679102897644052), (u'sea', 2.9679102897644052)]
+classes, url, path: [u'pool', u'swimming', u'resort', u'hotel', u'chair', u'vacation', u'tropical', u'water', u'leisure', u'exotic', u'umbrella', u'relaxation', u'beach', u'sun', u'poolside', u'paradise', u'travel', u'chaise', u'summer', u'luxury'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10748065_1501572546777453_179162293_n.jpg ; [(u'hotel-outdoor', 2.999151885509491), (u'pool', 2.999151885509491)]
+classes, url, path: [u'water', u'beach', u'sea', u'travel', u'ocean', u'coast', u'landscape', u'summer', u'island', u'rock', u'seascape', u'sand', u'coastline', u'nobody', u'bay', u'vacation', u'scenic', u'sky', u'nature', u'sun'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10809913_356360974545826_826557518_n.jpg ; [(u'hotel-outdoor', 2.9744730591773987), (u'sea', 2.9744730591773987)]
+classes, url, path: [u'wedding', u'water', u'sea', u'travel', u'bride', u'ocean', u'summer', u'people', u'sky', u'leisure', u'outdoors', u'women', u'love', u'recreation', u'portrait', u'boat', u'one', u'wind', u'dress', u'fashion'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10809562_740391612664432_1654566713_n.jpg ; [(u'hotel-outdoor', 2.9583403468132028), (u'sea', 2.9583403468132028)]
+classes, url, path: [u'travel', u'beach', u'people', u'tree', u'food', u'street', u'boat', u'sky', u'urban', u'woman', u'city', u'color', u'christmas', u'nude', u'girl', u'architecture', u'light', u'still life', u'sand', u'portrait'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10832067_812018042169372_1753197880_n.jpg ; [(u'hotel-outdoor', 2.8604210019111633), (u'sea', 2.8604210019111633)]
+classes, url, path: [u'water', u'pot', u'nature', u'tree', u'garden', u'earth', u'summer', u'wood', u'plant', u'color', u'leaf', u'flower', u'bowl', u'pool', u'leaves', u'jug', u'tropical', u'hanging', u'nobody', u'landscape'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10919195_394562840709310_1444634498_n.jpg ; [(u'hotel-outdoor', 2.8877699971199045), (u'sea', 2.8877699971199045)]
+classes, url, path: [u'food', u'restaurant', u'lobster', u'meal', u'seafood', u'dinner', u'pepper', u'lunch', u'dish', u'sushi', u'oil', u'vegetable', u'gourmet', u'menu', u'still life', u'tuna', u'nobody', u'appetizer', u'tomato', u'meat'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10995077_672575819518219_430019605_n.jpg ; [(u'food-beverages', 2.8843131065368652), (u'meal', 2.3639866847020299)]
+classes, url, path: [u'architecture', u'building', u'lawn', u'city', u'grass', u'facade', u'modern', u'urban', u'house', u'sky', u'landscape', u'nobody', u'cityscape', u'exterior', u'travel', u'park', u'path', u'light', u'dwelling', u'evening'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10860108_720613378058422_1213090587_n.jpg ; [(u'hotel-outdoor', 2.928836584091187), (u'patio', 2.5686792242160226)]
+classes, url, path: [u'fire', u'hot', u'coal', u'burnt', u'flame', u'background', u'charcoal', u'color', u'carp', u'ash', u'goldfish', u'food', u'water', u'light', u'blaze', u'nature', u'smoke', u'fancy', u'bonfire', u'closeup'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/11007984_782178441872794_1365631105_n.jpg ; [(u'hotel-outdoor', 2.1637926051971372), (u'sea', 2.1178385704970966)]
+classes, url, path: [u'glass', u'fruit', u'food', u'closeup', u'juice', u'healthy', u'salad', u'lemon', u'wood', u'vegetable', u'table', u'sweet', u'health', u'leaf', u'slice', u'fish', u'cuisine', u'dinner', u'lettuce', u'wooden'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10831952_352881911550139_1724486524_n.jpg ; [(u'amenities', 2.4622571623667793), (u'in-room', 1.9855733760830292), (u'medical', 1.7581353064423189)]
+classes, url, path: [u'store', u'nobody', u'people', u'market', u'food', u'table', u'interior design', u'commerce', u'indoors', u'group', u'room', u'travel', u'chair', u'restaurant', u'hotel', u'cafe', u'luxury', u'produce', u'stall', u'seat'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10979521_682920601834109_355805170_n.jpg ; [(u'food-beverages', 2.8223553895950322), (u'bar', 2.5594654859552968)]
+classes, url, path: [u'travel', u'sky', u'outdoors', u'nobody', u'water', u'lake', u'landscape', u'nature', u'resort', u'recreation', u'tropical', u'architecture', u'city', u'coast', u'transportation', u'house', u'building', u'summer', u'light', u'vacation'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10852643_1513575108898451_1040837649_n.jpg ; [(u'hotel-outdoor', 2.9027452468872075), (u'sea', 2.8175647258758554)]
+classes, url, path: [u'water', u'mist', u'lake', u'fog', u'rainbow', u'river', u'nature', u'landscape', u'summer', u'forest', u'travel', u'sunset', u'ocean', u'swimming', u'sea', u'splash', u'people', u'tree', u'sun', u'girl'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10802470_388768751278416_170056873_n.jpg ; [(u'hotel-outdoor', 2.9648435115814218), (u'pool', 2.9290892481803903)]
+classes, url, path: [u'sunset', u'sky', u'sun', u'landscape', u'sunrise', u'nature', u'dusk', u'cloud', u'silhouette', u'desert', u'city', u'evening', u'factory', u'travel', u'moon', u'light', u'pollution', u'smoke', u'industry', u'dark'] ; https://scontent.cdninstagram.com/hphotos-xta1/t51.2885-15/e15/10903720_1528675967401003_784210664_n.jpg ; [(u'hotel-outdoor', 2.896850287914277), (u'sea', 2.5321021742268934)]
+classes, url, path: [u'architecture', u'night', u'religion', u'evening', u'light', u'nobody', u'church', u'lamp', u'travel', u'outdoors', u'building', u'indochina', u'people', u'mosque', u'cathedral', u'pillar', u'group', u'palace', u'city', u'lantern'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/1738256_793297094080902_1884264063_n.jpg ; [(u'amenities', 2.2777866100766486), (u'pre-room', 2.2757402186664146), (u'reception', 2.1982819974154451)]
+classes, url, path: [u'dining', u'hotel', u'umbrella', u'chair', u'beach', u'furniture', u'nobody', u'travel', u'sunshine', u'table', u'sunset', u'summer', u'restaurant', u'vacation', u'leisure', u'room', u'lamp', u'wedding', u'interior design', u'seat'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10895147_1531668977088860_303213593_n.jpg ; [(u'hotel-outdoor', 2.8775733709335336), (u'sea', 2.8775733709335336)]
+classes, url, path: [u'jetty', u'pier', u'water', u'boardwalk', u'travel', u'dock', u'sunrise', u'recreation', u'lake', u'sky', u'relaxation', u'people', u'sea', u'vacation', u'summer', u'sunset', u'wood', u'sun', u'beach', u'romantic'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10949042_1533510033584261_2142428472_n.jpg ; [(u'hotel-outdoor', 2.7390787005424508), (u'sea', 2.6800519227981581)]
+classes, url, path: [u'architecture', u'tree', u'castle', u'old', u'travel', u'landmark', u'structure', u'nature', u'building', u'house', u'ancient', u'nobody', u'view', u'garden', u'wall', u'stone', u'art', u'outdoors', u'sky', u'monument'] ; https://scontent.cdninstagram.com/hphotos-xtf1/t51.2885-15/e15/10616773_738069039580942_1331677929_n.jpg ; [(u'hotel-outdoor', 2.569725595988285), (u'sea', 2.5135756283096731)]
+classes, url, path: [u'sea', u'water', u'travel', u'summer', u'city', u'sky', u'beach', u'lake', u'ocean', u'nature', u'landscape', u'port', u'architecture', u'island', u'panorama', u'coast', u'view', u'boat', u'bridge', u'pier'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10724816_1497666523819266_642100397_n.jpg ; [(u'hotel-outdoor', 2.9543681144714364), (u'sea', 2.9543681144714364)]
+classes, url, path: [u'garden', u'nobody', u'nature', u'house', u'summer', u'people', u'travel', u'tree', u'cemetery', u'recreation', u'castle', u'flower', u'lawn', u'path', u'religion', u'architecture', u'park', u'lake', u'church', u'water'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10860164_359761244203368_912031210_n.jpg ; [(u'hotel-outdoor', 2.8447049856185922), (u'sea', 2.8447049856185922)]
+classes, url, path: [u'sunset', u'sunrise', u'evening', u'landscape', u'water', u'sea', u'travel', u'river', u'dawn', u'night', u'dusk', u'sky', u'reflection', u'sun', u'morning', u'beach', u'nature', u'light', u'bridge', u'seascape'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10802657_802694916457702_448188503_n.jpg ; [(u'hotel-outdoor', 2.9316328167915353), (u'sea', 2.8797789812088022)]
+classes, url, path: [u'contemporary', u'furniture', u'room', u'wedding', u'interior design', u'hotel', u'pillow', u'interior', u'luxury', u'lamp', u'bed', u'headboard', u'estate', u'indoors', u'elegant', u'decoration', u'table', u'home', u'fancy', u'residential'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10832036_564913826978126_788155542_n.jpg ; [(u'room', 2.6749786345417714), (u'bathroom', 2.3647288513625315), (u'shower', 2.3647288513625315)]
+classes, url, path: [u'pool', u'water', u'resort', u'swimming', u'summer', u'vacation', u'luxury', u'tropical', u'beach', u'leisure', u'travel', u'paradise', u'boat', u'hotel', u'villa', u'tree', u'nobody', u'recreation', u'swimming pool', u'deck'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10848315_411185889034677_384098812_n.jpg ; [(u'hotel-outdoor', 2.9830459356307983), (u'pool', 2.9830459356307983)]
+classes, url, path: [u'water', u'landscape', u'beach', u'travel', u'river', u'village', u'tree', u'sea', u'house', u'lake', u'bridge', u'nature', u'nobody', u'island', u'pool', u'resort', u'summer', u'boat', u'seascape', u'coast'] ; https://scontent.cdninstagram.com/hphotos-xpt1/t51.2885-15/e15/10449071_1430279053910103_1864097918_n.jpg ; [(u'hotel-outdoor', 2.9295282959938049), (u'sea', 2.8954046368598942)]
+classes, url, path: [u'flower', u'frangipani', u'bath', u'wedding', u'spa', u'people', u'love', u'birthday', u'girl', u'plumeria', u'color', u'tropical', u'women', u'nature', u'sexy', u'christmas', u'gift', u'clean', u'rose', u'studio'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10731776_432071936951521_1707365686_n.jpg ; [(u'hotel-outdoor', 2.8626095056533818), (u'sea', 2.3994864225971191)]
+classes, url, path: [u'woman', u'flower', u'girl', u'women', u'pretty', u'beautiful', u'people', u'floral', u'blossom', u'lady', u'model', u'face', u'portrait', u'fashion', u'sexy', u'dress', u'hair', u'attractive', u'skin', u'person'] ; https://scontent.cdninstagram.com/hphotos-xpt1/t51.2885-15/e15/10994978_531026830371855_108189040_n.jpg ; [(u'hotel-outdoor', 2.1938972561680252), (u'garden', 2.1938972561680252)]
+classes, url, path: [u'wedding', u'bride', u'bridesmaid', u'celebration', u'ceremony', u'people', u'guest', u'festival', u'family', u'fashion', u'veil', u'bridal', u'children', u'fun', u'many', u'groom', u'show', u'annual', u'public', u'women'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10843969_932073720137083_1357447359_n.jpg ; [(u'amenities', 2.5689095503489798), (u'pre-room', 2.5689095503489798), (u'reception', 2.5689095503489798)]
+classes, url, path: [u'swimming pool', u'water', u'swimming', u'recreation', u'tree', u'beach', u'leisure', u'resort', u'nobody', u'travel', u'island', u'hotel', u'vacation', u'pool', u'summer', u'relaxation', u'palm', u'paradise', u'ocean', u'villa'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10691808_679575738822215_2130123628_n.jpg ; [(u'hotel-outdoor', 2.9823442697525029), (u'pool', 2.9735192060470581)]
+classes, url, path: [u'juice', u'nobody', u'glass', u'health', u'tropical', u'leaves', u'mint', u'cold', u'traditional', u'vitamins', u'tea', u'dinner', u'nutrition', u'drink', u'beverage', u'ice', u'taste', u'food', u'lunch', u'delicious'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10957305_1581721252066738_1143424958_n.jpg ; [(u'amenities', 2.7118773312844615), (u'pre-room', 2.1944785603414321), (u'reception', 2.1826464896458266)]
+classes, url, path: [u'night', u'silhouette', u'people', u'performance', u'pop', u'evening', u'show', u'crowd', u'many', u'party', u'concert', u'background', u'music', u'business', u'sunset', u'vector', u'group', u'audience', u'stage', u'design'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10475140_299883430204666_108123535_n.jpg ; [(u'amenities', 2.2444177242514116), (u'pre-room', 2.2444177242514116), (u'reception', 2.2444177242514116)]
+classes, url, path: [u'furniture', u'room', u'table', u'candle', u'interior', u'indoors', u'nobody', u'religion', u'sofa', u'seat', u'chair', u'decoration', u'christmas', u'interior design', u'fireplace', u'altar', u'luxury', u'religious', u'light', u'house'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/1742501_1382218408766381_52936526_n.jpg ; [(u'room', 2.6731228562478826), (u'clothing', 2.3566331119088826), (u'linens', 2.1720243258324969)]
+classes, url, path: [u'water', u'travel', u'beach', u'pool', u'clear', u'swimming', u'boat', u'turquoise', u'vacation', u'diving', u'resort', u'ocean', u'filter', u'tropical', u'sun', u'nobody', u'lagoon', u'sea', u'summer', u'nature'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10723969_769546466417066_1617426418_n.jpg ; [(u'hotel-outdoor', 2.9241389632225041), (u'pool', 2.8932599425315861)]
+classes, url, path: [u'ice', u'dessert', u'drink', u'cream', u'bar', u'cocktail', u'cold', u'sugar', u'chocolate', u'beverage', u'sweet', u'restaurant', u'glass', u'wine', u'snack', u'still life', u'food', u'spoon', u'spirit', u'alcohol'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/1530720_337345806459472_67119646_n.jpg ; [(u'food-beverages', 2.9473241567611694), (u'drinks', 2.943413734436036)]
+classes, url, path: [u'sunset', u'sun', u'sky', u'sunrise', u'evening', u'beach', u'dusk', u'silhouette', u'landscape', u'nature', u'cloud', u'light', u'night', u'ocean', u'golden', u'morning', u'dawn', u'sea', u'sol', u'water'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/1799688_1608704622685084_104127228_n.jpg ; [(u'hotel-outdoor', 2.9181683659553532), (u'sea', 2.8996049761772165)]
+classes, url, path: [u'water', u'travel', u'night', u'bridge', u'building', u'reflection', u'architecture', u'outdoors', u'nobody', u'sunset', u'sky', u'city', u'river', u'boat', u'town', u'ship', u'lake', u'tree', u'church', u'tourism'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/925656_814032675329632_1192715591_n.jpg ; [(u'hotel-outdoor', 2.8406596779823308), (u'pool', 2.8406596779823308)]
+classes, url, path: [u'frame', u'illustration', u'color', u'design', u'vintage', u'art', u'old', u'border', u'background', u'retro', u'antique', u'pattern', u'international', u'texture', u'text', u'ancient', u'paper', u'national', u'symbol', u'wall'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/11017647_497266323744546_705597867_n.jpg ; [(u'overall', 2.5453902960624051), (u'aesthetics', 2.5453902960624051)]
+classes, url, path: [u'surf', u'ocean', u'wave', u'water', u'action', u'sea', u'spray', u'sport', u'water sports', u'swell', u'surfboard', u'beach', u'recreation', u'wake', u'tube', u'splash', u'cold', u'adventure', u'travel', u'nobody'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10598738_915335935161286_1927094141_n.jpg ; [(u'hotel-outdoor', 2.9317348003387451), (u'sea', 2.9317348003387451)]
+classes, url, path: [u'pool', u'luxury', u'swimming', u'relaxation', u'summer', u'leisure', u'hotel', u'nobody', u'water', u'terrace', u'tropical', u'resort', u'villa', u'aqua', u'idyllic', u'rest', u'sun', u'chair', u'patio', u'poolside'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10802664_1528351200738354_2074787451_n.jpg ; [(u'hotel-outdoor', 2.9974158406257638), (u'pool', 2.9906958937644958)]
+classes, url, path: [u'beach', u'travel', u'sea', u'ocean', u'people', u'water', u'girl', u'pier', u'boat', u'vacation', u'woman', u'leisure', u'tan', u'recreation', u'sun', u'coast', u'man', u'island', u'relaxation', u'summer'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10832023_294639267412861_1418589260_n.jpg ; [(u'hotel-outdoor', 2.9893343448638916), (u'sea', 2.9893343448638916)]
+classes, url, path: [u'water', u'nature', u'beach', u'vacation', u'background', u'aqua', u'recreation', u'sea', u'nobody', u'ocean', u'summer', u'travel', u'pool', u'abstract', u'leisure', u'wave', u'color', u'texture', u'light', u'pattern'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10844070_414696098681478_1673380659_n.jpg ; [(u'hotel-outdoor', 2.9161288738250741), (u'sea', 2.9161288738250741)]
+classes, url, path: [u'sugar', u'food', u'sweet', u'dessert', u'fruit', u'milk', u'candy', u'health', u'breakfast', u'nutrition', u'tea', u'bowl', u'table', u'treat', u'healthy', u'delicious', u'snack', u'confectionery', u'variety', u'nobody'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10644088_680543312040613_161240171_n.jpg ; [(u'food-beverages', 2.9529460668563843), (u'drinks', 2.5106248760931531)]
+classes, url, path: [u'water', u'lake', u'summer', u'nature', u'river', u'landscape', u'sky', u'sea', u'travel', u'grass', u'alone', u'beach', u'horizon', u'view', u'calm', u'peace', u'boat', u'morning', u'vacation', u'sun'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10533609_1554198228149143_30011261_n.jpg ; [(u'hotel-outdoor', 2.969955801963807), (u'sea', 2.9366905093193068)]
+classes, url, path: [u'night', u'water', u'light', u'illuminated', u'sea', u'retro', u'nobody', u'travel', u'old', u'landscape', u'dark', u'sunset', u'moon', u'illustration', u'design', u'city', u'vintage', u'cool', u'celebration', u'sky'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10864760_598761486921689_516185381_n.jpg ; [(u'hotel-outdoor', 2.4763361656085481), (u'sea', 2.1103284587801965)]
+classes, url, path: [u'water', u'sea', u'coast', u'ship', u'travel', u'group', u'competition', u'watercraft', u'people', u'ocean', u'recreation', u'daytime', u'politics', u'city', u'navy', u'many', u'rescue', u'men', u'military', u'coastline'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10881756_735199343236198_1537963437_n.jpg ; [(u'hotel-outdoor', 2.8562855720520024), (u'sea', 2.8562855720520024)]
+classes, url, path: [u'night', u'golden', u'gold', u'water', u'nature', u'tropical', u'beach', u'sun', u'summer', u'landscape', u'dawn', u'palm', u'sea', u'dusk', u'scene', u'light', u'dark', u'hotel', u'island', u'reflection'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10725175_366859560145802_1999382823_n.jpg ; [(u'hotel-outdoor', 2.8930658698081975), (u'sea', 2.8930658698081975)]
+classes, url, path: [u'water', u'beach', u'sea', u'ocean', u'travel', u'sunset', u'vacation', u'sun', u'diving', u'sky', u'relaxation', u'sport', u'summer', u'sand', u'aqua', u'surf', u'bikini', u'leisure', u'storm', u'island'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/1516994_378703488956592_1766416945_n.jpg ; [(u'hotel-outdoor', 2.975213348865509), (u'sea', 2.975213348865509)]
+classes, url, path: [u'recreation', u'travel', u'people', u'watercraft', u'group', u'produce', u'cheese', u'beach', u'river', u'nobody', u'water', u'food', u'canoe', u'leisure', u'lake', u'boater', u'tree', u'raft', u'rowboat', u'chair'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10890938_389590777888990_566160823_n.jpg ; [(u'hotel-outdoor', 2.8684059381484985), (u'sea', 2.5567595426770615)]
+classes, url, path: [u'people', u'men', u'recreation', u'two', u'water', u'religion', u'architecture', u'watercraft', u'adult', u'outdoors', u'river', u'travel', u'nobody', u'group', u'leisure', u'women', u'sitting', u'three', u'ancient', u'spirituality'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10354556_1626037037631111_1576102604_n.jpg ; [(u'hotel-outdoor', 2.1618630100785192), (u'pool', 1.9911316831797587)]
+classes, url, path: [u'people', u'fine art', u'headgear', u'adult', u'market', u'religion', u'painting', u'commerce', u'men', u'food', u'family', u'hat', u'recreation', u'fruit', u'group', u'one', u'women', u'tuscany', u'still life', u'cap'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11269192_1450429251936072_1660442605_n.jpg ; [(u'overall', 1.7568441342866583), (u'aesthetics', 1.6757290319842846)]
+classes, url, path: [u'water', u'pool', u'travel', u'summer', u'swimming', u'clear', u'boat', u'nature', u'resort', u'color', u'nobody', u'vacation', u'art', u'filter', u'beautiful', u'sunny', u'river', u'landscape', u'beach', u'sun'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10946228_1051927768166305_1770557163_n.jpg ; [(u'hotel-outdoor', 2.8825054764747629), (u'pool', 2.8763688206672668)]
+classes, url, path: [u'people', u'religion', u'fine art', u'painting', u'clothing', u'one', u'jewelry', u'gold', u'adult', u'bracelet', u'necklace', u'needlework', u'buddhism', u'men', u'group', u'mosaic', u'two', u'nobody', u'women', u'market'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11356533_984444034929055_1340640801_n.jpg ; [(u'overall', 1.8680823507972797), (u'aesthetics', 1.8680823507972797)]
+classes, url, path: [u'water', u'nature', u'rock', u'landscape', u'travel', u'beach', u'island', u'boat', u'sea', u'earth', u'house', u'river', u'architecture', u'summer', u'stone', u'ecology', u'coast', u'city', u'outdoors', u'ocean'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11428187_1004249506261637_2075421438_n.jpg ; [(u'hotel-outdoor', 2.9563666582107548), (u'sea', 2.9296159744262704)]
+classes, url, path: [u'water', u'summer', u'beach', u'nature', u'pool', u'tropical', u'resort', u'island', u'vacation', u'beautiful', u'swimming', u'tree', u'travel', u'turquoise', u'paradise', u'relaxation', u'leisure', u'nobody', u'coast', u'lagoon'] ; https://scontent.cdninstagram.com/hphotos-xta1/t51.2885-15/e15/11117137_1568969466696491_938539222_n.jpg ; [(u'hotel-outdoor', 2.9781792759895334), (u'sea', 2.9781792759895334)]
+classes, url, path: [u'sea', u'ocean', u'beach', u'coast', u'island', u'water', u'travel', u'turquoise', u'shore', u'coastline', u'seascape', u'summer', u'view', u'seaside', u'nature', u'tourism', u'bay', u'sunny', u'vacation', u'nobody'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/11123733_102149536783586_1564149186_n.jpg ; [(u'hotel-outdoor', 2.9947469830513), (u'sea', 2.9947469830513)]
+classes, url, path: [u'luxury', u'nobody', u'house', u'hotel', u'seat', u'indoors', u'chair', u'architecture', u'window', u'balcony', u'table', u'garden', u'dwelling', u'patio', u'furniture', u'flower', u'resort', u'pool', u'terrace', u'porch'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/11085051_759392017514709_1228310484_n.jpg ; [(u'hotel-outdoor', 2.93438720703125), (u'patio', 2.9204527139663705)]
+classes, url, path: [u'flower', u'garden', u'park', u'yard', u'bush', u'nobody', u'nature', u'color', u'outdoors', u'landscape', u'tree', u'summer', u'outside', u'plant', u'formal', u'home', u'botanical', u'leaves', u'pathway', u'calm'] ; https://scontent.cdninstagram.com/hphotos-xat1/t51.2885-15/e15/10932222_819127588169964_1910097322_n.jpg ; [(u'hotel-outdoor', 2.9604543447494511), (u'sea', 2.8743445873260507)]
+classes, url, path: [u'pool', u'beach', u'swimming', u'water', u'summer', u'tropical', u'vacation', u'turquoise', u'coast', u'sun', u'sea', u'resort', u'island', u'leisure', u'flower', u'nature', u'ocean', u'sunny', u'travel', u'garden'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11313563_853531638064801_580318155_n.jpg ; [(u'hotel-outdoor', 2.9782397747039799), (u'pool', 2.9667832851409917)]
+classes, url, path: [u'pool', u'swimming pool', u'hotel', u'water', u'summer', u'lake', u'resort', u'swimming', u'tree', u'boat', u'chair', u'nature', u'garden', u'sun', u'recreation', u'travel', u'landscape', u'flower', u'leisure', u'patio'] ; https://scontent.cdninstagram.com/hphotos-xft1/t51.2885-15/e15/914807_457605504398406_1487330171_n.jpg ; [(u'hotel-outdoor', 2.9812290668487553), (u'pool', 2.9736773371696472)]
+classes, url, path: [u'water', u'sea', u'beach', u'ocean', u'nobody', u'travel', u'swimming', u'vacation', u'fish', u'boat', u'island', u'resort', u'recreation', u'summer', u'sun', u'nature', u'coast', u'coastline', u'landscape', u'relaxation'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11377629_101777110168091_349524916_n.jpg ; [(u'hotel-outdoor', 2.9685410857200623), (u'sea', 2.9685410857200623)]
+classes, url, path: [u'beach', u'ocean', u'sea', u'wave', u'coast', u'water', u'foam', u'travel', u'landscape', u'surf', u'sand', u'coastline', u'nobody', u'rock', u'seascape', u'pacific', u'scenic', u'tide', u'motion', u'summer'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11357314_1459578334341878_1311478695_n.jpg ; [(u'hotel-outdoor', 2.9908913969993591), (u'sea', 2.9908913969993591)]
+classes, url, path: [u'water', u'sea', u'island', u'ocean', u'travel', u'tropical', u'beach', u'nobody', u'coast', u'leisure', u'swimming', u'underwater', u'recreation', u'reef', u'exotic', u'seascape', u'watercraft', u'snorkeling', u'water sports', u'horizon'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/11008182_1554739601467751_18870172_n.jpg ; [(u'hotel-outdoor', 2.9502459168434143), (u'sea', 2.9502459168434143)]
+classes, url, path: [u'water', u'ocean', u'underwater', u'sea', u'nobody', u'reef', u'recreation', u'travel', u'water sports', u'coast', u'island', u'coral', u'seascape', u'coastline', u'snorkeling', u'wreckage', u'beach', u'diving', u'landscape', u'vacation'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/11094497_1416608848656408_1338411432_n.jpg ; [(u'hotel-outdoor', 2.9197837114334111), (u'sea', 2.9197837114334111)]
+classes, url, path: [u'beach', u'water', u'boat', u'travel', u'ocean', u'coast', u'leisure', u'swimming', u'sea', u'resort', u'vacation', u'summer', u'coastline', u'recreation', u'tropical', u'lagoon', u'sand', u'idyllic', u'bay', u'pool'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11266007_402343816615797_380364172_n.jpg ; [(u'hotel-outdoor', 2.9494798183441162), (u'sea', 2.9476320743560791)]
+classes, url, path: [u'water', u'vacation', u'beach', u'summer', u'pool', u'turquoise', u'boat', u'travel', u'resort', u'tropical', u'clear', u'leisure', u'island', u'nature', u'paradise', u'beautiful', u'sea', u'lagoon', u'coast', u'swimming'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10249244_932450106765836_768839662_n.jpg ; [(u'hotel-outdoor', 2.9607823491096501), (u'sea', 2.9476583003997807)]
+classes, url, path: [u'hotel', u'swimming pool', u'villa', u'chair', u'nobody', u'umbrella', u'resort', u'luxury', u'tree', u'island', u'leisure', u'beach', u'parasol', u'sea', u'ocean', u'pool', u'water', u'summer', u'vacation', u'lagoon'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11313473_965131090193194_327389552_n.jpg ; [(u'hotel-outdoor', 2.946532011032104), (u'pool', 2.9352970719337459)]
+classes, url, path: [u'pool', u'swimming pool', u'resort', u'villa', u'nobody', u'luxury', u'patio', u'hotel', u'house', u'poolside', u'dwelling', u'recreation', u'leisure', u'swimming', u'yard', u'architecture', u'property', u'bungalow', u'mansion', u'gazebo'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11256125_382594295269897_1773777697_n.jpg ; [(u'hotel-outdoor', 2.9915452003479004), (u'pool', 2.9915452003479004)]
+classes, url, path: [u'island', u'water', u'vacation', u'boat', u'sea', u'beach', u'travel', u'lagoon', u'bay', u'summer', u'ocean', u'pool', u'leisure', u'villa', u'coast', u'recreation', u'nature', u'tropical', u'fish', u'sunny'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10890894_781686735250672_390544750_n.jpg ; [(u'hotel-outdoor', 2.969646394252778), (u'sea', 2.969646394252778)]
+classes, url, path: [u'sea', u'beach', u'resort', u'villa', u'travel', u'water', u'ocean', u'summer', u'leisure', u'sun', u'coast', u'pool', u'hotel', u'sky', u'coastline', u'swimming', u'umbrella', u'island', u'palm', u'tourism'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10986338_1614680232084283_186596641_n.jpg ; [(u'hotel-outdoor', 2.9780299663543701), (u'sea', 2.965681254863739)]
+classes, url, path: [u'food', u'meal', u'dish', u'produce', u'fish', u'lunch', u'meat', u'dinner', u'restaurant', u'chicken', u'duck', u'vegetable', u'plate', u'cooking', u'travel', u'wine', u'nobody', u'lobster', u'dining', u'vacation'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10693833_408169449357580_1664340612_n.jpg ; [(u'food-beverages', 2.9673424363136292), (u'meal', 2.7390857856434314)]
+classes, url, path: [u'art', u'travel', u'beautiful', u'style', u'decoration', u'traditional', u'gold', u'background', u'image', u'card', u'cute', u'sea', u'cartoon', u'nobody', u'design', u'color', u'symbol', u'bright', u'painting', u'smile'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11312304_1593860737550868_1697782059_n.jpg ; [(u'overall', 2.7907866239547729), (u'aesthetics', 2.7907866239547729)]
+classes, url, path: [u'water', u'beach', u'vacation', u'pool', u'resort', u'summer', u'travel', u'swimming', u'tropical', u'romantic', u'leisure', u'boat', u'recreation', u'nature', u'color', u'paradise', u'island', u'coast', u'lagoon', u'exotic'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10848367_926854817332185_1154950785_n.jpg ; [(u'hotel-outdoor', 2.9653874635696411), (u'pool', 2.9452388286590576)]
+classes, url, path: [u'water', u'beach', u'travel', u'summer', u'sea', u'nobody', u'ocean', u'coast', u'nature', u'sand', u'island', u'sky', u'sun', u'sunshine', u'vacation', u'tropical', u'relaxation', u'aqua', u'idyllic', u'calm'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11375977_924345340940404_1864513126_n.jpg ; [(u'hotel-outdoor', 2.9750140905380258), (u'sea', 2.9750140905380258)]
+classes, url, path: [u'resort', u'water', u'beach', u'pool', u'swimming', u'vacation', u'travel', u'summer', u'boat', u'leisure', u'tropical', u'nature', u'romantic', u'exotic', u'paradise', u'recreation', u'nobody', u'lagoon', u'relaxation', u'color'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11375942_562108900595459_1801580776_n.jpg ; [(u'hotel-outdoor', 2.9751349687576294), (u'pool', 2.9717959761619568)]
+classes, url, path: [u'sea', u'ocean', u'water', u'coast', u'beach', u'travel', u'sand', u'landscape', u'seascape', u'wave', u'island', u'rock', u'summer', u'sky', u'shore', u'surf', u'horizon', u'turquoise', u'vacation', u'coastline'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11246090_874743165916385_1451099882_n.jpg ; [(u'hotel-outdoor', 2.9810550808906555), (u'sea', 2.9810550808906555)]
+classes, url, path: [u'vacation', u'sea', u'water', u'travel', u'summer', u'relaxation', u'pool', u'fun', u'sun', u'retro', u'enjoyment', u'beach', u'leisure', u'aqua', u'background', u'ocean', u'swimming', u'wet', u'crystal', u'hot'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11024110_951218154888373_2098216243_n.jpg ; [(u'hotel-outdoor', 2.9586803913116464), (u'sea', 2.9455255866050734)]
+classes, url, path: [u'sea', u'water', u'nature', u'summer', u'ocean', u'landscape', u'beach', u'sky', u'island', u'calm', u'nobody', u'travel', u'tree', u'horizon', u'lake', u'bay', u'boat', u'sand', u'tropical', u'sun'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/1527500_810404962342291_947445422_n.jpg ; [(u'hotel-outdoor', 2.962771832942964), (u'sea', 2.962771832942964)]
+classes, url, path: [u'water', u'food', u'travel', u'fish', u'river', u'people', u'agriculture', u'landscape', u'nobody', u'fisherman', u'outdoors', u'bamboo', u'nature', u'boat', u'environment', u'two', u'pollution', u'lake', u'transportation', u'net'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11379052_497974910355243_1862799893_n.jpg ; [(u'hotel-outdoor', 2.7598561644554147), (u'pool', 2.4317421043871215)]
+classes, url, path: [u'lake', u'river', u'water', u'recreation', u'pond', u'people', u'tree', u'nature', u'park', u'grass', u'food', u'summer', u'two', u'travel', u'pool', u'leisure', u'garden', u'adult', u'outdoors', u'men'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11378686_1609719289311098_714705265_n.jpg ; [(u'hotel-outdoor', 2.9388540387153625), (u'pool', 2.9067190289497375)]
+classes, url, path: [u'water', u'beach', u'sea', u'travel', u'nobody', u'landscape', u'summer', u'nature', u'island', u'coastline', u'ocean', u'bay', u'coast', u'seascape', u'sky', u'outdoors', u'boat', u'vacation', u'calm', u'shore'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11255392_1586401538280806_1283480077_n.jpg ; [(u'hotel-outdoor', 2.9779989719390874), (u'sea', 2.9761977195739755)]
+classes, url, path: [u'water', u'travel', u'nobody', u'tree', u'beach', u'tropical', u'resort', u'summer', u'vacation', u'relaxation', u'turquoise', u'nature', u'swimming pool', u'island', u'coast', u'hotel', u'bay', u'palm', u'paradise', u'luxury'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/11186878_846496435421681_1048183153_n.jpg ; [(u'hotel-outdoor', 2.9612047672271729), (u'sea', 2.9612047672271729)]
+classes, url, path: [u'resort', u'nobody', u'travel', u'grass', u'pool', u'recreation', u'water', u'relaxation', u'leisure', u'nature', u'summer', u'luxury', u'hotel', u'lawn', u'outdoors', u'swimming', u'wood', u'deck', u'golf', u'swimming pool'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/11176319_1599665653636643_2003493745_n.jpg ; [(u'hotel-outdoor', 2.9266553521156311), (u'pool', 2.8626803159713745)]
+classes, url, path: [u'pier', u'jetty', u'water', u'beach', u'sea', u'dock', u'ocean', u'summer', u'boardwalk', u'vacation', u'boat', u'calm', u'island', u'seascape', u'wood', u'bridge', u'lake', u'relaxation', u'sun', u'recreation'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11116878_1579119772344637_725309615_n.jpg ; [(u'hotel-outdoor', 2.9875780344009399), (u'sea', 2.9875780344009399)]
+classes, url, path: [u'water', u'travel', u'vacation', u'turquoise', u'tropical', u'beach', u'clear', u'view', u'nature', u'sea', u'summer', u'resort', u'ocean', u'sun', u'beautiful', u'shore', u'island', u'boat', u'coast', u'scene'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10865190_1530555780559434_1758722923_n.jpg ; [(u'hotel-outdoor', 2.9499624371528625), (u'sea', 2.9387971758842473)]
+classes, url, path: [u'summer', u'water', u'travel', u'nature', u'sky', u'vacation', u'island', u'boat', u'sun', u'sunshine', u'landscape', u'leisure', u'tropical', u'nobody', u'outdoors', u'beach', u'traditional', u'sea', u'tree', u'beautiful'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/11084837_748962991883898_1838205536_n.jpg ; [(u'hotel-outdoor', 2.9692488908767714), (u'sea', 2.9692488908767714)]
+classes, url, path: [u'nobody', u'garden', u'travel', u'countryside', u'landscape', u'grass', u'cropland', u'flower', u'water', u'outdoors', u'summer', u'tree', u'walkway', u'path', u'nature', u'curve', u'tuscany', u'house', u'sky', u'architecture'] ; https://scontent.cdninstagram.com/hphotos-xat1/t51.2885-15/e15/11093016_1612756065636339_1147019605_n.jpg ; [(u'hotel-outdoor', 2.9079043865203857), (u'sea', 2.8817042112350473)]
+classes, url, path: [u'food', u'table', u'bottle', u'fruit', u'wine', u'candle', u'still life', u'meal', u'apple', u'dish', u'nobody', u'bowl', u'tabletop', u'produce', u'plate', u'jar', u'sea', u'vegetable', u'healthy', u'group'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/11055513_621882604611548_876683645_n.jpg ; [(u'food-beverages', 2.8394396305084233), (u'meal', 2.7916387319564819)]
+classes, url, path: [u'sea', u'water', u'sand', u'beach', u'coast', u'travel', u'ocean', u'summer', u'seascape', u'creek', u'rocky', u'sun', u'sky', u'island', u'tropical', u'coastline', u'shallow', u'idyllic', u'turquoise', u'calm'] ; https://scontent.cdninstagram.com/hphotos-xta1/t51.2885-15/e15/10899341_390847851091088_902862305_n.jpg ; [(u'hotel-outdoor', 2.9748952984809884), (u'sea', 2.9748952984809884)]
+classes, url, path: [u'water', u'pool', u'swimming', u'underwater', u'travel', u'leisure', u'diving', u'sea', u'fun', u'splash', u'summer', u'boat', u'swimming pool', u'vacation', u'dolphin', u'aquarium', u'wet', u'recreation', u'fish', u'architecture'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11241392_840722079355073_1299831212_n.jpg ; [(u'hotel-outdoor', 2.9583019018173227), (u'pool', 2.9372885227203374)]
+classes, url, path: [u'beach', u'water', u'travel', u'boat', u'island', u'summer', u'bay', u'ocean', u'coast', u'paradise', u'vacation', u'sea', u'landscape', u'tropical', u'sand', u'lagoon', u'sun', u'seascape', u'coastline', u'recreation'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11327032_1394397917556227_1643778952_n.jpg ; [(u'hotel-outdoor', 2.9489732384681702), (u'sea', 2.9489732384681702)]
+classes, url, path: [u'water', u'nature', u'coast', u'sea', u'travel', u'summer', u'architecture', u'landscape', u'lake', u'beach', u'ocean', u'nobody', u'view', u'old', u'sky', u'house', u'seaside', u'tropical', u'tourism', u'coastline'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/11199423_1568971203356002_533086415_n.jpg ; [(u'hotel-outdoor', 2.9628753066062941), (u'sea', 2.9628753066062941)]
+classes, url, path: [u'people', u'travel', u'sunset', u'water', u'recreation', u'beach', u'vacation', u'sunrise', u'leisure', u'sunshine', u'relaxation', u'sun', u'lake', u'landscape', u'tourism', u'evening', u'reflection', u'group', u'outdoors', u'sea'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10919533_910885828931207_1480352424_n.jpg ; [(u'hotel-outdoor', 2.9099165201187143), (u'sea', 2.9099165201187143)]
+classes, url, path: [u'beach', u'water', u'ocean', u'travel', u'coast', u'tropical', u'sand', u'sea', u'island', u'vacation', u'summer', u'coastline', u'paradise', u'resort', u'shore', u'seascape', u'sunshine', u'boat', u'sky', u'exotic'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/11111405_1383567745304285_1030454666_n.jpg ; [(u'hotel-outdoor', 2.9910361766815186), (u'sea', 2.9910361766815186)]
+classes, url, path: [u'water', u'lake', u'pool', u'tree', u'car', u'boat', u'river', u'travel', u'recreation', u'nature', u'beach', u'park', u'color', u'landscape', u'light', u'reflection', u'canoe', u'bridge', u'summer', u'lagoon'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10853079_1510590469230560_1128708255_n.jpg ; [(u'hotel-outdoor', 2.9441194534301758), (u'pool', 2.9257834553718567)]
+classes, url, path: [u'swimming pool', u'pool', u'resort', u'chair', u'hotel', u'luxury', u'villa', u'nobody', u'seat', u'patio', u'poolside', u'leisure', u'water', u'swimming', u'hot tub', u'furniture', u'architecture', u'recreation', u'house', u'relaxation'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/11101985_327944634042490_1042615589_n.jpg ; [(u'hotel-outdoor', 2.9967845678329468), (u'pool', 2.9967845678329468)]
+classes, url, path: [u'beach', u'ocean', u'sea', u'water', u'summer', u'sand', u'travel', u'shore', u'coast', u'sunrise', u'vacation', u'sunset', u'tropical', u'sun', u'sky', u'color', u'horizon', u'wave', u'seascape', u'island'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11372066_471280743021555_39518338_n.jpg ; [(u'hotel-outdoor', 2.9863653182983398), (u'sea', 2.9863653182983398)]
+classes, url, path: [u'nature', u'dirty', u'nobody', u'water', u'rough', u'art', u'landscape', u'summer', u'edge', u'splash', u'vintage', u'dirt', u'travel', u'rusty', u'river', u'background', u'smoke', u'sky', u'beautiful', u'outdoors'] ; https://scontent.cdninstagram.com/hphotos-xtp1/t51.2885-15/e15/11208400_811610132242476_923311094_n.jpg ; [(u'hotel-outdoor', 2.8605512380599984), (u'sea', 2.5647256413944564)]
+classes, url, path: [u'summer', u'sea', u'leisure', u'travel', u'sky', u'water', u'vacation', u'coast', u'sunshine', u'picnic', u'relaxation', u'ocean', u'recreation', u'nature', u'sun', u'sand', u'beach', u'hat', u'people', u'fruit'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10954684_1709318562627923_1171395737_n.jpg ; [(u'hotel-outdoor', 2.904296040534974), (u'sea', 2.904296040534974)]
+classes, url, path: [u'people', u'wall', u'city', u'group', u'snow', u'crowd', u'travel', u'winter', u'men', u'ice', u'women', u'fun', u'background', u'old', u'festival', u'summer', u'decoration', u'celebration', u'jesus', u'art'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11333714_1663312990566056_876603257_n.jpg ; [(u'hotel-outdoor', 2.1202217390493692), (u'sea', 2.0547238122015923)]
+classes, url, path: [u'nobody', u'water', u'nature', u'summer', u'tree', u'outdoors', u'travel', u'tropical', u'calm', u'sky', u'idyllic', u'sunshine', u'grass', u'leaves', u'island', u'relaxation', u'recreation', u'coast', u'exotic', u'beach'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/11137906_1575094609409400_791554718_n.jpg ; [(u'hotel-outdoor', 2.9924044013023385), (u'sea', 2.9924044013023385)]
+classes, url, path: [u'water', u'nature', u'travel', u'summer', u'ocean', u'nobody', u'tropical', u'sea', u'beach', u'coast', u'island', u'bay', u'vacation', u'exotic', u'boat', u'beautiful', u'relaxation', u'coastline', u'paradise', u'outdoors'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11248382_1015699945109472_648241394_n.jpg ; [(u'hotel-outdoor', 2.9779582023620614), (u'sea', 2.9779582023620614)]
+classes, url, path: [u'beach', u'water', u'sea', u'resort', u'chair', u'umbrella', u'travel', u'ocean', u'nobody', u'pool', u'coast', u'summer', u'swimming pool', u'sun', u'parasol', u'sky', u'architecture', u'house', u'sand', u'vacation'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/11098525_864105260313241_1989439759_n.jpg ; [(u'hotel-outdoor', 2.9596956372261047), (u'sea', 2.9546478390693665)]
+classes, url, path: [u'chair', u'water', u'garden', u'leisure', u'nobody', u'pool', u'recreation', u'house', u'resort', u'hotel', u'travel', u'summer', u'tree', u'village', u'pavilion', u'reflection', u'pond', u'vacation', u'terrace', u'villa'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/11049165_1420560601577772_1156845154_n.jpg ; [(u'hotel-outdoor', 2.9615414142608643), (u'pool', 2.9401412606239319)]
+classes, url, path: [u'beach', u'water', u'ocean', u'travel', u'vacation', u'boat', u'sea', u'summer', u'swimming', u'recreation', u'island', u'hotel', u'resort', u'tropical', u'diving', u'sky', u'paradise', u'lagoon', u'leisure', u'coast'] ; https://scontent.cdninstagram.com/hphotos-xpt1/t51.2885-15/e15/10895120_750689431677188_132864021_n.jpg ; [(u'hotel-outdoor', 2.9735710620880127), (u'sea', 2.9735710620880127)]
+classes, url, path: [u'people', u'market', u'beach', u'group', u'sea', u'travel', u'recreation', u'leisure', u'food', u'swimming', u'resort', u'relaxation', u'water', u'hat', u'eyewear', u'vacation', u'sunglasses', u'ocean', u'sun', u'fish'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11358126_829286027155318_597927993_n.jpg ; [(u'hotel-outdoor', 2.9048285484313974), (u'sea', 2.8802016377449036)]
+classes, url, path: [u'water', u'travel', u'tropical', u'idyllic', u'nobody', u'summer', u'aqua', u'calm', u'nature', u'sky', u'sand', u'sun', u'exotic', u'heaven', u'sunshine', u'romance', u'beach', u'outdoors', u'relaxation', u'leisure'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/927389_274405306083698_1960015000_n.jpg ; [(u'hotel-outdoor', 2.9828327298164377), (u'sea', 2.9828327298164377)]
+classes, url, path: [u'beach', u'sand', u'water', u'sea', u'surf', u'coast', u'ocean', u'summer', u'wave', u'seascape', u'nature', u'travel', u'sun', u'coastline', u'vacation', u'tropical', u'landscape', u'plage', u'sunshine', u'sky'] ; https://scontent.cdninstagram.com/hphotos-xtp1/t51.2885-15/e15/11142757_646595142141879_801630810_n.jpg ; [(u'hotel-outdoor', 2.9870213270187387), (u'sea', 2.9870213270187387)]
+classes, url, path: [u'water', u'sea', u'beach', u'nobody', u'travel', u'summer', u'city', u'coast', u'ocean', u'sky', u'landscape', u'island', u'coastline', u'bay', u'tree', u'outdoors', u'sunshine', u'sand', u'sun', u'nature'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10864776_1552778411628368_1842972534_n.jpg ; [(u'hotel-outdoor', 2.9425950646400461), (u'sea', 2.9425950646400461)]
+classes, url, path: [u'sea', u'beach', u'ocean', u'travel', u'water', u'coast', u'summer', u'vacation', u'island', u'rock', u'coastline', u'shore', u'boat', u'sun', u'tropical', u'view', u'nature', u'sand', u'seaside', u'idyllic'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11355129_1453764361585069_8052111_n.jpg ; [(u'hotel-outdoor', 2.9893495440483093), (u'sea', 2.9893495440483093)]
+classes, url, path: [u'nobody', u'water', u'coast', u'sea', u'coastline', u'travel', u'ocean', u'bay', u'beach', u'rock', u'landscape', u'outdoors', u'island', u'cove', u'watercraft', u'seascape', u'summer', u'recreation', u'scenic', u'aerial'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10838399_779547745460070_828663851_n.jpg ; [(u'hotel-outdoor', 2.9588923454284672), (u'sea', 2.9588923454284672)]
+classes, url, path: [u'sea', u'water', u'beach', u'ocean', u'nature', u'bikini', u'sunset', u'coast', u'lake', u'travel', u'yoga', u'summer', u'river', u'horizon', u'sky', u'girl', u'vacation', u'island', u'relaxation', u'boat'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10932520_1030661416950411_1269309341_n.jpg ; [(u'hotel-outdoor', 2.9775240421295166), (u'sea', 2.9775240421295166)]
+classes, url, path: [u'sunset', u'sunrise', u'sun', u'water', u'evening', u'dusk', u'silhouette', u'beach', u'sea', u'dawn', u'reflection', u'landscape', u'sky', u'summer', u'sol', u'lake', u'morning', u'cloud', u'ocean', u'pier'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/11093051_1611301549106386_1831531322_n.jpg ; [(u'hotel-outdoor', 2.912677228450776), (u'sea', 2.912677228450776)]
+classes, url, path: [u'flower', u'garden', u'plant', u'tree', u'nature', u'landscape', u'water', u'summer', u'color', u'bush', u'nobody', u'park', u'patio', u'path', u'travel', u'backyard', u'rhododendron', u'view', u'bed', u'yard'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11269173_935955879757863_586239347_n.jpg ; [(u'hotel-outdoor', 2.9704616069793706), (u'sea', 2.9428915977478036)]
+classes, url, path: [u'sea', u'water', u'beach', u'ocean', u'people', u'travel', u'recreation', u'nude', u'outdoors', u'yoga', u'leisure', u'portrait', u'lake', u'girl', u'nature', u'vacation', u'sky', u'relaxation', u'one', u'coast'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11335135_1455987651362526_681579072_n.jpg ; [(u'hotel-outdoor', 2.9778609871864319), (u'sea', 2.9778609871864319)]
+classes, url, path: [u'nude', u'love', u'woman', u'drink', u'portrait', u'rose', u'food', u'people', u'girl', u'bathtub', u'conceptual', u'water', u'flower', u'color', u'one', u'tea', u'fashion', u'coffee', u'body', u'bath'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/11195792_1091879560828131_778630646_n.jpg ; [(u'food-beverages', 2.6426161518890696), (u'drinks', 2.6426161518890696)]
+classes, url, path: [u'tree', u'nobody', u'water', u'outdoors', u'travel', u'recreation', u'daytime', u'coast', u'beach', u'bay', u'ocean', u'sky', u'summer', u'sea', u'walkway', u'landscape', u'island', u'sunshine', u'hotel', u'architecture'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/11024331_1708724189354465_390512528_n.jpg ; [(u'hotel-outdoor', 2.9455345869064331), (u'sea', 2.9455345869064331)]
+classes, url, path: [u'beach', u'water', u'sea', u'travel', u'ocean', u'coast', u'island', u'landscape', u'idyllic', u'sand', u'seascape', u'coastline', u'vacation', u'horizon', u'tropical', u'nobody', u'summer', u'shore', u'rock', u'surf'] ; https://scontent.cdninstagram.com/hphotos-xat1/t51.2885-15/e15/1172052_790140467727435_1720139234_n.jpg ; [(u'hotel-outdoor', 2.9718660116195679), (u'sea', 2.9718660116195679)]
+classes, url, path: [u'chair', u'table', u'patio', u'seat', u'wood', u'terrace', u'nobody', u'house', u'architecture', u'hotel', u'garden', u'backyard', u'courtyard', u'cafe', u'room', u'resort', u'furniture', u'luxury', u'porch', u'wooden'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10895026_957252994304479_237093522_n.jpg ; [(u'hotel-outdoor', 2.9577175974845891), (u'patio', 2.9577175974845891)]
+classes, url, path: [u'water', u'recreation', u'lagoon', u'resort', u'two', u'coast', u'travel', u'beach', u'leisure', u'tree', u'swimming', u'river', u'summer', u'villa', u'turquoise', u'watercraft', u'environment', u'nobody', u'sea', u'relaxation'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10838320_1514231162185748_2018676571_n.jpg ; [(u'hotel-outdoor', 2.8838214874267578), (u'pool', 2.8626164197921757)]
+classes, url, path: [u'pier', u'jetty', u'sunset', u'sunrise', u'water', u'sea', u'romantic', u'reflection', u'dock', u'beach', u'boardwalk', u'nature', u'lake', u'relaxation', u'sun', u'wood', u'summer', u'sky', u'ocean', u'evening'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11098390_1424259547879388_21189960_n.jpg ; [(u'hotel-outdoor', 2.9193927645683297), (u'sea', 2.9096766114234933)]
+classes, url, path: [u'water', u'lagoon', u'nobody', u'watercraft', u'boat', u'ocean', u'travel', u'vehicle', u'canoe', u'sea', u'beach', u'sky', u'recreation', u'people', u'ship', u'summer', u'coast', u'reflection', u'fish', u'island'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/11032838_882050121817610_772944079_n.jpg ; [(u'hotel-outdoor', 2.8080536723136902), (u'sea', 2.8080536723136902)]
+classes, url, path: [u'street', u'fall', u'vintage', u'culture', u'art', u'traditional', u'cartoon', u'old', u'illustration', u'city', u'square', u'fairy', u'temple', u'stage', u'sky', u'people', u'gate', u'public', u'building', u'design'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10784918_594060287392757_1169851461_n.jpg ; [(u'overall', 2.4386926522698689), (u'aesthetics', 2.4386926522698689)]
+classes, url, path: [u'sunset', u'morning', u'evening', u'landscape', u'sunrise', u'river', u'tree', u'water', u'nobody', u'travel', u'lake', u'sky', u'dawn', u'city', u'dusk', u'twilight', u'beach', u'bridge', u'sun', u'boat'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10903369_1534301196842353_1398693837_n.jpg ; [(u'hotel-outdoor', 2.9188125729560852), (u'sea', 2.6670200824737553)]
+classes, url, path: [u'nobody', u'house', u'water', u'architecture', u'stairs', u'travel', u'landscape', u'stairway', u'wall', u'tree', u'chair', u'bridge', u'summer', u'beach', u'balcony', u'seat', u'outdoors', u'nature', u'lake', u'street'] ; https://scontent.cdninstagram.com/hphotos-xta1/t51.2885-15/e15/10843751_370920749753124_1205757924_n.jpg ; [(u'hotel-outdoor', 2.8030434846878056), (u'sea', 2.7641355395317082)]
+classes, url, path: [u'sunset', u'landscape', u'morning', u'sunrise', u'sun', u'golf', u'lake', u'evening', u'tree', u'light', u'park', u'sky', u'mist', u'nature', u'peace', u'dusk', u'golden', u'silhouette', u'dawn', u'country'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11249191_1593499004260955_2115208088_n.jpg ; [(u'hotel-outdoor', 2.9668194651603703), (u'sea', 2.8743997812271127)]
+classes, url, path: [u'nobody', u'hut', u'leisure', u'shade', u'tree', u'beach', u'chair', u'luxury', u'recreation', u'bench', u'gazebo', u'travel', u'tropical', u'daytime', u'wood', u'cabin', u'outdoors', u'hotel', u'water', u'architecture'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11259595_686734284806389_477333305_n.jpg ; [(u'hotel-outdoor', 2.9331119060516357), (u'sea', 2.9310348033905029)]
+classes, url, path: [u'beach', u'water', u'island', u'sea', u'travel', u'ocean', u'landscape', u'sky', u'summer', u'vacation', u'nature', u'coast', u'sand', u'paradise', u'bay', u'hotel', u'seascape', u'tree', u'view', u'boat'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10723934_1419403961699022_2076341470_n.jpg ; [(u'hotel-outdoor', 2.9912729859352112), (u'sea', 2.9912729859352112)]
+classes, url, path: [u'water', u'beach', u'summer', u'lagoon', u'travel', u'paradise', u'vacation', u'swimming', u'tropical', u'island', u'turquoise', u'relaxation', u'leisure', u'sea', u'boat', u'pool', u'ocean', u'resort', u'nature', u'exotic'] ; https://scontent.cdninstagram.com/hphotos-xtp1/t51.2885-15/e15/10903729_356612471187852_289519862_n.jpg ; [(u'hotel-outdoor', 2.9688056707382211), (u'sea', 2.9611158370971684)]
+classes, url, path: [u'architecture', u'landscape', u'travel', u'building', u'night', u'water', u'hotel', u'house', u'bridge', u'traditional', u'nobody', u'village', u'pool', u'old', u'street', u'fall', u'city', u'color', u'ancient', u'reflection'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/11138042_1587019018207634_1663510585_n.jpg ; [(u'hotel-outdoor', 2.842585563659668), (u'pool', 2.4825010346218739)]
+classes, url, path: [u'food', u'people', u'nobody', u'recreation', u'watercraft', u'travel', u'table', u'vehicle', u'water', u'produce', u'leisure', u'river', u'transportation', u'fish', u'group', u'restaurant', u'dish', u'salmon', u'tuscany', u'flower'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10731580_695366003893573_1913194721_n.jpg ; [(u'hotel-outdoor', 2.4747179918045705), (u'pool', 1.9490901654931236)]
+classes, url, path: [u'pool', u'resort', u'luxury', u'water', u'nobody', u'garden', u'swimming', u'summer', u'travel', u'villa', u'color', u'hotel', u'vacation', u'swimming pool', u'patio', u'tree', u'chair', u'relaxation', u'leisure', u'lounge'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10956463_1395565140758867_1797671245_n.jpg ; [(u'hotel-outdoor', 2.9763134717941284), (u'pool', 2.9763134717941284)]
+classes, url, path: [u'sunset', u'evening', u'sunrise', u'water', u'dusk', u'pier', u'river', u'morning', u'sun', u'silhouette', u'lake', u'travel', u'sky', u'nobody', u'watercraft', u'landscape', u'city', u'boat', u'cloud', u'light'] ; https://scontent.cdninstagram.com/hphotos-xat1/t51.2885-15/e15/10919706_1536438423278917_362878575_n.jpg ; [(u'hotel-outdoor', 2.8473627567291269), (u'pool', 2.5221226503188205)]
+classes, url, path: [u'beach', u'water', u'sea', u'vacation', u'travel', u'ocean', u'sunglasses', u'people', u'coast', u'sand', u'relaxation', u'girl', u'island', u'sky', u'bikini', u'adult', u'leisure', u'recreation', u'sun', u'summer'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11352907_890712907654898_992476302_n.jpg ; [(u'hotel-outdoor', 2.9829016923904419), (u'sea', 2.9829016923904419)]
+classes, url, path: [u'pool', u'beach', u'leisure', u'hotel', u'travel', u'swimming', u'resort', u'vacation', u'chair', u'sun', u'relaxation', u'tan', u'idyllic', u'recreation', u'umbrella', u'two', u'summer', u'water', u'sand', u'exotic'] ; https://scontent.cdninstagram.com/hphotos-xta1/t51.2885-15/e15/11137870_453510618139888_2125390819_n.jpg ; [(u'hotel-outdoor', 2.9483827352523808), (u'pool', 2.9210894703865051)]
+classes, url, path: [u'sea', u'summer', u'ocean', u'water', u'travel', u'beach', u'sand', u'island', u'vacation', u'horizon', u'tropical', u'romantic', u'beautiful', u'relaxation', u'sun', u'coast', u'honeymoon', u'sky', u'paradise', u'sunshine'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11417293_1621040061468854_1050205594_n.jpg ; [(u'hotel-outdoor', 2.9837045073509225), (u'sea', 2.9837045073509225)]
+classes, url, path: [u'travel', u'outdoors', u'chair', u'sky', u'garden', u'summer', u'nature', u'tree', u'flower', u'architecture', u'building', u'tourism', u'wedding', u'water', u'nobody', u'sun', u'sunset', u'people', u'landscape', u'grass'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11235990_775561659218310_2052674274_n.jpg ; [(u'hotel-outdoor', 2.9330227375030526), (u'sea', 2.9330227375030526)]
+classes, url, path: [u'water', u'ocean', u'coast', u'sea', u'travel', u'seascape', u'beach', u'wave', u'tropical', u'splash', u'surf', u'vacation', u'wet', u'sand', u'nobody', u'coastline', u'idyllic', u'relaxation', u'summer', u'underwater'] ; https://scontent.cdninstagram.com/hphotos-xtf1/t51.2885-15/e15/11117125_1432631467031384_139461500_n.jpg ; [(u'hotel-outdoor', 2.95063716173172), (u'sea', 2.95063716173172)]
+classes, url, path: [u'sea', u'water', u'travel', u'ocean', u'sky', u'vacation', u'beach', u'summer', u'island', u'landscape', u'chair', u'tourism', u'sunset', u'boat', u'calm', u'view', u'sun', u'lake', u'honeymoon', u'coast'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/11008119_1808967639327846_1318015355_n.jpg ; [(u'hotel-outdoor', 2.9443291425704956), (u'sea', 2.9443291425704956)]
+classes, url, path: [u'sea', u'water', u'beach', u'pier', u'ocean', u'sky', u'boat', u'nobody', u'summer', u'travel', u'landscape', u'light', u'sun', u'sunset', u'architecture', u'city', u'dock', u'nature', u'ship', u'coast'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10832237_408022102709918_1136554272_n.jpg ; [(u'hotel-outdoor', 2.9648351669311523), (u'sea', 2.9648351669311523)]
+classes, url, path: [u'water', u'ocean', u'sea', u'boat', u'summer', u'beach', u'leisure', u'travel', u'horizon', u'vacation', u'watercraft', u'recreation', u'sky', u'canoe', u'island', u'relaxation', u'paddle', u'sun', u'resort', u'water sports'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/11190197_650046065096501_477689765_n.jpg ; [(u'hotel-outdoor', 2.9721956253051767), (u'sea', 2.9721956253051767)]
+classes, url, path: [u'cave', u'water', u'rock', u'travel', u'underground', u'nobody', u'recreation', u'pool', u'outdoors', u'exploration', u'vacation', u'adventure', u'stone', u'surf', u'buddhism', u'hole', u'discovery', u'mountain', u'wall', u'tunnel'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10919618_1380900028883215_1134953990_n.jpg ; [(u'hotel-outdoor', 2.7984220385551457), (u'pool', 2.1570951930440367)]
+classes, url, path: [u'water', u'tropical', u'ocean', u'beach', u'sea', u'coast', u'nobody', u'chair', u'coastline', u'relaxation', u'leisure', u'travel', u'island', u'summer', u'pier', u'bay', u'resort', u'idyllic', u'vacation', u'recreation'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/891475_1511955112406897_451827157_n.jpg ; [(u'hotel-outdoor', 2.9781140089035034), (u'sea', 2.9781140089035034)]
+classes, url, path: [u'jetty', u'pier', u'water', u'beach', u'recreation', u'sea', u'calm', u'relaxation', u'dock', u'vacation', u'boardwalk', u'summer', u'sunset', u'sun', u'sky', u'heaven', u'wood', u'lake', u'leisure', u'ocean'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11280146_867692946637285_1061999344_n.jpg ; [(u'hotel-outdoor', 2.9704161882400522), (u'sea', 2.9704161882400522)]
+classes, url, path: [u'travel', u'sun', u'tropical', u'leisure', u'relaxation', u'summer', u'water', u'nobody', u'outdoors', u'sunshine', u'nature', u'recreation', u'fun', u'sky', u'journey', u'exotic', u'vacation', u'idyllic', u'old', u'vertical'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10919592_869153979771474_1499894677_n.jpg ; [(u'hotel-outdoor', 2.9609764218330392), (u'sea', 2.9609764218330392)]
+classes, url, path: [u'beach', u'sea', u'ocean', u'travel', u'water', u'boat', u'vacation', u'summer', u'leisure', u'tropical', u'romance', u'island', u'relaxation', u'coast', u'recreation', u'sand', u'people', u'sun', u'love', u'women'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10903504_783280761741946_1577416451_n.jpg ; [(u'hotel-outdoor', 2.9969850778579712), (u'sea', 2.9969850778579712)]
+classes, url, path: [u'water', u'beach', u'travel', u'sea', u'coast', u'ocean', u'sand', u'nobody', u'summer', u'idyllic', u'island', u'sun', u'seascape', u'vacation', u'sunshine', u'calm', u'shore', u'coastline', u'landscape', u'sky'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11232880_683682215111383_1835010042_n.jpg ; [(u'hotel-outdoor', 2.9659886956214905), (u'sea', 2.9659886956214905)]
+classes, url, path: [u'beach', u'sea', u'ocean', u'coast', u'water', u'travel', u'vacation', u'summer', u'sand', u'sun', u'tropical', u'island', u'hotel', u'coastline', u'swimming', u'resort', u'idyllic', u'chair', u'sunshine', u'paradise'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10995095_768506649899522_94655458_n.jpg ; [(u'hotel-outdoor', 2.9967655539512634), (u'sea', 2.9967655539512634)]
+classes, url, path: [u'pool', u'vacation', u'beach', u'travel', u'water', u'sunglasses', u'summer', u'leisure', u'sea', u'boat', u'woman', u'sun', u'girl', u'swimming', u'love', u'family', u'resort', u'ocean', u'smile', u'tropical'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10948387_935744519778885_1774168122_n.jpg ; [(u'hotel-outdoor', 2.9854260683059697), (u'sea', 2.974683642387391)]
+classes, url, path: [u'water', u'people', u'travel', u'coast', u'ocean', u'sea', u'beach', u'watercraft', u'group', u'two', u'island', u'recreation', u'adult', u'leisure', u'coastline', u'sand', u'vehicle', u'fisherman', u'vacation', u'men'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/11032954_954364677929316_1124342781_n.jpg ; [(u'hotel-outdoor', 2.9735026359558105), (u'sea', 2.9735026359558105)]
+classes, url, path: [u'travel', u'beach', u'tropical', u'summer', u'water', u'vacation', u'sand', u'resort', u'ocean', u'idyllic', u'island', u'recreation', u'leisure', u'relaxation', u'exotic', u'villa', u'sunshine', u'luxury', u'hotel', u'sea'] ; https://scontent.cdninstagram.com/hphotos-xtp1/t51.2885-15/e15/10932211_942937202392016_1167975525_n.jpg ; [(u'hotel-outdoor', 2.9791849255561833), (u'sea', 2.9791849255561833)]
+classes, url, path: [u'sunset', u'beach', u'evening', u'water', u'sun', u'people', u'sea', u'man', u'silhouette', u'sunrise', u'travel', u'portrait', u'woman', u'couple', u'train', u'men', u'dusk', u'sky', u'river', u'sand'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11226712_1671929596361582_709879854_n.jpg ; [(u'hotel-outdoor', 2.964970290660859), (u'sea', 2.964970290660859)]
+classes, url, path: [u'water', u'ocean', u'beach', u'sea', u'summer', u'boat', u'vacation', u'travel', u'leisure', u'horizon', u'recreation', u'island', u'sky', u'relaxation', u'resort', u'tropical', u'sun', u'swimming', u'bikini', u'watercraft'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/11117036_950610544990484_1601444161_n.jpg ; [(u'hotel-outdoor', 2.9838999509811401), (u'sea', 2.9838999509811401)]
+classes, url, path: [u'people', u'family', u'child', u'wedding', u'event', u'group', u'love', u'children', u'party', u'recreation', u'bride', u'crowd', u'couple', u'landscape', u'ceremony', u'men', u'celebration', u'childhood', u'religion', u'music'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11376092_1603276409935345_1014213901_n.jpg ; [(u'amenities', 2.0554141412213007), (u'pre-room', 2.0554141412213007), (u'reception', 2.0554141412213007)]
+classes, url, path: [u'water', u'travel', u'vacation', u'idyllic', u'nobody', u'ocean', u'sea', u'coast', u'turquoise', u'seascape', u'tropical', u'sunshine', u'beach', u'leisure', u'sand', u'coastline', u'shallow', u'underwater', u'rock', u'sky'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/1530688_851955521536374_510809321_n.jpg ; [(u'hotel-outdoor', 2.9388483762741098), (u'sea', 2.9388483762741098)]
+classes, url, path: [u'sunset', u'sunrise', u'beach', u'seascape', u'sea', u'water', u'ocean', u'landscape', u'sun', u'rock', u'dawn', u'coast', u'nature', u'summer', u'dusk', u'reflection', u'sky', u'travel', u'cloud', u'wave'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/11024165_1412046922431474_1457578239_n.jpg ; [(u'hotel-outdoor', 2.9739805459976196), (u'sea', 2.9739805459976196)]
+classes, url, path: [u'water', u'ocean', u'fly', u'summer', u'nature', u'children', u'wave', u'lake', u'sport', u'underwater', u'splash', u'beach', u'fun', u'sea', u'boy', u'swimming', u'mountain', u'dream', u'spray', u'travel'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11427433_1455849438045059_976324342_n.jpg ; [(u'hotel-outdoor', 2.9064382910728463), (u'sea', 2.9064382910728463)]
+classes, url, path: [u'people', u'group', u'wedding', u'adult', u'men', u'family', u'love', u'child', u'celebration', u'many', u'fun', u'ceremony', u'majestic', u'clothing', u'joy', u'women', u'groom', u'crowd', u'water', u'bride'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/11189405_827491407287447_1216875642_n.jpg ; [(u'amenities', 2.079324533078351), (u'pre-room', 2.079324533078351), (u'reception', 2.066956467497679)]
+classes, url, path: [u'nobody', u'water', u'travel', u'tree', u'resort', u'swimming', u'hotel', u'turquoise', u'beach', u'recreation', u'paradise', u'tropical', u'relaxation', u'palm', u'island', u'pool', u'villa', u'leisure', u'vacation', u'exotic'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10956614_568428336625724_1888826862_n.jpg ; [(u'hotel-outdoor', 2.9526721239089966), (u'pool', 2.9428499341011047)]
+classes, url, path: [u'wedding', u'anniversary', u'birthday', u'cake', u'home', u'christmas', u'love', u'dessert', u'sweet', u'luxury', u'gold', u'menu', u'chocolate', u'crown', u'house', u'celebration', u'marriage', u'invitation', u'hotel', u'decoration'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10890730_787285248017301_1221174499_n.jpg ; [(u'food-beverages', 1.8796509958394432), (u'bar', 1.7393452276784507)]
+classes, url, path: [u'beach', u'sand', u'water', u'sea', u'ocean', u'coast', u'wave', u'summer', u'surf', u'shore', u'travel', u'island', u'seashore', u'foam', u'nature', u'coastline', u'nobody', u'vacation', u'turquoise', u'landscape'] ; https://scontent.cdninstagram.com/hphotos-xpt1/t51.2885-15/e15/10369346_443691259124161_1361637696_n.jpg ; [(u'hotel-outdoor', 2.9941939711570749), (u'sea', 2.9941939711570749)]
+classes, url, path: [u'two', u'people', u'tree', u'three', u'nature', u'relaxation', u'park', u'child', u'outdoors', u'summer', u'adult', u'meditation', u'sitting', u'travel', u'garden', u'one', u'grass', u'flower', u'forest', u'recreation'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11378474_483926225106137_1485319091_n.jpg ; [(u'hotel-outdoor', 2.9259474873542795), (u'sea', 2.9259474873542795)]
+classes, url, path: [u'tropical', u'beach', u'summer', u'water', u'sand', u'sun', u'travel', u'relaxation', u'swimming', u'vacation', u'sky', u'sea', u'wet', u'idyllic', u'ocean', u'leisure', u'nature', u'aqua', u'nobody', u'pool'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10963773_1388601464786029_1776128899_n.jpg ; [(u'hotel-outdoor', 2.9910282492637639), (u'sea', 2.9910282492637639)]
+classes, url, path: [u'water', u'nature', u'beach', u'travel', u'sea', u'landscape', u'ocean', u'coast', u'summer', u'nobody', u'tree', u'outdoors', u'rock', u'sky', u'coastline', u'tourism', u'vacation', u'island', u'shore', u'environment'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11263321_486486428180628_849695382_n.jpg ; [(u'hotel-outdoor', 2.9590520858764657), (u'sea', 2.9590520858764657)]
+classes, url, path: [u'water', u'travel', u'ocean', u'beach', u'sea', u'horizon', u'island', u'vacation', u'summer', u'leisure', u'bikini', u'diving', u'sand', u'recreation', u'surf', u'tropical', u'sky', u'people', u'water sports', u'sun'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10948900_321553851388473_1873219659_n.jpg ; [(u'hotel-outdoor', 2.9739820957183838), (u'sea', 2.9739820957183838)]
+classes, url, path: [u'beach', u'travel', u'water', u'sea', u'ocean', u'vacation', u'sun', u'tropical', u'island', u'boat', u'leisure', u'summer', u'fisherman', u'sand', u'surf', u'recreation', u'sky', u'fun', u'resort', u'horizon'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10903428_863497553702794_513780586_n.jpg ; [(u'hotel-outdoor', 2.9680314064025879), (u'sea', 2.9680314064025879)]
+classes, url, path: [u'sun', u'sunset', u'beach', u'sunrise', u'ocean', u'water', u'coast', u'summer', u'sea', u'silhouette', u'relaxation', u'leisure', u'resort', u'sand', u'morning', u'vacation', u'people', u'recreation', u'warm', u'travel'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10958961_1568404946739478_1830225471_n.jpg ; [(u'hotel-outdoor', 2.9798070192337036), (u'sea', 2.9798070192337036)]
+classes, url, path: [u'table', u'hotel', u'pool', u'luxury', u'interior design', u'chair', u'house', u'nobody', u'room', u'garden', u'terrace', u'indoors', u'design', u'tropical', u'leisure', u'beautiful', u'architecture', u'interior', u'dining', u'travel'] ; https://scontent.cdninstagram.com/hphotos-xta1/t51.2885-15/e15/10817596_807829019262778_1258042329_n.jpg ; [(u'hotel-outdoor', 2.9277147650718689), (u'patio', 2.2474455210104773)]
+classes, url, path: [u'water', u'nobody', u'travel', u'sky', u'beach', u'summer', u'outdoors', u'winter', u'nature', u'sun', u'sea', u'landscape', u'leisure', u'architecture', u'bridge', u'ocean', u'sunshine', u'fun', u'aqua', u'classic'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10948473_380793048766191_904861947_n.jpg ; [(u'hotel-outdoor', 2.9335268139839181), (u'sea', 2.9335268139839181)]
+classes, url, path: [u'pool', u'swimming', u'beach', u'leisure', u'resort', u'turquoise', u'vacation', u'water', u'summer', u'sun', u'tropical', u'hotel', u'island', u'coast', u'boat', u'sunny', u'sea', u'flower', u'rest', u'luxury'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10723754_1570536793176355_1114202523_n.jpg ; [(u'hotel-outdoor', 2.9818089604377751), (u'pool', 2.9751076698303223)]
+classes, url, path: [u'furniture', u'room', u'luxury', u'contemporary', u'interior design', u'seat', u'hotel', u'table', u'indoors', u'mansion', u'chair', u'house', u'sofa', u'home', u'fireplace', u'mirror', u'rug', u'window', u'interior', u'dwelling'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10843744_1550983425173717_1264467538_n.jpg ; [(u'room', 2.9206441640853891), (u'clothing', 2.6532438267539278), (u'curtains', 2.2649426900991081)]
+classes, url, path: [u'hotel', u'chair', u'furniture', u'room', u'interior design', u'seat', u'table', u'nobody', u'lamp', u'house', u'luxury', u'easy chair', u'patio', u'window', u'pool', u'bedroom', u'home', u'dwelling', u'sofa', u'curtain'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11287923_1601697676753869_1801994228_n.jpg ; [(u'room', 2.9376428723335275), (u'clothing', 2.9203563928604135), (u'curtains', 2.5750060457316843)]
+classes, url, path: [u'sea', u'ocean', u'coast', u'water', u'sand', u'sky', u'beach', u'landscape', u'horizon', u'paradise', u'sun', u'wood', u'design', u'nature', u'background', u'wave', u'view', u'dream', u'luxury', u'decoration'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10986245_440181752801645_986055464_n.jpg ; [(u'hotel-outdoor', 2.9501178264617924), (u'sea', 2.9501178264617924)]
+classes, url, path: [u'sea', u'beach', u'water', u'boat', u'ocean', u'pier', u'travel', u'ship', u'summer', u'sun', u'deck', u'lake', u'harbor', u'bay', u'sunset', u'ferry', u'chair', u'coast', u'cruise', u'landscape'] ; https://scontent.cdninstagram.com/hphotos-xpt1/t51.2885-15/e15/10919456_843308952396495_25371310_n.jpg ; [(u'hotel-outdoor', 2.9907981157302856), (u'sea', 2.9907981157302856)]
+classes, url, path: [u'beach', u'resort', u'sea', u'vacation', u'leisure', u'travel', u'sand', u'tropical', u'island', u'summer', u'hotel', u'food', u'coast', u'exotic', u'paradise', u'fish', u'sunglasses', u'luxury', u'ocean', u'sun'] ; https://scontent.cdninstagram.com/hphotos-xtp1/t51.2885-15/e15/10995267_1613429482211696_1996718574_n.jpg ; [(u'hotel-outdoor', 2.9916235208511353), (u'sea', 2.9839195013046274)]
+classes, url, path: [u'water', u'splash', u'summer', u'sport', u'spray', u'sun', u'landscape', u'sky', u'man', u'sea', u'travel', u'reflection', u'vacation', u'people', u'woman', u'jump', u'light', u'girl', u'nature', u'beach'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10735291_881189195225455_600684674_n.jpg ; [(u'hotel-outdoor', 2.9095529913902292), (u'sea', 2.9074563384056105)]
+classes, url, path: [u'ocean', u'water', u'beach', u'tropical', u'travel', u'chair', u'leisure', u'tree', u'resort', u'coast', u'nobody', u'hotel', u'sea', u'recreation', u'umbrella', u'vacation', u'island', u'exotic', u'swimming', u'relaxation'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10693827_353759151465423_275006313_n.jpg ; [(u'hotel-outdoor', 2.9690689444541931), (u'sea', 2.9690689444541931)]
+classes, url, path: [u'sea', u'coast', u'beach', u'ocean', u'turquoise', u'nature', u'water', u'landscape', u'island', u'coastline', u'summer', u'travel', u'seascape', u'architecture', u'sky', u'view', u'seaside', u'shore', u'beautiful', u'tower'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10693792_594578670647348_780776570_n.jpg ; [(u'hotel-outdoor', 2.9927237629890442), (u'sea', 2.9927237629890442)]
+classes, url, path: [u'water', u'architecture', u'summer', u'house', u'pool', u'travel', u'city', u'river', u'vacation', u'village', u'nature', u'sun', u'hotel', u'color', u'view', u'boat', u'sunny', u'tourism', u'sea', u'garden'] ; https://scontent.cdninstagram.com/hphotos-xft1/t51.2885-15/e15/10666270_703424089743935_725589951_n.jpg ; [(u'hotel-outdoor', 2.9303166270256051), (u'sea', 2.8820392489433302)]
+classes, url, path: [u'sunset', u'reflection', u'sunrise', u'water', u'nature', u'silhouette', u'lake', u'sun', u'evening', u'dawn', u'river', u'sky', u'summer', u'dusk', u'landscape', u'dramatic', u'dark', u'night', u'sea', u'bright'] ; https://scontent.cdninstagram.com/hphotos-xat1/t51.2885-15/e15/10986156_420110991497629_1019182982_n.jpg ; [(u'hotel-outdoor', 2.9750361442565927), (u'pool', 2.9606903195381169)]
+classes, url, path: [u'paper', u'culture', u'nobody', u'retro', u'print', u'vintage', u'old', u'collection', u'color', u'art', u'antique', u'beach', u'style', u'background', u'image', u'traditional', u'sun', u'nostalgia', u'landscape', u'ancient'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/11189776_629324920535391_1671993321_n.jpg ; [(u'hotel-outdoor', 2.7204066514968877), (u'sea', 2.3234703446990843)]
+classes, url, path: [u'wedding', u'sand', u'beach', u'bride', u'sea', u'water', u'dress', u'travel', u'ocean', u'bridal', u'love', u'girl', u'fashion', u'sun', u'romance', u'summer', u'portrait', u'solitude', u'coast', u'sky'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10593505_721779217903136_1446436491_n.jpg ; [(u'hotel-outdoor', 2.939603030681611), (u'sea', 2.939603030681611)]
+classes, url, path: [u'landscape', u'field', u'grass', u'farm', u'nature', u'rural', u'sky', u'cloud', u'countryside', u'meadow', u'tree', u'cloudy', u'country', u'horizon', u'agriculture', u'farmland', u'sun', u'summer', u'light', u'grassland'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/924616_1592459140984186_2123088423_n.jpg ; [(u'hotel-outdoor', 2.9771041274070744), (u'sea', 2.9180484414100656)]
+classes, url, path: [u'tree', u'road', u'autumn', u'path', u'landscape', u'nature', u'rural', u'leaves', u'forest', u'garden', u'fall', u'foliage', u'park', u'country', u'wood', u'way', u'walkway', u'season', u'plant', u'grass'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10844284_310733005786691_1660449610_n.jpg ; [(u'hotel-outdoor', 2.971541285514832), (u'forest', 2.7077260721453889)]
+classes, url, path: [u'sunset', u'sunrise', u'sea', u'water', u'beach', u'dusk', u'sun', u'ocean', u'dawn', u'reflection', u'landscape', u'pier', u'seascape', u'jetty', u'evening', u'cloud', u'coast', u'wave', u'morning', u'light'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10706697_861456637212339_1083785092_n.jpg ; [(u'hotel-outdoor', 2.9745313525199899), (u'sea', 2.9745313525199899)]
+classes, url, path: [u'sky', u'beach', u'water', u'ocean', u'sea', u'surf', u'travel', u'adventure', u'coast', u'landscape', u'sand', u'background', u'nobody', u'water sports', u'outdoors', u'wave', u'art', u'boat', u'seascape', u'island'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10547169_150313698472611_2087885093_n.jpg ; [(u'hotel-outdoor', 2.9468092918395996), (u'sea', 2.9468092918395996)]
+classes, url, path: [u'nobody', u'flower', u'bright', u'nature', u'rose', u'romance', u'floral', u'decoration', u'traditional', u'bound', u'passion', u'ornate', u'love', u'graphic design', u'art', u'artistic', u'wallpaper', u'color', u'handmade', u'many'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10787850_1493709614241385_783670997_n.jpg ; [(u'hotel-outdoor', 2.5778760039718613), (u'garden', 2.0095518378358754)]
+classes, url, path: [u'bride', u'vehicle', u'transportation', u'groom', u'people', u'adult', u'two', u'automobile', u'classic', u'women', u'travel', u'wedding', u'vintage', u'girl', u'woman', u'riding', u'driver', u'road', u'car', u'men'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10958573_800187186742914_1471864871_n.jpg ; [(u'overall', 1.7378133899235118), (u'aesthetics', 1.6214828310145608)]
+classes, url, path: [u'tree', u'garden', u'cherry', u'sunset', u'autumn', u'travel', u'sun', u'park', u'light', u'nature', u'evening', u'bench', u'vacation', u'color', u'sky', u'restaurant', u'summer', u'nobody', u'landscape', u'dusk'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/1742632_849547781730165_440942862_n.jpg ; [(u'hotel-outdoor', 2.9599166512489328), (u'sea', 2.9599166512489328)]
+classes, url, path: [u'ocean', u'beach', u'sea', u'water', u'coast', u'sand', u'wave', u'relaxation', u'suntan', u'travel', u'summer', u'tropical', u'tan', u'recreation', u'sky', u'horizon', u'bikini', u'surf', u'body', u'vacation'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10725132_987969064553151_1264506013_n.jpg ; [(u'hotel-outdoor', 2.9920188188552856), (u'sea', 2.9920188188552856)]
+classes, url, path: [u'people', u'group', u'travel', u'clothing', u'men', u'several', u'women', u'adult', u'boy', u'recreation', u'dancing', u'dancer', u'street', u'many', u'child', u'vacation', u'three', u'girl', u'resort', u'two'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10950414_869751763056950_249385905_n.jpg ; [(u'hotel-outdoor', 1.9889427628248628), (u'pool', 1.8844187854189676)]
+classes, url, path: [u'beach', u'sea', u'island', u'water', u'landscape', u'panorama', u'coast', u'summer', u'panoramic', u'ocean', u'travel', u'nature', u'architecture', u'town', u'coastline', u'castle', u'city', u'landmark', u'boat', u'view'] ; https://scontent.cdninstagram.com/hphotos-xpt1/t51.2885-15/e15/10729241_745599092154648_614002027_n.jpg ; [(u'hotel-outdoor', 2.9768874645233159), (u'sea', 2.9675562977790841)]
+classes, url, path: [u'flower', u'garden', u'bush', u'home', u'color', u'hedge', u'bed', u'planter', u'summer', u'plant', u'nature', u'horticulture', u'yard', u'backyard', u'agriculture', u'blossom', u'rose', u'farm', u'people', u'house'] ; https://scontent.cdninstagram.com/hphotos-xft1/t51.2885-15/e15/10747817_757190877663412_1572406929_n.jpg ; [(u'hotel-outdoor', 2.9291849136352548), (u'garden', 2.5852945403531926)]
+classes, url, path: [u'room', u'interior design', u'table', u'sofa', u'furniture', u'chair', u'luxury', u'seat', u'hotel', u'lamp', u'indoors', u'window', u'coffee table', u'easy chair', u'lobby', u'dining', u'cushion', u'interior', u'dining table', u'lounge'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/11015514_614803338652423_2136489067_n.jpg ; [(u'room', 2.9746431112289438), (u'clothing', 2.6995146529159779), (u'curtains', 2.2742375266212997)]
+classes, url, path: [u'cart', u'people', u'carriage', u'transportation', u'wagon', u'road', u'street', u'group', u'women', u'travel', u'driver', u'vehicle', u'umbrella', u'two', u'men', u'horse', u'adult', u'vintage', u'man', u'work'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10601710_1546205758924993_1425980847_n.jpg ; [(u'hotel-outdoor', 1.5810038805737052), (u'patio', 1.5043075814809135)]
+classes, url, path: [u'travel', u'beach', u'leisure', u'tan', u'sand', u'tropical', u'sea', u'vacation', u'water', u'idyllic', u'sun', u'ocean', u'remote', u'bikini', u'summer', u'relaxation', u'recreation', u'resort', u'paradise', u'sunglasses'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10727431_1506588352926868_527030682_n.jpg ; [(u'hotel-outdoor', 2.9916214942932129), (u'sea', 2.9916214942932129)]
+classes, url, path: [u'nobody', u'water', u'travel', u'coast', u'ocean', u'beach', u'tree', u'sea', u'hut', u'hotel', u'island', u'tropical', u'resort', u'coastline', u'sun', u'idyllic', u'summer', u'vacation', u'recreation', u'swimming'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10735468_612844045508131_614447515_n.jpg ; [(u'hotel-outdoor', 2.922191858291626), (u'sea', 2.922191858291626)]
+classes, url, path: [u'nobody', u'traditional', u'variation', u'variety', u'food', u'rice', u'order', u'cooking', u'luxury', u'background', u'selection', u'health', u'jewelry', u'group', u'wood', u'tray', u'isolated', u'decoration', u'glass', u'spoon'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10881859_732614123497641_869394729_n.jpg ; [(u'amenities', 2.0110723069907559), (u'in-room', 2.0055581320161666), (u'laundry', 1.5581698992324615)]
+classes, url, path: [u'retro', u'wood', u'frame', u'design', u'wooden', u'antique', u'vintage', u'blank', u'paper', u'decoration', u'background', u'pattern', u'style', u'old', u'page', u'wall', u'space', u'texture', u'art', u'empty'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10946239_737728766323202_22982151_n.jpg ; [(u'overall', 2.9094666838645935), (u'aesthetics', 2.9027771949768066)]
+classes, url, path: [u'sea', u'wave', u'ocean', u'surf', u'beach', u'water', u'bird', u'splash', u'nature', u'coast', u'sand', u'spray', u'storm', u'winter', u'ice', u'motion', u'gull', u'action', u'wind', u'shore'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/924154_414682048700175_1499157082_n.jpg ; [(u'hotel-outdoor', 2.9953194856643677), (u'sea', 2.9953194856643677)]
+classes, url, path: [u'cake', u'food', u'basket', u'dessert', u'fruit', u'chocolate', u'sweet', u'still life', u'cooking', u'healthy', u'banana', u'bamboo', u'snack', u'background', u'dark', u'party', u'diet', u'delicious', u'nature', u'sugar'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10748437_721508651263675_1277686157_n.jpg ; [(u'food-beverages', 2.666845648149653), (u'meal', 2.2956280325977563)]
+classes, url, path: [u'tree', u'outdoors', u'travel', u'nature', u'architecture', u'nobody', u'summer', u'garden', u'park', u'vintage', u'art', u'tourism', u'old', u'house', u'fence', u'city', u'river', u'branch', u'plant', u'building'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10725135_569779779793263_2061382463_n.jpg ; [(u'hotel-outdoor', 2.869112730026246), (u'sea', 2.869112730026246)]
+classes, url, path: [u'sea', u'water', u'landscape', u'nature', u'ocean', u'beach', u'travel', u'old', u'rock', u'coast', u'stone', u'sky', u'hill', u'boat', u'canary', u'ancient', u'view', u'road', u'sand', u'vintage'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10731422_1554597988104049_77194367_n.jpg ; [(u'hotel-outdoor', 2.9598976373672494), (u'sea', 2.9467058777809152)]
+classes, url, path: [u'nobody', u'seat', u'interior design', u'home', u'furniture', u'room', u'indoors', u'chair', u'comfort', u'cozy', u'wall', u'bench', u'wood', u'interior', u'luxury', u'house', u'contemporary', u'hotel', u'table', u'lamp'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/1599599_1512457159011165_188315621_n.jpg ; [(u'room', 2.2752218732577503), (u'clothing', 2.2306832870142488), (u'linens', 2.1349631470800219)]
+classes, url, path: [u'business', u'success', u'money', u'information', u'paper', u'glass', u'wealth', u'travel', u'finance', u'nobody', u'text', u'number', u'currency', u'savings', u'water', u'global', u'blur', u'earth', u'data', u'investment'] ; https://scontent.cdninstagram.com/hphotos-xtp1/t51.2885-15/e15/1389169_1564220160468356_685330570_n.jpg ; [(u'hotel-outdoor', 1.774586640015305), (u'sea', 1.6452530534873451)]
+classes, url, path: [u'drink', u'wine', u'beverage', u'glass', u'white wine', u'nobody', u'still life', u'coffee', u'cup', u'wine bottle', u'bar', u'cafe', u'red wine', u'bottle', u'alcohol', u'food', u'restaurant', u'winery', u'travel', u'container'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10986021_452921724861443_1557365042_n.jpg ; [(u'food-beverages', 2.9926032423973092), (u'drinks', 2.9926032423973092)]
+classes, url, path: [u'water', u'beach', u'boat', u'lagoon', u'travel', u'coast', u'watercraft', u'swimming', u'ocean', u'recreation', u'leisure', u'nobody', u'resort', u'sea', u'island', u'turquoise', u'bay', u'summer', u'coastline', u'vacation'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10254291_448081745295222_1316984928_n.jpg ; [(u'hotel-outdoor', 2.9176479578018188), (u'sea', 2.8843923807144165)]
+classes, url, path: [u'nobody', u'sweet', u'ice', u'delicious', u'glass', u'cold', u'dessert', u'cream', u'wine', u'cherry', u'juice', u'health', u'beverage', u'strawberry', u'still life', u'fruit', u'sorbet', u'sugar', u'food', u'berry'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10755779_1550982015133911_304405701_n.jpg ; [(u'food-beverages', 2.7362165451049814), (u'meal', 2.4517003366818781)]
+classes, url, path: [u'water', u'summer', u'sea', u'travel', u'calm', u'sand', u'beach', u'swimming', u'nobody', u'coast', u'ocean', u'aqua', u'creek', u'sky', u'tropical', u'sun', u'coastline', u'idyllic', u'leisure', u'sunshine'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10684357_349110431932140_659378195_n.jpg ; [(u'hotel-outdoor', 2.9681691527366647), (u'sea', 2.9681691527366647)]
+classes, url, path: [u'water', u'travel', u'sea', u'beach', u'coast', u'tropical', u'coastline', u'ocean', u'summer', u'idyllic', u'sand', u'nobody', u'island', u'sunshine', u'sky', u'vacation', u'relaxation', u'recreation', u'turquoise', u'outdoors'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10561203_678447498877518_1455495235_n.jpg ; [(u'hotel-outdoor', 2.9654251337051396), (u'sea', 2.9654251337051396)]
+classes, url, path: [u'spoon', u'nobody', u'tableware', u'variety', u'food', u'produce', u'bowl', u'place setting', u'cup', u'cutlery', u'dish', u'beverage', u'plate', u'milk', u'soup', u'table', u'container', u'still life', u'tea', u'egg'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10784793_800953696655243_2067750308_n.jpg ; [(u'food-beverages', 2.9083933830261235), (u'drinks', 2.8921920061111455)]
+classes, url, path: [u'background', u'sea', u'water', u'dirty', u'wave', u'design', u'travel', u'border', u'texture', u'paper', u'ocean', u'rough', u'worn', u'messy', u'frame', u'abstract', u'vintage', u'old', u'vacation', u'summer'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10624102_1481696558751279_1037597481_n.jpg ; [(u'hotel-outdoor', 2.8544963598251352), (u'sea', 2.8544963598251352)]
+classes, url, path: [u'food', u'closeup', u'meal', u'table', u'healthy', u'cuisine', u'dish', u'vegetable', u'egg', u'plate', u'gourmet', u'oil', u'background', u'pepper', u'carrot', u'cooking', u'meat', u'delicious', u'appetizer', u'tomato'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10747896_371081339733200_1174095410_n.jpg ; [(u'food-beverages', 2.688500053353196), (u'meal', 2.3965460999776824)]
+classes, url, path: [u'sunset', u'travel', u'evening', u'dusk', u'water', u'sky', u'vehicle', u'sea', u'pier', u'twilight', u'city', u'sunrise', u'transportation', u'watercraft', u'boat', u'light', u'beach', u'barge', u'race', u'marina'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10616752_1460449194233564_330947124_n.jpg ; [(u'hotel-outdoor', 2.4827893872216835), (u'sea', 2.4827893872216835)]
+classes, url, path: [u'indoors', u'contemporary', u'luxury', u'nobody', u'modern', u'empty', u'architecture', u'pool', u'sunshine', u'water', u'interior design', u'clean', u'home', u'design', u'swimming pool', u'hotel', u'glass', u'furniture', u'business', u'sun'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10358274_1393237630901097_1385693251_n.jpg ; [(u'hotel-outdoor', 2.9541842341423035), (u'sea', 2.6120339854667507)]
+classes, url, path: [u'tropical', u'sunshine', u'relaxation', u'travel', u'summer', u'water', u'romance', u'calm', u'idyllic', u'leisure', u'nature', u'exotic', u'sky', u'sand', u'sun', u'outdoors', u'luxury', u'men', u'tan', u'sea'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10467834_542327279229247_50792754_n.jpg ; [(u'hotel-outdoor', 2.9907178878784189), (u'sea', 2.9907178878784189)]
+classes, url, path: [u'statue', u'buddha', u'sculpture', u'meditation', u'ancient', u'zen', u'buddhism', u'spirituality', u'travel', u'stone', u'sacred', u'temple', u'marble', u'peace', u'art', u'holy', u'religion', u'culture', u'worship', u'god'] ; https://scontent.cdninstagram.com/hphotos-xtf1/t51.2885-15/e15/10808725_1513541592256705_1020147868_n.jpg ; [(u'overall', 2.2118031477535665), (u'aesthetics', 2.1948203274646643)]
+classes, url, path: [u'sunset', u'pier', u'water', u'sun', u'sunrise', u'evening', u'beach', u'morning', u'sea', u'dusk', u'reflection', u'sky', u'silhouette', u'ocean', u'dawn', u'landscape', u'bridge', u'sol', u'jetty', u'night'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10735265_1683033888589089_1442948254_n.jpg ; [(u'hotel-outdoor', 2.9648842811584482), (u'sea', 2.9648842811584482)]
+classes, url, path: [u'water', u'sun', u'summer', u'sea', u'tropical', u'sand', u'nature', u'nobody', u'sky', u'relaxation', u'aqua', u'sunshine', u'leisure', u'island', u'idyllic', u'coast', u'ocean', u'dream', u'beach', u'exotic'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10665401_614147052041853_1781962293_n.jpg ; [(u'hotel-outdoor', 2.9544479250907911), (u'sea', 2.9544479250907911)]
+classes, url, path: [u'water', u'travel', u'nobody', u'outdoors', u'tropical', u'coast', u'coastline', u'sea', u'beach', u'surf', u'sand', u'ocean', u'sky', u'sunshine', u'summer', u'idyllic', u'island', u'rock', u'recreation', u'exotic'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/914384_628676377229848_847816380_n.jpg ; [(u'hotel-outdoor', 2.962641954421998), (u'sea', 2.962641954421998)]
+classes, url, path: [u'beach', u'sand', u'surf', u'sea', u'water', u'texture', u'abstract', u'nature', u'background', u'summer', u'paper', u'desert', u'love', u'ocean', u'wave', u'travel', u'art', u'sun', u'coast', u'people'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10723685_1501631816757854_2118325680_n.jpg ; [(u'hotel-outdoor', 2.9650928378105172), (u'sea', 2.9650928378105172)]
+classes, url, path: [u'fire', u'fireworks', u'light', u'night', u'celebration', u'festival', u'nobody', u'dark', u'travel', u'ceremony', u'party', u'people', u'christmas', u'illuminated', u'reflection', u'color', u'evening', u'flash', u'decoration', u'explosion'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10598240_1478287765746311_1842848804_n.jpg ; [(u'amenities', 2.5895604204933371), (u'pre-room', 2.5895604204933371), (u'reception', 2.5895604204933371)]
+classes, url, path: [u'beach', u'palm', u'ocean', u'resort', u'sea', u'water', u'travel', u'vacation', u'tropical', u'sand', u'coast', u'island', u'hotel', u'boat', u'paradise', u'pool', u'umbrella', u'summer', u'hut', u'sun'] ; https://scontent.cdninstagram.com/hphotos-xpt1/t51.2885-15/e15/10549727_321835877981216_655370243_n.jpg ; [(u'hotel-outdoor', 2.9929482340812679), (u'sea', 2.9910774230957031)]
+classes, url, path: [u'water', u'bikini', u'swimming', u'pool', u'wet', u'tan', u'resort', u'leisure', u'travel', u'goggles', u'vacation', u'sea', u'suntan', u'swimmer', u'recreation', u'ocean', u'swimming pool', u'swimsuit', u'relaxation', u'fun'] ; https://scontent.cdninstagram.com/hphotos-xta1/t51.2885-15/e15/10326562_1382413552019177_859365050_n.jpg ; [(u'hotel-outdoor', 2.925588846206665), (u'pool', 2.925588846206665)]
+classes, url, path: [u'food', u'healthy', u'health', u'nobody', u'plate', u'fruit', u'table', u'milk', u'nutrition', u'breakfast', u'still life', u'diet', u'muesli', u'spoon', u'jam', u'meal', u'drink', u'traditional', u'bread', u'granola'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10518023_1438158573112779_999012739_n.jpg ; [(u'food-beverages', 2.8345341086387634), (u'drinks', 2.4753721602468293)]
+classes, url, path: [u'store', u'window', u'exhibition', u'shelf', u'shopping', u'market', u'display', u'fair', u'retail', u'many', u'nobody', u'show', u'shelves', u'house', u'sale', u'merchandise', u'beer', u'walk', u'abundance', u'street'] ; https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e15/10848451_377649239079869_1791123610_n.jpg ; [(u'amenities', 2.1839483613502204), (u'post-room', 2.1839483613502204), (u'checkout', 2.1839483613502204)]
+classes, url, path: [u'water', u'travel', u'nobody', u'tree', u'outdoors', u'summer', u'sky', u'landscape', u'lake', u'beach', u'nature', u'scenic', u'ocean', u'sea', u'island', u'tropical', u'river', u'grass', u'recreation', u'sunshine'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10540448_1550898138459105_1026812446_n.jpg ; [(u'hotel-outdoor', 2.943587183952332), (u'sea', 2.9271581768989567)]
+classes, url, path: [u'dress', u'people', u'portrait', u'women', u'street', u'girl', u'fashion', u'colour', u'woman', u'jewelry', u'color', u'editorial', u'house', u'skirt', u'door', u'model', u'vintage', u'architecture', u'children', u'lady'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10731588_1498980117038097_893272458_n.jpg ; [(u'overall', 2.0670264710032713), (u'aesthetics', 2.0670264710032713)]
+classes, url, path: [u'food', u'lunch', u'dinner', u'meal', u'fish', u'plate', u'snack', u'still life', u'restaurant', u'tuna', u'appetizer', u'cuisine', u'vegetable', u'dish', u'pepper', u'salad', u'gourmet', u'seafood', u'cheese', u'lime'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10832166_926329974051805_1779564316_n.jpg ; [(u'food-beverages', 2.9338706731796265), (u'meal', 2.4476016903448423)]
+classes, url, path: [u'beverage', u'food', u'ice', u'tray', u'glass', u'color', u'plate', u'cold', u'alcohol', u'sugar', u'table', u'nobody', u'summer', u'plastic', u'restaurant', u'sweet', u'wine', u'background', u'appetizer', u'dessert'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/917139_319523804869404_1859868958_n.jpg ; [(u'food-beverages', 2.8372791409492497), (u'drinks', 2.5132810315707892)]
+classes, url, path: [u'flower', u'garden', u'summer', u'flora', u'nature', u'plant', u'blossom', u'color', u'floral', u'tree', u'bloom', u'park', u'grass', u'outdoors', u'romance', u'botany', u'botanical', u'bouquet', u'love', u'wedding'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10727781_791575334217963_191843885_n.jpg ; [(u'hotel-outdoor', 2.954835534095765), (u'sea', 2.9215457439422616)]
+classes, url, path: [u'beverage', u'candle', u'nobody', u'wine', u'spirit', u'wood', u'liquor', u'food', u'still life', u'cup', u'whiskey', u'celebration', u'decoration', u'handmade', u'alcohol', u'liquid', u'christmas', u'glass', u'party', u'vintage'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10362152_343726129117337_2082817971_n.jpg ; [(u'food-beverages', 2.9633548259735116), (u'drinks', 2.9633548259735116)]
+classes, url, path: [u'beach', u'coast', u'ocean', u'water', u'travel', u'vacation', u'sea', u'island', u'summer', u'coastline', u'relaxation', u'resort', u'tropical', u'idyllic', u'sand', u'leisure', u'sky', u'nobody', u'seascape', u'nature'] ; https://scontent.cdninstagram.com/hphotos-xpt1/t51.2885-15/e15/1172159_1383656425216731_750010516_n.jpg ; [(u'hotel-outdoor', 2.9839620590209961), (u'sea', 2.9839620590209961)]
+classes, url, path: [u'wedding', u'bride', u'bouquet', u'dress', u'flower', u'luxury', u'veil', u'elegant', u'bridal', u'gown', u'marriage', u'girl', u'groom', u'romantic', u'people', u'eyes', u'beautiful', u'fashion', u'window', u'sexy'] ; https://scontent.cdninstagram.com/hphotos-xat1/t51.2885-15/e15/10624164_516596461818877_1378901777_n.jpg ; [(u'room', 2.1054215497341513), (u'clothing', 2.0361329286899741), (u'curtains', 1.8545961798873161)]
+classes, url, path: [u'island', u'house', u'nobody', u'travel', u'bungalow', u'flower', u'architecture', u'garden', u'path', u'summer', u'tropical', u'beach', u'vacation', u'yard', u'shade', u'resort', u'courtyard', u'luxury', u'wall', u'building'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10413136_250879161765989_872649621_n.jpg ; [(u'hotel-outdoor', 2.8680550456047063), (u'sea', 2.8312160372734074)]
+classes, url, path: [u'sea', u'ocean', u'beach', u'coast', u'water', u'island', u'travel', u'lighthouse', u'coastline', u'architecture', u'nobody', u'landscape', u'seascape', u'house', u'vacation', u'sky', u'summer', u'tower', u'outdoors', u'tourism'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/928488_224683014395780_921242594_n.jpg ; [(u'hotel-outdoor', 2.9886419773101807), (u'sea', 2.9886419773101807)]
+classes, url, path: [u'group', u'people', u'portrait', u'adult', u'men', u'musician', u'bassist', u'music', u'women', u'facial expression', u'eyeglasses', u'five', u'performance', u'several', u'singer', u'guitarist', u'drummer', u'pants', u'night', u'three'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10891104_315107678698830_1544775617_n.jpg ; [(u'room', 1.7927247194455471), (u'clothing', 1.7584486400435209), (u'bathrobe', 1.6862691601740796)]
+classes, url, path: [u'street', u'people', u'family', u'city', u'vintage', u'color', u'child', u'tourist', u'man', u'transportation', u'travel', u'bus', u'vacation', u'tourism', u'art', u'road', u'car', u'children', u'wedding', u'fun'] ; https://scontent.cdninstagram.com/hphotos-xpt1/t51.2885-15/e15/1172843_706117719464009_2050121640_n.jpg ; [(u'overall', 2.0750573569197499), (u'aesthetics', 2.0750573569197499)]
+classes, url, path: [u'nude', u'portrait', u'sexy', u'model', u'girl', u'women', u'hair', u'erotic', u'woman', u'fashion', u'pretty', u'beautiful', u'glamour', u'naked', u'window', u'thin', u'topless', u'adult', u'young', u'blond'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10995143_1075105159182748_390515660_n.jpg ; [(u'room', 2.0566272853691974), (u'clothing', 2.0566272853691974), (u'curtains', 1.7066507989255573)]
+classes, url, path: [u'sunset', u'backlit', u'nobody', u'sunrise', u'reflection', u'tree', u'lake', u'twilight', u'landscape', u'evening', u'water', u'silhouette', u'outdoors', u'travel', u'recreation', u'riding', u'daytime', u'fine art', u'dawn', u'leisure'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10549729_732901686773512_179650162_n.jpg ; [(u'hotel-outdoor', 2.9446570873260498), (u'pool', 2.5746013601679452)]
+classes, url, path: [u'water', u'beach', u'sand', u'summer', u'coast', u'travel', u'tropical', u'ocean', u'relaxation', u'sea', u'sunshine', u'sky', u'nobody', u'vacation', u'landscape', u'idyllic', u'seascape', u'exotic', u'horizon', u'nature'] ; https://scontent.cdninstagram.com/hphotos-xft1/t51.2885-15/e15/10544008_1487224171495171_1519118975_n.jpg ; [(u'hotel-outdoor', 2.9733013510704049), (u'sea', 2.9733013510704049)]
+classes, url, path: [u'portrait', u'people', u'girl', u'women', u'color', u'woman', u'room', u'fashion', u'relaxation', u'sitting', u'lifestyle', u'adult', u'one', u'book', u'clothing', u'indoors', u'leisure', u'model', u'table', u'brunette'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10467818_314603258705148_1443456277_n.jpg ; [(u'room', 1.7376162002980868), (u'clothing', 1.6924521285849208), (u'bathrobe', 1.5691371360117898)]
+classes, url, path: [u'ocean', u'water', u'travel', u'tree', u'beach', u'tropical', u'coast', u'sea', u'leisure', u'nobody', u'island', u'hotel', u'daytime', u'chair', u'resort', u'recreation', u'vacation', u'watercraft', u'transportation', u'boat'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/929027_206096122928450_1409628686_n.jpg ; [(u'hotel-outdoor', 2.9477779865264893), (u'sea', 2.9477779865264893)]
+classes, url, path: [u'water', u'watercraft', u'vehicle', u'nobody', u'boat', u'recreation', u'transportation', u'travel', u'tree', u'summer', u'lake', u'river', u'beach', u'sea', u'canoe', u'ocean', u'coast', u'swimming pool', u'two', u'indochina'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/1171628_177132435823277_722723315_n.jpg ; [(u'hotel-outdoor', 2.8621440529823308), (u'sea', 2.8386098146438603)]
+classes, url, path: [u'market', u'produce', u'merchant', u'commerce', u'people', u'shopping', u'men', u'women', u'adult', u'root vegetable', u'food', u'store', u'basket', u'stall', u'retail', u'one', u'chef', u'cooking', u'politics', u'travel'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10554200_610106989104003_535120075_n.jpg ; [(u'food-beverages', 2.2566234593118057), (u'meal', 2.0263314015056157)]
+classes, url, path: [u'pier', u'beach', u'water', u'boardwalk', u'sea', u'travel', u'summer', u'jetty', u'sunrise', u'ocean', u'sunset', u'sky', u'dock', u'island', u'recreation', u'boat', u'landscape', u'peace', u'bridge', u'sun'] ; https://scontent.cdninstagram.com/hphotos-xfa1/outbound-distilleryimage5/t0.0-17/OBPTH/0321c158a46011e385a40e4cbd071739_8.jpg ; [(u'hotel-outdoor', 2.8845177888870248), (u'sea', 2.8845177888870248)]
+classes, url, path: [u'resort', u'hotel', u'exotic', u'leisure', u'umbrella', u'ocean', u'island', u'vacation', u'tropical', u'luxury', u'beach', u'parasol', u'villa', u'nobody', u'relaxation', u'chair', u'recreation', u'pool', u'travel', u'poolside'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11376463_1592493937693127_148735908_n.jpg ; [(u'hotel-outdoor', 2.9889543056488033), (u'sea', 2.9831268787384033)]
+classes, url, path: [u'people', u'sunset', u'water', u'winter', u'adult', u'light', u'ice', u'street', u'snow', u'travel', u'men', u'group', u'man', u'night', u'industry', u'beach', u'evening', u'landscape', u'girl', u'sun'] ; https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/1598539_446184682176575_1052577874_n.jpg ; [(u'hotel-outdoor', 2.7059831023216252), (u'sea', 2.5004202660100603)]
+classes, url, path: [u'wedding', u'people', u'festival', u'bride', u'group', u'clothing', u'groom', u'celebration', u'marriage', u'fashion', u'performance', u'ceremony', u'women', u'fair', u'costume', u'indochina', u'family', u'religion', u'pride', u'editorial'] ; https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/10520333_1442606279335244_1477808710_n.jpg ; [(u'amenities', 2.1061422292510641), (u'pre-room', 2.1061422292510641), (u'reception', 2.1061422292510641)]
+classes, url, path: [u'mint', u'food', u'ingredients', u'ice', u'herb', u'juice', u'vegetable', u'beverage', u'leaf', u'nobody', u'spice', u'peppermint', u'fruit', u'lime', u'tea', u'leaves', u'garnish', u'cold', u'health', u'tropical'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10326522_840262726001594_2069616247_n.jpg ; [(u'food-beverages', 2.7228829665255816), (u'meal', 2.4688843136750629)]
+classes, url, path: [u'people', u'beach', u'vacation', u'relaxation', u'travel', u'leisure', u'men', u'recreation', u'women', u'two', u'seat', u'girl', u'sitting', u'adult', u'water', u'love', u'portrait', u'summer', u'bed', u'three'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/891370_668695673183448_485737153_n.jpg ; [(u'hotel-outdoor', 2.568763186011791), (u'sea', 2.568763186011791)]
+classes, url, path: [u'nobody', u'outdoors', u'wood', u'travel', u'summer', u'tropical', u'gazebo', u'sky', u'water', u'shrine', u'architecture', u'nature', u'table', u'sunset', u'leisure', u'hut', u'relaxation', u'illuminated', u'sun', u'tourism'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11327179_1108282315854115_1094232441_n.jpg ; [(u'hotel-outdoor', 2.950931310653687), (u'sea', 2.9383753538131723)]
+classes, url, path: [u'pool', u'resort', u'hotel', u'leisure', u'water', u'swimming', u'villa', u'aqua', u'vacation', u'travel', u'mythology', u'rest', u'exotic', u'architecture', u'relaxation', u'summer', u'ocean', u'sun', u'sea', u'art'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11420714_1451020601859860_488432091_n.jpg ; [(u'hotel-outdoor', 2.9977777004241943), (u'pool', 2.9977777004241943)]
+classes, url, path: [u'sunset', u'sunrise', u'water', u'beach', u'landscape', u'dusk', u'sun', u'seascape', u'evening', u'sea', u'pier', u'ocean', u'dawn', u'sky', u'bridge', u'night', u'jetty', u'cloud', u'river', u'city'] ; https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11328273_851167851637582_388736731_n.jpg ; [(u'hotel-outdoor', 2.9109674692153935), (u'sea', 2.8831652402877816)]
+classes, url, path: [u'portrait', u'eyes', u'people', u'girl', u'face', u'fashion', u'model', u'woman', u'women', u'lips', u'beautiful', u'skin', u'glamour', u'veil', u'studio', u'smile', u'adult', u'makeup', u'cute', u'one'] ; https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10809735_1426404164351495_570886160_n.jpg ; [(u'overall', 1.6372303048507852), (u'aesthetics', 1.6372303048507852)]
+classes, url, path: [u'water', u'pool', u'nature', u'vacation', u'patio', u'hotel', u'summer', u'flower', u'luxury', u'travel', u'tropical', u'leisure', u'tree', u'plant', u'boat', u'private', u'nobody', u'resort', u'river', u'aqua'] ; https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/11272763_835000753249201_953182740_n.jpg ; [(u'hotel-outdoor', 2.9328313469886789), (u'sea', 2.8760306835174569)]

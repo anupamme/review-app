@@ -17,7 +17,7 @@ import sys
 
 attribute_tree_file = 'keywords-filled.json'
 dataFile = "review-lines.txt"
-model_file = '../word2vec-all/word2vec/trunk/vectors-phrase.bin'
+model_file = '../code/word2vec-all/word2vec/trunk/vectors-phrase.bin'
 
 attribute_tree = None
 model = None
@@ -36,7 +36,7 @@ def findMaxDistance(tag, keywords):
         try:
             distance = model.similarity(tag, word)
         except KeyError:
-            print 'Key Error for key: ' + tag
+            #print 'Key Error for key: ' + tag
             break
         if distance > max_distance:
             max_distance = distance

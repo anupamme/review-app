@@ -4,14 +4,14 @@ from gensim.models import word2vec
 
 '''
 read the attribute tree.
-traverse to leaves. 
+traverse to leaves.
 fill the keywords at the leaf level: use word2vec to find nearest words. And filter which are not nouns.
 Then traverse up and percolate those keywords one level up. Till you reach root node.
 output the populated tree.
 '''
 
 tree_file = 'attribute-tree.json'
-model_file = '../word2vec-all/word2vec/trunk/vectors-phrase.bin'
+model_file = '../code/word2vec-all/word2vec/trunk/vectors-phrase.bin'
 model = None
 pickFirst = lambda (x,y): x
     
