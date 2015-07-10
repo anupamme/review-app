@@ -21,19 +21,27 @@
                 },
                 "aesthetics": {
                     "next": {},
-                    "keywords": ["aesthetic", "design", "architecture", "conceptual", "wabi_sabi", "geometry", "geometric_forms", "sculptural", "creativity", "style", "midcentury", "visual", "art", "artistic", "sensibility"]
+                    "keywords": ["aesthetic", "design", "architecture", "conceptual", "wabi_sabi", "geometry", "geometric_forms", "sculptural", "creativity", "style", "midcentury", "visual", "art", "artistic", "sensibility", "landscape", "building", "gate", "interior", "art", "piano", "interior design", "indoor", "chandelier", "luxury", "ceiling", "lobby", "light", "furniture", "library", "seat", "decoration", "wallpaper", "illustration", "palace", "sculpture", "zen", "nature", "wood", "bamboo", "outdoors", "indoors", "texture", "antique", "vintage", "dirt", "mud", "material", "traditional"]
                 },
                 "safety": {
                     "next": {},
                     "keywords": ["safety", "safety_measures", "safety_standards", "safety_protocols", "public_safety", "safety_procedures", "safety_concerns", "safety_improvements", "unsafe", "security", "safe", "safety_requirements"]
+                },
+                "culture": {
+                    "next": {},
+                    "keywords": ["loom", "weaver", "artisan", "skill", "thread", "culture", "religion", "entertainment", "famous", "event", "fame", "wedding", "music", "art", "colour", "temple", "church", "buddhism", "worship"]
                 }
             },
             "keywords": ["overall"]
         },
-        "amenities": {
+        "services": {
             "next": {
                 "pre-room": {
                     "next": {
+                        "pickup": {
+                            "next": {},
+                            "keywords": []
+                        },
                         "welcome": {
                             "next": {},
                             "keywords": ["welcoming", "look_forward", "delighted", "invite", "warm_welcome", "greeted", "long_overdue", "pleased", "appreciative", "inviting", "enjoy", "invites", "warmly_welcomed", "applaud", "wholehearted", "heartening", "warmly_welcome", "good_afternoon", "good_evening", "thrilled", "grateful", "welcoming_visitors"]
@@ -86,17 +94,17 @@
             "next": {
                 "furniture": {
                     "next": {},
-                    "keywords": ["bed", "sofa"]
+                    "keywords": ["bed", "sofa", "headboard", "furniture", "carpet", "floor", "interior", "carpet", "ceiling", "indoor", "mansion", "rug", "seat", "wood", "interior design", "shelf", "table", "desk"]
                 },
                 "appliances": {
                     "next": {},
-                    "keywords": []
+                    "keywords": ["lamp", "television", "refrigerator", "fridge"]
                 },
                 "clothing": {
                     "next": {
                         "linens": {
                             "next": {},
-                            "keywords": []
+                            "keywords": ["sheet", "linen", "pillow"]
                         },
                         "curtains": {
                             "next": {},
@@ -129,10 +137,6 @@
             },
             "keywords": []
         },
-        "services": {
-            "next": {},
-            "keywords": []
-        },
         "others": {
             "next": {},
             "keywords": []
@@ -141,19 +145,19 @@
             "next": {
                 "meal": {
                     "next": {},
-                    "keywords": ["breakfast", "cereals", "breads", "cuts", "fruits", "yoghurt", "coffee", "buffet", "eggs", "sausage", "bacon", "spread", "apple", "banana", "strawberry", "berry", "produce", "grape", "vegetable", "pot"]
+                    "keywords": ["breakfast", "cereals", "breads", "cuts", "fruits", "yoghurt", "coffee", "buffet", "eggs", "sausage", "bacon", "spread", "apple", "banana", "strawberry", "berry", "produce", "grape", "vegetable", "pot", "fish", "lobster", "seafood", "food", "meal", "snack", "sauce", "rice", "dish"]
                 },
                 "food-decor": {
                     "next": {},
-                    "keywords": ["smell", "assortment", "culinary", "gourmet", "homemade"]
+                    "keywords": ["smell", "assortment", "culinary", "gourmet", "homemade", "healthy"]
                 },
                 "drinks": {
                     "next": {},
-                    "keywords": ["drink", "beer", "cocktails", "snacks", "beverage", "iced_teas", "wine", "bloody_mary", "vodka", "mojito", "coffee", "soda", "soft_drinks", "booze", "fruit_juice", "ounce_bottle", "free_refills", "mixed_drinks", "smoothie", "vitamin_water", "milk", "cup"]
+                    "keywords": ["drink", "beer", "cocktails", "snacks", "beverage", "iced_teas", "wine", "bloody_mary", "vodka", "mojito", "coffee", "soda", "soft_drinks", "booze", "fruit_juice", "ounce_bottle", "free_refills", "mixed_drinks", "smoothie", "vitamin_water", "milk", "cup", "porcelain", "vase", "jug"]
                 },
                 "restaurant": {
                     "next": {},
-                    "keywords": []
+                    "keywords": ["restaurant", "lunch", "dinner", "chef", "cooking", "waiter", "dining", "cafe", "indoor", "service"]
                 },
                 "bar": {
                     "next": {},
@@ -183,7 +187,7 @@
             },
             "keywords": []
         },
-        "hotel-outdoor": {
+        "amenities": {
             "next": {
                 "patio": {
                     "next": {},
@@ -191,30 +195,89 @@
                 },
                 "garden": {
                     "next": {},
-                    "keywords": ["gazebo", "flower", "plant"]
+                    "keywords": ["gazebo", "flower", "plant", "garden", "park", "tree", "shade", "leaf", "foliage", "farm", "soil", "leaves", "nature", "grass", "squirrel", "frangipani", "plumeria", "floral", "blossom"]
                 },
                 "pool": {
                     "next": {},
-                    "keywords": ["turquoise", "canal", "lake", "river", "pool", "poolside", "swimming_pool", "swimming", "resort", "reflection"]
+                    "keywords": ["turquoise", "canal", "lake", "river", "pool", "poolside", "swimming_pool", "swimming", "resort", "reflection", "lake", "river", "water", "duck", "pond", "fish"]
                 },
-                "sea": {
-                    "next": {},
-                    "keywords": ["sunshine", "summer", "tropical", "beach", "idyllic", "aqua", "sand", "nature", "sun", "tree", "coastline", "ocean", "sea"]
-                },
-                "forest": {
-                    "next": {},
-                    "keywords": ["trees", "forest", "grass"]
-                },
-                "mountains": {
+                "entrance" : {
                     "next": {},
                     "keywords": []
                 },
-                "activities": {
+                "shopping": {
                     "next": {},
-                    "keywords": ["snorkeling", "tour", "adventure", "safari"]
+                    "keywords": ["shopping", "store", "market", "stall", "display", "retail", "trade", "basket", "commerce", "bazaar", "seller", "trader", "jewellery", "ring", "crystal", "beads", "market", "merchandise", "display"]
+                },
+                "gym": {
+                    "next": {},
+                    "keywords": ["equipments", "train", "carpet", "steel", "weights"]
+                },
+                "banquet": {
+                    "next": {},
+                    "keywords": ["banquet", "dining", "tableware", "carpet", "reception", "seat", "theater"]
+                },
+                "conference": {
+                    "next": {},
+                    "keywords": ["education", "group", "table", "school", "desk", "classroom", "leader", "discussion", "meeting", "indoor", "furniture"]
+                },
+                "recreation": {
+                    "next": {},
+                    "keywords": ["recreation", "people", "group", "festival", "audience", "clothing", "dancing", "music", "concert", "dancer", "performance", "crowd", "flag", "wedding", "band", "drum", "picnic"]
                 }
             },
             "keywords": []
+        },
+        "location": {
+            "next": {
+                "sea": {
+                    "next": {},
+                    "keywords": ["sunshine", "summer", "beach", "idyllic", "aqua", "sand", "nature", "sun", "tree", "coastline", "ocean", "sea"]
+                    },
+                "forest": {
+                    "next": {},
+                    "keywords": ["tree", "forest", "wildlife", "animal", "fur", "nut", "monkey", "lemur", "zoo", "avian", "eagle"]
+                    },
+                "mountains": {
+                    "next": {},
+                    "keywords": []
+                    },
+                "airport": {
+                    "next": {},
+                    "keywords": []
+                },
+                "station": {
+                    "next": {},
+                    "keywords": []
+                }
+            },
+            "keywords": []
+        },
+        "hotel-outside": {
+                "next": {
+                    "nightlife": {
+                        "next": {},
+                        "keywords": ["night", "street", "city", "illuminated", "dark"]
+                    },
+                    "activities": {
+                        "next": {
+                            "snorkeling": {
+                                "next": {},
+                                "keywords": ["snorkeling", "underwater", "diving", ""]
+                            },
+                            "shopping": {
+                                "next": {},
+                                "keywords": ["shopping", "store", "market", "stall", "display", "retail", "trade", "basket", "commerce", "bazaar", "seller", "trader", "jewellery", "ring", "crystal", "beads", "market", "merchandise", "display"]
+                            },
+                            "others" :{
+                                "next": {},
+                                "keywords": ["tour", "adventure", "safari"]
+                            }
+                        },
+                        "keywords": []
+                    }
+                },
+                "keywords": []
         }
     },
     "keywords": []

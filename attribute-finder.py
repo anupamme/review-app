@@ -52,7 +52,7 @@ poolMeta = {'nounList': ['pool', 'swimming', 'spa', 'infinity', 'jacuzzi', 'wet'
 reverseNounMap = {}
 reverseAdjMap = {}
 
-modelFile = "../word2vec-all/word2vec/trunk/vectors-phrase.bin"
+modelFile = "../code/word2vec-all/word2vec/trunk/vectors-phrase.bin"
 possibleNounTags = ['NN', 'NNP', 'NNS', 'NNPS']
 possibleAdjTags = ['JJ', 'JJR', 'JJS', 'RB', 'RBS', 'RBR']
 
@@ -216,6 +216,12 @@ def buildReverseMaps():
     for val in adjArr:
         reverseAdjMap[val] = "pool"
 
+def checkIfDone(user_controlled, user_input, reviewArr, current_count):
+    if user_controlled:
+        return user_input == 'stop'
+    else:
+        return (len(reviewArr) == current_count + 1)
+        
 if __name__ == "__main__":
     loadModelFile()
     foodNounCloud = buildWordCloud(foodMeta['nounList'])
@@ -249,18 +255,38 @@ if __name__ == "__main__":
     poolNounCloud = buildWordCloud(poolMeta['nounList'])
     poolAdjCloud = buildWordCloud(poolMeta['descList'])
     buildReverseMaps()
-    user_input = raw_input("Some input please: ")
-    while user_input != 'stop':
-        review = user_input
+    user_controlled = False
+    reviewArr = None
+    user_input = None
+    if len(sys.argv) == 1:
+        user_controlled = True
+        user_input = raw_input("Some input please: ")
+    else:
+        reviewArr = json.loads(open(sys.argv[1], 'r').read())
+    
+    count = 0
+    while not checkIfDone(user_controlled, user_input, reviewArr, count):
+        if user_controlled:
+            review = user_input
+        else:
+            review = reviewArr[count]
+            count = count + 1
+
         review = review.encode('utf-8')
+        print '\nsentence: ' + review
         tokens = word_tokenize(review)
         try:
             pos_tags = nltk.pos_tag(tokens)
         except UnicodeDecodeError:
-            print 'cannot decode: ' + str(newTokens)
-        print 'pos tags: ' + str(pos_tags)
+            print 'cannot decode: ' + str(tokens)
+        if len(pos_tags) == 0:
+            print 'pos tags are empty for: ' + review
+            continue
+        #print 'pos tags: ' + str(pos_tags)
         res_noun = []
         res_adj = []
+        noun_tags = []
+        adj_tags = []
         for word,pos in pos_tags:
             word = word.lower()
             # experimental to decide on prp.
@@ -270,94 +296,94 @@ if __name__ == "__main__":
                 res_noun.append((max_val[0], max_match, max_val[1]))
                 continue
             # nounTag is used to determine attribute.
-            for nounTag in possibleNounTags:
-                if nounTag == pos:
-                    print 'checking for noun word: ' + word
-                    try: 
-                        similar_words = model.most_similar(word)
-                    except KeyError:
-                        print('not found word: ' + word)
-                        if pos == 'NNP':
-                            max_match = 'service'
-                            max_val = [0.4, (word, 'service', 'service')]
-                            res_noun.append((max_val[0], max_match, max_val[1]))
-                        continue
-                    max_match, max_val = findMaxMatch(word, similar_words, foodNounCloud)
-                    res_noun.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, serviceNounCloud)
-                    res_noun.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, viewNounCloud)
-                    res_noun.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, locNounCloud)
-                    res_noun.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, overallNounCloud)
-                    res_noun.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, roomNounCloud)
-                    res_noun.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, feelNounCloud)
-                    res_noun.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, wifiNounCloud)
-                    res_noun.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, pickupNounCloud)
-                    res_noun.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, sleepNounCloud)
-                    res_noun.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, priceNounCloud)
-                    res_noun.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, purposeNounCloud)
-                    res_noun.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, breakfastNounCloud)
-                    res_noun.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, bathroomNounCloud)
-                    res_noun.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, poolNounCloud)
-                    res_noun.append((max_val[0], max_match, max_val[1]))
+            if pos in possibleNounTags:
+                noun_tags.append(word)
+                try: 
+                    similar_words = model.most_similar(word)
+                except KeyError:
+                    print('not found word: ' + word)
+                    if pos == 'NNP':
+                        max_match = 'service'
+                        max_val = [0.4, (word, 'service', 'service')]
+                        res_noun.append((max_val[0], max_match, max_val[1]))
+                    continue
+                max_match, max_val = findMaxMatch(word, similar_words, foodNounCloud)
+                res_noun.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, serviceNounCloud)
+                res_noun.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, viewNounCloud)
+                res_noun.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, locNounCloud)
+                res_noun.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, overallNounCloud)
+                res_noun.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, roomNounCloud)
+                res_noun.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, feelNounCloud)
+                res_noun.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, wifiNounCloud)
+                res_noun.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, pickupNounCloud)
+                res_noun.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, sleepNounCloud)
+                res_noun.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, priceNounCloud)
+                res_noun.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, purposeNounCloud)
+                res_noun.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, breakfastNounCloud)
+                res_noun.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, bathroomNounCloud)
+                res_noun.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, poolNounCloud)
+                res_noun.append((max_val[0], max_match, max_val[1]))
             # adjTag is used to figure why that attribute is selected.
-            for adjTag in possibleAdjTags:
-                if adjTag == pos:
-                    print 'checking for adj word: ' + word
-                    try: 
-                        similar_words = model.most_similar(word)
-                    except KeyError:
-                        print('not found word: ' + word)
-                        continue
-                    max_match, max_val = findMaxMatch(word, similar_words, foodAdjCloud)
-                    res_adj.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, serviceAdjCloud)
-                    res_adj.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, viewAdjCloud)
-                    res_adj.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, locAdjCloud)
-                    res_adj.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, overallAdjCloud)
-                    res_adj.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, roomAdjCloud)
-                    res_adj.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, feelAdjCloud)
-                    res_adj.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, wifiAdjCloud)
-                    res_adj.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, pickupAdjCloud)
-                    res_adj.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, sleepAdjCloud)
-                    res_adj.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, priceAdjCloud)
-                    res_adj.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, purposeAdjCloud)
-                    res_adj.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, breakfastAdjCloud)
-                    res_adj.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, bathroomAdjCloud)
-                    res_adj.append((max_val[0], max_match, max_val[1]))
-                    max_match, max_val = findMaxMatch(word, similar_words, poolAdjCloud)
-                    res_adj.append((max_val[0], max_match, max_val[1]))
+            if pos in possibleAdjTags:
+                adj_tags.append(word)
+                try: 
+                    similar_words = model.most_similar(word)
+                except KeyError:
+                    print('not found word: ' + word)
+                    continue
+                max_match, max_val = findMaxMatch(word, similar_words, foodAdjCloud)
+                res_adj.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, serviceAdjCloud)
+                res_adj.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, viewAdjCloud)
+                res_adj.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, locAdjCloud)
+                res_adj.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, overallAdjCloud)
+                res_adj.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, roomAdjCloud)
+                res_adj.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, feelAdjCloud)
+                res_adj.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, wifiAdjCloud)
+                res_adj.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, pickupAdjCloud)
+                res_adj.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, sleepAdjCloud)
+                res_adj.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, priceAdjCloud)
+                res_adj.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, purposeAdjCloud)
+                res_adj.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, breakfastAdjCloud)
+                res_adj.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, bathroomAdjCloud)
+                res_adj.append((max_val[0], max_match, max_val[1]))
+                max_match, max_val = findMaxMatch(word, similar_words, poolAdjCloud)
+                res_adj.append((max_val[0], max_match, max_val[1]))
 
         sorted_res_noun = sorted(res_noun, key=operator.itemgetter(0), reverse=True)
-    #    if len(sorted_res_noun) == 0:
-    #        continue
+        if len(sorted_res_noun) == 0:
+            continue
         top_noun_data = sorted_res_noun[0]
         top_noun = top_noun_data[1]
         top_noun_root = reverseNounMap[top_noun]
+        print 'possible nouns: ' + str(noun_tags)
+        print 'possible adjectives: ' + str(adj_tags)
         print 'top noun root and val: ' + top_noun_root + ' : ' + str(top_noun_data)
         sorted_res_adj = sorted(res_adj, key=operator.itemgetter(0), reverse=True)
         for val in sorted_res_adj:
@@ -367,4 +393,5 @@ if __name__ == "__main__":
             if top_noun_root == adj_val_root:
                 print 'Found! adj val: ' + str(val)
                 break
-        user_input = raw_input("Some input please: ")
+        if user_controlled:
+            user_input = raw_input("Some input please: ")

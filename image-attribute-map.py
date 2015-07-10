@@ -47,7 +47,7 @@ def findMaxForEachSource(classes, probs, keywords):
         result.append((source_word, source_prob*interim[0]))
     return result
 
-    
+
 def findBestCategory(classes, probs, attribute_seed, path):
     nextNode = attribute_seed['next']
     if nextNode == {}:
@@ -68,13 +68,13 @@ def findBestCategory(classes, probs, attribute_seed, path):
         winner_node, winner_val = result_items[index]
     path.append(result_items[index])
     return findBestCategory(classes, probs, nextNode[winner_node], path)
-        
+
 
 if __name__ == '__main__':
     loadModelFile()
     attribute_seed = json.loads(open(sys.argv[1], 'r').read())
     image_tree = json.loads(open(sys.argv[2], 'r').read())
-    
+    output = []
     for index in image_tree:
         tree = image_tree[index]
         for res in tree['results']:
@@ -84,4 +84,11 @@ if __name__ == '__main__':
             # now find the perfect category.
             path = []
             findBestCategory(classes, probs, attribute_seed['root'], path)
-            print 'classes, url, path: ' + str(classes) + ' ; ' + url + ' ; ' + str(path)
+            element = {}
+            element['classes'] = classes
+            element['url'] = url
+            element['path'] = path
+            output.append(element)
+    f = open('output.json', 'w')
+    f.write(json.dumps(output))
+    f.close()

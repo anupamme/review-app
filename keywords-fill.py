@@ -26,6 +26,7 @@ def findNearestNouns(word, current_keywords):
         return current_keywords
     try:
         result = map(pickFirst, model.most_similar(word))
+        result.append(word)
         print 'current keywords calculated: ' + str(result)
     except KeyError:
         print 'key not found for key: ' + word
