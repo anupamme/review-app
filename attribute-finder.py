@@ -52,7 +52,7 @@ poolMeta = {'nounList': ['pool', 'swimming', 'spa', 'infinity', 'jacuzzi', 'wet'
 reverseNounMap = {}
 reverseAdjMap = {}
 
-modelFile = "../code/word2vec-all/word2vec/trunk/vectors-phrase.bin"
+modelFile = "../trunk/vectors-phrase.bin"
 possibleNounTags = ['NN', 'NNP', 'NNS', 'NNPS']
 possibleAdjTags = ['JJ', 'JJR', 'JJS', 'RB', 'RBS', 'RBR']
 
@@ -265,6 +265,7 @@ if __name__ == "__main__":
         reviewArr = json.loads(open(sys.argv[1], 'r').read())
     
     count = 0
+    result = []
     while not checkIfDone(user_controlled, user_input, reviewArr, count):
         if user_controlled:
             review = user_input
@@ -273,7 +274,7 @@ if __name__ == "__main__":
             count = count + 1
 
         review = review.encode('utf-8')
-        print '\nsentence: ' + review
+        #print '\nsentence: ' + review
         tokens = word_tokenize(review)
         try:
             pos_tags = nltk.pos_tag(tokens)
@@ -382,8 +383,13 @@ if __name__ == "__main__":
         top_noun_data = sorted_res_noun[0]
         top_noun = top_noun_data[1]
         top_noun_root = reverseNounMap[top_noun]
-        print 'possible nouns: ' + str(noun_tags)
-        print 'possible adjectives: ' + str(adj_tags)
+        element = {}
+        element['sentence'] = review
+        element ['nouns'] = noun_tags
+        element['adjectives'] = adj_tags
+        #print 'possible nouns: ' + str(noun_tags)
+        #print 'possible adjectives: ' + str(adj_tags)
+        element['top_noun'] = [top_noun_root, top_noun_data]
         print 'top noun root and val: ' + top_noun_root + ' : ' + str(top_noun_data)
         sorted_res_adj = sorted(res_adj, key=operator.itemgetter(0), reverse=True)
         for val in sorted_res_adj:
@@ -392,6 +398,11 @@ if __name__ == "__main__":
             adj_val_root = reverseAdjMap[adj_val]
             if top_noun_root == adj_val_root:
                 print 'Found! adj val: ' + str(val)
+                element['top_adj'] = val
                 break
+        result.append(element)
         if user_controlled:
             user_input = raw_input("Some input please: ")
+    f = open('output.json', 'w')
+    f.close(json.dumps(result))
+    f.close()
