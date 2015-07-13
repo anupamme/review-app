@@ -3,6 +3,7 @@ from gensim.models import word2vec
 import json
 import sys
 from nltk import word_tokenize
+import re
 
 '''
 algorithm: 
@@ -14,7 +15,7 @@ algorithm:
     4. pick the correct noun and adjective.
 
 '''
-model_file = "../code/word2vec-all/word2vec/trunk/vectors-phrase.bin"
+model_file = "../trunk/vectors-phrase.bin"
 possibleNounTags = ['NN', 'NNP', 'NNS', 'NNPS']
 possibleAdjTags = ['JJ', 'JJR', 'JJS', 'RB', 'RBS', 'RBR']
 model = None
@@ -80,43 +81,50 @@ if __name__ == "__main__":
     final_map = {}
     loadModelFile()
     attribute_seed = json.loads(open(sys.argv[1], 'r').read())
-    data = json.loads(open(sys.argv[2], 'r').read())
-    for line in data:
-        line = line.encode('utf-8')
-        tokens = word_tokenize(line)
-        try:
-            pos_tags = nltk.pos_tag(tokens)
-        except UnicodeDecodeError:
-            print 'cannot decode: ' + str(tokens)
-        if len(pos_tags) == 0:
-            print 'pos tags are empty for: ' + line
-            continue
-        res_noun = []
-        res_adjectives = []
-        for word, pos in pos_tags:
-            if word == '' or word == None:
+    input_arg = sys.argv[2]
+    input_file = input_arg + '.json'
+    data = json.loads(open(input_file, 'r').read())
+    for review in data:
+        lineArr = re.split('\n|\.', review)
+        for line in lineArr:
+            line = line.encode('utf-8').strip()
+            if line == '':
                 continue
-            if pos in possibleNounTags:
-                print 'checking out word: ' + word
-                word = normalize(word)
-                path = []
-                if word in attribute_seed['root']['keywords']:
-                    findExact(attribute_seed['root'], word, path)
-                else:
-                    attribute_seed['root']['keywords'].append(word)
-                    try:
-                        similar = model.most_similar(word)
-                    except KeyError:
-                        print 'Key Error for word: ' + word
-                        continue
-                    findAndInsert(attribute_seed['root'], word, path)
-                str_path = str(path)
-                if str_path not in final_map:
-                        final_map[str_path] = []
-                final_map[str_path].append(line)
+            tokens = word_tokenize(line)
+            try:
+                pos_tags = nltk.pos_tag(tokens)
+            except UnicodeDecodeError:
+                print 'cannot decode: ' + str(tokens)
+            if len(pos_tags) == 0:
+                print 'pos tags are empty for: ' + line
+                continue
+            res_noun = []
+            res_adjectives = []
+            for word, pos in pos_tags:
+                if word == '' or word == None:
+                    continue
+                if pos in possibleNounTags:
+                    #print 'checking out word: ' + word
+                    word = normalize(word)
+                    path = []
+                    if word in attribute_seed['root']['keywords']:
+                        findExact(attribute_seed['root'], word, path)
+                    else:
+                        attribute_seed['root']['keywords'].append(word)
+                        try:
+                            similar = model.most_similar(word)
+                        except KeyError:
+                            print 'Key Error for word: ' + word
+                            continue
+                        findAndInsert(attribute_seed['root'], word, path)
+                    str_path = str(path)
+                    if str_path not in final_map:
+                            final_map[str_path] = []
+                    final_map[str_path].append(line)
         f = open('expanded-seed-2.json', 'w')
         f.write(json.dumps(attribute_seed))
         f.close()
-        f = open('attribute-classification.json', 'w')
+        output_file = input_arg + '-out.json'
+        f = open(output_file, 'w')
         f.write(json.dumps(final_map))
         f.close()

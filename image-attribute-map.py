@@ -11,7 +11,7 @@ from gensim.models import word2vec
     Similarly take the sum over top three keys.
 
 '''
-model_file = '../code/word2vec-all/word2vec/trunk/vectors-phrase.bin'
+model_file = '../trunk/vectors-phrase.bin'
 model = None
 
 top_number_of_items = 3
@@ -75,6 +75,7 @@ if __name__ == '__main__':
     attribute_seed = json.loads(open(sys.argv[1], 'r').read())
     image_tree = json.loads(open(sys.argv[2], 'r').read())
     output = []
+    reverse_output = {}
     for index in image_tree:
         tree = image_tree[index]
         for res in tree['results']:
@@ -89,6 +90,13 @@ if __name__ == '__main__':
             element['url'] = url
             element['path'] = path
             output.append(element)
+            str_path = str(map(lambda x: x[0], path))
+            if str_path not in reverse_output:
+                reverse_output[str_path] = []
+            reverse_output[str_path].append(url)
     f = open('output.json', 'w')
     f.write(json.dumps(output))
+    f.close()
+    f = open('reverse_image.json', 'w')
+    f.write(json.dumps(reverse_output))
     f.close()
