@@ -52,7 +52,7 @@ poolMeta = {'nounList': ['pool', 'swimming', 'spa', 'infinity', 'jacuzzi', 'wet'
 reverseNounMap = {}
 reverseAdjMap = {}
 
-modelFile = "../trunk/vectors-phrase.bin"
+modelFile = "../code/word2vec-all/word2vec/trunk/vectors-phrase.bin"
 possibleNounTags = ['NN', 'NNP', 'NNS', 'NNPS']
 possibleAdjTags = ['JJ', 'JJR', 'JJS', 'RB', 'RBS', 'RBR']
 
@@ -274,7 +274,7 @@ if __name__ == "__main__":
             count = count + 1
 
         review = review.encode('utf-8')
-        #print '\nsentence: ' + review
+        print '\nsentence: ' + review
         tokens = word_tokenize(review)
         try:
             pos_tags = nltk.pos_tag(tokens)
@@ -283,7 +283,7 @@ if __name__ == "__main__":
         if len(pos_tags) == 0:
             print 'pos tags are empty for: ' + review
             continue
-        #print 'pos tags: ' + str(pos_tags)
+        print 'pos tags: ' + str(pos_tags)
         res_noun = []
         res_adj = []
         noun_tags = []
@@ -298,6 +298,7 @@ if __name__ == "__main__":
                 continue
             # nounTag is used to determine attribute.
             if pos in possibleNounTags:
+                print 'adding noun word: ' + word
                 noun_tags.append(word)
                 try: 
                     similar_words = model.most_similar(word)
@@ -340,6 +341,7 @@ if __name__ == "__main__":
                 res_noun.append((max_val[0], max_match, max_val[1]))
             # adjTag is used to figure why that attribute is selected.
             if pos in possibleAdjTags:
+                print 'adding adjective word: ' + word
                 adj_tags.append(word)
                 try: 
                     similar_words = model.most_similar(word)
@@ -397,12 +399,13 @@ if __name__ == "__main__":
             adj_val = val[1]
             adj_val_root = reverseAdjMap[adj_val]
             if top_noun_root == adj_val_root:
-                print 'Found! adj val: ' + str(val)
+                #print 'Found! adj val: ' + str(val)
                 element['top_adj'] = val
                 break
+        print 'adding element: ' + str(element)
         result.append(element)
         if user_controlled:
             user_input = raw_input("Some input please: ")
     f = open('output.json', 'w')
-    f.close(json.dumps(result))
+    f.write(json.dumps(result))
     f.close()
