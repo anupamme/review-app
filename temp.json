@@ -1,15 +1,23 @@
 {"root": {
     "next": {
-        "price-value": {
-            "next": {
-                "discount_rate": {
-                    "next": {}, 
-                    "keywords": ["discounts", "premium", "price", "coupon", "deep_discount"]
-                }
+            "ele1": {
+                "next": {},
+                "keywords": ["e", "f"]
             },
-            "keywords": []
-        } 
+            "ele2": {
+                "next": {},
+                "keywords": ["a", "b"]
+            },
+            "ele3": {
+                "next": {
+                    "ele31": {
+                        "next": {},
+                        "keywords": ["c", "d"]
+                    }
+                },
+                "keywords": []
+            }
     },
-    "keywords": []
+    "keywords": []       
 }
 }
