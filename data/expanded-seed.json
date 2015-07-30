@@ -1015,7 +1015,8 @@
                             "purchase": 1,
                             "advertized_price": 1,
                             "heavily_discounted": 1,
-                            "discounting": 1
+                            "discounting": 1,
+                            "money": 1
                         },
                         "next": {}
                     }
@@ -1205,7 +1206,7 @@
                             "steam_bath": 1,
                             "bathtubs": 1,
                             "washing": 1,
-                            "room": 1,
+                            "room": 0,
                             "marble_tiled": 1,
                             "bucket": 1,
                             "bed": 1,
@@ -1246,9 +1247,9 @@
                                     "steam_bath": 1,
                                     "bathtubs": 1,
                                     "washing": 1,
-                                    "room": 1,
+                                    "room": 0,
                                     "bucket": 1,
-                                    "bed": 1,
+                                    "bed": 0,
                                     "restroom": 1,
                                     "tub": 1
                                 },
@@ -1276,7 +1277,7 @@
                                     "toilet_bowl": 1,
                                     "tub": 1,
                                     "marble_tiled": 1,
-                                    "bed": 1,
+                                    "bed": 0,
                                     "shower": 1,
                                     "bath_tub": 1,
                                     "backyard_swimming_pool": 1
@@ -1352,7 +1353,7 @@
                             "sofa": 1,
                             "floor": 1,
                             "walls": 1,
-                            "bed": 1,
+                            "bed": 0,
                             "pillow_menu": 1,
                             "shower": 1,
                             "bedspread": 1,
@@ -1394,7 +1395,7 @@
                                     "cotton_blend": 1,
                                     "furnishings": 1,
                                     "high_thread_count": 1,
-                                    "bed": 1,
+                                    "bed": 0,
                                     "pillow_menu": 1,
                                     "bedspread": 1,
                                     "bed_linen": 1,
@@ -1527,7 +1528,9 @@
                             "noise": 1,
                             "bustling": 1,
                             "loud": 1,
-                            "noisy": 1
+                            "noisy": 1,
+                            "quiet": 1,
+                            "quietness": 1
                         },
                         "next": {}
                     },
@@ -1956,7 +1959,7 @@
                     "apple_flavoured": 1,
                     "cocktails": 1,
                     "vitamin_water": 1,
-                    "room": 1,
+                    "room": 0,
                     "italian_restaurant": 1,
                     "healthy": 1,
                     "fruits": 1,
@@ -2000,8 +2003,8 @@
                             "bistro": 1,
                             "bars": 1,
                             "evening": 1,
-                            "room": 1,
-                            "beach": 1,
+                            "room": 0,
+                            "beach": 0,
                             "drink": 1,
                             "drinks": 1,
                             "pub": 1,
@@ -2014,8 +2017,8 @@
                             "cafe": 1,
                             "cocktail_bar": 1,
                             "lobby": 1,
-                            "pool": 1,
-                            "restaurants": 1
+                            "pool": 0,
+                            "restaurants": 0
                         },
                         "next": {}
                     },
@@ -2413,7 +2416,7 @@
                             "lively": 1,
                             "night": 1,
                             "watering_holes": 1,
-                            "restaurants": 1
+                            "restaurants": 0
                         },
                         "next": {}
                     }
@@ -2732,7 +2735,7 @@
                             "group": 1,
                             "concert": 1,
                             "crowd": 1,
-                            "people": 1,
+                            "people": 0,
                             "festival": 1,
                             "clothing": 1,
                             "dancing": 1,
@@ -2797,7 +2800,7 @@
                             "shops": 1,
                             "impulse_buys": 1,
                             "shopping_destination": 1,
-                            "restaurants": 1
+                            "restaurants": 0
                         },
                         "next": {}
                     },
@@ -2887,11 +2890,11 @@
                             "professional": 1,
                             "rock_climbing_wall": 1,
                             "elliptical_machine": 1,
-                            "pool": 1,
+                            "pool": 0,
                             "steel": 1,
                             "spinning_classes": 1,
                             "fitness_centre": 1,
-                            "room": 1,
+                            "room": 0,
                             "boxercise": 1,
                             "gyms": 1,
                             "jogging": 1,
@@ -3046,7 +3049,7 @@
                             "front": 1,
                             "yard": 1,
                             "fireplace": 1,
-                            "pool": 1,
+                            "pool": 0,
                             "lawn": 1,
                             "bar": 1,
                             "log_fire": 1,

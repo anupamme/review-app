@@ -30,7 +30,7 @@ model_file = "../code/word2vec-all/word2vec/trunk/vectors-phrase.bin"
 stanford_jars = "/Volumes/anupam work/code/stanford-jars/3.5/*"
 model = None
 proc = None
-exclude_noun = ["day", "hotel"]
+exclude_noun = ["day", "hotel", "july", "ones", "years", "guest", "night", "year", "room"]
 
 def findExact(attribute_seed, word, word_val, path):
     if attribute_seed['next'] == {}:
