@@ -4,7 +4,7 @@ import json
 import sys
 from nltk import word_tokenize
 import re
-from stanford_corenlp_pywrapper import CoreNLP
+from stanford_corenlp_pywrapper import sockwrap
 from ast import literal_eval
 import operator
 
@@ -34,6 +34,7 @@ stanford_jars = "/Volumes/anupam work/code/stanford-jars/3.5/*"
 model = None
 proc = None
 exclude_noun = ["day", "hotel", "july", "ones", "years", "guest", "night", "year", "room"]
+
 
 def findExact(attribute_seed, word, word_val, path):
     if attribute_seed['next'] == {}:
@@ -107,7 +108,7 @@ def loadModelFile():
     global model_file
     global proc
     model = word2vec.Word2Vec.load_word2vec_format(model_file, binary=True)
-    proc = CoreNLP("parse", corenlp_jars=[stanford_jars])
+    proc = sockwrap.SockWrap("parse", corenlp_jars=[stanford_jars])
 
 def find_subject_object(line):
     global proc
