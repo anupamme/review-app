@@ -1,0 +1,9 @@
+The hotel was right next to airport.
+It was an hour long drive from the airport.
+It was 10 mins drive from airport.
+The hotel was very close to all the cafes and downtown
+We could literally walk to downtown and cafes from our hotel
+We loved the location of the hotel because everything was walkable.
+
+can we use lat long and find the distance from airport etc.
+information we need:

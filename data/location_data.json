@@ -1,0 +1,13 @@
+{"root": {
+    "next": {
+        "verbs": {
+            "next": {},
+            "keywords": ["situated", "located", "overlooking", "minutes'_drive_from", "nestled", "sited", "overlooks", "adjacent", "occupies", "sits", "walled", "minutes'_drive", "stone's_throw_from", "housed", "conveniently_located", "located_near", "minutes'_walk", "short_walk", "tucked_away", "adjoins", "walking_distance", "an_hour's_drive", "minute_walk", ""]
+        },
+        "adjectives" : {
+            "next": {},
+            "keywords": ["near", "nearby", "outskirts", "miles_north", "miles_south", "about_miles_north", "about_miles_south", "north", "northwest", "south", "miles_away", "east", "southeast", "located_near", "outside", "about_miles_southeast", "southwestern", "short_distance", "miles_west", "about_miles_east", "about_miles_southwest", "kilometers_east", "miles_east", "southern_edge", "about_miles_northwest", "miles_northwest", "miles_southeast", "northern", "about_miles_west", "miles", "eastern", "km_north", "km_miles_north", "southern_outskirts"]
+        }
+    },
+    "keywords": []
+}}

@@ -4,7 +4,7 @@ import json
 import sys
 from nltk import word_tokenize
 import re
-from stanford_corenlp_pywrapper import CoreNLP
+from stanford_corenlp_pywrapper import sockwrap
 from ast import literal_eval
 import operator
 
@@ -29,11 +29,21 @@ for each line find:
 possibleNounTags = ['NN', 'NNP', 'NNS', 'NNPS']
 possibleAdjTags = ['JJ', 'JJR', 'JJS', 'RB', 'RBS', 'RBR']
 possibleVerbTags = ['VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ']
+
+antonym_file = 'data/antonym_map.json'
+positive_file = 'data/positives.json'
+negative_file = 'data/negatives.json'
+attribute_adjective_file = 'data/reverse_adj.json'
 model_file = "../code/word2vec-all/word2vec/trunk/vectors-phrase.bin"
-stanford_jars = "/Volumes/anupam work/code/stanford-jars/3.5/*"
+stanford_jars = "../code/stanford-jars/3.5/*"
 model = None
 proc = None
+attribute_adjective_map = {}
+positive_array = []
+negative_array = []
+antonym_map = {}
 exclude_noun = ["day", "hotel", "july", "ones", "years", "guest", "night", "year", "room"]
+
 
 def findExact(attribute_seed, word, word_val, path):
     if attribute_seed['next'] == {}:
@@ -102,12 +112,22 @@ def normalize(word):
         return None
     return word.lower().replace(' ', '_').replace('-','_')
 
-def loadModelFile():
+def init():
     global model
     global model_file
     global proc
+    global attribute_adjective_map
+    global positive_array
+    global negative_array
+    global antonym_map
     model = word2vec.Word2Vec.load_word2vec_format(model_file, binary=True)
-    proc = CoreNLP("parse", corenlp_jars=[stanford_jars])
+    print 'stanford-jars: ' + stanford_jars
+    proc = sockwrap.SockWrap("parse", corenlp_jars=[stanford_jars])
+    attribute_adjective_map = json.loads(open(attribute_adjective_file, 'r').read())
+    print 'length of attribute_adjective_map: ' + str(len(attribute_adjective_map))
+    positive_array = json.loads(open(positive_file, 'r').read())
+    negative_array = json.loads(open(negative_file, 'r').read())
+    antonym_map = json.loads(open(antonym_file, 'r').read())
 
 def find_subject_object(line):
     global proc
@@ -154,7 +174,7 @@ def find_subject_object(line):
                 noun_arr.append(noun)
         index += 1
     print 'nouns: ' + str(noun_arr)
-    return sub, adj_list, verb_list, obj, noun_arr
+    return sub, adj_list, verb_list, obj, noun_arr, parsed_c['sentences'][0]['sentiment']
 
 def checkIfDone(user_controlled, user_input, reviewArr, current_count):
     if user_controlled:
@@ -202,15 +222,92 @@ def search_noun_array(map_val, noun_arr):
             print 'Unknown: Not able to insert line and noun: ' + line + ' ; ' + winner_noun
     return path
     
+def convert_sentiment_to_int(sentiment):
+    sentiment_lower = sentiment.lower()
+    if 'positive' in sentiment_lower:
+        if 'very' in sentiment_lower:
+            return 5
+        else:
+            return 4
+    else:
+        if 'negative' in sentiment_lower:
+            if 'very' in sentiment_lower:
+                return 1
+            else:
+                return 2
+    return 3
+
+def find_max_adjective(adj, candidate_adjectives):
+    max_adj = None
+    max_distance = -1
+    for candidate, frequency in candidate_adjectives:
+        try:
+            dist = model.similarity(adj, candidate) * frequency
+            if dist > max_distance:
+                max_adj = candidate
+                max_distance = dist
+        except KeyError:
+            print 'Key error for: ' + adj + '; ' + candidate
+    return max_adj, max_distance
+    
+def find_correct_adjective(adj_list, candidate_adjectives, sentiment):
+    global antonym_map
+    global positive_array
+    global negative_array
+    selected_adj = []
+    final_adj = []
+    for adj in adj_list:
+        if adj in positive_array or adj in negative_array:
+            max_candidate_adj, max_candidate_distance = find_max_adjective(adj, candidate_adjectives)
+            print 'max adj match: ' + str(max_candidate_adj) + ' ; ' + str(max_candidate_distance)
+            if max_candidate_adj == None:
+                continue
+            selected_adj.append(max_candidate_adj)
+        else:
+            print 'error: invalid adjective: ' + adj
         
-            
+    # figure whether positive or negative.
+    print 'sentiment: ' + sentiment
+    if selected_adj == []:
+        print 'max adjective is none for adj_list: ' + str(adj_list)
+        return None, -1
+    
+    if convert_sentiment_to_int(sentiment) >= 3:
+        for max_adj in selected_adj:
+            if max_adj in positive_array:
+                final_adj.append(max_adj)
+            else:
+                if max_adj in negative_array:
+                    if max_adj in antonym_map:
+                        print 'returning antonym for: ' + max_adj
+                        final_adj.append(antonym_map[max_adj])
+                    else:
+                        print 'error 00: ' + str(max_adj)
+                else:
+                    print 'error 01: ' + max_adj
+    else:
+        for max_adj in selected_adj:
+            if max_adj in negative_array:
+                final_adj.append(max_adj)
+            else:
+                if max_adj in positive_array:
+                    if max_adj in antonym_map:
+                        print 'returning antonym for: ' + max_adj
+                        final_adj.append(antonym_map[max_adj])
+                    else:
+                        print 'error 11: ' + max_adj
+                else:
+                    print 'error 10: ' + max_adj
+    return final_adj
     
 if __name__ == "__main__":
     reverse_map = {}
     forward_map = {}
     reverse_map_adj = {}
     reverse_map_verb = {}
-    loadModelFile()
+    forward_adj_map = {}
+    global attribute_adjective_map
+    init()
     attribute_seed = json.loads(open(sys.argv[1], 'r').read())
     
     user_controlled = False
@@ -244,7 +341,7 @@ if __name__ == "__main__":
                 continue
             print 'line: ' + line
             path = []
-            sub, adj_list, verb_list, obj, noun_arr = find_subject_object(line)
+            sub, adj_list, verb_list, obj, noun_arr, sentiment = find_subject_object(line)
             try:
                 print 'sub, obj: ' + str(sub) + ' ; ' + str(obj)
             except UnicodeEncodeError:
@@ -304,6 +401,17 @@ if __name__ == "__main__":
                 reverse_map[str_path] = []
                 reverse_map_adj[str_path] = {}
                 reverse_map_verb[str_path] = {}
+            # calculate correct set of adjectives
+            print 'adj_list: ' + str(adj_list)
+            if len(adj_list) > 0:
+                if str_path in attribute_adjective_map:
+                    candidate_adjectives = attribute_adjective_map[str_path]
+                    correct_adjective_list = find_correct_adjective(adj_list, candidate_adjectives, sentiment)
+                    forward_adj_map[line] = str(correct_adjective_list)
+                    print 'found adjective: ' + str(correct_adjective_list)
+                else:
+                    print 'error attribute adjective map key error: ' + str_path + '; ' + str(len(attribute_adjective_map))
+            
             for adj in adj_list:
                 if adj in reverse_map_adj[str_path]:
                     reverse_map_adj[str_path][adj] = reverse_map_adj[str_path][adj] + 1
@@ -335,4 +443,7 @@ if __name__ == "__main__":
     f.close()
     f = open('reverse_verb.json', 'w')
     f.write(json.dumps(sorted_list_verb))
+    f.close()
+    f = open('forward_adj.json', 'w')
+    f.write(json.dumps(forward_adj_map))
     f.close()
