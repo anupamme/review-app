@@ -203,7 +203,71 @@ def search_noun_array(map_val, noun_arr):
             print 'Unknown: Not able to insert line and noun: ' + line + ' ; ' + winner_noun
     return path
     
-        
+def find_attribute(line, attribute_seed):
+    try:
+        line = line.encode('utf-8').strip()
+    except UnicodeDecodeError:
+        print 'Error: UnicodeDecodeError for line no: ' + str(count)
+        continue
+    if line == '':
+        continue
+    print 'line: ' + line
+    path = []
+    sub, adj_list, verb_list, obj, noun_arr = find_subject_object(line)
+    try:
+        print 'sub, obj: ' + str(sub) + ' ; ' + str(obj)
+    except UnicodeEncodeError:
+        print 'UnicodeEncodeError. So setting sub and obj none.'
+        sub = None
+        obj = None
+
+    sub = normalize(sub)
+    obj = normalize(obj)
+    if sub == None and obj == None:
+        # play with noun_arr
+        path = search_noun_array(attribute_seed['root'], noun_arr)
+        if path == []:
+            print 'Not Found: For line: ' + line
+            return None
+    else:
+        if sub == None:
+            # if object is present.
+            if is_present(obj, attribute_seed['root']['keywords']):
+                word_val = attribute_seed['root']['keywords'][obj]
+                print 'found obj: ' + obj
+                path = []
+                findExact(attribute_seed['root'], obj, word_val, path)
+            else:
+                path = search_noun_array(attribute_seed['root'], noun_arr)
+                if path == []:
+                    print 'Not Found: For line: ' + line
+                    return None
+        else:
+            # if subject is present
+            if is_present(sub, attribute_seed['root']['keywords']):
+                word_val = attribute_seed['root']['keywords'][sub]
+                print 'found sub: ' + sub
+                path = []
+                findExact(attribute_seed['root'], sub, word_val, path)
+            else:
+                if obj == None:
+                    path = search_noun_array(attribute_seed['root'], noun_arr)
+                    if path == []:
+                        print 'Not Found: For line: ' + line
+                        return None
+                else:
+                    if is_present(obj, attribute_seed['root']['keywords']):
+                        word_val = attribute_seed['root']['keywords'][obj]
+                        print 'found: ' + obj
+                        path = []
+                        findExact(attribute_seed['root'], obj, word_val, path)
+                    else:
+                        path = search_noun_array(attribute_seed['root'], noun_arr)
+                        if path == []:
+                            print 'Not Found: For line: ' + line
+                            return None
+    return path
+
             
     
 if __name__ == "__main__":
@@ -236,68 +300,9 @@ if __name__ == "__main__":
         
         lineArr = re.split('\n|\.', review)
         for line in lineArr:
-            try:
-                line = line.encode('utf-8').strip()
-            except UnicodeDecodeError:
-                print 'Error: UnicodeDecodeError for line no: ' + str(count)
+            path = find_attribute(line, attribute_seed)
+            if path == None:
                 continue
-            if line == '':
-                continue
-            print 'line: ' + line
-            path = []
-            sub, adj_list, verb_list, obj, noun_arr = find_subject_object(line)
-            try:
-                print 'sub, obj: ' + str(sub) + ' ; ' + str(obj)
-            except UnicodeEncodeError:
-                print 'UnicodeEncodeError. So setting sub and obj none.'
-                sub = None
-                obj = None
-            
-            sub = normalize(sub)
-            obj = normalize(obj)
-            if sub == None and obj == None:
-                # play with noun_arr
-                path = search_noun_array(attribute_seed['root'], noun_arr)
-                if path == []:
-                    print 'Not Found: For line: ' + line
-                    continue
-            else:
-                if sub == None:
-                    # if object is present.
-                    if is_present(obj, attribute_seed['root']['keywords']):
-                        word_val = attribute_seed['root']['keywords'][obj]
-                        print 'found obj: ' + obj
-                        path = []
-                        findExact(attribute_seed['root'], obj, word_val, path)
-                    else:
-                        path = search_noun_array(attribute_seed['root'], noun_arr)
-                        if path == []:
-                            print 'Not Found: For line: ' + line
-                            continue
-                else:
-                    # if subject is present
-                    if is_present(sub, attribute_seed['root']['keywords']):
-                        word_val = attribute_seed['root']['keywords'][sub]
-                        print 'found sub: ' + sub
-                        path = []
-                        findExact(attribute_seed['root'], sub, word_val, path)
-                    else:
-                        if obj == None:
-                            path = search_noun_array(attribute_seed['root'], noun_arr)
-                            if path == []:
-                                print 'Not Found: For line: ' + line
-                                continue
-                        else:
-                            if is_present(obj, attribute_seed['root']['keywords']):
-                                word_val = attribute_seed['root']['keywords'][obj]
-                                print 'found: ' + obj
-                                path = []
-                                findExact(attribute_seed['root'], obj, word_val, path)
-                            else:
-                                path = search_noun_array(attribute_seed['root'], noun_arr)
-                                if path == []:
-                                    print 'Not Found: For line: ' + line
-                                    continue
             assert(path != [])
             str_path = str(path)
             print 'path: ' + str_path
