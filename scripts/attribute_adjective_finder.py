@@ -300,6 +300,78 @@ def find_correct_adjective(adj_list, candidate_adjectives, sentiment):
                     print 'error 10: ' + max_adj
     return final_adj
     
+def find_meta_data(line, attribute_seed, attribute_adjective_map):
+    try:
+        line = line.encode('utf-8').strip()
+    except UnicodeDecodeError:
+        print 'Error: UnicodeDecodeError for line no: ' + str(count)
+        return None, None, None, None
+    if line == '':
+        return None, None, None, None
+    print 'line: ' + line
+    path = []
+    sub, adj_list, verb_list, obj, noun_arr, sentiment = find_subject_object(line)
+    try:
+        print 'sub, obj: ' + str(sub) + ' ; ' + str(obj)
+    except UnicodeEncodeError:
+        print 'UnicodeEncodeError. So setting sub and obj none.'
+        sub = None
+        obj = None
+
+    sub = normalize(sub)
+    obj = normalize(obj)
+    if sub == None and obj == None:
+        # play with noun_arr
+        path = search_noun_array(attribute_seed['root'], noun_arr)
+        if path == []:
+            print 'Not Found: For line: ' + line
+            return None, sentiment, None, None
+    else:
+        if sub == None:
+            # if object is present.
+            if is_present(obj, attribute_seed['root']['keywords']):
+                word_val = attribute_seed['root']['keywords'][obj]
+                print 'found obj: ' + obj
+                path = []
+                findExact(attribute_seed['root'], obj, word_val, path)
+            else:
+                path = search_noun_array(attribute_seed['root'], noun_arr)
+                if path == []:
+                    print 'Not Found: For line: ' + line
+                    return None, sentiment, None, adj_list
+        else:
+            # if subject is present
+            if is_present(sub, attribute_seed['root']['keywords']):
+                word_val = attribute_seed['root']['keywords'][sub]
+                print 'found sub: ' + sub
+                path = []
+                findExact(attribute_seed['root'], sub, word_val, path)
+            else:
+                if obj == None:
+                    path = search_noun_array(attribute_seed['root'], noun_arr)
+                    if path == []:
+                        print 'Not Found: For line: ' + line
+                        return None, sentiment, None, adj_list
+                else:
+                    if is_present(obj, attribute_seed['root']['keywords']):
+                        word_val = attribute_seed['root']['keywords'][obj]
+                        print 'found: ' + obj
+                        path = []
+                        findExact(attribute_seed['root'], obj, word_val, path)
+                    else:
+                        path = search_noun_array(attribute_seed['root'], noun_arr)
+                        if path == []:
+                            print 'Not Found: For line: ' + line
+                            return None, sentiment, None, adj_list
+    assert(path != None and path != [])
+    print 'adj_list: ' + str(adj_list)
+    str_path = str(path)
+    if len(adj_list) > 0:
+        if str_path in attribute_adjective_map:
+            candidate_adjectives = attribute_adjective_map[str_path]
+            correct_adjective_list = find_correct_adjective(adj_list, candidate_adjectives, sentiment)
+    return path, sentiment, correct_adjective_list, adj_list
+    
 if __name__ == "__main__":
     reverse_map = {}
     forward_map = {}
@@ -332,68 +404,14 @@ if __name__ == "__main__":
         
         lineArr = re.split('\n|\.', review)
         for line in lineArr:
-            try:
-                line = line.encode('utf-8').strip()
-            except UnicodeDecodeError:
-                print 'Error: UnicodeDecodeError for line no: ' + str(count)
+            path, sentiment, correct_adjective_list, adj_list = find_meta_data(line, attribute_seed, attribute_adjective_map)
+            if path == None or path == []:
                 continue
-            if line == '':
-                continue
-            print 'line: ' + line
-            path = []
-            sub, adj_list, verb_list, obj, noun_arr, sentiment = find_subject_object(line)
-            try:
-                print 'sub, obj: ' + str(sub) + ' ; ' + str(obj)
-            except UnicodeEncodeError:
-                print 'UnicodeEncodeError. So setting sub and obj none.'
-                sub = None
-                obj = None
-            
-            sub = normalize(sub)
-            obj = normalize(obj)
-            if sub == None and obj == None:
-                # play with noun_arr
-                path = search_noun_array(attribute_seed['root'], noun_arr)
-                if path == []:
-                    print 'Not Found: For line: ' + line
-                    continue
+            if correct_adjective_list != None and correct_adjective_list != []:
+                forward_adj_map[line] = str(correct_adjective_list)
+                print 'found adjective: ' + str(correct_adjective_list)
             else:
-                if sub == None:
-                    # if object is present.
-                    if is_present(obj, attribute_seed['root']['keywords']):
-                        word_val = attribute_seed['root']['keywords'][obj]
-                        print 'found obj: ' + obj
-                        path = []
-                        findExact(attribute_seed['root'], obj, word_val, path)
-                    else:
-                        path = search_noun_array(attribute_seed['root'], noun_arr)
-                        if path == []:
-                            print 'Not Found: For line: ' + line
-                            continue
-                else:
-                    # if subject is present
-                    if is_present(sub, attribute_seed['root']['keywords']):
-                        word_val = attribute_seed['root']['keywords'][sub]
-                        print 'found sub: ' + sub
-                        path = []
-                        findExact(attribute_seed['root'], sub, word_val, path)
-                    else:
-                        if obj == None:
-                            path = search_noun_array(attribute_seed['root'], noun_arr)
-                            if path == []:
-                                print 'Not Found: For line: ' + line
-                                continue
-                        else:
-                            if is_present(obj, attribute_seed['root']['keywords']):
-                                word_val = attribute_seed['root']['keywords'][obj]
-                                print 'found: ' + obj
-                                path = []
-                                findExact(attribute_seed['root'], obj, word_val, path)
-                            else:
-                                path = search_noun_array(attribute_seed['root'], noun_arr)
-                                if path == []:
-                                    print 'Not Found: For line: ' + line
-                                    continue
+                print 'error attribute adjective map key error: ' + str_path + '; ' + str(len(attribute_adjective_map))
             assert(path != [])
             str_path = str(path)
             print 'path: ' + str_path
@@ -402,26 +420,18 @@ if __name__ == "__main__":
                 reverse_map_adj[str_path] = {}
                 reverse_map_verb[str_path] = {}
             # calculate correct set of adjectives
-            print 'adj_list: ' + str(adj_list)
-            if len(adj_list) > 0:
-                if str_path in attribute_adjective_map:
-                    candidate_adjectives = attribute_adjective_map[str_path]
-                    correct_adjective_list = find_correct_adjective(adj_list, candidate_adjectives, sentiment)
-                    forward_adj_map[line] = str(correct_adjective_list)
-                    print 'found adjective: ' + str(correct_adjective_list)
-                else:
-                    print 'error attribute adjective map key error: ' + str_path + '; ' + str(len(attribute_adjective_map))
+            
             
             for adj in adj_list:
                 if adj in reverse_map_adj[str_path]:
                     reverse_map_adj[str_path][adj] = reverse_map_adj[str_path][adj] + 1
                 else:
                     reverse_map_adj[str_path][adj] = 1
-            for vb in verb_list:
-                if vb in reverse_map_verb[str_path]:
-                    reverse_map_verb[str_path][vb] = reverse_map_verb[str_path][vb] + 1
-                else:
-                    reverse_map_verb[str_path][vb] = 1
+#            for vb in verb_list:
+#                if vb in reverse_map_verb[str_path]:
+#                    reverse_map_verb[str_path][vb] = reverse_map_verb[str_path][vb] + 1
+#                else:
+#                    reverse_map_verb[str_path][vb] = 1
             reverse_map[str_path].append(line)
             forward_map[line] = str_path
         if user_controlled:
@@ -441,9 +451,9 @@ if __name__ == "__main__":
     f = open('reverse_adj.json', 'w')
     f.write(json.dumps(sorted_list))
     f.close()
-    f = open('reverse_verb.json', 'w')
-    f.write(json.dumps(sorted_list_verb))
-    f.close()
+#    f = open('reverse_verb.json', 'w')
+#    f.write(json.dumps(sorted_list_verb))
+#    f.close()
     f = open('forward_adj.json', 'w')
     f.write(json.dumps(forward_adj_map))
     f.close()

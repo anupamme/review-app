@@ -204,7 +204,7 @@ def search_noun_array(map_val, noun_arr):
             print 'Unknown: Not able to insert line and noun: ' + line + ' ; ' + winner_noun
     return path
     
-def find_location_attribute(line, attribute_seed):
+def find_attribute(line, attribute_seed):
     try:
         line = line.encode('utf-8').strip()
     except UnicodeDecodeError:
@@ -274,7 +274,7 @@ def is_location_present(line, attribute_tree):
     for token in tokens:
         if token in location_phrases:
             # find object
-            attr = find_location_attribute(line, attribute_tree)
+            attr = find_attribute(line, attribute_tree)
             return True, attr
     return False, None
             
