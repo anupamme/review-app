@@ -43,6 +43,7 @@ positive_array = []
 negative_array = []
 antonym_map = {}
 exclude_noun = ["day", "hotel", "july", "ones", "years", "guest", "night", "year", "room"]
+location_phrases = ['next', 'near', 'far', 'close', 'distance', 'walking', 'drive']
 
 
 def findExact(attribute_seed, word, word_val, path):
@@ -174,7 +175,7 @@ def find_subject_object(line):
                 noun_arr.append(noun)
         index += 1
     print 'nouns: ' + str(noun_arr)
-    return sub, adj_list, verb_list, obj, noun_arr, parsed_c['sentences'][0]['sentiment']
+    return sub, adj_list, verb_list, obj, noun_arr, parsed_c['sentences'][0]['sentiment'], tokens
 
 def checkIfDone(user_controlled, user_input, reviewArr, current_count):
     if user_controlled:
@@ -310,7 +311,7 @@ def find_meta_data(line, attribute_seed, attribute_adjective_map):
         return None, None, None, None
     print 'line: ' + line
     path = []
-    sub, adj_list, verb_list, obj, noun_arr, sentiment = find_subject_object(line)
+    sub, adj_list, verb_list, obj, noun_arr, sentiment, tokens = find_subject_object(line)
     try:
         print 'sub, obj: ' + str(sub) + ' ; ' + str(obj)
     except UnicodeEncodeError:
@@ -366,6 +367,7 @@ def find_meta_data(line, attribute_seed, attribute_adjective_map):
     assert(path != None and path != [])
     print 'adj_list: ' + str(adj_list)
     str_path = str(path)
+    correct_adjective_list = []
     if len(adj_list) > 0:
         if str_path in attribute_adjective_map:
             candidate_adjectives = attribute_adjective_map[str_path]
@@ -407,6 +409,7 @@ if __name__ == "__main__":
             path, sentiment, correct_adjective_list, adj_list = find_meta_data(line, attribute_seed, attribute_adjective_map)
             if path == None or path == []:
                 continue
+            str_path = str(path)
             if correct_adjective_list != None and correct_adjective_list != []:
                 forward_adj_map[line] = str(correct_adjective_list)
                 print 'found adjective: ' + str(correct_adjective_list)
