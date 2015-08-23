@@ -14,7 +14,7 @@ read the insta images and query 1000 images and then sleep for 1 hour.
 3. when 10000 images are done or all hotels are finished, exit.
 '''
 
-crawled_so_far = 46
+crawled_so_far = 10
 
 def crawl(api, image_arr):
     func = lambda x: x['images']['standard_resolution']['url']
@@ -71,6 +71,6 @@ if __name__ == "__main__":
         else:
             final_result[hotel_name] = result
     
-    f = open('image_out.json', 'w')
+    f = open(sys.argv[2], 'w')
     f.write(json.dumps(final_result))
     f.close()
