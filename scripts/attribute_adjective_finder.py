@@ -134,6 +134,8 @@ def find_subject_object(line):
     global proc
     parsed_c = proc.parse_doc(line)
     #tuple_v = convert_to_tuple(parsed_c['sentences'][0]['parse'])
+    if len(parsed_c['sentences']) == 0:
+        return None, None, None, None, None, None, None
     tokens = parsed_c['sentences'][0]['tokens']
     deps = parsed_c['sentences'][0]['deps_basic']
     subj_details = None
@@ -201,8 +203,8 @@ def is_any_noun_present(map_val, noun_arr):
     return path
 
 def search_noun_array(map_val, noun_arr):
-    if len(noun_arr) == 0:
-        print 'Not Found: Subject and object are none and no noun present: ' + line
+    if noun_arr == None or len(noun_arr) == 0:
+        print 'Not Found: Subject and object are none and no noun present: ' + str(noun_arr)
         return []
     path = is_any_noun_present(map_val, noun_arr)
     if path == []:
@@ -220,7 +222,7 @@ def search_noun_array(map_val, noun_arr):
         if findAndInsert(map_val, winner_noun, path):
             assert(path != [])
         else:
-            print 'Unknown: Not able to insert line and noun: ' + line + ' ; ' + winner_noun
+            print 'Unknown: Not able to insert line and noun: ' + str(noun_arr) + ' ; ' + winner_noun
     return path
     
 def convert_sentiment_to_int(sentiment):

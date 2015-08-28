@@ -20,7 +20,7 @@ algo:
     6. Make JJ indexable in elastic search.
 '''
 
-possibleNounTags = ['NN', 'NNP', 'NNS', 'NNPS', 'NP']
+possibleNounTags = ['NN', 'NNP', 'NNS', 'NNPS']
 possibleAdjTags = ['JJ', 'JJR', 'JJS', 'RB', 'RBS', 'RBR']
 possibleVerbTags = ['VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ']
 model_file = "../code/word2vec-all/word2vec/trunk/vectors-phrase.bin"
@@ -55,6 +55,28 @@ def find_lowest_subtree(tree, tag):
         count = count - 1
     return None
 
+def find_subtree_2(tree, tag):
+    if tree == None:
+        return None
+    tree_len = len(tree)
+    if tree_len == 0:
+        return None
+    count = 0
+    print 'tree: ' + str(tree)
+    while count < tree_len:
+        if type(tree[count]) == str:
+            if tree[count] == tag:
+                print 'returning: ' + str(tree)
+                return tree
+            else:
+                count += 1
+                continue
+        val = find_subtree_2(tree[count], tag)
+        if val != None:
+            return val
+        count = count + 1
+    return None
+        
 def find_lowest_subtree_2(tree, tag):
     if tree == None:
         return None
@@ -171,8 +193,9 @@ def findAndInsert(attribute_seed, word, path):
 
 def find_best_attribute(noun_arr, map_val):
     if len(noun_arr) == 0:
-        print 'Not Found: Subject and object are none and no noun present: ' + line
+        print 'Not Found: Subject and object are none and no noun present: ' + str(noun_arr)
         return []
+    print 'noun arr: ' + str(noun_arr)
     path = is_any_noun_present(map_val, noun_arr)
     if path == []:
         print 'No noun is present in tree. So finding best bet...'
@@ -192,19 +215,29 @@ def find_best_attribute(noun_arr, map_val):
             print 'Unknown: Not able to insert line and noun: ' + str(noun_arr) + ' ; ' + winner_noun
     return path
 
+def find_first_index(my_tuple, speech_list):
+    count = 0
+    while count < len(my_tuple):
+        if my_tuple[count][0] in speech_list:
+            return count
+        count += 1
+    return -1
+
 def find_all(sub_tree, tags_list, nouns):
     tree_len = len(sub_tree)
     count = 0
     #print 'tree first: ' + str(sub_tree)
     while count < tree_len:
         if type(sub_tree[count]) == str:
-            count = count + 1
-            continue
+            if sub_tree[count] in tags_list:
+                nouns.append(sub_tree[count + 1])
+                return
+            else: 
+                count = count + 1
+                continue
         #print 'tree_next first: ' + str(sub_tree[count][0])
-        if type(sub_tree[count][0]) == tuple:
-            find_first(sub_tree[count], tags_list, nouns)
-        if sub_tree[count][0] in tags_list:
-            nouns.append(sub_tree[count][1])
+        if type(sub_tree[count]) == tuple:
+            find_all(sub_tree[count], tags_list, nouns)
         count = count + 1
     return
 
@@ -225,49 +258,50 @@ if __name__ == "__main__":
         
         # find last PP or NP.
         path = []
-        pp_tree = find_lowest_subtree_2(parse_tree, 'PP')
+        pp_tree = find_subtree_2(parse_tree, 'PP')
         if pp_tree == None:
             print 'NULL: pp_tree is null'
             np_tree = find_lowest_subtree_2(parse_tree, 'NP')
             if np_tree == None:
                 print 'NULL: np_tree is null'
-                noun_arr = find_noun_array(processed)
+                noun_arr = []
+                find_all(parse_tree, possibleNounTags + possibleAdjTags, noun_arr)
                 path = find_best_attribute(noun_arr, attribute_seed['root'])
             else:
                 assert(np_tree[0] == 'NP')
                 tree_len = len(np_tree)
-                if np_tree[1][0] == 'JJ' and np_tree[2][0] in possibleNounTags:
+                if np_tree[1][0] in possibleAdjTags and np_tree[2][0] in possibleNounTags:
                     adj = np_tree[1][1]
                     noun = np_tree[2][1]
-                    path = find_best_attribute([noun], attribute_seed['root'])
+                    path = find_best_attribute([adj, noun], attribute_seed['root'])
                 else:
-                    if np_tree[tree_len - 1][0] == 'NN':
+                    #if np_tree[tree_len - 1][0] == 'NN':
                         # find all nouns:
-                        tree_count = 0
-                        noun_arr = []
-                        while tree_count < tree_len:
-                            if np_tree[tree_count][0] == 'NN':
-                                noun_arr.append(np_tree[tree_count][1])
-                            tree_count += 1
-                        # off all the nouns find the nearest attribute.
-                        print 'noun arr: ' + str(noun_arr)
-                        path = find_best_attribute(noun_arr, attribute_seed['root'])
+                    tree_count = 0
+                    noun_arr = []
+                    find_all(np_tree, possibleNounTags + possibleAdjTags, noun_arr)
+                    # off all the nouns find the nearest attribute.
+                    print 'noun arr: ' + str(noun_arr)
+                    path = find_best_attribute(noun_arr, attribute_seed['root'])
         else:
             print 'pp_tree: ' + str(pp_tree)
             assert(pp_tree[0] == 'PP')
             # mostly location attribute.
             tree_len = len(pp_tree)
-            assert(pp_tree[2][0] in possibleNounTags)
-            noun_val_arr = []
-            find_all(pp_tree[2], ['NN', 'NNS'], noun_val_arr)
-            if pp_tree[1][0] == 'TO':
-                #only location attribute.
-                # find location target for noun_val
-                path = find_best_attribute(noun_val_arr, attribute_seed['root']['next']['location'])
-            else:
-                if pp_tree[1][0] == 'IN':
-                    # either purpose or location.
-                    # choose between purpose and location.
-                    path = find_best_attribute(noun_val, attribute_seed['root']['next']['location'])
+            noun_index = find_first_index(pp_tree, ['NP'])
+            if noun_index == -1:
+                print 'ERROR: No NP found in: ' + str(pp_tree)
+            else: 
+                noun_val_arr = []
+                find_all(pp_tree[noun_index], possibleNounTags + possibleAdjTags, noun_val_arr)
+                if pp_tree[1][0] == 'TO':
+                    #only location attribute.
+                    # find location target for noun_val
+                    path = find_best_attribute(noun_val_arr, attribute_seed['root']['next']['location'])
+                else:
+                    if pp_tree[1][0] == 'IN':
+                        # either purpose or location.
+                        # choose between purpose and location.
+                        path = find_best_attribute(noun_val_arr, attribute_seed['root'])
         print 'path found: ' + str(path)
         user_input = raw_input("Some input please: ")
