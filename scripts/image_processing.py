@@ -18,12 +18,20 @@ if __name__ == "__main__":
                 i_map.findBestCategory(image['result']['tag']['classes'], image['result']['tag']['probs'], attribute_seed['root'], path)
                 assert(path != [])
                 filtered_path = map(lambda x: x[0], path)
+<<<<<<< HEAD
                 str_path = json.dumps(filtered_path)
+=======
+                str_path = str(filtered_path)
+>>>>>>> origin/master
                 
                 if str_path not in hotel_attr_image[hotel_name]:
                     hotel_attr_image[hotel_name][str_path] = []
                 hotel_attr_image[hotel_name][str_path].append(image['url'])
     
+<<<<<<< HEAD
     f = open('data/hotel_attr_image.json', 'w')
+=======
+    f = open('hotel_attr_image.json', 'w')
+>>>>>>> origin/master
     f.write(json.dumps(hotel_attr_image))
     f.close()
