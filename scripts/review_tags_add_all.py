@@ -3,6 +3,12 @@ import attribute_adjective_finder as finder
 import sys
 import re
 
+def get_hotel_id(hotel_name, hotel_id_map):
+    for key in hotel_id_map:
+        if hotel_name == hotel_id_map[key]:
+            return key
+    return -1
+
 if __name__ == "__main__":
     attribute_seed = json.loads(open(sys.argv[1], 'r').read())
     attribute_adjective_map = json.loads(open(sys.argv[2], 'r').read())
@@ -10,14 +16,16 @@ if __name__ == "__main__":
     finder.init()
     # read the data
     review_data = json.loads(open(sys.argv[3], 'r').read())
+    hotel_id_map = json.loads(open(sys.argv[4], 'r').read())
     output = []
     output_hotel_id_review_id = {}      #hotel_id -> review_id -> review_object
-    output_hotel_id_hotel_name = {}
     count = 0
-    hotel_id = 0
     for val in review_data:
         hotel_name = val['name']
-        output_hotel_id_hotel_name[hotel_id] = hotel_name
+        hotel_id = get_hotel_id(hotel_name, hotel_id_map)
+        if hotel_id == -1:
+            print 'hotel_id not found for ' + hotel_name
+            continue
         output_hotel_id_review_id[hotel_id] = {}
         reviews = val['reviews']
         rev_id = 0
@@ -27,7 +35,11 @@ if __name__ == "__main__":
             review_sentences = re.split('\.|\?| !', complete_review)
             result = []
             for sent in review_sentences:
-                path, sentiment, correct_adj_list, adj_list = finder.find_meta_data(sent, attribute_seed, attribute_adjective_map)
+                try:
+                    path, sentiment, correct_adj_list, adj_list = finder.find_meta_data(sent, attribute_seed, attribute_adjective_map)
+                except TypeError:
+                    print 'Type Error in attribute_adjective_finder for line: ' + str(sent)
+                    continue
                 result.append({'path': path, 'sentiment': sentiment, 'adj_list': correct_adj_list })
                 
             attr_to_insert = []
@@ -59,11 +71,7 @@ if __name__ == "__main__":
             count += 1
             rev_id += 1
             output.append(formed_object)
-        hotel_id += 1
     
-    f = open('hotel_id_name.json', 'w')
-    f.write(json.dumps(output_hotel_id_hotel_name))
-    f.close()
     
     f = open('hotel_review_id.json', 'w')
     f.write(json.dumps(output_hotel_id_review_id))

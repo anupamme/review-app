@@ -133,6 +133,9 @@ def init():
 def find_subject_object(line):
     global proc
     parsed_c = proc.parse_doc(line)
+    if parsed_c == None:
+        print 'proc.parse_doc is None for line: ' + str(line)
+        return None, None, None, None, None, None, None
     #tuple_v = convert_to_tuple(parsed_c['sentences'][0]['parse'])
     if len(parsed_c['sentences']) == 0:
         return None, None, None, None, None, None, None
