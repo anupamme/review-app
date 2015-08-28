@@ -77,26 +77,6 @@ def find_subtree_2(tree, tag):
         count = count + 1
     return None
         
-def find_lowest_subtree_2(tree, tag):
-    if tree == None:
-        return None
-    tree_len = len(tree)
-    if tree_len == 0:
-        return None
-    count = tree_len - 1
-    print 'tree: ' + str(tree)
-    while count >= 0:
-        if type(tree[count]) == str:
-            if tree[count] == tag:
-                print 'returning: ' + str(tree)
-                return tree
-            else:
-                return None
-        val = find_lowest_subtree_2(tree[count], tag)
-        if val != None:
-            return val
-        count = count - 1
-
 def find_noun_array(processed):
     count = 0
     pos_count = len(processed['sentences'][0]['pos'])
@@ -193,9 +173,14 @@ def findAndInsert(attribute_seed, word, path):
 
 def find_best_attribute(noun_arr, map_val):
     if len(noun_arr) == 0:
+<<<<<<< HEAD
         print 'Not Found: Subject and object are none and no noun present: ' + str(noun_arr)
         return []
     print 'noun arr: ' + str(noun_arr)
+=======
+        print 'Not Found: Subject and object are none and no noun present: ' + line
+        return []
+>>>>>>> ce407fadfb6d67eafb72571b058bdceeb546983e
     path = is_any_noun_present(map_val, noun_arr)
     if path == []:
         print 'No noun is present in tree. So finding best bet...'
@@ -215,6 +200,7 @@ def find_best_attribute(noun_arr, map_val):
             print 'Unknown: Not able to insert line and noun: ' + str(noun_arr) + ' ; ' + winner_noun
     return path
 
+<<<<<<< HEAD
 def find_first_index(my_tuple, speech_list):
     count = 0
     while count < len(my_tuple):
@@ -223,12 +209,15 @@ def find_first_index(my_tuple, speech_list):
         count += 1
     return -1
 
+=======
+>>>>>>> ce407fadfb6d67eafb72571b058bdceeb546983e
 def find_all(sub_tree, tags_list, nouns):
     tree_len = len(sub_tree)
     count = 0
     #print 'tree first: ' + str(sub_tree)
     while count < tree_len:
         if type(sub_tree[count]) == str:
+<<<<<<< HEAD
             if sub_tree[count] in tags_list:
                 nouns.append(sub_tree[count + 1])
                 return
@@ -238,6 +227,15 @@ def find_all(sub_tree, tags_list, nouns):
         #print 'tree_next first: ' + str(sub_tree[count][0])
         if type(sub_tree[count]) == tuple:
             find_all(sub_tree[count], tags_list, nouns)
+=======
+            count = count + 1
+            continue
+        #print 'tree_next first: ' + str(sub_tree[count][0])
+        if type(sub_tree[count][0]) == tuple:
+            find_first(sub_tree[count], tags_list, nouns)
+        if sub_tree[count][0] in tags_list:
+            nouns.append(sub_tree[count][1])
+>>>>>>> ce407fadfb6d67eafb72571b058bdceeb546983e
         count = count + 1
     return
 
@@ -303,5 +301,6 @@ if __name__ == "__main__":
                         # either purpose or location.
                         # choose between purpose and location.
                         path = find_best_attribute(noun_val_arr, attribute_seed['root'])
+
         print 'path found: ' + str(path)
         user_input = raw_input("Some input please: ")
