@@ -198,18 +198,101 @@
             },
             "style": {
                 "next": {
-                "boutique": {
-                    "next": {},
-                    "keywords": ["boutiques", "fivestory", "boutique_style", "trendy", "upscale", "chic", "hostem", "upmarket", "sloane_street", "stylish", "vintage_furniture", "firmdale", "boutique_hotel", "pastry_shops", "luxurious", "super_chic", "vintage_clothing", "vintage_shops", "romantic"]
-                },
-                "classic": {
-                    "next": {},
-                    "keywords": ["classics", "vintage", "retro", "style", "contemporary", "iconic", "famous", "homage", "inspired", "featuring", "timeless", "legendary", "quirky", "reinterpreted", "melds", "reimagining", "epic", "whimsical", "re_imagined", "themed", "mash_up", "venerable", "old_fashioned", "features", "elegant", "americana", "musical", "noir", "cinematic", "quintessential", "mixes"]
-                },
-                "family_friendly": {
-                    "next": {},
-                    "keywords": ["kid_friendly", "family_oriented", "themed", "waterslides", "kiddie", "theme_park", "entertainment", "dining_options", "theme_parks", "adult_themed", "all_inclusive_resort", "disney_world", "themed_rides", "kids'", "offbeat", "movie_screenings", "musical_performances", "dance_performances", "walt_disney_world", "jungle_themed", "kids'_programming", "wholesome", "arcade_games", "hayrides", "friendly_amenities", "kids'_activities", "snallygaster", "nature_trails", "youth_oriented", "amusement_park"]
-                }
+                    "boutique": {
+                        "next": {},
+                        "keywords": [
+                            "boutiques",
+                            "fivestory",
+                            "boutique_style",
+                            "trendy",
+                            "upscale",
+                            "chic",
+                            "hostem",
+                            "upmarket",
+                            "sloane_street",
+                            "stylish",
+                            "vintage_furniture",
+                            "firmdale",
+                            "boutique_hotel",
+                            "pastry_shops",
+                            "luxurious",
+                            "super_chic",
+                            "vintage_clothing",
+                            "vintage_shops",
+                            "romantic"
+                        ]
+                    },
+                    "classic": {
+                        "next": {},
+                        "keywords": [
+                            "classics",
+                            "vintage",
+                            "retro",
+                            "style",
+                            "contemporary",
+                            "iconic",
+                            "famous",
+                            "homage",
+                            "inspired",
+                            "featuring",
+                            "timeless",
+                            "legendary",
+                            "quirky",
+                            "reinterpreted",
+                            "melds",
+                            "reimagining",
+                            "epic",
+                            "whimsical",
+                            "re_imagined",
+                            "themed",
+                            "mash_up",
+                            "venerable",
+                            "old_fashioned",
+                            "features",
+                            "elegant",
+                            "americana",
+                            "musical",
+                            "noir",
+                            "cinematic",
+                            "quintessential",
+                            "mixes"
+                        ]
+                    },
+                    "family_friendly": {
+                        "next": {},
+                        "keywords": [
+                            "kid_friendly",
+                            "family_oriented",
+                            "themed",
+                            "waterslides",
+                            "kiddie",
+                            "theme_park",
+                            "entertainment",
+                            "dining_options",
+                            "theme_parks",
+                            "adult_themed",
+                            "all_inclusive_resort",
+                            "disney_world",
+                            "themed_rides",
+                            "kids'",
+                            "offbeat",
+                            "movie_screenings",
+                            "musical_performances",
+                            "dance_performances",
+                            "walt_disney_world",
+                            "jungle_themed",
+                            "kids'_programming",
+                            "wholesome",
+                            "arcade_games",
+                            "hayrides",
+                            "friendly_amenities",
+                            "kids'_activities",
+                            "snallygaster",
+                            "nature_trails",
+                            "youth_oriented",
+                            "amusement_park"
+                        ]
+                    }
                 },
                 "keywords": []
             },
@@ -671,19 +754,131 @@
                         "next": {
                             "vegetarian": {
                                 "next": {},
-                                "keywords": ["vegan_options", "vegetarians", "vegan", "meatless", "vegan_dishes", "vegetarian_food", "meals", "paneer", "raw_food", "veg", "veggie_burgers", "samosas", "pilaf", "vegetarian_options", "gluten_free", "aloo", "tandoori", "macrobiotic", "cooked", "veggie", "curries", "herbivoracious", "foodie", "vegetarianism", "pakora", "gluten_intolerant"]
+                                "keywords": [
+                                    "vegan_options",
+                                    "vegetarians",
+                                    "vegan",
+                                    "meatless",
+                                    "vegan_dishes",
+                                    "vegetarian_food",
+                                    "meals",
+                                    "paneer",
+                                    "raw_food",
+                                    "veg",
+                                    "veggie_burgers",
+                                    "samosas",
+                                    "pilaf",
+                                    "vegetarian_options",
+                                    "gluten_free",
+                                    "aloo",
+                                    "tandoori",
+                                    "macrobiotic",
+                                    "cooked",
+                                    "veggie",
+                                    "curries",
+                                    "herbivoracious",
+                                    "foodie",
+                                    "vegetarianism",
+                                    "pakora",
+                                    "gluten_intolerant"
+                                ]
                             },
                             "italian": {
                                 "next": {},
-                                "keywords": ["pasta", "garganelli", "rigatoni", "soup", "lasagna", "chitarra", "bolognese", "potpie", "beef_brisket", "farro", "pita", "lamb_stew", "parmigiana", "scampi", "orecchiette", "fresh_tomato_sauce", "oven_roasted", "chicken_salad", "vegetable_curry", "crabmeat", "meat_sauce", "carbonara", "ravioli", "vongole", "hard_boiled_eggs", "spaghetti_alla", "fettuccine", "pesto", "trofie", "braised_lamb", "parmigiano", "garlic_bread", "grilled_fish", "chicken_pot_pie", "angel_hair", "puttanesca"]
+                                "keywords": [
+                                    "pasta",
+                                    "garganelli",
+                                    "rigatoni",
+                                    "soup",
+                                    "lasagna",
+                                    "chitarra",
+                                    "bolognese",
+                                    "potpie",
+                                    "beef_brisket",
+                                    "farro",
+                                    "pita",
+                                    "lamb_stew",
+                                    "parmigiana",
+                                    "scampi",
+                                    "orecchiette",
+                                    "fresh_tomato_sauce",
+                                    "oven_roasted",
+                                    "chicken_salad",
+                                    "vegetable_curry",
+                                    "crabmeat",
+                                    "meat_sauce",
+                                    "carbonara",
+                                    "ravioli",
+                                    "vongole",
+                                    "hard_boiled_eggs",
+                                    "spaghetti_alla",
+                                    "fettuccine",
+                                    "pesto",
+                                    "trofie",
+                                    "braised_lamb",
+                                    "parmigiano",
+                                    "garlic_bread",
+                                    "grilled_fish",
+                                    "chicken_pot_pie",
+                                    "angel_hair",
+                                    "puttanesca"
+                                ]
                             },
                             "thai": {
                                 "next": {},
-                                "keywords": ["mukda", "satay", "sour_sauce", "noodle_dish", "vegetable_dishes", "rice_noodles", "bananas_foster", "sticky_rice", "fried_oysters", "cocumber_salad", "tapas_style", "chicken_curry", "spicy", "steak_tartare", "vong", "izakaya", "chilli_sauce", "brown_shrimp", "scotch_egg", "fried_rice", "lettuce_wraps", "poblano", "lightly_spiced", "green_chicken_curry", "fish_soup", "sriracha", "green_papaya", "comfort_food", "chickpea", "roast_pork", "ikan", "pad_thai", "brochettes", "garlic_sauce"]
+                                "keywords": [
+                                    "mukda",
+                                    "satay",
+                                    "sour_sauce",
+                                    "noodle_dish",
+                                    "vegetable_dishes",
+                                    "rice_noodles",
+                                    "bananas_foster",
+                                    "sticky_rice",
+                                    "fried_oysters",
+                                    "cocumber_salad",
+                                    "tapas_style",
+                                    "chicken_curry",
+                                    "spicy",
+                                    "steak_tartare",
+                                    "vong",
+                                    "izakaya",
+                                    "chilli_sauce",
+                                    "brown_shrimp",
+                                    "scotch_egg",
+                                    "fried_rice",
+                                    "lettuce_wraps",
+                                    "poblano",
+                                    "lightly_spiced",
+                                    "green_chicken_curry",
+                                    "fish_soup",
+                                    "sriracha",
+                                    "green_papaya",
+                                    "comfort_food",
+                                    "chickpea",
+                                    "roast_pork",
+                                    "ikan",
+                                    "pad_thai",
+                                    "brochettes",
+                                    "garlic_sauce"
+                                ]
                             },
                             "french": {
                                 "next": {},
-                                "keywords": ["shallots", "wine", "vinegar", "tarragon", "olive", "mustard", "leeks", "herbes", "fleur_de_sel", "cheese", "butter", "breads"]
+                                "keywords": [
+                                    "shallots",
+                                    "wine",
+                                    "vinegar",
+                                    "tarragon",
+                                    "olive",
+                                    "mustard",
+                                    "leeks",
+                                    "herbes",
+                                    "fleur_de_sel",
+                                    "cheese",
+                                    "butter",
+                                    "breads"
+                                ]
                             },
                             "breakfast": {
                                 "next": {},
@@ -709,7 +904,7 @@
                                     "vegetable",
                                     "pot",
                                     "sauce"
-                                ]   
+                                ]
                             }
                         },
                         "keywords": []
@@ -870,7 +1065,37 @@
                     },
                     "spacious": {
                         "next": {},
-                        "keywords": ["guest_rooms", "marble_bathrooms", "individually_decorated", "rooftop_pool", "mountain_views", "colonial_style", "four_poster_beds", "outdoor_pool", "chalet_style", "seven_bedrooms", "solarium", "self_catering_apartments", "minimalist_rooms", "marble_floors", "features_high_ceilings", "high_ceilings", "sun_deck", "indoor_outdoor", "lounge_bar", "tropical_garden", "pool_spa", "room_boutique_hotel", "outdoor_hot_tub", "wood_burning_fireplaces", "queen_beds", "en_suite_bathrooms", "private_baloconies", "suites", "gas_fireplace"]
+                        "keywords": [
+                            "guest_rooms",
+                            "marble_bathrooms",
+                            "individually_decorated",
+                            "rooftop_pool",
+                            "mountain_views",
+                            "colonial_style",
+                            "four_poster_beds",
+                            "outdoor_pool",
+                            "chalet_style",
+                            "seven_bedrooms",
+                            "solarium",
+                            "self_catering_apartments",
+                            "minimalist_rooms",
+                            "marble_floors",
+                            "features_high_ceilings",
+                            "high_ceilings",
+                            "sun_deck",
+                            "indoor_outdoor",
+                            "lounge_bar",
+                            "tropical_garden",
+                            "pool_spa",
+                            "room_boutique_hotel",
+                            "outdoor_hot_tub",
+                            "wood_burning_fireplaces",
+                            "queen_beds",
+                            "en_suite_bathrooms",
+                            "private_baloconies",
+                            "suites",
+                            "gas_fireplace"
+                        ]
                     }
                 },
                 "keywords": []

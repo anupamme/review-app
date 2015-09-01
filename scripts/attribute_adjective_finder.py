@@ -74,7 +74,7 @@ def findBestDistance(keywords, word):
             try:
                 local_distance = model.similarity(key, word)
             except KeyError:
-                print 'word2vec error: word not found: ' + key + ' ; ' + word
+                #print 'word2vec error: word not found: ' + key + ' ; ' + word
                 continue
             if local_distance > max_distance:
                 max_distance = local_distance
@@ -145,7 +145,6 @@ def find_subject_object(line):
     obj_details = None
     mod_details = None
     for val in deps:
-        #print 'checking: ' + str(val)
         if 'subj' in val[0]:
             subj_details = val
         if 'obj' in val[0]:
@@ -161,6 +160,8 @@ def find_subject_object(line):
     else:
         obj = tokens[obj_details[2]]
     sub = None
+    if subj_details is not None:
+        sub = tokens[subj_details[2]]
     adj_list = []
     verb_list = []
     pos_count = 0
@@ -179,7 +180,9 @@ def find_subject_object(line):
             if noun not in exclude_noun:
                 noun_arr.append(noun)
         index += 1
-    print 'nouns: ' + str(noun_arr)
+    print 'pos: ' + str(pos_tags)
+    print 'tokens:' + str(tokens)
+    print 'verb_tags: ' + str(verb_list)
     return sub, adj_list, verb_list, obj, noun_arr, parsed_c['sentences'][0]['sentiment'], tokens
 
 def checkIfDone(user_controlled, user_input, reviewArr, current_count):
@@ -418,8 +421,8 @@ if __name__ == "__main__":
             if correct_adjective_list != None and correct_adjective_list != []:
                 forward_adj_map[line] = str(correct_adjective_list)
                 print 'found adjective: ' + str(correct_adjective_list)
-            else:
-                print 'error attribute adjective map key error: ' + str_path + '; ' + str(len(attribute_adjective_map))
+#            else:
+#                print 'error attribute adjective map key error: ' + str_path + '; ' + str(len(attribute_adjective_map))
             assert(path != [])
             str_path = str(path)
             print 'path: ' + str_path

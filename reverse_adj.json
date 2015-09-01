@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-{"[u'hotel-outside', u'nightlife']": [["next", 1]], "[u'location', u'station']": [], "[u'amenities', u'shopping']": [["right", 1], ["next", 1]], "[u'food-beverages', u'restaurant']": []}
-=======
-{"[u'hotel-outside', u'activities', u'snorkeling']": [["very", 1], ["few", 1], ["different", 1], ["romantic", 1], ["nice", 1]]}
->>>>>>> ce407fadfb6d67eafb72571b058bdceeb546983e
+{"[u'room', u'clothing', u'linens']": [["nicely", 1], ["impeccable", 1], ["clean", 1]], "[u'room', u'bathroom', u'shower']": [["glad", 1], ["first", 1]], "[u'overall', u'culture']": [["perfect", 1]], "[u'amenities', u'gym']": [["good", 1]], "[u'room-experience', u'view']": [["airy", 1], ["minimaly", 1], ["well", 1]], "[u'room', u'furniture']": [["minimal", 1]], "[u'location', u'sea']": [], "[u'services', u'in-room', u'general-service']": [["as", 1], ["smooth", 1], ["soon", 1]]}
