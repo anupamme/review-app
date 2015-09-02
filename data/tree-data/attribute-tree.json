@@ -502,12 +502,6 @@
                                     "kitchen_utencils"
                                 ]
                             },
-                            "room-service": {
-                                "next": {},
-                                "keywords": [
-                                    "room_service"
-                                ]
-                            },
                             "general-service": {
                                 "next": {},
                                 "keywords": [
@@ -742,12 +736,6 @@
                 },
                 "keywords": []
             },
-            "others": {
-                "next": {},
-                "keywords": [
-                    "none"
-                ]
-            },
             "food-beverages": {
                 "next": {
                     "meal": {
@@ -905,6 +893,41 @@
                                     "pot",
                                     "sauce"
                                 ]
+                            },
+                            "seafood": {
+                                "next": {},
+                                "keywords": [
+                                    "shellfish",
+                                    "fresh_fish",
+                                    "fish",
+                                    "fresh_seafood",
+                                    "locally_caught",
+                                    "oysters",
+                                    "prepared_foods",
+                                    "food",
+                                    "seafood_dishes",
+                                    "seafood",
+                                    "freshly_caught",
+                                    "tuna",
+                                    "red_snaper",
+                                    "fish_tacos",
+                                    "ceviche",
+                                    "smoked_fish",
+                                    "sushi_bars",
+                                    "lobster",
+                                    "shrimp",
+                                    "seafood_restaurant",
+                                    "salmon",
+                                    "locally_sourced",
+                                    "hamachi",
+                                    "prawns",
+                                    "oyster",
+                                    "seafood_gumbo",
+                                    "raw_tuna",
+                                    "fried_fish",
+                                    "raw_fish",
+                                    "oyster_bar"
+                                ]
                             }
                         },
                         "keywords": []
@@ -1010,26 +1033,6 @@
                             "poolside",
                             "terrace",
                             "glass"
-                        ]
-                    },
-                    "vending_machine": {
-                        "next": {},
-                        "keywords": [
-                            "vending_machines",
-                            "soda",
-                            "apple_flavoured",
-                            "kit_kat",
-                            "soft_drinks",
-                            "pill",
-                            "sodas",
-                            "hershey's_kisses",
-                            "diet_coke",
-                            "ounce_bottle",
-                            "kiosks",
-                            "slurpee",
-                            "ounce_soda",
-                            "cough_drops",
-                            "dispenser"
                         ]
                     }
                 },
@@ -1231,8 +1234,33 @@
                             "water",
                             "duck",
                             "pond",
-                            "fish",
-                            "spa"
+                            "fish"
+                        ]
+                    },
+                    "spa": {
+                        "next": {},
+                        "keywords": [
+                            "resort",
+                            "massage",
+                            "sauna",
+                            "spa_treatments",
+                            "steam_bath",
+                            "spa_treatment",
+                            "hydrotherapy",
+                            "spa's",
+                            "square_foot_spa",
+                            "massages",
+                            "luxury_spa",
+                            "spa_facilities",
+                            "infinity_edge_pool",
+                            "outdoor_pool",
+                            "wellness_centre",
+                            "infinity_pool",
+                            "heated_outdoor_pool",
+                            "hot_tubs",
+                            "sauna_steam_room",
+                            "facials",
+                            "heated_indoor_pool"
                         ]
                     },
                     "gym": {

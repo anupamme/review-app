@@ -208,9 +208,9 @@ def find_attribute(line, attribute_seed):
         line = line.encode('utf-8').strip()
     except UnicodeDecodeError:
         print 'Error: UnicodeDecodeError for line no: ' + str(count)
-        continue
+        return None, None, None
     if line == '':
-        continue
+        return None, None, None
     print 'line: ' + line
     path = []
     sub, adj_list, verb_list, obj, noun_arr = find_subject_object(line)
@@ -228,7 +228,7 @@ def find_attribute(line, attribute_seed):
         path = search_noun_array(attribute_seed['root'], noun_arr)
         if path == []:
             print 'Not Found: For line: ' + line
-            return None
+            return None, adj_list, verb_list
     else:
         if sub == None:
             # if object is present.
@@ -241,7 +241,7 @@ def find_attribute(line, attribute_seed):
                 path = search_noun_array(attribute_seed['root'], noun_arr)
                 if path == []:
                     print 'Not Found: For line: ' + line
-                    return None
+                    return None, adj_list, verb_list
         else:
             # if subject is present
             if is_present(sub, attribute_seed['root']['keywords']):
@@ -254,7 +254,7 @@ def find_attribute(line, attribute_seed):
                     path = search_noun_array(attribute_seed['root'], noun_arr)
                     if path == []:
                         print 'Not Found: For line: ' + line
-                        return None
+                        return None, adj_list, verb_list
                 else:
                     if is_present(obj, attribute_seed['root']['keywords']):
                         word_val = attribute_seed['root']['keywords'][obj]
@@ -265,8 +265,8 @@ def find_attribute(line, attribute_seed):
                         path = search_noun_array(attribute_seed['root'], noun_arr)
                         if path == []:
                             print 'Not Found: For line: ' + line
-                            return None
-    return path
+                            return None, adj_list, verb_list
+    return path, adj_list, verb_list
 
             
     
@@ -300,7 +300,7 @@ if __name__ == "__main__":
         
         lineArr = re.split('\n|\.', review)
         for line in lineArr:
-            path = find_attribute(line, attribute_seed)
+            path, adj_list, verb_list = find_attribute(line, attribute_seed)
             if path == None:
                 continue
             assert(path != [])

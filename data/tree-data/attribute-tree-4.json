@@ -447,7 +447,7 @@
             "top": 1,
             "tradition": 1,
             "blinds": 1,
-            "touristy": 1,
+            "tourist": 1,
             "wildlife": 1,
             "silverado": 1,
             "scullery": 1,
@@ -1941,7 +1941,11 @@
                                 "keywords": {
                                     "tour": 1,
                                     "adventure": 1,
-                                    "safari": 1
+                                    "safari": 1,
+                                    "class": 1,
+                                    "making": 1,
+                                    "cooking": 1,
+                                    "trip": 1
                                 },
                                 "next": {}
                             },
@@ -3328,7 +3332,7 @@
                         "keywords": {
                             "bamboos": 1,
                             "gardening": 1,
-                            "shade": 1,
+                            "shade": 0,
                             "soil": 1,
                             "walled_garden": 1,
                             "raised_beds": 1,
@@ -3578,7 +3582,9 @@
                             "river": 1,
                             "pond": 1,
                             "pool": 1,
-                            "swimming": 1
+                            "swimming": 1,
+                            "shade": 1,
+                            "umbrellas": 1
                         },
                         "next": {}
                     }
@@ -3589,7 +3595,7 @@
                     "summer": 1,
                     "walking": 1,
                     "valleys": 1,
-                    "touristy": 1,
+                    "tourist": 1,
                     "5/10min": 1,
                     "aqua": 1,
                     "nut": 1,
@@ -3701,7 +3707,7 @@
                             "sun": 1,
                             "sunshine": 1,
                             "aqua": 1,
-                            "tree": 1,
+                            "tree": 0,
                             "ocean": 1,
                             "sand": 1,
                             "coastline": 1,
@@ -3721,7 +3727,7 @@
                             "vicinity": 1,
                             "walkable": 1,
                             "bustling": 1,
-                            "touristy": 1,
+                            "tourist": 1,
                             "souvenir_shops": 1,
                             "shopping": 1,
                             "town_centre": 1,
@@ -3735,7 +3741,10 @@
                             "convenient": 1,
                             "trendy_bars": 1,
                             "shops": 1,
-                            "restaurants": 1
+                            "restaurants": 1,
+                            "area": 1,
+                            "outside": 1,
+                            "location": 1
                         },
                         "next": {}
                     }
