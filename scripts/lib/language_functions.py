@@ -304,6 +304,7 @@ def findBestCategory(classes, probs, map_val, path):
     result_items.sort(key=lambda k: k[1], reverse=True)
     index = 0
     winner_node, winner_val = result_items[index]
+    print 'candidate: ' + str(winner_node) + ' ; ' + str(winner_val)
     while winner_node in excludedCategories:
         index += 1
         winner_node, winner_val = result_items[index]
