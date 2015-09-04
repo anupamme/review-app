@@ -17,6 +17,10 @@ possibleNounTags = ['NN', 'NNP', 'NNS', 'NNPS']
 possibleAdjTags = ['JJ', 'JJR', 'JJS', 'RB', 'RBS', 'RBR']
 possibleVerbTags = ['VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ']
 
+#image data.
+excludedCategories = ['services', 'others', 'price-value']
+top_number_of_items = 3
+
 model_file = "../code/word2vec-all/word2vec/trunk/vectors-phrase.bin"
 stanford_jars = "/Volumes/anupam work/code/stanford-jars/3.5/*"
 
@@ -85,7 +89,7 @@ def find_best_attribute_multi_2(data_map, map_val, path):
             max_score = score
             max_node = node
     assert(max_node != None)
-    path.append(max_node)
+    path.append([max_node, max_score])
     if len(map_val['next'][max_node]['next']) == 0:
         return
     else:
@@ -130,6 +134,9 @@ def filter_array(processed, possibleTags):
     return res_arr        
         
 def find_attribute_2(attribute_seed, user_input):
+    if proc == None:
+        print 'proc was none unexpectedly so reiniting...'
+        load_for_adjectives()
     processed = proc.parse_doc(user_input)
     if len(processed['sentences']) == 0:
         return None
@@ -259,3 +266,46 @@ def find_sentiment_adjective(attribute_adjective_map, attribute_path, user_input
         else:
             print 'Not found in path: ' + str_path
     return correct_adjective_list
+
+def findMaxForEachSource(classes, probs, keywords):
+    index = 0
+    result = []
+    while index < len(classes):
+        source_word = normalize(classes[index])
+        source_prob = probs[index]
+        index += 1
+        interim = []
+        for word in keywords:
+            word = normalize(word)
+            try:
+                interim.append(model.similarity(source_word, word))
+            except KeyError:
+                #print 'key error for: ' + source_word + ' ; ' + word
+                continue
+        if len(interim) == 0:
+            #print 'No similar word found for word, keywords: ' + source_word + ' ; ' + str(keywords)
+            continue
+        interim.sort(reverse=True)
+        result.append((source_word, source_prob*interim[0]))
+    return result
+
+def findBestCategory(classes, probs, map_val, path):
+    nextNode = map_val['next']
+    if nextNode == {}:
+        return
+    result_node = {}
+    for key in nextNode:
+        keywords = nextNode[key]['keywords']
+        source_max = findMaxForEachSource(classes, probs, keywords)
+        source_max.sort(key=lambda k: k[1], reverse=True)
+        sum_val = sum(map(lambda x: x[1], source_max[:top_number_of_items]))
+        result_node[key] = sum_val
+    result_items = result_node.items()
+    result_items.sort(key=lambda k: k[1], reverse=True)
+    index = 0
+    winner_node, winner_val = result_items[index]
+    while winner_node in excludedCategories:
+        index += 1
+        winner_node, winner_val = result_items[index]
+    path.append([winner_node, winner_val])
+    return findBestCategory(classes, probs, nextNode[winner_node], path)
