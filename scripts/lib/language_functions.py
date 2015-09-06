@@ -38,6 +38,12 @@ def normalize(word):
         return None
     return word.lower().replace(' ', '_').replace('-','_')
 
+def is_present(word, map_val):
+    if word in map_val:
+        if map_val[word] == 1 or map_val[word] == 2:
+            return True
+    return False
+
 def load_for_adjectives():
     load_model_files()
     attribute_adjective_map = json.loads(open(attribute_adjective_file, 'r').read())
@@ -69,12 +75,13 @@ def find_best_score(word, keywords_map):
 def find_score(data_map, map_val):
     score_sum = 0
     for key in data_map:
-        if key in map_val['keywords'] and map_val['keywords'][key] >= 1:
+        if is_present(key, map_val['keywords']):
             score_sum += 1 * data_map[key]
-        else:
-            best = find_best_score(key, map_val['keywords']) * data_map[key]
-            if best > 0:
-                score_sum += best
+#        else:
+#            print 'error 001: ' + str(key.encode('utf-8'))
+#            best = find_best_score(key, map_val['keywords']) * data_map[key]
+#            if best > 0:
+#                score_sum += best
     return score_sum
     
 def find_best_attribute_multi_2(data_map, map_val, path):
@@ -88,12 +95,16 @@ def find_best_attribute_multi_2(data_map, map_val, path):
             print 'win: max_score, new_score: ' + str(max_score) + ' ; ' + str(score) + ' ; ' + node
             max_score = score
             max_node = node
-    assert(max_node != None)
-    path.append([max_node, max_score])
-    if len(map_val['next'][max_node]['next']) == 0:
+    if max_node == None:
+        print 'error 001: Time to update attribute tree.'
         return
     else:
-        find_best_attribute_multi_2(data_map, map_val['next'][max_node], path)
+        assert(max_node != None)
+        path.append([max_node, max_score])
+        if len(map_val['next'][max_node]['next']) == 0:
+            return
+        else:
+            find_best_attribute_multi_2(data_map, map_val['next'][max_node], path)
 
 def find_sub_obj(processed):
     deps = processed['sentences'][0]['deps_basic']
@@ -267,46 +278,81 @@ def find_sentiment_adjective(attribute_adjective_map, attribute_path, user_input
             print 'Not found in path: ' + str_path
     return correct_adjective_list
 
-def findMaxForEachSource(classes, probs, keywords):
+#def findMaxForEachSource(classes, probs, keywords):
+#    index = 0
+#    result = []
+#    while index < len(classes):
+#        source_word = normalize(classes[index])
+#        source_prob = probs[index]
+#        index += 1
+#        interim = []
+#        for word in keywords:
+#            word = normalize(word)
+#            try:
+#                interim.append(model.similarity(source_word, word))
+#            except KeyError:
+#                #print 'key error for: ' + source_word + ' ; ' + word
+#                continue
+#        if len(interim) == 0:
+#            #print 'No similar word found for word, keywords: ' + source_word + ' ; ' + str(keywords)
+#            continue
+#        interim.sort(reverse=True)
+#        result.append((source_word, source_prob*interim[0]))
+#    return result
+
+def find_num_matches(classes, probs, keywords):
     index = 0
     result = []
     while index < len(classes):
         source_word = normalize(classes[index])
         source_prob = probs[index]
         index += 1
-        interim = []
-        for word in keywords:
-            word = normalize(word)
-            try:
-                interim.append(model.similarity(source_word, word))
-            except KeyError:
-                #print 'key error for: ' + source_word + ' ; ' + word
-                continue
-        if len(interim) == 0:
-            #print 'No similar word found for word, keywords: ' + source_word + ' ; ' + str(keywords)
-            continue
-        interim.sort(reverse=True)
-        result.append((source_word, source_prob*interim[0]))
+        if is_present(source_word, keywords):
+            #print 'is present: ' + str(source_word)
+            result.append(source_prob)
     return result
 
-def findBestCategory(classes, probs, map_val, path):
+def findBestCategory_2(classes, probs, map_val, path):
     nextNode = map_val['next']
     if nextNode == {}:
         return
     result_node = {}
     for key in nextNode:
         keywords = nextNode[key]['keywords']
-        source_max = findMaxForEachSource(classes, probs, keywords)
-        source_max.sort(key=lambda k: k[1], reverse=True)
-        sum_val = sum(map(lambda x: x[1], source_max[:top_number_of_items]))
-        result_node[key] = sum_val
+        #print 'finding matches for: ' + str(key)
+        result = find_num_matches(classes, probs, keywords)
+        total_sum = reduce(lambda x, y: x+y, result, 0.0)
+        result_node[key] = total_sum
     result_items = result_node.items()
     result_items.sort(key=lambda k: k[1], reverse=True)
+    
     index = 0
     winner_node, winner_val = result_items[index]
-    print 'candidate: ' + str(winner_node) + ' ; ' + str(winner_val)
+    #print 'candidate: ' + str(winner_node) + ' ; ' + str(winner_val)
     while winner_node in excludedCategories:
         index += 1
         winner_node, winner_val = result_items[index]
     path.append([winner_node, winner_val])
-    return findBestCategory(classes, probs, nextNode[winner_node], path)
+    return findBestCategory_2(classes, probs, nextNode[winner_node], path)
+
+#def findBestCategory(classes, probs, map_val, path):
+#    nextNode = map_val['next']
+#    if nextNode == {}:
+#        return
+#    result_node = {}
+#    for key in nextNode:
+#        keywords = nextNode[key]['keywords']
+#        source_max = findMaxForEachSource(classes, probs, keywords)
+#        source_max.sort(key=lambda k: k[1], reverse=True)
+#        sum_val = sum(map(lambda x: x[1], source_max[:top_number_of_items]))
+#        result_node[key] = sum_val
+#    result_items = result_node.items()
+#    result_items.sort(key=lambda k: k[1], reverse=True)
+#    index = 0
+#    winner_node, winner_val = result_items[index]
+#    print 'candidate: ' + str(winner_node) + ' ; ' + str(winner_val)
+#    while winner_node in excludedCategories:
+#        index += 1
+#        winner_node, winner_val = result_items[index]
+#    path.append([winner_node, winner_val])
+#    return findBestCategory(classes, probs, nextNode[winner_node], path)

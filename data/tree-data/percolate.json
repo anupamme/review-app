@@ -1310,7 +1310,8 @@
                             "upmarket": 1,
                             "boutiques": 1,
                             "hostem": 1,
-                            "vintage_clothing": 1
+                            "vintage_clothing": 1,
+                            "leisure": 1
                         },
                         "next": {}
                     },
@@ -1345,7 +1346,9 @@
                             "musical_performances": 1,
                             "disney_world": 1,
                             "dining_options": 1,
-                            "dance_performances": 1
+                            "dance_performances": 1,
+                            "children": 1,
+                            "slide": 1
                         },
                         "next": {}
                     },
@@ -1989,7 +1992,8 @@
                                     "adventure": 1,
                                     "safari": 1,
                                     "making": 1,
-                                    "class": 1
+                                    "class": 1,
+                                    "freedom": 1
                                 },
                                 "next": {}
                             },
@@ -2030,7 +2034,13 @@
                                     "morning": 1,
                                     "bikram": 1,
                                     "fitness_classes": 1,
-                                    "ashtanga": 1
+                                    "ashtanga": 1,
+                                    "calm": 1,
+                                    "solitude": 1,
+                                    "zen": 1,
+                                    "outdoors": 1,
+                                    "posture": 1,
+                                    "peace": 1
                                 },
                                 "next": {}
                             },
@@ -2321,7 +2331,7 @@
                             "indoors": 1,
                             "artistic": 1,
                             "sculptural": 1,
-                            "outdoors": 1,
+                            "outdoors": 0,
                             "geometric_forms": 1,
                             "bamboo": 1,
                             "sculpture": 1
@@ -3435,6 +3445,7 @@
                             "concert": 1,
                             "crowd": 1,
                             "people": 1,
+                            "women": 1,
                             "festival": 1,
                             "dancing": 1,
                             "picnic": 1,
@@ -3453,6 +3464,7 @@
                     },
                     "garden": {
                         "keywords": {
+                            "nature": 1,
                             "bamboos": 1,
                             "gardening": 1,
                             "soil": 1,
@@ -3470,8 +3482,7 @@
                             "wisley": 1,
                             "blossom": 1,
                             "orangery": 1,
-                            "nature": 1,
-                            "woodland": 1,
+                            "woodland": 0,
                             "botanical_garden": 1,
                             "flower_garden": 1,
                             "hanging_baskets": 1,
@@ -3507,7 +3518,8 @@
                             "shade": 0,
                             "frangipani": 1,
                             "grass": 1,
-                            "leaves": 1
+                            "leaves": 1,
+                            "conifer": 1
                         },
                         "next": {}
                     },
@@ -3620,7 +3632,11 @@
                             "private_terrace": 1,
                             "roof_deck": 1,
                             "dining_room": 1,
-                            "patio": 1
+                            "patio": 1,
+                            "romantic": 1,
+                            "bouquet": 1,
+                            "table": 1,
+                            "romance": 1
                         },
                         "next": {}
                     },
@@ -3693,7 +3709,26 @@
                             "outdoor_pool": 1,
                             "steam_bath": 1,
                             "hot_tubs": 1,
-                            "massage": 1
+                            "massage": 1,
+                            "flower": 1,
+                            "women": 1,
+                            "girl": 1,
+                            "relaxation": 1,
+                            "floral": 1,
+                            "nude": 1,
+                            "enjoyment": 1,
+                            "treatment": 1,
+                            "therapy": 1,
+                            "aromatherapy": 1,
+                            "alternative": 1,
+                            "health": 1,
+                            "harmony": 1,
+                            "decoration": 1,
+                            "balance": 1,
+                            "bath": 1,
+                            "healthy": 1,
+                            "care": 1,
+                            "leaf": 1
                         },
                         "next": {}
                     },
@@ -3733,7 +3768,12 @@
                             "river": 1,
                             "pond": 1,
                             "pool": 1,
-                            "swimming": 1
+                            "swimming": 1,
+                            "leisure": 1,
+                            "tropical": 1,
+                            "summer": 1,
+                            "recreation": 1
+                            
                         },
                         "next": {}
                     }
@@ -3811,7 +3851,9 @@
                             "valleys": 1,
                             "foothills": 1,
                             "mountain_range": 1,
-                            "hills": 1
+                            "hills": 1,
+                            "adventure": 1,
+                            "hill": 1
                         },
                         "next": {}
                     },
@@ -3847,7 +3889,14 @@
                             "zoo": 1,
                             "forest": 1,
                             "animal": 1,
-                            "lemur": 1
+                            "lemur": 1,
+                            "woodland": 1,
+                            "outdoor": 1,
+                            "scenic": 1,
+                            "field": 1,
+                            "plantation": 1,
+                            "outdoors": 1,
+                            "nature": 1
                         },
                         "next": {}
                     },
@@ -3864,7 +3913,9 @@
                             "sand": 1,
                             "coastline": 1,
                             "sea": 1,
-                            "beach": 1
+                            "beach": 1,
+                            "wind": 1,
+                            "coast": 1
                         },
                         "next": {}
                     },
@@ -3896,7 +3947,16 @@
                             "convenient": 1,
                             "trendy_bars": 1,
                             "shops": 1,
-                            "restaurants": 1
+                            "restaurants": 1,
+                            "outdoors": 1,
+                            "street": 1,
+                            "road": 1,
+                            "row": 1,
+                            "house": 1,
+                            "walkway": 1,
+                            "city": 1,
+                            "walk": 1,
+                            "christmas_tree": 1
                         },
                         "next": {}
                     }
