@@ -9,6 +9,9 @@ def get_hotel_id(hotel_name, hotel_id_map):
             return key
     return -1
 
+def get_review_details():
+    
+
 if __name__ == "__main__":
     attribute_seed = json.loads(open(sys.argv[1], 'r').read())
     attribute_adjective_map = json.loads(open(sys.argv[2], 'r').read())
@@ -36,11 +39,20 @@ if __name__ == "__main__":
             result = []
             for sent in review_sentences:
                 try:
-                    path, sentiment, correct_adj_list, adj_list = finder.find_meta_data(sent, attribute_seed, attribute_adjective_map)
+                    path_with_score = text_p.find_attribute_2(attribute_seed, sent)
+                    if path_with_score == None or path_with_score == []:
+                        'path is none for line: ' + str(line)
+                        continue
+                    #print 'path_with_score: ' + str(path_with_score)
+                    path = map(lambda x: x[0], path_with_score)
+                    score = map(lambda x: x[1], path_with_score)
+                    #print 'score: ' + str(score)
+                    cumulative_score = reduce(lambda x, y: x * y, score, 1.0)
+                    adj_list = text_p.find_sentiment_adjective(attribute_adjective_map, path, sent)
                 except TypeError:
                     print 'Type Error in attribute_adjective_finder for line: ' + str(sent)
                     continue
-                result.append({'path': path, 'sentiment': sentiment, 'adj_list': correct_adj_list })
+                result.append({'path': path, 'sentiment': sentiment, 'adj_list': adj_list })
                 
             attr_to_insert = []
             sentiment_map = {}
