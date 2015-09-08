@@ -22,10 +22,13 @@ def get_review_details(attribute_seed, attribute_adjective_map, sent):
         score = map(lambda x: x[1], path_with_score)
         #print 'score: ' + str(score)
         cumulative_score = reduce(lambda x, y: x * y, score, 1.0)
-        adj_list = text_p.find_sentiment_adjective(attribute_adjective_map, path, sent)
+        adj_list, sentiment = text_p.find_sentiment_adjective(attribute_adjective_map, path, sent)
     except TypeError:
         print 'Type Error in attribute_adjective_finder for line: ' + str(sent)
         return
+    print 'path: ' + str(path)
+    print 'sentiment: ' + str(sentiment)
+    print 'adj_list: ' + str(adj_list)
     yield {'path': path, 'sentiment': sentiment, 'adj_list': adj_list }
 
 if __name__ == "__main__":
@@ -54,8 +57,8 @@ if __name__ == "__main__":
             review_sentences = re.split('\.|\?| !', complete_review)
             result = []
             for sent in review_sentences:
-                result.append(get_review_details(attribute_seed, attribute_adjective_map, sent))
-                
+                result.append(dict(get_review_details(attribute_seed, attribute_adjective_map, sent)))
+            print 'result: ' + str(result)
             attr_to_insert = []
             sentiment_map = {}
             adj_list_map = {}

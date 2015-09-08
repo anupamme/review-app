@@ -276,7 +276,7 @@ def find_sentiment_adjective(attribute_adjective_map, attribute_path, user_input
             correct_adjective_list = find_correct_adjective(adj_list, candidate_adjectives, sentiment)
         else:
             print 'Not found in path: ' + str_path
-    return correct_adjective_list
+    return correct_adjective_list, sentiment
 
 #def findMaxForEachSource(classes, probs, keywords):
 #    index = 0
