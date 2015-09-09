@@ -147,7 +147,8 @@ def filter_array(processed, possibleTags):
 def find_attribute_2(attribute_seed, user_input):
     if proc == None:
         print 'proc was none unexpectedly so reiniting...'
-        load_for_adjectives()
+        #load_for_adjectives()
+        return None
     processed = proc.parse_doc(user_input)
     if len(processed['sentences']) == 0:
         return None

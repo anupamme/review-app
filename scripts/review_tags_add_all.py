@@ -15,8 +15,8 @@ def get_review_details(attribute_seed, attribute_adjective_map, sent):
     try:
         path_with_score = text_p.find_attribute_2(attribute_seed, sent)
         if path_with_score == None or path_with_score == []:
-            'path is none for line: ' + str(line)
-            yield None
+            'path is none for line: ' + str(sent)
+            return None
         #print 'path_with_score: ' + str(path_with_score)
         path = map(lambda x: x[0], path_with_score)
         score = map(lambda x: x[1], path_with_score)
@@ -25,11 +25,11 @@ def get_review_details(attribute_seed, attribute_adjective_map, sent):
         adj_list, sentiment = text_p.find_sentiment_adjective(attribute_adjective_map, path, sent)
     except TypeError:
         print 'Type Error in attribute_adjective_finder for line: ' + str(sent)
-        return
+        return None
     print 'path: ' + str(path)
     print 'sentiment: ' + str(sentiment)
     print 'adj_list: ' + str(adj_list)
-    yield {'path': path, 'sentiment': sentiment, 'adj_list': adj_list }
+    return {'path': path, 'sentiment': sentiment, 'adj_list': adj_list }
 
 if __name__ == "__main__":
     attribute_seed = json.loads(open(sys.argv[1], 'r').read())
@@ -57,7 +57,9 @@ if __name__ == "__main__":
             review_sentences = re.split('\.|\?| !', complete_review)
             result = []
             for sent in review_sentences:
-                result.append(dict(get_review_details(attribute_seed, attribute_adjective_map, sent)))
+                item = get_review_details(attribute_seed, attribute_adjective_map, sent)
+                if item != None:
+                    result.append(item)
             print 'result: ' + str(result)
             attr_to_insert = []
             sentiment_map = {}
