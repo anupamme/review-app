@@ -4016,7 +4016,8 @@
                             "international_airport": 1,
                             "shuttle": 1,
                             "flight": 1,
-                            "bus": 1
+                            "bus": 1,
+                            "airport": 1
                         },
                         "next": {}
                     },

@@ -1,5 +1,5 @@
 '''
-input: hotel_name -> attribute -> [image_url]
+input: hotel_name -> attribute -> [(image_url, image_score)]
 output: [{
     "id": count,
     "hotel_id": hotel_id,
@@ -28,12 +28,13 @@ if __name__ == "__main__":
             image_arr = attr_url_map[attr_path_str]
             attr_path = ast.literal_eval(attr_path_str)
             attr_to_insert = map(lambda x: {"value": x}, attr_path)
-            for image_url in image_arr:
+            for image_url, image_score in image_arr:
                 obj = {
                     "id": count,
                     "hotel_id": hotel_id,
                     "attributes": attr_to_insert,
-                    "url": image_url
+                    "url": image_url,
+                    "score": image_score
                 }
                 count += 1
                 output_arr.append(obj)

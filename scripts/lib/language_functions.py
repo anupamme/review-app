@@ -4,7 +4,8 @@ import json
 import sys
 from nltk import word_tokenize
 import re
-from stanford_corenlp_pywrapper import sockwrap
+#from stanford_corenlp_pywrapper import sockwrap
+from stanford_corenlp_pywrapper import CoreNLP
 from ast import literal_eval
 import operator
 import time
@@ -21,7 +22,8 @@ possibleVerbTags = ['VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ']
 excludedCategories = ['services', 'others', 'price-value']
 top_number_of_items = 3
 
-model_file = "../code/word2vec-all/word2vec/trunk/vectors-phrase.bin"
+#model_file = "../code/word2vec-all/word2vec/trunk/vectors-phrase.bin"
+model_file = "../word2vec-all/word2vec/trunk/vectors-phrase.bin"
 stanford_jars = "/Volumes/anupam work/code/stanford-jars/3.5/*"
 
 antonym_file = 'data/antonyms/antonym_map.json'
@@ -58,7 +60,10 @@ def load_model_files():
     global proc
     global stanford_jars
     model = word2vec.Word2Vec.load_word2vec_format(model_file, binary=True)
-    proc = sockwrap.SockWrap("parse", corenlp_jars=[stanford_jars])
+    proc = CoreNLP("parse", corenlp_jars=[stanford_jars])
+    
+def is_model_loaded():
+    return model != None and proc != None
     
 def find_best_score(word, keywords_map):
     best_score = -1
@@ -267,7 +272,8 @@ def find_sentiment_adjective(attribute_adjective_map, attribute_path, user_input
     assert(attribute_path != None and attribute_path != [])
     processed = proc.parse_doc(user_input)
     adj_list = filter_array(processed, possibleAdjTags)
-    sentiment = processed['sentences'][0]['sentiment']
+    #sentiment = processed['sentences'][0]['sentiment']
+    sentiment = 2
     print 'adj_list: ' + str(adj_list)
     str_path = str(attribute_path)
     correct_adjective_list = []
@@ -278,28 +284,6 @@ def find_sentiment_adjective(attribute_adjective_map, attribute_path, user_input
         else:
             print 'Not found in path: ' + str_path
     return correct_adjective_list, sentiment
-
-#def findMaxForEachSource(classes, probs, keywords):
-#    index = 0
-#    result = []
-#    while index < len(classes):
-#        source_word = normalize(classes[index])
-#        source_prob = probs[index]
-#        index += 1
-#        interim = []
-#        for word in keywords:
-#            word = normalize(word)
-#            try:
-#                interim.append(model.similarity(source_word, word))
-#            except KeyError:
-#                #print 'key error for: ' + source_word + ' ; ' + word
-#                continue
-#        if len(interim) == 0:
-#            #print 'No similar word found for word, keywords: ' + source_word + ' ; ' + str(keywords)
-#            continue
-#        interim.sort(reverse=True)
-#        result.append((source_word, source_prob*interim[0]))
-#    return result
 
 def find_num_matches(classes, probs, keywords):
     index = 0
@@ -335,25 +319,3 @@ def findBestCategory_2(classes, probs, map_val, path):
         winner_node, winner_val = result_items[index]
     path.append([winner_node, winner_val])
     return findBestCategory_2(classes, probs, nextNode[winner_node], path)
-
-#def findBestCategory(classes, probs, map_val, path):
-#    nextNode = map_val['next']
-#    if nextNode == {}:
-#        return
-#    result_node = {}
-#    for key in nextNode:
-#        keywords = nextNode[key]['keywords']
-#        source_max = findMaxForEachSource(classes, probs, keywords)
-#        source_max.sort(key=lambda k: k[1], reverse=True)
-#        sum_val = sum(map(lambda x: x[1], source_max[:top_number_of_items]))
-#        result_node[key] = sum_val
-#    result_items = result_node.items()
-#    result_items.sort(key=lambda k: k[1], reverse=True)
-#    index = 0
-#    winner_node, winner_val = result_items[index]
-#    print 'candidate: ' + str(winner_node) + ' ; ' + str(winner_val)
-#    while winner_node in excludedCategories:
-#        index += 1
-#        winner_node, winner_val = result_items[index]
-#    path.append([winner_node, winner_val])
-#    return findBestCategory(classes, probs, nextNode[winner_node], path)

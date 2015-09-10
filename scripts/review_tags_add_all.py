@@ -5,6 +5,9 @@ sys.path.insert(0, '/Volumes/anupam work/review-app-local/scripts/lib/')
 
 import language_functions as text_p
 
+count_so_far = -1
+hotels_so_far = -1
+
 def get_hotel_id(hotel_name, hotel_id_map):
     for key in hotel_id_map:
         if hotel_name == hotel_id_map[key]:
@@ -22,14 +25,11 @@ def get_review_details(attribute_seed, attribute_adjective_map, sent):
         score = map(lambda x: x[1], path_with_score)
         #print 'score: ' + str(score)
         cumulative_score = reduce(lambda x, y: x * y, score, 1.0)
-        adj_list, sentiment = text_p.find_sentiment_adjective(attribute_adjective_map, path, sent)
+        #adj_list, sentiment = text_p.find_sentiment_adjective(attribute_adjective_map, path, sent)
     except TypeError:
         print 'Type Error in attribute_adjective_finder for line: ' + str(sent)
         return None
-    print 'path: ' + str(path)
-    print 'sentiment: ' + str(sentiment)
-    print 'adj_list: ' + str(adj_list)
-    return {'path': path, 'sentiment': sentiment, 'adj_list': adj_list }
+    return {'path': path, 'sentiment': 1, 'adj_list': [] }
 
 if __name__ == "__main__":
     attribute_seed = json.loads(open(sys.argv[1], 'r').read())
@@ -41,8 +41,14 @@ if __name__ == "__main__":
     hotel_id_map = json.loads(open(sys.argv[4], 'r').read())
     output = []
     output_hotel_id_review_id = {}      #hotel_id -> review_id -> review_object
-    count = 0
+    count = count_so_far + 1
+    hotel_count = 0
     for val in review_data:
+        if hotel_count < hotels_so_far:
+            hotel_count += 1
+            continue
+        
+        hotel_count += 1
         hotel_name = val['name']
         hotel_id = get_hotel_id(hotel_name, hotel_id_map)
         if hotel_id == -1:
@@ -57,6 +63,7 @@ if __name__ == "__main__":
             review_sentences = re.split('\.|\?| !', complete_review)
             result = []
             for sent in review_sentences:
+                sent = sent.encode('utf-8')
                 item = get_review_details(attribute_seed, attribute_adjective_map, sent)
                 if item != None:
                     result.append(item)
@@ -90,6 +97,17 @@ if __name__ == "__main__":
             count += 1
             rev_id += 1
             output.append(formed_object)
+            
+            if count % 1000 == 0:
+                f = open('hotel_review_elastic_' + str(count) + '.json', 'w')
+                f.write(json.dumps(output))
+                f.close()
+                output = []
+                f = open('hotel_review_id_' + str(count) + '.json', 'w')
+                f.write(json.dumps(output_hotel_id_review_id))
+                f.close()
+                output_hotel_id_review_id = {}
+                output_hotel_id_review_id[hotel_id] = {}
     
     
     f = open('hotel_review_id.json', 'w')

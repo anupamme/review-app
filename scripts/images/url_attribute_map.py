@@ -28,6 +28,7 @@ if __name__ == "__main__":
         result = {}
         input_data = json.loads(open(sys.argv[2], 'r').read())
         for hotel_name in input_data:
+            result[hotel_name] = {}
             for image_item in input_data[hotel_name]['results']:
                 if 'tag' not in image_item['result']:
                     print 'error 01: No tag item in item: ' + str(image_item['result'])
@@ -40,14 +41,14 @@ if __name__ == "__main__":
                 assert(path_with_score != [])
                 path = map(lambda x: x[0], path_with_score)
                 path_str = str(path)
-                if path_str not in result:
-                    result[path_str] = []
+                if path_str not in result[hotel_name]:
+                    result[hotel_name][path_str] = []
                 final_score = path_with_score[len(path_with_score) - 1][1]
                 url = image_item['url']
-                result[path_str].append([url, final_score])
-        sorted_result = {}
-        for path_key in result:
-            sorted_result[path_key] = sorted(result[path_key], key=operator.itemgetter(1), reverse=True)
+                result[hotel_name][path_str].append([url, final_score])
+#        sorted_result = {}
+#        for path_key in result:
+#            sorted_result[path_key] = sorted(result[path_key], key=operator.itemgetter(1), reverse=True)
         f = open('path_image_score.json', 'w')
-        f.write(json.dumps(sorted_result))
+        f.write(json.dumps(result))
         f.close()
