@@ -22,8 +22,8 @@ possibleVerbTags = ['VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ']
 excludedCategories = ['services', 'others', 'price-value']
 top_number_of_items = 3
 
-#model_file = "../code/word2vec-all/word2vec/trunk/vectors-phrase.bin"
-model_file = "../word2vec-all/word2vec/trunk/vectors-phrase.bin"
+model_file = "../code/word2vec-all/word2vec/trunk/vectors-phrase.bin"
+#model_file = "../word2vec-all/word2vec/trunk/vectors-phrase.bin"
 stanford_jars = "/Volumes/anupam work/code/stanford-jars/3.5/*"
 
 antonym_file = 'data/antonyms/antonym_map.json'

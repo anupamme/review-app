@@ -5,6 +5,10 @@ import sys
 import re
 sys.path.insert(0, '/Volumes/anupam work/review-app-local/scripts/lib/')
 
+'''
+to run: python multi_process.py data/tree-data/percolate_4.json data/antonyms/reverse_adj.json
+'''
+
 import language_functions as text_p
 
 def get_review_details(attribute_seed, attribute_adjective_map, sent):
