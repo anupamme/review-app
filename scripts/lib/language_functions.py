@@ -158,6 +158,7 @@ def find_attribute_2(attribute_seed, user_input):
     if len(processed['sentences']) == 0:
         return None
     nouns = filter_array(processed, possibleNounTags)
+    adjectives = filter_array(processed, possibleAdjTags)
     sub, obj = find_sub_obj(processed)
     data = {}
     for noun in nouns:
@@ -166,6 +167,12 @@ def find_attribute_2(attribute_seed, user_input):
             data[n_noun] += 1
         else:
             data[n_noun] = 1
+    for adj in adjectives:
+        n_adj = normalize(adj)
+        if n_adj in data:
+            data[n_adj] += 0.5
+        else:
+            data[n_adj] = 0.5
     if sub != None:
         if sub in possibleNounTags or sub in possibleAdjTags or sub in possibleVerbTags:
             n_sub = normalize(sub)
