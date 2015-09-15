@@ -3705,7 +3705,8 @@
                             "professional": 1,
                             "fitness_classes": 1,
                             "massage": 1,
-                            "swimming": 1
+                            "swimming": 1,
+                            "gym": 1
                         },
                         "next": {}
                     },

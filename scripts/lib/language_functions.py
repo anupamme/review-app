@@ -10,6 +10,9 @@ from ast import literal_eval
 import operator
 import time
 
+sys.path.insert(0, '/Volumes/anupam work/review-app-local/')
+from reference import proc
+
 model = None
 proc = None
 
@@ -61,6 +64,7 @@ def load_model_files():
     global stanford_jars
     model = word2vec.Word2Vec.load_word2vec_format(model_file, binary=True)
     proc = CoreNLP("parse", corenlp_jars=[stanford_jars])
+    #proc = sockwrap.SockWrap("parse", corenlp_jars=[stanford_jars])
     
 def is_model_loaded():
     return model != None and proc != None
@@ -150,10 +154,7 @@ def filter_array(processed, possibleTags):
     return res_arr        
         
 def find_attribute_2(attribute_seed, user_input):
-    if proc == None:
-        print 'proc was none unexpectedly so reiniting...'
-        #load_for_adjectives()
-        return None
+    assert(is_model_loaded())
     processed = proc.parse_doc(user_input)
     if len(processed['sentences']) == 0:
         return None
@@ -227,12 +228,12 @@ def find_correct_adjective(adj_list, candidate_adjectives, sentiment):
     global negative_array
     selected_adj = []
     final_adj = []
-    print 'candidate_adjectives: ' + str(candidate_adjectives)
+    #print 'candidate_adjectives: ' + str(candidate_adjectives)
     for adj in adj_list:
         #if adj in positive_array or adj in negative_array:
-        print 'looking for adjective: ' + str(adj)
+        #print 'looking for adjective: ' + str(adj)
         max_candidate_adj, max_candidate_distance = find_max_adjective(adj, candidate_adjectives)
-        print 'max adj match: ' + str(max_candidate_adj) + ' ; ' + str(max_candidate_distance)
+        #print 'max adj match: ' + str(max_candidate_adj) + ' ; ' + str(max_candidate_distance)
         if max_candidate_adj == None:
             continue
         selected_adj.append(max_candidate_adj)
@@ -240,21 +241,21 @@ def find_correct_adjective(adj_list, candidate_adjectives, sentiment):
 #            print 'error: invalid adjective: ' + adj
         
     # figure whether positive or negative.
-    print 'sentiment: ' + sentiment
+    #print 'sentiment: ' + sentiment
     if selected_adj == []:
         print 'max adjective is none for adj_list: ' + str(adj_list)
         return None, -1
     
     if convert_sentiment_to_int(sentiment) >= 3:
         for max_adj in selected_adj:
-            print 'checking for max_adj: ' + str(max_adj)
-            print 'positive_array: ' + str(positive_array)
+            #print 'checking for max_adj: ' + str(max_adj)
+            #print 'positive_array: ' + str(positive_array)
             if max_adj in positive_array:
                 final_adj.append(max_adj)
             else:
                 if max_adj in negative_array:
                     if max_adj in antonym_map:
-                        print 'returning antonym for: ' + max_adj
+                        #print 'returning antonym for: ' + max_adj
                         final_adj.append(antonym_map[max_adj])
                     else:
                         print 'error 00: ' + str(max_adj)
@@ -267,7 +268,7 @@ def find_correct_adjective(adj_list, candidate_adjectives, sentiment):
             else:
                 if max_adj in positive_array:
                     if max_adj in antonym_map:
-                        print 'returning antonym for: ' + max_adj
+                        #print 'returning antonym for: ' + max_adj
                         final_adj.append(antonym_map[max_adj])
                     else:
                         print 'error 11: ' + max_adj
@@ -279,8 +280,7 @@ def find_sentiment_adjective(attribute_adjective_map, attribute_path, user_input
     assert(attribute_path != None and attribute_path != [])
     processed = proc.parse_doc(user_input)
     adj_list = filter_array(processed, possibleAdjTags)
-    #sentiment = processed['sentences'][0]['sentiment']
-    sentiment = 2
+    sentiment = processed['sentences'][0]['sentiment']
     print 'adj_list: ' + str(adj_list)
     str_path = str(attribute_path)
     correct_adjective_list = []
