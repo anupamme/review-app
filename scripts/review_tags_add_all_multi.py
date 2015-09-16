@@ -68,7 +68,7 @@ if __name__ == "__main__":
             complete_review = ''.join(rev['description'])
             review_sentences = re.split('\.|\?| !', complete_review)
             #result = []
-            result = [pool.apply(get_review_details, args=(attribute_seed, attribute_adjective_map, x,)) for x in review_sentences]
+            result = [pool.apply(get_review_details, args=(attribute_seed, attribute_adjective_map, x.encode('utf-8'),)) for x in review_sentences]
 #            for sent in review_sentences:
 #                sent = sent.encode('utf-8')
 #                item = get_review_details(attribute_seed, attribute_adjective_map, sent)
