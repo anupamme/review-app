@@ -10,6 +10,10 @@ import language_functions as text_p
 count_so_far = -1
 hotels_so_far = -1
 
+seed_file = 'data/tree-data/percolate_4.json'
+adjective_file = 'data/antonyms/reverse_adj.json'
+hotel_id_file = 'data/hotel_id.json'
+
 def get_hotel_id(hotel_name, hotel_id_map):
     for key in hotel_id_map:
         if hotel_name == hotel_id_map[key]:
@@ -34,19 +38,19 @@ def get_review_details(attribute_seed, attribute_adjective_map, sent):
     return {'path': path, 'sentiment': 1, 'adj_list': [] }
 
 if __name__ == "__main__":
-    attribute_seed = json.loads(open(sys.argv[1], 'r').read())
-    attribute_adjective_map = json.loads(open(sys.argv[2], 'r').read())
+    attribute_seed = seed_file
+    attribute_adjective_map = adjective_file
     
     text_p.load_for_adjectives()
     # read the data
-    meta_review_data = json.loads(open(sys.argv[3], 'r').read())
-    hotel_id_map = json.loads(open(sys.argv[4], 'r').read())
+    meta_review_data = json.loads(open(sys.argv[1], 'r').read())
+    hotel_id_map = hotel_id_file
     output = []
     output_hotel_id_review_id = {}      #hotel_id -> review_id -> review_object
     count = count_so_far + 1
     hotel_count = 0
     
-    pool = mp.Pool(processes=int(sys.argv[5]))
+    pool = mp.Pool(processes=int(sys.argv[2]))
     
     for city_id in meta_review_data:
         review_data = meta_review_data[city_id]
