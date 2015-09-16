@@ -9,10 +9,13 @@ import time
 to run: python multi_process.py data/tree-data/percolate_4.json data/antonyms/reverse_adj.json
 '''
 
+attribute_seed = None
+attribute_adjective_map = None
+
 import language_functions as text_p
 text_p.load_for_adjectives()
-
-def get_review_details(attribute_seed, attribute_adjective_map, sent):
+    
+def get_review_details(sent):
     try:
         path_with_score = text_p.find_attribute_2(attribute_seed, sent)
         if path_with_score == None or path_with_score == []:
@@ -27,15 +30,12 @@ def get_review_details(attribute_seed, attribute_adjective_map, sent):
     except TypeError:
         print 'Type Error in attribute_adjective_finder for line: ' + str(sent)
         return None
-    #print 'path: ' + str(path)
-    #print 'sentiment: ' + str(sentiment)
-    #print 'adj_list: ' + str(adj_list)
-    print 'sent, path: ' + sent + ' ; ' + str(path)
     obj = {'sent': sent, 'path': path, 'sentiment': sentiment, 'adj_list': adj_list }
-    #result.append(obj)
     return obj
 
 if __name__ == '__main__':
+    global attribute_seed
+    global attribute_adjective_map
     attribute_seed = json.loads(open(sys.argv[1], 'r').read())
     attribute_adjective_map = json.loads(open(sys.argv[2], 'r').read())
     print 'initing...'
@@ -44,11 +44,11 @@ if __name__ == '__main__':
     #review_data = json.loads(open(sys.argv[3], 'r').read())
     #hotel_id_map = json.loads(open(sys.argv[4], 'r').read())
     
-    pool = mp.Pool(processes=4)
-    
+    pool = mp.Pool(processes=2)
     print 'init results...'
     stamp_init = time.time()
-    results = [pool.apply_async(get_review_details, args=(attribute_seed, attribute_adjective_map, x,)) for x in [ "wine was the best", "service was lousy"]]
+#    results = poo.map(get_review_details, [0, 1, 2])
+    results = [pool.apply(get_review_details, args=(x,)) for x in ["wine was the best", "service was lousy", "pool was unclean", "gym was big and functional", "view from the room was fantastic", "we really enjoyed having brunch in their lobby with breeze and awesome view", "we were greeted so warmly by their staff that we felt at home"]]
     stamp_end = time.time()
     print 'end results...' + str(stamp_end - stamp_init)
 #    result = []
@@ -58,8 +58,8 @@ if __name__ == '__main__':
     #print 'results: ' + str(results)
     print 'all done!'
     for item in results:
-        print 'item: ' + str(item.get())
+        print 'item: ' + str(item)
     print 'all done done!'
-    output = [p.get() for p in results]
-    print 'all done done done!'
-    print(output)
+#    output = [p.get() for p in results]
+#    print 'all done done done!'
+#    print(output)

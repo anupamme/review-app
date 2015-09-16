@@ -3,6 +3,7 @@ import sys
 import re
 sys.path.insert(0, '/Volumes/anupam work/review-app-local/scripts/lib/')
 import multiprocessing as mp
+import random
 
 import language_functions as text_p
 
@@ -45,7 +46,7 @@ if __name__ == "__main__":
     count = count_so_far + 1
     hotel_count = 0
     
-    pool = mp.Pool(processes=int(sys.argv[3]))
+    pool = mp.Pool(processes=int(sys.argv[5]))
     
     for val in review_data:
         if hotel_count < hotels_so_far:
@@ -57,7 +58,8 @@ if __name__ == "__main__":
         hotel_id = get_hotel_id(hotel_name, hotel_id_map)
         if hotel_id == -1:
             print 'hotel_id not found for ' + hotel_name
-            continue
+            hotel_id = random.randint(100, 1000)
+            #continue
         output_hotel_id_review_id[hotel_id] = {}
         reviews = val['reviews']
         rev_id = 0
@@ -65,21 +67,22 @@ if __name__ == "__main__":
             output_hotel_id_review_id[hotel_id][rev_id] = rev
             complete_review = ''.join(rev['description'])
             review_sentences = re.split('\.|\?| !', complete_review)
-            result = []
-            for sent in review_sentences:
-                sent = sent.encode('utf-8')
-                item = get_review_details(attribute_seed, attribute_adjective_map, sent)
-                item = pool.apply_async(get_review_details, args=(attribute_seed, attribute_adjective_map, sent))
-                if item != None:
-                    result.append(item)
-            print 'result: ' + str(result)
+            #result = []
+            result = [pool.apply(get_review_details, args=(attribute_seed, attribute_adjective_map, x,)) for x in review_sentences]
+#            for sent in review_sentences:
+#                sent = sent.encode('utf-8')
+#                item = get_review_details(attribute_seed, attribute_adjective_map, sent)
+#                
+#                if item != None:
+#                    result.append(item)
+            #print 'result: ' + str(result)
             attr_to_insert = []
             sentiment_map = {}
             adj_list_map = {}
             sentence_map = {}
             sentence_count = 0
             for obj in result:
-                if obj['path'] == None or obj['path'] == []:
+                if obj == None or obj['path'] == None or obj['path'] == []:
                     sentence_count += 1
                     continue
                 attr = obj['path'][len(obj['path']) - 1]
