@@ -1,5 +1,5 @@
 import nltk
-from gensim.models import word2vec
+#from gensim.models import word2vec
 import json
 import sys
 from nltk import word_tokenize
@@ -13,7 +13,7 @@ import time
 sys.path.insert(0, '/Volumes/anupam work/review-app-local/')
 from reference import proc
 
-model = None
+#model = None
 proc = None
 
 # data
@@ -25,7 +25,7 @@ possibleVerbTags = ['VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ']
 excludedCategories = ['services', 'others', 'price-value']
 top_number_of_items = 3
 
-model_file = "../code/word2vec-all/word2vec/trunk/vectors-phrase.bin"
+#model_file = "../code/word2vec-all/word2vec/trunk/vectors-phrase.bin"
 #model_file = "../word2vec-all/word2vec/trunk/vectors-phrase.bin"
 stanford_jars = "/Volumes/anupam work/code/stanford-jars/3.5/*"
 
@@ -58,28 +58,29 @@ def load_for_adjectives():
     antonym_map = json.loads(open(antonym_file, 'r').read())
 
 def load_model_files():
-    global model
+    #global model
     global model_file
     global proc
     global stanford_jars
-    model = word2vec.Word2Vec.load_word2vec_format(model_file, binary=True)
+    #model = word2vec.Word2Vec.load_word2vec_format(model_file, binary=True)
     proc = CoreNLP("parse", corenlp_jars=[stanford_jars])
     #proc = sockwrap.SockWrap("parse", corenlp_jars=[stanford_jars])
     
 def is_model_loaded():
-    return model != None and proc != None
+    #return model != None and proc != None
+    return proc != None
     
-def find_best_score(word, keywords_map):
-    best_score = -1
-    for key in keywords_map:
-        try:
-            score = model.similarity(word, key) * keywords_map[key]
-        except KeyError:
-            #print 'word2vec error: word not found: ' + word + ' ; ' + key
-            continue
-        if score > best_score:
-            best_score = score
-    return best_score
+#def find_best_score(word, keywords_map):
+#    best_score = -1
+#    for key in keywords_map:
+#        try:
+#            score = model.similarity(word, key) * keywords_map[key]
+#        except KeyError:
+#            #print 'word2vec error: word not found: ' + word + ' ; ' + key
+#            continue
+#        if score > best_score:
+#            best_score = score
+#    return best_score
     
 def find_score(data_map, map_val):
     score_sum = 0
@@ -194,18 +195,18 @@ def find_attribute_2(attribute_seed, user_input):
     print 'path: ' + str(path)
     return path
 
-def find_max_adjective(adj, candidate_adjectives):
-    max_adj = None
-    max_distance = -1
-    for candidate, frequency in candidate_adjectives:
-        try:
-            dist = model.similarity(adj, candidate) * frequency
-            if dist > max_distance:
-                max_adj = candidate
-                max_distance = dist
-        except KeyError:
-            print 'Key error for: ' + adj + '; ' + candidate
-    return max_adj, max_distance
+#def find_max_adjective(adj, candidate_adjectives):
+#    max_adj = None
+#    max_distance = -1
+#    for candidate, frequency in candidate_adjectives:
+#        try:
+#            dist = model.similarity(adj, candidate) * frequency
+#            if dist > max_distance:
+#                max_adj = candidate
+#                max_distance = dist
+#        except KeyError:
+#            print 'Key error for: ' + adj + '; ' + candidate
+#    return max_adj, max_distance
 
 def convert_sentiment_to_int(sentiment):
     sentiment_lower = sentiment.lower()
@@ -222,59 +223,59 @@ def convert_sentiment_to_int(sentiment):
                 return 2
     return 3
 
-def find_correct_adjective(adj_list, candidate_adjectives, sentiment):
-    global antonym_map
-    global positive_array
-    global negative_array
-    selected_adj = []
-    final_adj = []
-    #print 'candidate_adjectives: ' + str(candidate_adjectives)
-    for adj in adj_list:
-        #if adj in positive_array or adj in negative_array:
-        #print 'looking for adjective: ' + str(adj)
-        max_candidate_adj, max_candidate_distance = find_max_adjective(adj, candidate_adjectives)
-        #print 'max adj match: ' + str(max_candidate_adj) + ' ; ' + str(max_candidate_distance)
-        if max_candidate_adj == None:
-            continue
-        selected_adj.append(max_candidate_adj)
-#        else:
-#            print 'error: invalid adjective: ' + adj
-        
-    # figure whether positive or negative.
-    #print 'sentiment: ' + sentiment
-    if selected_adj == []:
-        print 'max adjective is none for adj_list: ' + str(adj_list)
-        return None, -1
-    
-    if convert_sentiment_to_int(sentiment) >= 3:
-        for max_adj in selected_adj:
-            #print 'checking for max_adj: ' + str(max_adj)
-            #print 'positive_array: ' + str(positive_array)
-            if max_adj in positive_array:
-                final_adj.append(max_adj)
-            else:
-                if max_adj in negative_array:
-                    if max_adj in antonym_map:
-                        #print 'returning antonym for: ' + max_adj
-                        final_adj.append(antonym_map[max_adj])
-                    else:
-                        print 'error 00: ' + str(max_adj)
-                else:
-                    print 'error 01: ' + max_adj
-    else:
-        for max_adj in selected_adj:
-            if max_adj in negative_array:
-                final_adj.append(max_adj)
-            else:
-                if max_adj in positive_array:
-                    if max_adj in antonym_map:
-                        #print 'returning antonym for: ' + max_adj
-                        final_adj.append(antonym_map[max_adj])
-                    else:
-                        print 'error 11: ' + max_adj
-                else:
-                    print 'error 10: ' + max_adj
-    return final_adj    
+#def find_correct_adjective(adj_list, candidate_adjectives, sentiment):
+#    global antonym_map
+#    global positive_array
+#    global negative_array
+#    selected_adj = []
+#    final_adj = []
+#    #print 'candidate_adjectives: ' + str(candidate_adjectives)
+#    for adj in adj_list:
+#        #if adj in positive_array or adj in negative_array:
+#        #print 'looking for adjective: ' + str(adj)
+#        max_candidate_adj, max_candidate_distance = find_max_adjective(adj, candidate_adjectives)
+#        #print 'max adj match: ' + str(max_candidate_adj) + ' ; ' + str(max_candidate_distance)
+#        if max_candidate_adj == None:
+#            continue
+#        selected_adj.append(max_candidate_adj)
+##        else:
+##            print 'error: invalid adjective: ' + adj
+#        
+#    # figure whether positive or negative.
+#    #print 'sentiment: ' + sentiment
+#    if selected_adj == []:
+#        print 'max adjective is none for adj_list: ' + str(adj_list)
+#        return None, -1
+#    
+#    if convert_sentiment_to_int(sentiment) >= 3:
+#        for max_adj in selected_adj:
+#            #print 'checking for max_adj: ' + str(max_adj)
+#            #print 'positive_array: ' + str(positive_array)
+#            if max_adj in positive_array:
+#                final_adj.append(max_adj)
+#            else:
+#                if max_adj in negative_array:
+#                    if max_adj in antonym_map:
+#                        #print 'returning antonym for: ' + max_adj
+#                        final_adj.append(antonym_map[max_adj])
+#                    else:
+#                        print 'error 00: ' + str(max_adj)
+#                else:
+#                    print 'error 01: ' + max_adj
+#    else:
+#        for max_adj in selected_adj:
+#            if max_adj in negative_array:
+#                final_adj.append(max_adj)
+#            else:
+#                if max_adj in positive_array:
+#                    if max_adj in antonym_map:
+#                        #print 'returning antonym for: ' + max_adj
+#                        final_adj.append(antonym_map[max_adj])
+#                    else:
+#                        print 'error 11: ' + max_adj
+#                else:
+#                    print 'error 10: ' + max_adj
+#    return final_adj    
     
 def find_sentiment_adjective(attribute_adjective_map, attribute_path, user_input):
     assert(attribute_path != None and attribute_path != [])
@@ -284,12 +285,13 @@ def find_sentiment_adjective(attribute_adjective_map, attribute_path, user_input
     print 'adj_list: ' + str(adj_list)
     str_path = str(attribute_path)
     correct_adjective_list = []
-    if len(adj_list) > 0:
-        if str_path in attribute_adjective_map:
-            candidate_adjectives = attribute_adjective_map[str_path]
-            correct_adjective_list = find_correct_adjective(adj_list, candidate_adjectives, sentiment)
-        else:
-            print 'Not found in path: ' + str_path
+# XXX: Uncommend for it to work.
+#    if len(adj_list) > 0:
+#        if str_path in attribute_adjective_map:
+#            candidate_adjectives = attribute_adjective_map[str_path]
+#            correct_adjective_list = find_correct_adjective(adj_list, candidate_adjectives, sentiment)
+#        else:
+#            print 'Not found in path: ' + str_path
     return correct_adjective_list, sentiment
 
 def find_num_matches(classes, probs, keywords):
