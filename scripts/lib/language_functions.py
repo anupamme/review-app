@@ -10,9 +10,6 @@ from ast import literal_eval
 import operator
 import time
 
-sys.path.insert(0, '/Volumes/anupam work/review-app-local/')
-from reference import proc
-
 #model = None
 proc = None
 

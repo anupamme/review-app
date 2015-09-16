@@ -1,7 +1,7 @@
 import json
 import sys
 import re
-sys.path.insert(0, '/Volumes/anupam work/review-app-local/scripts/lib/')
+sys.path.insert(0, 'scripts/lib/')
 import multiprocessing as mp
 import random
 
