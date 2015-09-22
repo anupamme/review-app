@@ -49,11 +49,13 @@ def is_present(word, map_val):
 def load_for_adjectives():
     load_model_files()
     attribute_adjective_map = json.loads(open(attribute_adjective_file, 'r').read())
-    print 'length of attribute_adjective_map: ' + str(len(attribute_adjective_map))
+    global positive_array
+    global negative_array
+    global antonym_map
     positive_array = json.loads(open(positive_file, 'r').read())
     negative_array = json.loads(open(negative_file, 'r').read())
     antonym_map = json.loads(open(antonym_file, 'r').read())
-
+    
 def load_model_files():
     global model
     global model_file
@@ -152,6 +154,8 @@ def filter_array(processed, possibleTags):
         
 def find_attribute_2(attribute_seed, user_input):
     assert(is_model_loaded())
+    print 'in find_attribute_2 length of positive_array: ' + str(len(positive_array))
+    print 'in find_attribute_2 length of antonym_map: ' + str(len(antonym_map))
     processed = proc.parse_doc(user_input)
     if len(processed['sentences']) == 0:
         return None
@@ -200,6 +204,7 @@ def find_max_adjective(adj, candidate_adjectives):
             if dist > max_distance:
                 max_adj = candidate
                 max_distance = dist
+                print 'possible correct adj item: ' + str(max_adj) + ' ; ' + str(max_distance)
         except KeyError:
             print 'Key error for: ' + adj + '; ' + candidate
     return max_adj, max_distance
@@ -225,6 +230,8 @@ def find_correct_adjective(adj_list, candidate_adjectives, sentiment):
     global negative_array
     selected_adj = []
     final_adj = []
+    print 'length of positive_array: ' + str(len(positive_array))
+    print 'length of negative_array: ' + str(len(negative_array))
     #print 'candidate_adjectives: ' + str(candidate_adjectives)
     for adj in adj_list:
         #if adj in positive_array or adj in negative_array:
@@ -233,7 +240,7 @@ def find_correct_adjective(adj_list, candidate_adjectives, sentiment):
         #print 'max adj match: ' + str(max_candidate_adj) + ' ; ' + str(max_candidate_distance)
         if max_candidate_adj == None:
             continue
-        selected_adj.append(max_candidate_adj)
+        selected_adj.append([max_candidate_adj, max_candidate_distance])
 #        else:
 #            print 'error: invalid adjective: ' + adj
         
@@ -244,29 +251,29 @@ def find_correct_adjective(adj_list, candidate_adjectives, sentiment):
         return None, -1
     
     if convert_sentiment_to_int(sentiment) >= 3:
-        for max_adj in selected_adj:
+        for max_adj, max_dist in selected_adj:
             #print 'checking for max_adj: ' + str(max_adj)
             #print 'positive_array: ' + str(positive_array)
             if max_adj in positive_array:
-                final_adj.append(max_adj)
+                final_adj.append([max_adj, max_dist])
             else:
                 if max_adj in negative_array:
                     if max_adj in antonym_map:
                         #print 'returning antonym for: ' + max_adj
-                        final_adj.append(antonym_map[max_adj])
+                        final_adj.append([antonym_map[max_adj], max_dist])
                     else:
                         print 'error 00: ' + str(max_adj)
                 else:
                     print 'error 01: ' + max_adj
     else:
-        for max_adj in selected_adj:
+        for max_adj, max_dist in selected_adj:
             if max_adj in negative_array:
-                final_adj.append(max_adj)
+                final_adj.append([max_adj, max_dist])
             else:
                 if max_adj in positive_array:
                     if max_adj in antonym_map:
                         #print 'returning antonym for: ' + max_adj
-                        final_adj.append(antonym_map[max_adj])
+                        final_adj.append([antonym_map[max_adj], max_dist])
                     else:
                         print 'error 11: ' + max_adj
                 else:
@@ -278,16 +285,14 @@ def find_sentiment_adjective(attribute_adjective_map, attribute_path, user_input
     processed = proc.parse_doc(user_input)
     adj_list = filter_array(processed, possibleAdjTags)
     sentiment = processed['sentences'][0]['sentiment']
-    print 'adj_list: ' + str(adj_list)
     str_path = str(attribute_path)
     correct_adjective_list = []
-# XXX: Uncommend for it to work.
     if len(adj_list) > 0:
         if str_path in attribute_adjective_map:
             candidate_adjectives = attribute_adjective_map[str_path]
             correct_adjective_list = find_correct_adjective(adj_list, candidate_adjectives, sentiment)
         else:
-            print 'Not found in path: ' + str_path
+            print 'path Not found in path: ' + str_path
     return correct_adjective_list, sentiment
 
 def find_num_matches(classes, probs, keywords):
