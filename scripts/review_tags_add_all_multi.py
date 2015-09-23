@@ -109,7 +109,10 @@ if __name__ == "__main__":
                     attr = obj['path'][len(obj['path']) - 1]
                     score = obj['cumulative_score']
                     sentiment_map[attr] = obj['sentiment']
-                    adj_list_map[attr] = obj['adj_list'][0] # only the first element
+                    if len(obj['adj_list']) > 0:
+                        adj_list_map[attr] = obj['adj_list'][0] # only the first element
+                    else:
+                        adj_list_map[attr] = []
                     sentence_map[attr] = sentence_count
                     score_map[attr] = score
                     sentence_count += 1
