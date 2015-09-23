@@ -1660,7 +1660,7 @@
                                     "loo": 1,
                                     "rain_shower": 1,
                                     "cold_water": 1,
-                                    "laundry": 1,
+                                    "laundry": 0,
                                     "soaped": 1,
                                     "steam_room": 1,
                                     "delousing": 1,
@@ -3271,7 +3271,7 @@
                     "view": {
                         "keywords": {
                             "view": 1,
-                            "room": 1,
+                            "room": 0,
                             "hill": 1,
                             "balcony": 1
                         },
@@ -4434,7 +4434,8 @@
                                     "dishwasher": 1,
                                     "washing": 1,
                                     "dirty_dishes": 1,
-                                    "doing_laundry": 1
+                                    "doing_laundry": 1,
+                                    "laundry": 2
                                 },
                                 "next": {}
                             },
@@ -4458,7 +4459,7 @@
                                     "valet_parking": 1,
                                     "washroom": 1,
                                     "diapers_changing": 1,
-                                    "laundry": 1,
+                                    "laundry": 0,
                                     "warm_dishes": 1,
                                     "tomsky": 1,
                                     "flushing_toilets": 1,

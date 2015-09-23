@@ -35,7 +35,7 @@ def get_review_details(attribute_seed, attribute_adjective_map, sent):
     except TypeError:
         print 'Type Error in attribute_adjective_finder for line: ' + str(sent)
         return None
-    return {'path': path, 'sentiment': sentiment, 'adj_list': adj_list}
+    return {'path': path, 'sentiment': sentiment, 'adj_list': adj_list, 'cumulative_score': cumulative_score}
 
 def load_json(file_name):
     return json.loads(open(file_name, 'r').read())
@@ -97,20 +97,21 @@ if __name__ == "__main__":
     #                if item != None:
     #                    result.append(item)
                 #print 'result: ' + str(result)
-                attr_to_insert = []
                 sentiment_map = {}
                 adj_list_map = {}
                 sentence_map = {}
+                score_map = {}
                 sentence_count = 0
                 for obj in result:
                     if obj == None or obj['path'] == None or obj['path'] == []:
                         sentence_count += 1
                         continue
                     attr = obj['path'][len(obj['path']) - 1]
-                    attr_to_insert.append(attr)
+                    score = obj['cumulative_score']
                     sentiment_map[attr] = obj['sentiment']
                     adj_list_map[attr] = obj['adj_list']
                     sentence_map[attr] = sentence_count
+                    score_map[attr] = score
                     sentence_count += 1
 
                 attr_to_insert_2 = map(lambda x: {"value": x}, adj_list_map)
@@ -122,7 +123,8 @@ if __name__ == "__main__":
                     "attribute_list": attr_to_insert_2,
                     "sentiment": sentiment_map,
                     "adjective_list": adj_list_map,
-                    "attribute_line": sentence_map
+                    "attribute_line": sentence_map,
+                    "score": score_map
                 }
                 count += 1
                 rev_id += 1

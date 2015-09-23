@@ -1,6 +1,6 @@
 import json
 import sys
-sys.path.insert(0, '/Volumes/anupam work/review-app-local/scripts/lib/')
+sys.path.insert(0, 'scripts/lib/')
 import operator
 
 import language_functions as text_p
