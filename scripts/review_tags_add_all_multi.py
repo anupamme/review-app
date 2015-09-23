@@ -40,6 +40,16 @@ def get_review_details(attribute_seed, attribute_adjective_map, sent):
 def load_json(file_name):
     return json.loads(open(file_name, 'r').read())
 
+def find_to_insert(obj):
+    if 'adjective' in obj:
+        return obj['adjective']
+    if 'noun' in obj:
+        return obj['noun']
+    if 'adverb' in obj:
+        return obj['adverb']
+    print 'warn: unknown type: ' + str(obj)
+    return None
+
 if __name__ == "__main__":
     attribute_seed = load_json(seed_file)
     attribute_adjective_map = load_json(adjective_file)
@@ -109,8 +119,22 @@ if __name__ == "__main__":
                     attr = obj['path'][len(obj['path']) - 1]
                     score = obj['cumulative_score']
                     sentiment_map[attr] = obj['sentiment']
-                    if len(obj['adj_list']) > 0:
-                        adj_list_map[attr] = obj['adj_list'][0] # only the first element
+                    if len(obj['adj_list']) > 0 and obj['adj_list'][0] != None:
+                        val = obj['adj_list'][0]
+                        val_to_insert = []
+                        adj_to_insert = None
+                        print 'val: ' + str(val)
+                        val_type = type(val[0])
+                        if val_type == dict:
+                            adj_to_insert = find_to_insert(val[0])
+                            assert(adj_to_insert != None)
+                        else:
+                            assert(val_type == str or val_type == unicode)
+                            adj_to_insert = val[0]
+                        
+                        val_to_insert.append(adj_to_insert)
+                        val_to_insert.append(val[1])
+                        adj_list_map[attr] = val_to_insert # only the first element
                     else:
                         adj_list_map[attr] = []
                     sentence_map[attr] = sentence_count
