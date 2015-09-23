@@ -278,6 +278,7 @@ def find_correct_adjective(adj_list, candidate_adjectives, sentiment):
                         print 'error 11: ' + max_adj
                 else:
                     print 'error 10: ' + max_adj
+    final_adj.sort(key=lambda x: x[1], reverse=True)
     return final_adj    
     
 def find_sentiment_adjective(attribute_adjective_map, attribute_path, user_input):
