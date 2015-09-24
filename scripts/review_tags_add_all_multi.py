@@ -185,7 +185,7 @@ if __name__ == "__main__":
                 for obj in result:
                     if obj == None or obj == {}:
                         continue
-                    output.append(formed_object)
+                    output.append(obj)
                 
 #                if elastic_count % 1000 == 0:
 #                    f = open('hotel_review_elastic_' + str(count) + '.json', 'w')
