@@ -11,7 +11,7 @@ count_so_far = -1
 hotels_so_far = -1
 elastic_count = 0
 review_count = 0
-output_hotel_id_review_id = {}      #hotel_id -> review_id -> review_object
+#output_hotel_id_review_id = {}      #hotel_id -> review_id -> review_object
 
 seed_file = 'data/tree-data/percolate_6.json'
 adjective_file = 'data/antonyms/reverse_adj.json'
@@ -53,21 +53,28 @@ def find_to_insert(obj):
     print 'warn: unknown type: ' + str(obj)
     return None
 
-def parse_review(attribute_seed, attribute_adjective_map, raw_review, city_id, hotel_id):
+def parse_review(attribute_seed, attribute_adjective_map, raw_review, city_id, hotel_id, output_hotel_id_review_id):
     global elastic_count
     global review_count
-    global output_hotel_id_review_id
-    if 'description' not in raw_review:
-        print 'description not present in review: ' + str(raw_review)
-        return None
-    complete_review = ''.join(raw_review['description']).encode('utf-8')
-    review_sentences = re.split('\.|\?| !', complete_review)
+    #global output_hotel_id_review_id
+#    if 'description' not in raw_review:
+#        print 'description not present in review: ' + str(raw_review)
+#        return None
+#    complete_review = ''.join(raw_review['description']).encode('utf-8')
+#    if raw_review == None:
+#        print 'raw review is none: '
+#        return None
+    try:
+        complete_review = raw_review
+        review_sentences = re.split('\.|\?| !', complete_review)
+    except Exception, e:
+        print 'exception: ' + str(e)
     review_sentences_encode = []
     for sent in review_sentences:
         try: 
             review_sentences_encode.append(sent.encode('utf-8'))
         except UnicodeDecodeError:
-            print 'error 01: ' + city_id + ' ; ' + hotel_name.encode('utf-8') + ' ; ' + str(review_count)
+            print 'error 01: ' + city_id + ' ; ' + str(hotel_id) + ' ; ' + str(review_count)
             continue
     result = []
     for sent in review_sentences_encode:
@@ -120,7 +127,7 @@ def parse_review(attribute_seed, attribute_adjective_map, raw_review, city_id, h
         "attribute_line": sentence_map,
         "score": score_map
     }
-    output_hotel_id_review_id[city_id][hotel_id][review_count] = complete_review
+    output_hotel_id_review_id[city_id][hotel_id] = complete_review
     elastic_count += 1
     review_count += 1
     return formed_object
@@ -129,8 +136,8 @@ if __name__ == "__main__":
     attribute_seed = load_json(seed_file)
     attribute_adjective_map = load_json(adjective_file)
     global review_count
-    global output_hotel_id_review_id
-    
+    #global output_hotel_id_review_id
+    output_hotel_id_review_id = {}
     text_p.load_for_adjectives()
     # read the data
     hotel_id_map = load_json(hotel_id_file)
@@ -148,7 +155,7 @@ if __name__ == "__main__":
         pool = mp.Pool(processes=int(sys.argv[2]))
         meta_review_data = json.loads(open(sys.argv[1], 'r').read())
         for city_id in meta_review_data:
-            print 'city_id: ' + str(city_id)
+            city_id = city_id.encode('utf-8')
             review_data = meta_review_data[city_id]
             output_hotel_id_review_id[city_id] = {}
             for val in review_data:
@@ -167,7 +174,14 @@ if __name__ == "__main__":
                 output_hotel_id_review_id[city_id][hotel_id] = {}
                 reviews = val['reviews']
                 review_count = 0
-                result = [pool.apply(parse_review, args=(attribute_seed, attribute_adjective_map, x, city_id, hotel_id)) for x in reviews]
+                city_id = 'bali'
+                try: 
+                    result = [pool.apply(parse_review, args=(attribute_seed, attribute_adjective_map, ''.join(x['description']).encode('utf-8'), city_id.encode('utf-8'), hotel_id, output_hotel_id_review_id)) for x in reviews if 'description' in x]
+                except TypeError, e:
+                    print type(city_id)
+                    print type(hotel_id)
+                    print 'type error: ' + str(e) + ' ; ' + city_id.encode('utf-8') + ' ; ' + str(hotel_id)
+                
                 for obj in result:
                     if obj == None or obj == {}:
                         continue
