@@ -18,12 +18,23 @@ processing:
 
 import sys
 import json
+sys.path.insert(0, '../scripts/lib/')
+
+import elastic_search as es
+
+def find_path(item):
+    return ['']
+
+def find_sentiment(item):
+    return ''
+
+def find_adjective(item):
+    return ''
 
 if __name__ == "__main__":
     city_name = sys.argv[1]
-    hotel_name = sys.argv[2]
-    hotel_id = get_hotel_id_name(city_name, hotel_name)
-    elastic_results = get_elastic_results(city_name, hotel_id)
+    hotel_id = sys.argv[2]
+    elastic_results = es.find_city_hotel_reviews(city_name, hotel_id)
     output_sentiment = {}
     output_adjective = {}
     for item in elastic_results:
