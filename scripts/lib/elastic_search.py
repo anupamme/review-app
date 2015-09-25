@@ -60,14 +60,14 @@ def find_images_for_attribute(search_attribute):
 def find_city_hotel_reviews(city_name, hotel_id):
     response = {}
     response = client.search(
-            index="hn",
+            index="hn_reviews",
             size=10000,
             body={
                 "query" : {
                     "bool": {
                         "must": [
                             { "match": { "hotel_id":  hotel_id }},
-                            { "match": { "city_name": city_name }}
+                            { "match": { "city_id": city_name }}
                         ]
                     }
                 }
@@ -75,6 +75,22 @@ def find_city_hotel_reviews(city_name, hotel_id):
         )
     return response
 
+def find_city_reviews(city_name):
+    response = {}
+    response = client.search(
+            index="hn_reviews",
+            size=100000,
+            body={
+                "query" : {
+                    "bool": {
+                        "must": [
+                            { "match": { "city_id": city_name }}
+                        ]
+                    }
+                }
+            }
+        )
+    return response
 
 if __name__ == "__main__":
     search_type = sys.argv[1]
