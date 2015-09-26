@@ -11,11 +11,11 @@ count_so_far = -1
 hotels_so_far = -1
 elastic_count = 0
 review_count = 0
-#output_hotel_id_review_id = {}      #hotel_id -> review_id -> review_object
+output_hotel_id_review_id = {}      #hotel_id -> review_id -> review_object
 
 seed_file = 'data/tree-data/percolate_6.json'
 adjective_file = 'data/antonyms/reverse_adj.json'
-hotel_id_file = 'data/images/hotel_id.json'
+hotel_id_file = 'data/city_hotel_id.json'
 
 def get_hotel_id(hotel_name, hotel_id_map):
     for key in hotel_id_map:
@@ -53,7 +53,7 @@ def find_to_insert(obj):
     print 'warn: unknown type: ' + str(obj)
     return None
 
-def parse_review(attribute_seed, attribute_adjective_map, raw_review, city_id, hotel_id, output_hotel_id_review_id):
+def parse_review(attribute_seed, attribute_adjective_map, raw_review, city_id, hotel_id):
     global elastic_count
     global review_count
     #global output_hotel_id_review_id
@@ -125,9 +125,10 @@ def parse_review(attribute_seed, attribute_adjective_map, raw_review, city_id, h
         "sentiment": sentiment_map,
         "adjective_list": adj_list_map,
         "attribute_line": sentence_map,
-        "score": score_map
+        "score": score_map,
+        "complete_review": complete_review
     }
-    output_hotel_id_review_id[city_id][hotel_id] = complete_review
+    print 'elastic_count, review_count: ' + str(elastic_count) + ' ; ' + str(review_count)
     elastic_count += 1
     review_count += 1
     return formed_object
@@ -137,7 +138,7 @@ if __name__ == "__main__":
     attribute_adjective_map = load_json(adjective_file)
     global review_count
     #global output_hotel_id_review_id
-    output_hotel_id_review_id = {}
+    #output_hotel_id_review_id = {}
     text_p.load_for_adjectives()
     # read the data
     hotel_id_map = load_json(hotel_id_file)
@@ -157,7 +158,7 @@ if __name__ == "__main__":
         for city_id in meta_review_data:
             city_id = city_id.encode('utf-8')
             review_data = meta_review_data[city_id]
-            output_hotel_id_review_id[city_id] = {}
+            #output_hotel_id_review_id[city_id] = {}
             for val in review_data:
                 if hotel_count < hotels_so_far:
                     hotel_count += 1
@@ -167,16 +168,17 @@ if __name__ == "__main__":
                 hotel_name = val['name']
                 print 'hotel_name: ' + hotel_name
                 hotel_id = get_hotel_id(hotel_name, hotel_id_map[city_id])
+                #hotel_id = -1
                 if hotel_id == -1:
                     print 'hotel_id not found for ' + hotel_name
-                    hotel_id = random.randint(100, 1000)
+                    hotel_id = random.randint(0, 1000)
                     #continue
-                output_hotel_id_review_id[city_id][hotel_id] = {}
+                #output_hotel_id_review_id[city_id][hotel_id] = {}
                 reviews = val['reviews']
                 review_count = 0
                 city_id = 'bali'
                 try: 
-                    result = [pool.apply(parse_review, args=(attribute_seed, attribute_adjective_map, ''.join(x['description']).encode('utf-8'), city_id.encode('utf-8'), hotel_id, output_hotel_id_review_id)) for x in reviews if 'description' in x]
+                    result = [pool.apply(parse_review, args=(attribute_seed, attribute_adjective_map, ''.join(x['description']).encode('utf-8'), city_id.encode('utf-8'), hotel_id)) for x in reviews if 'description' in x]
                 except TypeError, e:
                     print type(city_id)
                     print type(hotel_id)
@@ -185,6 +187,7 @@ if __name__ == "__main__":
                 for obj in result:
                     if obj == None or obj == {}:
                         continue
+                    #output_hotel_id_review_id[obj['city_id']][obj['hotel_id']] = obj['complete_review']
                     output.append(obj)
                 
 #                if elastic_count % 1000 == 0:
