@@ -138,6 +138,10 @@ def parse_review(attribute_seed, attribute_adjective_map, raw_review, city_id, h
                     location = {}
                     location['lat'] = geocode_result[0]['geometry']['location']['lat']
                     location['lon'] = geocode_result[0]['geometry']['location']['lng']
+            else:
+                print 'parsing error 00: neither address nor location is present: ' + city_id + ' ; ' + hotel_id
+        else:
+            print 'parsing error 01: neither address nor location is present: ' + city_id + ' ; ' + hotel_id
     
     formed_object = {
         "city_id": city_id,
