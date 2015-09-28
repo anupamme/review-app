@@ -75,6 +75,33 @@ def find_city_hotel_reviews(city_name, hotel_id):
         )
     return response
 
+def find_location_hotels(lat, lon):
+    response = {}
+    response = client.search(
+        index="hn_distance",
+        size=10000,
+        body={
+        "query":{
+            "filtered":{
+                    "query":{
+                        "match_all":{}
+                    },  
+                    "filter":{
+                        "geo_distance":{
+                            "distance":"10km",
+                            "location":{
+                                "lat":lat,
+                                "lon":lon
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    )
+    return response
+    
+
 def find_city_reviews(city_name):
     response = {}
     response = client.search(

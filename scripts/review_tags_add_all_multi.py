@@ -4,6 +4,7 @@ import re
 sys.path.insert(0, 'scripts/lib/')
 import multiprocessing as mp
 import random
+import googlemaps
 
 import language_functions as text_p
 
@@ -12,10 +13,12 @@ hotels_so_far = -1
 elastic_count = 0
 review_count = 0
 output_hotel_id_review_id = {}      #hotel_id -> review_id -> review_object
+address_delim = ', '
 
 seed_file = 'data/tree-data/percolate_6.json'
 adjective_file = 'data/antonyms/reverse_adj.json'
 hotel_id_file = 'data/city_hotel_id.json'
+gmaps = googlemaps.Client(key='AIzaSyAXQ2pGkeUBhRZG4QNqy2t1AbzA6O3ToUU') 
 
 def get_hotel_id(hotel_name, hotel_id_map):
     for key in hotel_id_map:
@@ -53,9 +56,15 @@ def find_to_insert(obj):
     print 'warn: unknown type: ' + str(obj)
     return None
 
-def parse_review(attribute_seed, attribute_adjective_map, raw_review, city_id, hotel_id):
+def parse_review(attribute_seed, attribute_adjective_map, raw_review, city_id, hotel_id, item):
     global elastic_count
     global review_count
+    address = None
+    location = None
+    if 'address' in item:
+        address = item['address']
+    if 'location' in item:
+        location = item['location']
     #global output_hotel_id_review_id
 #    if 'description' not in raw_review:
 #        print 'description not present in review: ' + str(raw_review)
@@ -116,6 +125,20 @@ def parse_review(attribute_seed, attribute_adjective_map, raw_review, city_id, h
         sentence_count += 1
 
     attr_to_insert_2 = map(lambda x: {"value": x}, adj_list_map)
+    
+    # handle address:
+    if location == None or location == {}:
+        if address != None and address != []:
+            if address['street'] != '' and address['street'] != None:
+                street_address = address['street'] + address_delim + city_id + address_delim + address['country']
+                geocode_result = gmaps.geocode(street_address)
+                if geocode_result == None or len(geocode_result) == 0:
+                    print 'geo code not found for street address: ' + str(street_address)
+                else:
+                    location = {}
+                    location['lat'] = geocode_result[0]['geometry']['location']['lat']
+                    location['lon'] = geocode_result[0]['geometry']['location']['lng']
+    
     formed_object = {
         "city_id": city_id,
         "id": elastic_count,
@@ -126,7 +149,8 @@ def parse_review(attribute_seed, attribute_adjective_map, raw_review, city_id, h
         "adjective_list": adj_list_map,
         "attribute_line": sentence_map,
         "score": score_map,
-        "complete_review": complete_review
+        "complete_review": complete_review,
+        "location": location
     }
     print 'elastic_count, review_count: ' + str(elastic_count) + ' ; ' + str(review_count)
     elastic_count += 1
@@ -178,7 +202,7 @@ if __name__ == "__main__":
                 review_count = 0
                 city_id = 'bali'
                 try: 
-                    result = [pool.apply(parse_review, args=(attribute_seed, attribute_adjective_map, ''.join(x['description']).encode('utf-8'), city_id.encode('utf-8'), hotel_id)) for x in reviews if 'description' in x]
+                    result = [pool.apply(parse_review, args=(attribute_seed, attribute_adjective_map, ''.join(x['description']).encode('utf-8'), city_id.encode('utf-8'), hotel_id, val)) for x in reviews if 'description' in x]
                 except TypeError, e:
                     print type(city_id)
                     print type(hotel_id)

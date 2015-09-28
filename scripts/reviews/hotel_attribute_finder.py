@@ -141,15 +141,21 @@ def sort(output_sentiment_sum, candidate_attribute):
                 hotel_sentiment_map[hotel_id] = output_sentiment_sum[hotel_id][attr]
     return sorted(hotel_sentiment_map.items(), key=operator.itemgetter(1), reverse=True)
                 
-            
-
 def find_city_attribute_top_hotels(city_name, attribute):
     output_sentiment, output_adjective = find_city_all_hotels_attributes(city_name)
     output_sentiment_sum = find_sum_over_sentiment(output_sentiment)
     output_sentiment_sort = sort(output_sentiment_sum, attribute)
     return output_sentiment_sort
 
+def find_city_location_hotels(lat, lon):
+    elastic_results = es.find_location_hotels(lat, lon)
+    output = []
+    for item in elastic_results['hits']['hits']:
+        item = item['_source']
+        output.append(item)
+    return output
+
 if __name__ == "__main__":
-    out_top_hotels = find_city_attribute_top_hotels(sys.argv[1], sys.argv[2])
+    out_top_hotels = find_city_location_hotels(sys.argv[1], sys.argv[2])
     pp = pprint.PrettyPrinter(depth=2)
     pp.pprint(out_top_hotels)

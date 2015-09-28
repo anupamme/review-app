@@ -219,7 +219,8 @@
                             "super_chic",
                             "vintage_clothing",
                             "vintage_shops",
-                            "romantic"
+                            "romantic",
+                            "luxury"
                         ]
                     },
                     "classic": {
@@ -1072,14 +1073,12 @@
                             "guest_rooms",
                             "marble_bathrooms",
                             "individually_decorated",
-                            "rooftop_pool",
                             "mountain_views",
                             "colonial_style",
                             "four_poster_beds",
                             "outdoor_pool",
                             "chalet_style",
                             "seven_bedrooms",
-                            "solarium",
                             "self_catering_apartments",
                             "minimalist_rooms",
                             "marble_floors",
@@ -1217,51 +1216,91 @@
                         ]
                     },
                     "pool": {
-                        "next": {},
-                        "keywords": [
-                            "turquoise",
-                            "canal",
-                            "lake",
-                            "river",
-                            "pool",
-                            "poolside",
-                            "swimming_pool",
-                            "swimming",
-                            "resort",
-                            "reflection",
-                            "lake",
-                            "river",
-                            "water",
-                            "duck",
-                            "pond",
-                            "fish"
-                        ]
-                    },
-                    "spa": {
-                        "next": {},
-                        "keywords": [
-                            "resort",
-                            "massage",
-                            "sauna",
-                            "spa_treatments",
-                            "steam_bath",
-                            "spa_treatment",
-                            "hydrotherapy",
-                            "spa's",
-                            "square_foot_spa",
-                            "massages",
-                            "luxury_spa",
-                            "spa_facilities",
-                            "infinity_edge_pool",
-                            "outdoor_pool",
-                            "wellness_centre",
-                            "infinity_pool",
-                            "heated_outdoor_pool",
-                            "hot_tubs",
-                            "sauna_steam_room",
-                            "facials",
-                            "heated_indoor_pool"
-                        ]
+                        "next": {
+                            "swimming_pool": {
+                                "next": {},
+                                "keywords": [
+                                    "turquoise",
+                                    "canal",
+                                    "lake",
+                                    "river",
+                                    "pool",
+                                    "poolside",
+                                    "swimming_pool",
+                                    "swimming",
+                                    "resort",
+                                    "reflection",
+                                    "lake",
+                                    "river",
+                                    "water",
+                                    "duck",
+                                    "pond",
+                                    "fish"
+                                ]
+                            },
+                            "infinity_pool": {
+                                "next": {},
+                                "keywords": [
+                                    "plunge_pool",
+                                    "sun_deck",
+                                    "outdoor_pool",
+                                    "rooftop_pool",
+                                    "saltwater_pool",
+                                    "white_sand_beach",
+                                    "tropical_gardens",
+                                    "stunning_views",
+                                    "infinity_pools",
+                                    "solarium",
+                                    "private_terrace",
+                                    "rooftop_terrace",
+                                    "indoor_pool",
+                                    "bedroom_villa",
+                                    "outdoor_swimming_pool",
+                                    "infinity_edge_pool",
+                                    "heated_pool",
+                                    "sauna_steam_room",
+                                    "ocean_views",
+                                    "infinity_edge",
+                                    "casitas",
+                                    "heated_outdoor_pool",
+                                    "hot_tubs",
+                                    "pleasure_palace",
+                                    "white_sand_beaches",
+                                    "terrace_overlooking",
+                                    "white_sand",
+                                    "hot_tub",
+                                    "resort_spa"
+                                ]
+                            },
+                            "spa": {
+                                "next": {},
+                                "keywords": [
+                                    "resort",
+                                    "massage",
+                                    "pool",
+                                    "sauna",
+                                    "spa_treatments",
+                                    "steam_bath",
+                                    "spa_treatment",
+                                    "hydrotherapy",
+                                    "spa's",
+                                    "square_foot_spa",
+                                    "massages",
+                                    "luxury_spa",
+                                    "spa_facilities",
+                                    "infinity_edge_pool",
+                                    "outdoor_pool",
+                                    "wellness_centre",
+                                    "infinity_pool",
+                                    "heated_outdoor_pool",
+                                    "hot_tubs",
+                                    "sauna_steam_room",
+                                    "facials",
+                                    "heated_indoor_pool"
+                                ]
+                            }
+                        },
+                        "keywords": []
                     },
                     "gym": {
                         "next": {},
@@ -1274,8 +1313,6 @@
                             "cardio",
                             "workout",
                             "swimming",
-                            "spa",
-                            "pool",
                             "elliptical_machine",
                             "fitness",
                             "fitness_classes",
@@ -1303,8 +1340,7 @@
                             "bathroom",
                             "exercise_bike",
                             "rowing_machine",
-                            "gym_equipment",
-                            "sauna"
+                            "gym_equipment"
                         ]
                     },
                     "banquet": {
@@ -1616,6 +1652,32 @@
                                     "tai_chi",
                                     "ashtanga_yoga",
                                     "jivamukti"
+                                ]
+                            },
+                            "surfing": {
+                                "next": {},
+                                "keywords": [
+                                    "surf",
+                                    "surfers",
+                                    "surfer",
+                                    "paddle_boarding",
+                                    "surf_school",
+                                    "bodysurfing",
+                                    "waterskiing",
+                                    "surfs",
+                                    "surfboards",
+                                    "scuba_diving",
+                                    "surf_lessons",
+                                    "kayak",
+                                    "kite_surfers",
+                                    "kayaking",
+                                    "surfboard",
+                                    "longboard",
+                                    "sea_kayaking",
+                                    "bondi_beach",
+                                    "riding",
+                                    "windsurfers",
+                                    "surf_city"
                                 ]
                             },
                             "others": {
