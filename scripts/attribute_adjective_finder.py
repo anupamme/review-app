@@ -4,7 +4,7 @@ import json
 import sys
 from nltk import word_tokenize
 import re
-from stanford_corenlp_pywrapper import sockwrap
+from stanford_corenlp_pywrapper import CoreNLP
 from ast import literal_eval
 import operator
 
@@ -30,10 +30,10 @@ possibleNounTags = ['NN', 'NNP', 'NNS', 'NNPS']
 possibleAdjTags = ['JJ', 'JJR', 'JJS', 'RB', 'RBS', 'RBR']
 possibleVerbTags = ['VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ']
 
-antonym_file = 'data/antonym_map.json'
-positive_file = 'data/positives.json'
-negative_file = 'data/negatives.json'
-attribute_adjective_file = 'data/reverse_adj.json'
+antonym_file = 'data/antonyms/antonym_map.json'
+positive_file = 'data/antonyms/positives.json'
+negative_file = 'data/antonyms/negatives.json'
+#attribute_adjective_file = 'data/reverse_adj.json'
 model_file = "../code/word2vec-all/word2vec/trunk/vectors-phrase.bin"
 stanford_jars = "../code/stanford-jars/3.5/*"
 model = None
@@ -123,9 +123,9 @@ def init():
     global antonym_map
     model = word2vec.Word2Vec.load_word2vec_format(model_file, binary=True)
     print 'stanford-jars: ' + stanford_jars
-    proc = sockwrap.SockWrap("parse", corenlp_jars=[stanford_jars])
-    attribute_adjective_map = json.loads(open(attribute_adjective_file, 'r').read())
-    print 'length of attribute_adjective_map: ' + str(len(attribute_adjective_map))
+    proc = CoreNLP("parse", corenlp_jars=[stanford_jars])
+    #attribute_adjective_map = json.loads(open(attribute_adjective_file, 'r').read())
+    #print 'length of attribute_adjective_map: ' + str(len(attribute_adjective_map))
     positive_array = json.loads(open(positive_file, 'r').read())
     negative_array = json.loads(open(negative_file, 'r').read())
     antonym_map = json.loads(open(antonym_file, 'r').read())
@@ -309,7 +309,7 @@ def find_correct_adjective(adj_list, candidate_adjectives, sentiment):
                     print 'error 10: ' + max_adj
     return final_adj
     
-def find_meta_data(line, attribute_seed, attribute_adjective_map):
+def find_meta_data(line, attribute_seed):
     try:
         line = line.encode('utf-8').strip()
     except UnicodeDecodeError:
@@ -376,11 +376,12 @@ def find_meta_data(line, attribute_seed, attribute_adjective_map):
     print 'adj_list: ' + str(adj_list)
     str_path = str(path)
     correct_adjective_list = []
-    if len(adj_list) > 0:
-        if str_path in attribute_adjective_map:
-            candidate_adjectives = attribute_adjective_map[str_path]
-            correct_adjective_list = find_correct_adjective(adj_list, candidate_adjectives, sentiment)
+#    if len(adj_list) > 0:
+#        if str_path in attribute_adjective_map:
+#            candidate_adjectives = attribute_adjective_map[str_path]
+#            correct_adjective_list = find_correct_adjective(adj_list, candidate_adjectives, sentiment)
     return path, sentiment, correct_adjective_list, adj_list
+    #return path, sentiment, adj_list
     
 if __name__ == "__main__":
     reverse_map = {}
@@ -388,7 +389,6 @@ if __name__ == "__main__":
     reverse_map_adj = {}
     reverse_map_verb = {}
     forward_adj_map = {}
-    global attribute_adjective_map
     init()
     attribute_seed = json.loads(open(sys.argv[1], 'r').read())
     
@@ -414,13 +414,13 @@ if __name__ == "__main__":
         
         lineArr = re.split('\n|\.', review)
         for line in lineArr:
-            path, sentiment, correct_adjective_list, adj_list = find_meta_data(line, attribute_seed, attribute_adjective_map)
+            path, sentiment, correct_adjective_list, adj_list = find_meta_data(line, attribute_seed)
             if path == None or path == []:
                 continue
             str_path = str(path)
-            if correct_adjective_list != None and correct_adjective_list != []:
-                forward_adj_map[line] = str(correct_adjective_list)
-                print 'found adjective: ' + str(correct_adjective_list)
+            if adj_list != None and adj_list != []:
+                forward_adj_map[line] = str(adj_list)
+                print 'found adjective: ' + str(adj_list)
 #            else:
 #                print 'error attribute adjective map key error: ' + str_path + '; ' + str(len(attribute_adjective_map))
             assert(path != [])
