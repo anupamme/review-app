@@ -78,7 +78,7 @@ def find_city_hotel_reviews(city_name, hotel_id):
 def find_location_hotels(lat, lon):
     response = {}
     response = client.search(
-        index="hn_distance",
+        index="hn_reviews",
         size=10000,
         body={
         "query":{
