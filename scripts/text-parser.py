@@ -4,7 +4,7 @@ import json
 import sys
 from nltk import word_tokenize
 import re
-from stanford_corenlp_pywrapper import sockwrap
+from stanford_corenlp_pywrapper import CoreNLP
 from ast import literal_eval
 import operator
 import time
@@ -34,8 +34,8 @@ def loadModelFile():
     global model_file
     global proc
     model = word2vec.Word2Vec.load_word2vec_format(model_file, binary=True)
-    proc = sockwrap.SockWrap("parse", corenlp_jars=[stanford_jars])
-
+    proc = CoreNLP("parse", corenlp_jars=[stanford_jars])
+    
 def find_lowest_subtree(tree, tag):
     if tree[0] == tag:
         print 'returning: ' + str(tree)
@@ -173,14 +173,9 @@ def findAndInsert(attribute_seed, word, path):
 
 def find_best_attribute(noun_arr, map_val):
     if len(noun_arr) == 0:
-<<<<<<< HEAD
         print 'Not Found: Subject and object are none and no noun present: ' + str(noun_arr)
         return []
     print 'noun arr: ' + str(noun_arr)
-=======
-        print 'Not Found: Subject and object are none and no noun present: ' + line
-        return []
->>>>>>> ce407fadfb6d67eafb72571b058bdceeb546983e
     path = is_any_noun_present(map_val, noun_arr)
     if path == []:
         print 'No noun is present in tree. So finding best bet...'
@@ -200,7 +195,6 @@ def find_best_attribute(noun_arr, map_val):
             print 'Unknown: Not able to insert line and noun: ' + str(noun_arr) + ' ; ' + winner_noun
     return path
 
-<<<<<<< HEAD
 def find_first_index(my_tuple, speech_list):
     count = 0
     while count < len(my_tuple):
@@ -209,15 +203,12 @@ def find_first_index(my_tuple, speech_list):
         count += 1
     return -1
 
-=======
->>>>>>> ce407fadfb6d67eafb72571b058bdceeb546983e
 def find_all(sub_tree, tags_list, nouns):
     tree_len = len(sub_tree)
     count = 0
     #print 'tree first: ' + str(sub_tree)
     while count < tree_len:
         if type(sub_tree[count]) == str:
-<<<<<<< HEAD
             if sub_tree[count] in tags_list:
                 nouns.append(sub_tree[count + 1])
                 return
@@ -227,15 +218,6 @@ def find_all(sub_tree, tags_list, nouns):
         #print 'tree_next first: ' + str(sub_tree[count][0])
         if type(sub_tree[count]) == tuple:
             find_all(sub_tree[count], tags_list, nouns)
-=======
-            count = count + 1
-            continue
-        #print 'tree_next first: ' + str(sub_tree[count][0])
-        if type(sub_tree[count][0]) == tuple:
-            find_first(sub_tree[count], tags_list, nouns)
-        if sub_tree[count][0] in tags_list:
-            nouns.append(sub_tree[count][1])
->>>>>>> ce407fadfb6d67eafb72571b058bdceeb546983e
         count = count + 1
     return
 
@@ -259,7 +241,7 @@ if __name__ == "__main__":
         pp_tree = find_subtree_2(parse_tree, 'PP')
         if pp_tree == None:
             print 'NULL: pp_tree is null'
-            np_tree = find_lowest_subtree_2(parse_tree, 'NP')
+            np_tree = find_lowest_subtree(parse_tree, 'NP')
             if np_tree == None:
                 print 'NULL: np_tree is null'
                 noun_arr = []

@@ -156,6 +156,20 @@ def find_city_location_hotels(lat, lon):
     return output
 
 if __name__ == "__main__":
-    out_top_hotels = find_city_location_hotels(sys.argv[1], sys.argv[2])
+    result = {}
+    search_type = sys.argv[1]
+    if search_type == 'city_hotel':
+        assert(len(sys.argv) >= 4)
+        result = find_city_hotel_attributes(sys.argv[2], sys.argv[3])
+    else:
+        if search_type == 'city_attribute':
+            assert(len(sys.argv) >= 4)
+            result = find_city_attribute_top_hotels(sys.argv[2], sys.argv[3])
+        else:
+            if search_type == 'loc':
+                assert(len(sys.argv) >= 4)
+                result = find_city_location_hotels(sys.argv[2], sys.argv[3])
+            else:
+                raise Exception('invalid search type: ' + search_type)
     pp = pprint.PrettyPrinter(depth=2)
-    pp.pprint(out_top_hotels)
+    pp.pprint(result)
