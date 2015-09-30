@@ -28,7 +28,8 @@ def get_hotel_id(hotel_name, hotel_id_map):
 
 def get_review_details(attribute_seed, attribute_adjective_map, sent):
     try:
-        path_with_score = text_p.find_attribute_2(attribute_seed, sent)
+        res_obj = text_p.find_attribute_2(attribute_seed, sent)
+        path_with_score = res_obj['path']
         if path_with_score == None or path_with_score == []:
             'path is none for line: ' + str(sent)
             return None
@@ -164,7 +165,6 @@ def parse_review(attribute_seed, attribute_adjective_map, raw_review, city_id, h
 if __name__ == "__main__":
     attribute_seed = load_json(seed_file)
     attribute_adjective_map = load_json(adjective_file)
-    global review_count
     #global output_hotel_id_review_id
     #output_hotel_id_review_id = {}
     text_p.load_for_adjectives()
@@ -210,24 +210,18 @@ if __name__ == "__main__":
                     print type(hotel_id)
                     print 'type error: ' + str(e) + ' ; ' + city_id.encode('utf-8') + ' ; ' + str(hotel_id)
                 
+                count += len(result)
                 for obj in result:
                     if obj == None or obj == {}:
                         continue
                     #output_hotel_id_review_id[obj['city_id']][obj['hotel_id']] = obj['complete_review']
                     output.append(obj)
                 
-#                if elastic_count % 1000 == 0:
-#                    f = open('hotel_review_elastic_' + str(count) + '.json', 'w')
-#                    f.write(json.dumps(output))
-#                    f.close()
-#                    output = []
-#                    f = open('hotel_review_id_' + str(count) + '.json', 'w')
-#                    f.write(json.dumps(output_hotel_id_review_id))
-#                    f.close()
-#                    output_hotel_id_review_id = {}
-#                    output_hotel_id_review_id[city_id] = {}
-#                    output_hotel_id_review_id[city_id][hotel_id] = {}
-
+                if count % 1000 == 0:
+                    f = open('hotel_review_elastic_' + str(count) + '.json', 'w')
+                    f.write(json.dumps(output))
+                    f.close()
+                    output = []
 
         f = open('hotel_review_id.json', 'w')
         f.write(json.dumps(output_hotel_id_review_id))

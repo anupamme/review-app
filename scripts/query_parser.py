@@ -2,6 +2,7 @@ import json
 sys.path.insert(0, 'scripts/lib/')
 import Levenshtein
 import language_functions as text_p
+import googlemaps
 '''
 algorithm:
     1. city: Parse nouns and do look up in list of cities. Do fuzzy match: closest in terms of spelling.
@@ -15,6 +16,8 @@ algorithm:
 
 city_hotel_id_file = 'data/city_hotel_id.json'
 attribute_file = 'data/tree-data/percolate_8.json'
+delim_address = ', '
+gmaps = googlemaps.Client(key='AIzaSyAXQ2pGkeUBhRZG4QNqy2t1AbzA6O3ToUU') 
 
 default_city = 'Bali'
 location_phrases = ['next', 'near', 'far', 'close', 'distance', 'walking', 'drive', 'on']
@@ -43,6 +46,18 @@ def is_location(tokens):
             return True
     return False
 
+def find_lat_lng(noun_phrases, city_name, country, result_lat_long):
+    for np in noun_phrases:
+        street_address = np + delim_address + city_name + delim_address + country
+        geocode_result = gmaps.geocode(street_address)
+        if geocode_result == None or len(geocode_result) == 0:
+            print 'geo code not found for street address: ' + str(street_address)
+        else:
+            location = {}
+            location['lat'] = geocode_result[0]['geometry']['location']['lat']
+            location['lon'] = geocode_result[0]['geometry']['location']['lng']
+
+
 if __name__ == "__main__":
     city_hotel_id_map = json.loads(open(city_hotel_id_file, 'r').read())
     city_list = []
@@ -61,10 +76,11 @@ if __name__ == "__main__":
         tokens = result['tokens']
         is_location = is_location(tokens)
         if is_location:
-            noun_phrases = result['noun_phrase']
+            noun_phrases = result['NP']
+            result_lat_long = []
             # check to see google maps if there is lat lng for any of the noun phrases.
-            lat_lng = find_lat_lng(noun_phrases, city_name, city_country_map[city_name])
-            if lat_lng == None or lat_lng == {}:
+            find_lat_lng(noun_phrases, city_name, city_country_map[city_name], result_lat_long)
+            if result_lat_long == []:
                 result_loc = text_p.find_attribute_2(attribute_seed['root']['next']['location'], user_input)
                 attr_loc = result_loc['path']
                 print 'attr_location: ' + str(attr_loc)
