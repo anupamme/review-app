@@ -203,8 +203,6 @@ if __name__ == "__main__":
                     #continue
                 #output_hotel_id_review_id[city_id][hotel_id] = {}
                 reviews = val['reviews']
-                review_count = 0
-                city_id = 'bali'
                 try: 
                     result = [pool.apply(parse_review, args=(attribute_seed, attribute_adjective_map, ''.join(x['description']).encode('utf-8'), city_id.encode('utf-8'), hotel_id, val)) for x in reviews if 'description' in x]
                 except TypeError, e:

@@ -4,7 +4,7 @@ import json
 import sys
 from nltk import word_tokenize
 import re
-from stanford_corenlp_pywrapper import sockwrap
+from stanford_corenlp_pywrapper import CoreNLP
 from ast import literal_eval
 import operator
 
@@ -109,7 +109,7 @@ def loadModelFile():
     global model_file
     global proc
     model = word2vec.Word2Vec.load_word2vec_format(model_file, binary=True)
-    proc = sockwrap.SockWrap("parse", corenlp_jars=[stanford_jars])
+    proc = CoreNLP("parse", corenlp_jars=[stanford_jars])
 
 def find_subject_object(line):
     global proc

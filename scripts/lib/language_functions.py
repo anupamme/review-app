@@ -154,8 +154,6 @@ def filter_array(processed, possibleTags):
         
 def find_attribute_2(attribute_seed, user_input):
     assert(is_model_loaded())
-    print 'in find_attribute_2 length of positive_array: ' + str(len(positive_array))
-    print 'in find_attribute_2 length of antonym_map: ' + str(len(antonym_map))
     processed = proc.parse_doc(user_input)
     if len(processed['sentences']) == 0:
         return None
@@ -193,7 +191,14 @@ def find_attribute_2(attribute_seed, user_input):
     path = []
     find_best_attribute_multi_2(data, attribute_seed['root'], path)
     print 'path: ' + str(path)
-    return path
+    obj = {}
+    obj['noun'] = nouns
+    obj['adjectives'] = adjectives
+    obj['sub'] = sub
+    obj['obj'] = obj
+    obj['path'] = path
+    obj['tokens'] = tokens
+    return obj
 
 def find_max_adjective(adj, candidate_adjectives):
     max_adj = None
@@ -230,8 +235,6 @@ def find_correct_adjective(adj_list, candidate_adjectives, sentiment):
     global negative_array
     selected_adj = []
     final_adj = []
-    print 'length of positive_array: ' + str(len(positive_array))
-    print 'length of negative_array: ' + str(len(negative_array))
     #print 'candidate_adjectives: ' + str(candidate_adjectives)
     for adj in adj_list:
         #if adj in positive_array or adj in negative_array:

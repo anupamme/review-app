@@ -4010,7 +4010,7 @@
                                 "keywords": {
                                     "sauna_steam_room": 1,
                                     "rooftop_pool": 1,
-                                    "infinity_edge_pool": 1,
+                                    "infinity_edge_pool": 2,
                                     "white_sand_beach": 1,
                                     "indoor_pool": 1,
                                     "solarium": 1,
@@ -4036,7 +4036,8 @@
                                     "outdoor_swimming_pool": 1,
                                     "private_terrace": 1,
                                     "infinity_pools": 1,
-                                    "hot_tub": 1
+                                    "hot_tub": 1,
+                                    "infinity": 2
                                 },
                                 "next": {}
                             },
@@ -4082,7 +4083,8 @@
                                     "spa_treatment": 1,
                                     "wellness_centre": 1,
                                     "spa_treatments": 1,
-                                    "massage": 1
+                                    "massage": 1,
+                                    "spa": 2
                                 },
                                 "next": {}
                             }
