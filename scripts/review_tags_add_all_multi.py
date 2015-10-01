@@ -15,8 +15,8 @@ review_count = 0
 output_hotel_id_review_id = {}      #hotel_id -> review_id -> review_object
 address_delim = ', '
 
-seed_file = 'data/tree-data/percolate_6.json'
-adjective_file = 'data/antonyms/reverse_adj.json'
+seed_file = 'data/tree-data/percolate_8.json'
+adjective_file = 'data/antonyms/reverse_adj_2.json'
 hotel_id_file = 'data/city_hotel_id.json'
 gmaps = googlemaps.Client(key='AIzaSyAXQ2pGkeUBhRZG4QNqy2t1AbzA6O3ToUU') 
 
@@ -171,7 +171,8 @@ if __name__ == "__main__":
     # read the data
     hotel_id_map = load_json(hotel_id_file)
     output = []
-    count = count_so_far + 1
+    prev_count = 0
+    next_count = 0
     hotel_count = 0
     
     if len(sys.argv) == 1:
@@ -210,18 +211,19 @@ if __name__ == "__main__":
                     print type(hotel_id)
                     print 'type error: ' + str(e) + ' ; ' + city_id.encode('utf-8') + ' ; ' + str(hotel_id)
                 
-                count += len(result)
+                next_count += len(result)
                 for obj in result:
                     if obj == None or obj == {}:
                         continue
                     #output_hotel_id_review_id[obj['city_id']][obj['hotel_id']] = obj['complete_review']
                     output.append(obj)
                 
-                if count % 1000 == 0:
-                    f = open('hotel_review_elastic_' + str(count) + '.json', 'w')
+                if next_count - prev_count > 1000:
+                    f = open('hotel_review_elastic_' + str(next_count) + '.json', 'w')
                     f.write(json.dumps(output))
                     f.close()
                     output = []
+                    prev_count = next_count
 
         f = open('hotel_review_id.json', 'w')
         f.write(json.dumps(output_hotel_id_review_id))
