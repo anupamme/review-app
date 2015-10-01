@@ -155,7 +155,6 @@ def filter_array(processed, possibleTags):
 
 def parse_phrase(child_node, phrase):
     index = 0
-    print 'child_node: ' + str(child_node)
     while index < len(child_node):
         node = child_node[index]
         #print 'node: ' + str(node)
@@ -170,7 +169,6 @@ def parse_phrase(child_node, phrase):
         index += 1
     
 def parse_from_parse_tree(parse_tree, tag_name, result):
-    print 'parse tree: ' + str(parse_tree)
     assert(type(parse_tree) == tuple)
     root_node = parse_tree[0]
     assert(type(root_node) == str)
@@ -192,7 +190,7 @@ def parse_from_parse_tree(parse_tree, tag_name, result):
             
     
     
-def find_attribute_2(attribute_seed, user_input):
+def find_attribute_2(attribute_seed, user_input, phrase_parsing=False):
     assert(is_model_loaded())
     processed = proc.parse_doc(user_input)
     if len(processed['sentences']) == 0:
@@ -231,20 +229,23 @@ def find_attribute_2(attribute_seed, user_input):
     path = []
     find_best_attribute_multi_2(data, attribute_seed['root'], path)
     print 'path: ' + str(path)
+    result_np = []
     
-#    parse_tree_str = str(processed['sentences'][0]['parse']).replace(' ', ' ,').replace(' ', '\' ').replace('(', '(\'').replace(')', '\')').replace(',', ',\'').replace('\'(', '(').replace(')\'', ')').replace(')\')', '))').replace(')\')', '))')
-#    parse_tree = literal_eval(parse_tree_str)
-#    result_np = []
-#    parse_from_parse_tree(parse_tree, 'NP', result_np)
+    if phrase_parsing:
+        user_input_cleaned = user_input.replace('\'', ' i').replace('\"', '')
+        processed = proc.parse_doc(user_input_cleaned)
+        parse_tree_str = str(processed['sentences'][0]['parse']).replace(' ', ' ,').replace(' ', '\' ').replace('(', '(\'').replace(')', '\')').replace(',', ',\'').replace('\'(', '(').replace(')\'', ')').replace(')\')', '))').replace(')\')', '))')
+        parse_tree = literal_eval(parse_tree_str)
+        parse_from_parse_tree(parse_tree, 'NP', result_np)
     
     obj = {}
-    obj['noun'] = nouns
+    obj['nouns'] = nouns
     obj['adjectives'] = adjectives
     obj['sub'] = sub
     obj['obj'] = obj
     obj['path'] = path
     obj['tokens'] = processed['sentences'][0]['tokens']
-#    obj['NP'] = result_np
+    obj['NP'] = result_np
     return obj
 
 def find_max_adjective(adj, candidate_adjectives):

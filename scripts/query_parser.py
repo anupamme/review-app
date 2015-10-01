@@ -1,6 +1,9 @@
 import json
-sys.path.insert(0, 'scripts/lib/')
 import Levenshtein
+import sys
+sys.path.insert(0, 'scripts/lib/')
+
+
 import language_functions as text_p
 import googlemaps
 '''
@@ -19,7 +22,7 @@ attribute_file = 'data/tree-data/percolate_8.json'
 delim_address = ', '
 gmaps = googlemaps.Client(key='AIzaSyAXQ2pGkeUBhRZG4QNqy2t1AbzA6O3ToUU') 
 
-default_city = 'Bali'
+default_city = 'bali'
 location_phrases = ['next', 'near', 'far', 'close', 'distance', 'walking', 'drive', 'on']
 
 city_country_map = {
@@ -40,13 +43,14 @@ def find_city(noun_arr, city_list):
         return max_city
     return None
 
-def is_location(tokens):
+def is_location_present(tokens):
     for tok in tokens:
         if tok in location_phrases:
             return True
     return False
 
-def find_lat_lng(noun_phrases, city_name, country, result_lat_long):
+def find_lat_lng(noun_phrases, city_name, country):
+    result_lat_long = []
     for np in noun_phrases:
         street_address = np + delim_address + city_name + delim_address + country
         geocode_result = gmaps.geocode(street_address)
@@ -56,9 +60,12 @@ def find_lat_lng(noun_phrases, city_name, country, result_lat_long):
             location = {}
             location['lat'] = geocode_result[0]['geometry']['location']['lat']
             location['lon'] = geocode_result[0]['geometry']['location']['lng']
+            result_lat_long.append(location)
+    return result_lat_long
 
 
 if __name__ == "__main__":
+    text_p.load_model_files()
     city_hotel_id_map = json.loads(open(city_hotel_id_file, 'r').read())
     city_list = []
     for key in city_hotel_id_map:
@@ -66,7 +73,7 @@ if __name__ == "__main__":
     attribute_seed = json.loads(open(attribute_file, 'r').read())
     user_input = raw_input("Some input please: ")
     while user_input != 'stop':
-        result = text_p.find_attribute_2(attribute_seed, user_input)
+        result = text_p.find_attribute_2(attribute_seed, user_input, True)
         noun_arr = result['nouns']
         # step 1
         city_name = find_city(noun_arr, city_list)
@@ -74,18 +81,21 @@ if __name__ == "__main__":
             print 'defaulting to: ' + default_city
             city_name = default_city
         tokens = result['tokens']
-        is_location = is_location(tokens)
+        is_location = is_location_present(tokens)
         if is_location:
             noun_phrases = result['NP']
-            result_lat_long = []
             # check to see google maps if there is lat lng for any of the noun phrases.
-            find_lat_lng(noun_phrases, city_name, city_country_map[city_name], result_lat_long)
+            result_lat_long = find_lat_lng(noun_phrases, city_name, city_country_map[city_name])
             if result_lat_long == []:
                 result_loc = text_p.find_attribute_2(attribute_seed['root']['next']['location'], user_input)
                 attr_loc = result_loc['path']
                 print 'attr_location: ' + str(attr_loc)
+                # call city_attribute search
             else:
-                print 'location_search: ' + str(lat_lng)
+                print 'location_search: ' + str(result_lat_long)
+                # call the location_search for all the locations and whichever has the max, show that.
         else:
             attr_path = result['path']
             print 'attr_general: ' + str(attr_path)
+            # call city_attribute search
+        user_input = raw_input("Some input please: ")
