@@ -14,7 +14,7 @@ read the insta images and query 1000 images and then sleep for 1 hour.
 3. when 10000 images are done or all hotels are finished, exit.
 '''
 
-crawled_so_far = 36 + 17 + 4 + 2 + 2 + 1
+crawled_so_far = 77
 
 def crawl(api, image_arr):
     func = lambda x: x['images']['standard_resolution']['url']
@@ -37,13 +37,18 @@ if __name__ == "__main__":
     final_result = {}
     api = ClarifaiApi()
     count = 0
-    for hotel_name in hotel_data:
+    for hotel_id in hotel_data:
+        hotel_meta = hotel_data[hotel_id]
         if count < crawled_so_far:
             count += 1
             continue
-        hotel_name = hotel_name.encode('utf-8')
+        hotel_name = hotel_meta['name'].encode('utf-8')
         print 'crawling hotel name: ' + hotel_name
-        image_arr = hotel_data[hotel_name]
+        image_arr = hotel_meta['results']
+        if image_arr == None:
+            print 'error 00: images are none: ' + hotel_name
+            count += 1
+            continue
         if len(image_arr) < 10:
             continue
         capped_images_arr = image_arr[:(100)]

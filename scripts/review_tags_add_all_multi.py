@@ -197,11 +197,9 @@ if __name__ == "__main__":
                 hotel_name = val['name']
                 print 'hotel_name: ' + hotel_name
                 hotel_id = get_hotel_id(hotel_name, hotel_id_map[city_id])
-                #hotel_id = -1
                 if hotel_id == -1:
-                    print 'hotel_id not found for ' + hotel_name
-                    hotel_id = random.randint(0, 1000)
-                    #continue
+                    print 'error 11: hotel_id not found for ' + hotel_name
+                    continue
                 #output_hotel_id_review_id[city_id][hotel_id] = {}
                 reviews = val['reviews']
                 try: 
