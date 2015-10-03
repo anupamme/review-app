@@ -220,7 +220,6 @@ if __name__ == "__main__":
                     f = open('hotel_review_elastic_' + str(next_count) + '.json', 'w')
                     f.write(json.dumps(output))
                     f.close()
-                    output = []
                     prev_count = next_count
 
         f = open('hotel_review_id.json', 'w')
