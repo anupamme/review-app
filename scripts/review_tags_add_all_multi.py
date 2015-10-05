@@ -5,6 +5,7 @@ sys.path.insert(0, 'scripts/lib/')
 import multiprocessing as mp
 import random
 import googlemaps
+import gc
 
 import language_functions as text_p
 
@@ -221,6 +222,7 @@ if __name__ == "__main__":
                     f.write(json.dumps(output))
                     f.close()
                     prev_count = next_count
+                    gc.collect()
 
         f = open('hotel_review_id.json', 'w')
         f.write(json.dumps(output_hotel_id_review_id))
