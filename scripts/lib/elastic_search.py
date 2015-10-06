@@ -2,7 +2,8 @@
 import sys
 import json
 from elasticsearch import Elasticsearch
-client = Elasticsearch()
+client = Elasticsearch('localhost:9200')
+#client = Elasticsearch()
 '''
 Input: 
     type: review, images, distance

@@ -23,7 +23,9 @@ import pprint
 import operator
 import elastic_search as es
 
-attribute_seed = json.loads(open('data/tree-data/percolate_6.json', 'r').read())
+hash_tag_delim = '_'
+
+attribute_seed = json.loads(open('data/tree-data/percolate_8.json', 'r').read())
 
 def find_abs_path(search_node):
 #    if root_node['next'] == {}:
@@ -82,7 +84,13 @@ def insert_or_increment_adjective(out, path_dict, adjective_dict):
                 out[path][adj] = out[path][adj] + adj_score
             else:
                 out[path][adj] = adj_score
-                
+
+'''
+input: city_name, hotel_id
+output: 
+    output_sentiment: path -> sentiment -> score
+    output_adjective: path -> adjective -> score
+'''
 def find_city_hotel_attributes(city_name, hotel_id):
     elastic_results = es.find_city_hotel_reviews(city_name, hotel_id)
     output_sentiment = {}   # format is: 
@@ -102,8 +110,8 @@ def find_city_hotel_attributes(city_name, hotel_id):
 
 def find_city_all_hotels_attributes(city_name):
     elastic_results = es.find_city_reviews(city_name)
-    output_sentiment = {}   # format is: 
-    output_adjective = {}   # format is: 
+    output_sentiment = {}   # format is: hotel_id -> path -> sentiment -> score
+    output_adjective = {}   # format is: hotel_id -> path -> adjective -> score
     for item in elastic_results['hits']['hits']:
         item = item['_source']
         hotel_id = item['hotel_id']
@@ -142,12 +150,14 @@ def sort(output_sentiment_sum, candidate_attribute):
     return sorted(hotel_sentiment_map.items(), key=operator.itemgetter(1), reverse=True)
                 
 def find_city_attribute_top_hotels(city_name, attribute):
+    print 'finder:: ' + city_name + ' ; ' + attribute
     output_sentiment, output_adjective = find_city_all_hotels_attributes(city_name)
     output_sentiment_sum = find_sum_over_sentiment(output_sentiment)
     output_sentiment_sort = sort(output_sentiment_sum, attribute)
     return output_sentiment_sort
 
 def find_city_location_hotels(lat, lon):
+    print 'finder:: ' + str(lat) + ' ; ' + str(lon)
     elastic_results = es.find_location_hotels(lat, lon)
     output = []
     for item in elastic_results['hits']['hits']:
@@ -155,6 +165,44 @@ def find_city_location_hotels(lat, lon):
         output.append(item)
     return output
 
+'''
+input: city_name
+level 1: 
+output: hashtag -> [hotel_id]
+'''
+def find_city_hashtags(city_name):
+    output = {} # hashtag -> [(hotel_id, score)]
+    most_talked_about = {}
+    most_talked_about_arr = {}
+    output_sentiment, output_adjective = find_city_all_hotels_attributes(city_name)
+    for hotel_id in output_sentiment:
+        if hotel_id not in most_talked_about:
+            most_talked_about[hotel_id] = {}
+        for path in output_sentiment[hotel_id]:
+            s = sum(output_sentiment[hotel_id][path].values())
+            most_talked_about[hotel_id][path] = s
+        most_talked_about_arr[hotel_id] = most_talked_about[hotel_id].items()
+        #print 'most: ' + str(most_talked_about_arr[hotel_id])
+        most_talked_about_arr[hotel_id].sort(key=lambda x: x[1], reverse=True)
+    
+    for hotel_id in most_talked_about_arr:
+        #print 'most: ' + str(most_talked_about_arr[hotel_id])
+        for attr, attr_score in most_talked_about_arr[hotel_id]:
+            adjective_values = output_adjective[hotel_id][attr].items()
+            if adjective_values == []:
+                print 'No adjective found for: ' + str(attr)
+                continue
+            adj, adj_score = adjective_values[0]
+            hash_tag = adj + hash_tag_delim + attr
+            hash_score = attr_score * adj_score
+            if hash_tag not in output:
+                output[hash_tag] = []
+            output[hash_tag].append((hotel_id, hash_score))
+    for hash_tag in output:
+        output[hash_tag].sort(key=lambda x: x[1], reverse=True)
+    return output
+
+    
 if __name__ == "__main__":
     result = {}
     search_type = sys.argv[1]
@@ -170,6 +218,9 @@ if __name__ == "__main__":
                 assert(len(sys.argv) >= 4)
                 result = find_city_location_hotels(sys.argv[2], sys.argv[3])
             else:
-                raise Exception('invalid search type: ' + search_type)
+                if search_type == 'city_hash':
+                    result = find_city_hashtags(sys.argv[2])
+                else:
+                    raise Exception('invalid search type: ' + search_type)
     pp = pprint.PrettyPrinter(depth=2)
     pp.pprint(result)

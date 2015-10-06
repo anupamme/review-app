@@ -22,9 +22,9 @@ possibleVerbTags = ['VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ']
 excludedCategories = ['services', 'others', 'price-value']
 top_number_of_items = 3
 
-model_file = "/Volumes/anupam work/code/word2vec-all/word2vec/trunk/vectors-phrase.bin"
+model_file = "/Volumes/anupam_work/code/word2vec-all/word2vec/trunk/vectors-phrase.bin"
 #model_file = "../word2vec-all/word2vec/trunk/vectors-phrase.bin"
-stanford_jars = "/Volumes/anupam work/code/stanford-jars/3.5/*"
+stanford_jars = "/Volumes/anupam_work/code/stanford-jars/3.5/*"
 
 antonym_file = 'data/antonyms/antonym_map.json'
 positive_file = 'data/antonyms/positives.json'
@@ -227,7 +227,7 @@ def find_attribute_2(attribute_seed, user_input, phrase_parsing=False):
                 data[n_obj] = 1.01
     print 'data: ' + str(data)
     path = []
-    find_best_attribute_multi_2(data, attribute_seed['root'], path)
+    find_best_attribute_multi_2(data, attribute_seed, path)
     print 'path: ' + str(path)
     result_np = []
     

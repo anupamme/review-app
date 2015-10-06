@@ -63,6 +63,36 @@ def find_lat_lng(noun_phrases, city_name, country):
             result_lat_long.append(location)
     return result_lat_long
 
+def process_request(result, city_list, attribute_seed, user_input):
+    processed = {}
+    noun_arr = result['nouns']
+    # step 1
+    city_name = find_city(noun_arr, city_list)
+    if city_name == None:
+        print 'defaulting to: ' + default_city
+        city_name = default_city
+    processed['city'] = city_name
+    tokens = result['tokens']
+    is_location = is_location_present(tokens)
+    if is_location:
+        noun_phrases = result['NP']
+        # check to see google maps if there is lat lng for any of the noun phrases.
+        result_lat_long = find_lat_lng(noun_phrases, city_name, city_country_map[city_name])
+        if result_lat_long == []:
+            result_loc = text_p.find_attribute_2(attribute_seed['root']['next']['location'], user_input)
+            attr_loc = result_loc['path']
+            processed['attr'] = attr_loc
+            print 'attr_location: ' + str(attr_loc)
+            # call city_attribute search
+        else:
+            processed['loc'] = result_lat_long
+            print 'location_search: ' + str(result_lat_long)
+            # call the location_search for all the locations and whichever has the max, show that.
+    else:
+        attr_path = result['path']
+        processed['attr'] = attr_path
+        print 'attr_general: ' + str(attr_path)
+    return processed
 
 if __name__ == "__main__":
     text_p.load_model_files()
@@ -74,28 +104,6 @@ if __name__ == "__main__":
     user_input = raw_input("Some input please: ")
     while user_input != 'stop':
         result = text_p.find_attribute_2(attribute_seed, user_input, True)
-        noun_arr = result['nouns']
-        # step 1
-        city_name = find_city(noun_arr, city_list)
-        if city_name == None:
-            print 'defaulting to: ' + default_city
-            city_name = default_city
-        tokens = result['tokens']
-        is_location = is_location_present(tokens)
-        if is_location:
-            noun_phrases = result['NP']
-            # check to see google maps if there is lat lng for any of the noun phrases.
-            result_lat_long = find_lat_lng(noun_phrases, city_name, city_country_map[city_name])
-            if result_lat_long == []:
-                result_loc = text_p.find_attribute_2(attribute_seed['root']['next']['location'], user_input)
-                attr_loc = result_loc['path']
-                print 'attr_location: ' + str(attr_loc)
-                # call city_attribute search
-            else:
-                print 'location_search: ' + str(result_lat_long)
-                # call the location_search for all the locations and whichever has the max, show that.
-        else:
-            attr_path = result['path']
-            print 'attr_general: ' + str(attr_path)
-            # call city_attribute search
+        process_request(result, city_list, attribute_seed, user_input)
+        # call city_attribute search
         user_input = raw_input("Some input please: ")

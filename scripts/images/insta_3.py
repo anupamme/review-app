@@ -3,6 +3,7 @@ import sys
 import json
 import time
 import clarifai
+import socket
 
 from clarifai.client import ClarifaiApi
 import image_attribute_map as i_map
@@ -14,7 +15,9 @@ read the insta images and query 1000 images and then sleep for 1 hour.
 3. when 10000 images are done or all hotels are finished, exit.
 '''
 
-crawled_so_far = ['Riad Dar Zahia', 'Les Deux Tours', 'Riad Tzarra', 'Riad Dar Anika', 'RIad Al Loune', 'Riad Infinity Sea', 'La Mamounia Marrakech', 'Riad La Porte Rouge', 'Ryad Dyor', 'Riyad El Cadi', 'Riad Karmela', 'La Maison Arabe', 'Sahara Palace Marrakech', 'Selman Marrakech', 'Riad Houdo', 'Riad Alma', 'Pullman Marrakech Palmeraie Resort and Spa', 'Les Jardins de Touhina', 'Caravanserai', 'Riad 58 Bl', 'Dar Crystal', 'Riad Akka', 'Riad Sapphire and Spa', 'Riad Les Bougainvilliers', 'Hotel & Ryad Art Place Marrakech', 'La Villa des Orangers', 'AnaYela', 'Le Rihani', 'Lodge K', 'Riad el Noujoum', 'Al Fassia Aguedal', 'Beachcomber Royal Palm Marrakech', 'Ksar Char-Bagh', 'Hotel Framissima les Idrissides', 'Riad Camilia', 'Riad Hikaya', 'Palais Namaskar', 'Riad Tamarrakecht', 'Riad 72', 'La Sultana Marrakech', 'Riad Massiba', 'Riad Dar Najat', 'Riad Kheirredine', 'Royal Mansour Marrakech', 'Tigmiza - Suites & Pavillons', 'Riad Dar Massai', 'Zamzam Riad', 'Riad Africa', 'Dar Les Cigognes', 'Riad Tizwa', 'Dar Ayniwen Villa Hotel', u"P'tit Habibi", 'Riad Kniza', 'Riad Anjar', 'Riad Dar Thalge', 'Riad Tahili & Spa', 'Riad Dar Dialkoum', 'Riad Joya', 'Dar Charkia', 'Palais Sebban', 'Riad Ilayka', 'Riad Al Massarah', 'Dar Zemora', 'El Fenn', 'Four Seasons Resort Marrakech', 'Les Jardins de la Medina', 'Riad Nora', 'Eden Andalou Hotel Aquapark & Spa', 'Maison MK', 'Albakech House', 'Riad Mur Akush', 'Riad le Clos des Arts', 'Riad Dar Attajmil', 'Riad Farnatchi', 'Mosaic Palais Aziza & Spa', 'Riad Mirage', 'MonRiad', 'Riad Houdou', 'Riad Miski', 'Riad Al Badia', 'Riad 58 Blu']
+max_count = 5000
+
+crawled_so_far = ['The Mansion Resort Hotel & Spa', 'Love F Hotel', 'The Bale', 'B Hotel Bali', 'Nandini Bali Resort & Spa Ubud', 'Nusa Dua Retreat and Spa', 'Ulu Segara Luxury Suites & Villas', 'Alila Villas Soori', 'Tarci Bungalow', 'Swiss-Belinn Legian', 'Patra Jasa Bali Resort & Villas', 'Anantara Bali Uluwatu Resort & Spa Bali', 'Puri Santrian', 'Saren Indah Hotel', 'Surya Shanti Villa', 'Bintang Kuta Hotel', 'Ibis Styles Bali Benoa', 'The Puri Nusa Dua', 'Spa Village Resort Tembok Bali', 'Park Regis Kuta Bali', 'The Trans Resort Bali', 'Grand Inna Kuta', 'The Purist Villas and Spa', 'Bambu Indah', 'Bali Mandira Beach Resort & Spa', 'The Haven Seminyak Hotel & Suites', 'Bunga Permai Hotel', '100 Sunset 2 Hotel', 'Bali Niksoma Boutique Beach Resort', 'The Breezes Bali Resort & Spa', 'Amaroossa Suite Bali', 'Artemis Villa and Hotel', 'Rama Candidasa Resort & Spa', 'Ramada Resort Camakila Bali', 'Kupu Kupu Barong Villas and Tree Spa', 'FuramaXclusive Ocean Beach', 'Padma Resort Legian', 'Mulia Villas', 'The Samaya Bali', 'Four Seasons Resort Bali at Jimbaran Bay', 'Courtyard by Marriott Bali Seminyak', 'Club Med Bali', 'Mulia Resort', 'HARRIS Hotel & Residences Riverview Kuta', 'Hotel Tugu Bali', 'Citadines Kuta Beach Bali', 'The Dipan Resort Petitenget', 'Puri Gangga Resort', 'Fontana Hotel Bali', 'Villa Sarna Ubud', 'Wapa di Ume Resort and Spa', 'Sun Island Hotel Kuta', 'Grand Istana Rama Hotel Bali', 'Sun Island Villas & Spa', 'Fairmont Sanur Beach Bali', 'All Seasons Legian Bali', 'Sheraton Bali Kuta Resort', 'Grand Mirage Resort', 'Villa Kub', 'Komaneka at Bisma', 'Tulamben Wreck Divers Resort', 'Novotel Bali Benoa', 'BEST WESTERN Kuta Villa', 'Sofitel Bali Nusa Dua Beach Resort', 'The Akmani Legian', 'Swiss-Belresort Watu Jimbar', 'H Sovereign Bali', 'The St. Regis Bali Resort', 'Liberty Dive Resort', 'The Gangsa Private Villa by Kayumanis', 'Lembongan Beach Club and Resort', 'Royal Candidasa: Royal Bali Beach Club', 'Hotel Vila Lumbung', 'The Segara Suites', 'Bali Shangrila Beach Club', 'Mega Boutique Hotel', 'Alila Manggis', 'Legian Paradiso Hotel', 'The Layar - Designer Villas and Spa', 'The Grand Bali Nusa Dua', 'Four Seasons Resort Bali at Sayan', 'The Radiant Hotel and Spa', 'Chapung SeBali Resort and Spa', 'Holiday Inn Express Bali Raya Kuta', 'H\'u Villas Bali', 'Kamandalu Ubud', 'Jamahal Private Resort & SPA', 'Fivelements Puri Ahimsa', 'PING Hotel Seminyak Bali', 'The Kana Kuta', 'Mercure Resort Sanur', 'Komaneka at Monkey Forest', 'Hotel Terrace At Kuta', 'Villa Kub', 'The Seminyak Suite Private Villa', 'Aston Kuta Hotel & Residence', 'Centra Taum Seminyak Bali', 'The Menjangan', 'Kayumanis Jimbaran Private Estate & Spa', u"H'u Villas Bali", 'Mercure Bali Legian', 'Agung Raka Resort & Villas', 'Ananta Legian Hotel', 'Holiday Inn Express Bali Kuta Square', 'Ramayana Resort & Spa', 'Alila Villas Uluwat', 'The Seminyak Beach Resort & Spa', 'Furama Villas & Spa Ubud', 'Aria Villas Ubud', 'The Kayon Resort', 'Ayung Resort Ubud', 'Villa Kub', 'Alila Villas Uluwat', 'Atanaya Hotel', 'The Club Villas', 'Hotel Tjampuhan & Spa', 'Ubud Bungalow', u"H'u Villas Bali", 'Biyukukung Suites and Spa', 'Kuta Puri Bungalows', 'Grand Hyatt Bali', 'The Stones Hotel - Legian Bali, Autograph Collection', 'Bulgari Resort Bali', 'Uma by COMO, Ubud', 'Royal Jimbaran: Royal Bali Beach Club', 'Santi Mandala', 'Abi Bali Resort & Villa', 'Bebek Tepi Sawah Villas & Spa', 'Puri Wirata Dive Resort and Spa Amed', 'Bali Ginger Suites', 'Pan Pacific Nirwana Bali Resort', 'Alila Villas Uluwat', 'Bounty Hotel', 'Nirwana Resort and Spa', 'Amandari', 'Risata Bali Resort & Spa', 'Villa Kub', 'The Ahimsa Estate', 'L Hotel Seminyak', 'Grandmas Seminyak Hotel', 'Mercure Bali Nusa Dua', 'Hotel Santika Siligita Nusa Dua', 'Hotel NEO + Kuta Legian', 'Puri Saron Seminyak', 'Puri Dajuma Cottages', 'Batu Karang Lembongan Resort & Day Spa', 'Le Grande Bali', 'Hard Rock Hotel Bali', 'Taman Harum Cottages', 'Swiss-Belhotel Segara Resort & Spa', u"H'u Villas Bali", 'Champlung Sari Hotel', 'HARRIS Hotel Bukit Jimbaran', 'Alindra Villa', 'Villa Kub', 'Griya Santrian', 'Alila Villas Uluwat', 'Kayumanis Ubud Private Villa & Spa', 'Peppers Seminyak', 'Puri Wulandari Boutique Resort', 'Matahari Tulamben Resort, Dive & SPA', u"H'u Villas Bali", 'The Sungu Resort & Spa', 'The Legian Bali \u2013 a GHM hotel', 'Svarga Loka Resort', 'Ramada Bintang Bali Resort', 'Amankila']
 
 def crawl(api, image_arr):
     func = lambda x: x['images']['standard_resolution']['url']
@@ -28,6 +31,9 @@ def crawl(api, image_arr):
         return None
     except clarifai.client.client.ApiThrottledError:
         print 'throttle error while trying: ' + str(filtered_arr)
+        return None
+    except socket.error,v:
+        print 'socket error: ' + str(v)
         return None
 
 if __name__ == "__main__":
@@ -57,7 +63,7 @@ if __name__ == "__main__":
         hourly_count += image_len
         total_count += image_len
         
-        if total_count > 5000:
+        if total_count > max_count:
             break
         
         print 'hourly_count: ' + str(hourly_count)

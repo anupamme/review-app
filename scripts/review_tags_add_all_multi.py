@@ -29,7 +29,7 @@ def get_hotel_id(hotel_name, hotel_id_map):
 
 def get_review_details(attribute_seed, attribute_adjective_map, sent):
     try:
-        res_obj = text_p.find_attribute_2(attribute_seed, sent)
+        res_obj = text_p.find_attribute_2(attribute_seed['root'], sent)
         path_with_score = res_obj['path']
         if path_with_score == None or path_with_score == []:
             'path is none for line: ' + str(sent)
