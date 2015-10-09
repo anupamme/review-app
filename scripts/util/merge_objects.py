@@ -10,7 +10,7 @@ if __name__ == "__main__":
         print 'length: ' + str(len(json_obj))
         for key in json_obj:
             if key in output:
-                print 'key already present: ' + str(key)
+                print 'key already present: ' + key.encode('utf-8')
             output[key] = json_obj[key]
         count += 1
     

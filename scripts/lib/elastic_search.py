@@ -3,6 +3,7 @@ import sys
 import json
 from elasticsearch import Elasticsearch
 client = Elasticsearch('localhost:9200')
+#client = Elasticsearch(host='104.197.70.181', port=9200)
 #client = Elasticsearch()
 '''
 Input: 
@@ -56,7 +57,23 @@ def find_images_for_attribute(search_attribute):
         )
     return response
 
-
+def find_city_hotel_images(city_name, hotel_id):
+    response = {}
+    response = client.search(
+            index="hn",
+            size=10000,
+            body={
+                "query" : {
+                    "bool": {
+                        "must": [
+                            { "match": { "hotel_id":  hotel_id }},
+                            { "match": { "city_id": city_name }}
+                        ]
+                    }
+                }
+            }
+        )
+    return response
 
 def find_city_hotel_reviews(city_name, hotel_id):
     response = {}
@@ -102,7 +119,23 @@ def find_location_hotels(lat, lon):
     )
     return response
     
-
+def find_city_images(city_name):
+    response = {}
+    response = client.search(
+            index="hn",
+            size=100000,
+            body={
+                "query" : {
+                    "bool": {
+                        "must": [
+                            { "match": { "city_id": city_name }}
+                        ]
+                    }
+                }
+            }
+        )
+    return response
+    
 def find_city_reviews(city_name):
     response = {}
     response = client.search(

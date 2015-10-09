@@ -108,6 +108,38 @@ def find_city_hotel_attributes(city_name, hotel_id):
         
     return output_sentiment, output_adjective
 
+def find_city_hotel_images(city_name, hotel_id):
+    elastic_results = es.find_city_hotel_images(city_name, hotel_id)
+    output = {}   # format is: path -> [url, score]
+    for item in elastic_results['hits']['hits']:
+        item = item['_source']
+        url = item['url']
+        score = item['score']
+        path = map(lambda x: x['value'], item['attributes'])
+        path_s = str(path)
+        if path_s not in output:
+            output[path_s] = []
+        output[path_s].append((url, score))
+    for path in output:
+        output[path].sort(key=lambda x: x[1], reverse=True)
+    return output
+
+def find_city_all_hotels_reviews_images(city_name):
+    output_sentiment, output_adjective = find_city_all_hotels_attributes(city_name)
+    output_images = find_city_all_hotels_images(city_name)
+    output_c = {}
+    for hotel_id in output_sentiment:
+        if hotel_id in output_images:
+            output_c[hotel_id] = {}
+            for path in output_sentiment[hotel_id]:
+                output_c[hotel_id][path] = {}
+                output_c[hotel_id][path]['reviews'] = output_sentiment[hotel_id][path]
+                if path in output_images[hotel_id]:
+                    output_c[hotel_id][path]['images'] = output_images[hotel_id][path]
+        else:
+            output_c[hotel_id] = output_sentiment[hotel_id]
+    return output_c
+
 def find_city_all_hotels_attributes(city_name):
     elastic_results = es.find_city_reviews(city_name)
     output_sentiment = {}   # format is: hotel_id -> path -> sentiment -> score
@@ -129,6 +161,28 @@ def find_city_all_hotels_attributes(city_name):
         insert_or_increment_adjective(output_adjective[hotel_id], path_dict, adjective_dict)
 
     return output_sentiment, output_adjective
+
+def find_city_all_hotels_images(city_name):
+    elastic_results = es.find_city_images(city_name)
+    output = {}   # format is: hotel_id -> path -> [(url, score)]
+    for item in elastic_results['hits']['hits']:
+        item = item['_source']
+        hotel_id = item['hotel_id']
+        if hotel_id not in output:
+            output[hotel_id] = {}
+        url = item['url']
+        score = item['score']
+        path = map(lambda x: x['value'], item['attributes'])
+        path_s = str(path)
+        if path_s not in output[hotel_id]:
+            output[hotel_id][path_s] = []
+        output[hotel_id][path_s].append((url, score))
+        
+    for hotel_id in output:
+        for path in output[hotel_id]:
+            output[hotel_id][path].sort(key=lambda x: x[1], reverse=True)
+
+    return output
 
 def find_sum_over_sentiment(output_sentiment):
     output_sentiment_sum = {}
@@ -205,22 +259,39 @@ def find_city_hashtags(city_name):
     
 if __name__ == "__main__":
     result = {}
-    search_type = sys.argv[1]
-    if search_type == 'city_hotel':
-        assert(len(sys.argv) >= 4)
-        result = find_city_hotel_attributes(sys.argv[2], sys.argv[3])
-    else:
-        if search_type == 'city_attribute':
+    arg_count = 1
+    search_kind = sys.argv[arg_count]
+    arg_count += 1
+    search_type = sys.argv[arg_count]
+    arg_count += 1
+    if search_kind == 'reviews':
+        if search_type == 'city_hotel':
             assert(len(sys.argv) >= 4)
-            result = find_city_attribute_top_hotels(sys.argv[2], sys.argv[3])
+            result = find_city_hotel_attributes(sys.argv[arg_count], sys.argv[arg_count + 1])
         else:
-            if search_type == 'loc':
+            if search_type == 'city_attribute':
                 assert(len(sys.argv) >= 4)
-                result = find_city_location_hotels(sys.argv[2], sys.argv[3])
+                result = find_city_attribute_top_hotels(sys.argv[arg_count], sys.argv[arg_count + 1])
             else:
-                if search_type == 'city_hash':
-                    result = find_city_hashtags(sys.argv[2])
+                if search_type == 'loc':
+                    assert(len(sys.argv) >= 4)
+                    result = find_city_location_hotels(sys.argv[arg_count], sys.argv[arg_count + 1])
                 else:
-                    raise Exception('invalid search type: ' + search_type)
+                    if search_type == 'city_hash':
+                        result = find_city_hashtags(sys.argv[arg_count])
+                    else:
+                        raise Exception('invalid search type: ' + search_type)
+    else:
+        if search_kind == 'images':
+            if search_type == 'city_hotel':
+                assert(len(sys.argv) >= 4)
+                result = find_city_hotel_images(sys.argv[arg_count], sys.argv[arg_count + 1])
+            else:
+                if search_type == 'city':
+                    assert(len(sys.argv) >= 4)
+                    result = find_city_all_hotels_images(sys.argv[arg_count])
+        else:
+            if search_kind == 'both':
+                result = find_city_all_hotels_reviews_images(sys.argv[arg_count])
     pp = pprint.PrettyPrinter(depth=2)
     pp.pprint(result)

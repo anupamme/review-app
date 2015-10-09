@@ -89,7 +89,7 @@ if __name__ == "__main__":
                         "attributes": attr_to_insert,
                         "url": image_url,
                         "score": image_score,
-                        "city_name": city_name
+                        "city_id": city_name
                     }
                     count += 1
                     output_arr.append(obj)
