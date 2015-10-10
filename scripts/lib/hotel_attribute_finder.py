@@ -116,7 +116,8 @@ def find_city_hotel_images(city_name, hotel_id):
         url = item['url']
         score = item['score']
         path = map(lambda x: x['value'], item['attributes'])
-        path_s = str(path)
+        #print 'path: ' + str(path)
+        path_s = str(path[len(path) - 1])
         if path_s not in output:
             output[path_s] = []
         output[path_s].append((url, score))
@@ -167,13 +168,13 @@ def find_city_all_hotels_images(city_name):
     output = {}   # format is: hotel_id -> path -> [(url, score)]
     for item in elastic_results['hits']['hits']:
         item = item['_source']
-        hotel_id = item['hotel_id']
+        hotel_id = str(item['hotel_id'])
         if hotel_id not in output:
             output[hotel_id] = {}
         url = item['url']
         score = item['score']
         path = map(lambda x: x['value'], item['attributes'])
-        path_s = str(path)
+        path_s = str(path[len(path) - 1])
         if path_s not in output[hotel_id]:
             output[hotel_id][path_s] = []
         output[hotel_id][path_s].append((url, score))
@@ -208,7 +209,7 @@ def find_city_attribute_top_hotels(city_name, attribute):
     output_sentiment, output_adjective = find_city_all_hotels_attributes(city_name)
     output_sentiment_sum = find_sum_over_sentiment(output_sentiment)
     output_sentiment_sort = sort(output_sentiment_sum, attribute)
-    return output_sentiment_sort
+    return output_sentiment_sort, output_sentiment, output_adjective
 
 def find_city_location_hotels(lat, lon):
     print 'finder:: ' + str(lat) + ' ; ' + str(lon)
@@ -218,6 +219,38 @@ def find_city_location_hotels(lat, lon):
         item = item['_source']
         output.append(item)
     return output
+
+'''
+output: 
+    [hash_tags]
+    {attribute -> [hash_tags]}
+'''
+def find_hotel_hashtags(city_name, hotel_id):
+    most_talked_about = {}
+    most_talked_about_arr = {}
+    output_sentiment, output_adjective = find_city_hotel_attributes(city_name, hotel_id)
+    for path in output_sentiment:
+        s = sum(output_sentiment[path].values())
+        most_talked_about[path] = s
+    most_talked_about_arr = most_talked_about.items()
+    #print 'most: ' + str(most_talked_about_arr[hotel_id])
+    most_talked_about_arr.sort(key=lambda x: x[1], reverse=True)
+    
+    output = {} # attribute -> [(hashtag, score)]
+    for attr, attr_score in most_talked_about_arr:
+        adjective_values = output_adjective[attr].items()
+        if adjective_values == []:
+            print 'No adjective found for: ' + str(attr)
+            continue
+        adj, adj_score = adjective_values[0]
+        hash_tag = adj + hash_tag_delim + attr
+        hash_score = attr_score * adj_score
+        if attr not in output:
+            output[attr] = []
+        output[attr].append((hash_tag, hash_score))
+    for attr in output:
+        output[attr].sort(key=lambda x: x[1], reverse=True)
+    return output_sentiment, output_adjective, output
 
 '''
 input: city_name
@@ -271,7 +304,7 @@ if __name__ == "__main__":
         else:
             if search_type == 'city_attribute':
                 assert(len(sys.argv) >= 4)
-                result = find_city_attribute_top_hotels(sys.argv[arg_count], sys.argv[arg_count + 1])
+                result, res2, res3 = find_city_attribute_top_hotels(sys.argv[arg_count], sys.argv[arg_count + 1])
             else:
                 if search_type == 'loc':
                     assert(len(sys.argv) >= 4)
@@ -293,5 +326,5 @@ if __name__ == "__main__":
         else:
             if search_kind == 'both':
                 result = find_city_all_hotels_reviews_images(sys.argv[arg_count])
-    pp = pprint.PrettyPrinter(depth=2)
+    pp = pprint.PrettyPrinter(depth=4)
     pp.pprint(result)
