@@ -15,7 +15,24 @@
         {
             "title": "pool",
             "images": ["url", "url2"],
-            "detail": ["most people said the pool was awesome", "few people said the pool had expensive drinks", "some peole said that the water in pool was cold"]
+            "detail": ["most people said the pool was awesome", "few people said the pool had expensive drinks", "some peole said that the water in pool was cold"],
+            "sentiment_graph": [
+                {
+                    "status":"awesome",
+                    "description": "25",
+                    "hash_tags": ['beautiful_pool', 'awesome_pool']
+                },
+                {
+                    "status":"ok",
+                    "description": "25",
+                    "hash_tags": ['beautiful_pool', 'awesome_pool']
+                },
+                {
+                    "status":"bad",
+                    "description": "25",
+                    "hash_tags": ['beautiful_pool', 'awesome_pool']
+                }
+            ]
         },
         {
             "title": "spa",

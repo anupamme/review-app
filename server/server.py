@@ -156,7 +156,7 @@ def convert_into_presentation_format(final_results, search_city, search_attr):
         obj['sentiment_percent'] = round(popular_percent)
         obj['attribute_summary'] = 'Most popular sentiment about: ' + search_attr + ' is: ' + str(popular_sentiment)
         presentation_json.append(obj)
-    presentation_json.sort(lambda x: x['score'], reverse=True)
+    presentation_json.sort(key=lambda x: x['score'], reverse=True)
     return presentation_json
 
 def create_sentiment_graph(output_sentiment):
@@ -253,7 +253,7 @@ def create_attribute_graph(output_sentiment, output_adj, output_images):
         if sentiment_len > 2:
             less = sentiment_arr[2][0]
         else:
-            few = 'None'
+            less = 'None'
         obj = {
             "title": attr,
             "images": image_arr,
@@ -290,7 +290,7 @@ def convert_into_presentation_format_hashtags(city, hash_tags_map, output_images
     for hash_tag in hash_tags_map:
         first_index = hash_tag.index(finder.hash_tag_delim)
         attr = hash_tag[first_index + 1:]
-        adj = hash_tag[:first_index]
+        adj = hash_tag[1:first_index]
         hotel_results = hash_tags_map[hash_tag]
         out_hotel_list = []
         sum_score = 0

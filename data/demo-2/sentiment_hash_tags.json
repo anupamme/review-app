@@ -1,0 +1,18 @@
+[
+    {
+        "attribute": "pool",
+        'awesome': {
+            'ratio': 25,
+            'hash_tags': ['beautiful_pool', 'awesome_pool']
+        },
+        'ok': {
+            'ratio': 45,
+            'hash_tags': ['cold_water', 'little_crowded']
+        },
+        'bad': {
+            'ratio': 30,
+            'hash_tags': ['expensive_drinks', 'rude_staff']
+        }
+    }
+    
+]

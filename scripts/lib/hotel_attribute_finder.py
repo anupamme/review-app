@@ -24,6 +24,7 @@ import operator
 import elastic_search as es
 
 hash_tag_delim = '_'
+hash_tag_prefix = '#'
 
 attribute_seed = json.loads(open('data/tree-data/percolate_8.json', 'r').read())
 
@@ -243,7 +244,7 @@ def find_hotel_hashtags(city_name, hotel_id):
             print 'No adjective found for: ' + str(attr)
             continue
         adj, adj_score = adjective_values[0]
-        hash_tag = adj + hash_tag_delim + attr
+        hash_tag = hash_tag_prefix + adj + hash_tag_delim + attr
         hash_score = attr_score * adj_score
         if attr not in output:
             output[attr] = []
@@ -280,7 +281,8 @@ def find_city_hashtags(city_name):
                 print 'No adjective found for: ' + str(attr)
                 continue
             adj, adj_score = adjective_values[0]
-            hash_tag = adj + hash_tag_delim + attr
+            # what is the sentiment of this adj.
+            hash_tag = hash_tag_prefix + adj + hash_tag_delim + attr
             hash_score = attr_score * adj_score
             if hash_tag not in output:
                 output[hash_tag] = []
