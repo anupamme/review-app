@@ -3,6 +3,7 @@
     "name": "Hotel Name",
     "address": "Hotel Address",
     "location": "Hotel lat long",
+    "city": "bali",
     "sentiment_graph": {
         "awesome": 3,
         "good": 2,

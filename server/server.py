@@ -136,13 +136,20 @@ def convert_into_presentation_format(final_results, search_city, search_attr):
             if len(image_arr) > 0:
                 obj['image'] = image_arr[0][0]
         else:
-            obj['image'] = default_image
+            for in_attr in final_results[hotel_id]['attribute_details']:
+                if 'images' in final_results[hotel_id]['attribute_details'][in_attr]:
+                    image_arr = final_results[hotel_id]['attribute_details'][in_attr]['images']
+                    if len(image_arr) > 0:
+                        obj['image'] = image_arr[0][0]
+            if 'image' not in obj:
+                print 'error 11: using default image for hotel: ' + str(obj['name'])
+                obj['image'] = default_image
         #attribute summary
         sentiment_arr = sentiment_graph.items()
         sentiment_arr.sort(key=lambda x: x[1], reverse=True)
         popular_sentiment = sentiment_arr[0][0]
         popular_percent = (sentiment_arr[0][1]*100)/sum(sentiment_graph.values())
-        obj['sentiment_percent'] = popular_percent
+        obj['sentiment_percent'] = round(popular_percent)
         obj['attribute_summary'] = 'Most popular sentiment about: ' + search_attr + ' is: ' + str(popular_sentiment)
         presentation_json.append(obj)
     return presentation_json
@@ -233,7 +240,12 @@ def convert_into_presentation_format_hashtags(city, hash_tags_map, output_images
             if attr in output_images[hotel_id]:
                 obj['image'] = output_images[hotel_id][attr][0][0]
             else:
-                obj['image'] = default_image
+                for in_attr in output_images[hotel_id]:
+                    if len(output_images[hotel_id][in_attr]) > 0:
+                        obj['image'] = output_images[hotel_id][in_attr][0][0]
+                if 'image' not in obj:
+                    print 'error 10: image not found for hash_tag and hotel_id: ' + str(hash_tag) + ' ; ' + str(hotel_id) + ' ; ' + str(city)
+                    obj['image'] = default_image
             out_hotel_list.append(obj)
         meta_obj = {}
         meta_obj['title'] = hash_tag
@@ -287,6 +299,7 @@ class DetailHandler(restful.Resource):
         sentiment_graph = create_sentiment_graph(output_sentiment)
         attribute_graph = create_attribute_graph(output_sentiment, output_adj, output_images)
         obj = {
+            'city': search_city,
             'hotel_id': search_hotel_id,
             'name': hotel_details['name'],
             'address': hotel_details['address'],
