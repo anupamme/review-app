@@ -1,0 +1,40 @@
+{
+    'city': 'marrakech',
+    'results': [
+        {
+            'title': 'beautiful_view',
+            'hotels': [
+                {
+                    'hotel_id': '123',
+                    'score': 12121,
+                    'name': 'my hotel',
+                    'image': 'my url'
+                },
+                {
+                    'hotel_id': '321',
+                    'score': 12321,
+                    'name': 'my hotel 2',
+                    'image': 'my url 2'
+                }
+            ]
+        },
+        {
+            'title': 'cheap_pickup',
+            'hotels': [
+                {
+                    'hotel_id': '123',
+                    'score': 12121,
+                    'name': 'my hotel',
+                    'image': 'my url'
+                },
+                {
+                    'hotel_id': '321',
+                    'score': 12321,
+                    'name': 'my hotel 2',
+                    'image': 'my url 2'
+                }
+            ]
+        }
+    ]
+}
+

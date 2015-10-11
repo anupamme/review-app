@@ -1,0 +1,47 @@
+[
+    {
+        "hotel_id": "1",
+        "city": "bali",
+        "name": "Hotel Name",
+        "Address": "Hotel Address",
+        "Lat/Long": "Latitude, Longitude",
+        "attribute_summary": "summary of this attribute",
+        "image": "image_url"
+    },
+    {
+        "hotel_id": "2",
+        "city": "bali",
+        "name": "Hotel Name 2",
+        "Address": "Hotel Address",
+        "Lat/Long": "Latitude, Longitude",
+        "attribute_summary": "summary of this attribute",
+        "image": "image_url"
+    },
+    {
+        "hotel_id": "3",
+        "city": "bali",
+        "name": "Hotel Name 3",
+        "Address": "Hotel Address",
+        "Lat/Long": "Latitude, Longitude",
+        "attribute_summary": "summary of this attribute",
+        "image": "image_url"
+    },
+    {
+        "hotel_id": "4",
+        "city": "bali",
+        "name": "Hotel Name 4",
+        "Address": "Hotel Address",
+        "Lat/Long": "Latitude, Longitude",
+        "attribute_summary": "summary of this attribute",
+        "image": "image_url"
+    },
+    {
+        "hotel_id": "5",
+        "city": "bali",
+        "name": "Hotel Name 5",
+        "Address": "Hotel Address",
+        "Lat/Long": "Latitude, Longitude",
+        "attribute_summary": "summary of this attribute",
+        "image": "image_url"
+    }
+]

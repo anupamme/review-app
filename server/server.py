@@ -22,6 +22,7 @@ app = Flask(__name__)
 
 attribute_seed_file = 'data/tree-data/percolate_8.json'
 city_hotel_id_file = 'data/city_hotel_details.json'
+default_image = 'https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11240355_1446634575634173_545669914_n.jpg'
 
 a = reqparse.RequestParser()
 a.add_argument('search_str', type=str)
@@ -116,7 +117,7 @@ def merge_results(images, hashtags, sentiment, adjectives):
  
 def convert_into_presentation_format(final_results, search_city, search_attr):
     presentation_json = []
-    default_image = 'https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11240355_1446634575634173_545669914_n.jpg'
+    
     for hotel_id in final_results:
         obj = {}
         obj['hotel_id'] = hotel_id
@@ -140,6 +141,8 @@ def convert_into_presentation_format(final_results, search_city, search_attr):
         sentiment_arr = sentiment_graph.items()
         sentiment_arr.sort(key=lambda x: x[1], reverse=True)
         popular_sentiment = sentiment_arr[0][0]
+        popular_percent = (sentiment_arr[0][1]*100)/sum(sentiment_graph.values())
+        obj['sentiment_percent'] = popular_percent
         obj['attribute_summary'] = 'Most popular sentiment about: ' + search_attr + ' is: ' + str(popular_sentiment)
         presentation_json.append(obj)
     return presentation_json
@@ -161,7 +164,7 @@ def create_sentiment_graph(output_sentiment):
 def create_attribute_graph(output_sentiment, output_adj, output_images):
     output = {}
     for path in output_sentiment:
-        print 'path: ' + str(path)
+        #print 'path: ' + str(path)
         attr = path
         image_arr = None
         if attr in output_images:
@@ -192,6 +195,53 @@ def create_attribute_graph(output_sentiment, output_adj, output_images):
     return output
 
 '''
+output:
+    {
+        'title': 'beautiful_view',
+        'city': 'marrakech',
+        'hotels': [
+            {
+                'hotel_id': '123',
+                'score': 12121,
+                'name': 'my hotel',
+                'image': 'my url'
+            },
+        ]
+    }
+'''
+def convert_into_presentation_format_hashtags(city, hash_tags_map, output_images):
+    output = {}
+    output['city']  = city
+    results = []
+    for hash_tag in hash_tags_map:
+        first_index = hash_tag.index(finder.hash_tag_delim)
+        attr = hash_tag[first_index + 1:]
+        adj = hash_tag[:first_index]
+        hotel_results = hash_tags_map[hash_tag]
+        out_hotel_list = []
+        for hotel_id, hash_score in hotel_results:
+            obj = {}
+            hotel_id = str(hotel_id)
+            #print 'hotel_id type: ' + str(type(hotel_id))
+            obj['hotel_id'] = hotel_id
+            obj['score'] = hash_score
+            obj['name'] = app.hotel_name_data[city][hotel_id]['name']
+            #print 'obj: ' + str(obj)
+            if attr in output_images[hotel_id]:
+                obj['image'] = output_images[hotel_id][attr][0][0]
+            else:
+                obj['image'] = default_image
+            out_hotel_list.append(obj)
+        meta_obj = {}
+        meta_obj['title'] = hash_tag
+        meta_obj['hotels'] = out_hotel_list
+        results.append(meta_obj)
+    output['results'] = results
+    return output
+        
+            
+
+'''
 possible outputs:
 1. [hash_tags]
 2. [attribute -> [images]]
@@ -199,6 +249,17 @@ possible outputs:
 4. [attribute -> (sentiment, adjective)]
 5. [attribute -> [hash_tags]]
 '''
+
+class HashTagHandler(restful.Resource):
+    def get(self):
+        args = a.parse_args()
+        search_city = args.get('city')
+        hash_tags = finder.find_city_hashtags(search_city)  # format is hash_tag -> [(hotel_id, score)]
+        output_images = finder.find_city_all_hotels_images(search_city)
+        output_format = convert_into_presentation_format_hashtags(search_city, hash_tags, output_images)
+        return output_format, 200
+        
+        
 
 class DetailHandler(restful.Resource):
     def get(self):
@@ -257,7 +318,8 @@ if __name__ == "__main__":
     cors = CORS(app)
     app.config['CORS_HEADERS'] = 'Content-Type'
     api = restful.Api(app)
-    api.add_resource(HelloHandler, '/hello')
+    api.add_resource(HelloHandler, '/listing')
     api.add_resource(DetailHandler, '/detail')
+    api.add_resource(HashTagHandler, '/hashtag')
     print 'running server...'
     app.run(debug=True, port=8080, host="0.0.0.0")
