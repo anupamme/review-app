@@ -176,6 +176,8 @@ def create_attribute_graph(output_sentiment, output_adj, output_images):
         image_arr = None
         if attr in output_images:
             image_arr = output_images[attr]
+        else:
+            continue
         sentiment_map = output_sentiment[path]
         sentiment_arr = sentiment_map.items()
         sentiment_arr.sort(key=lambda x: x[1], reverse=True)
@@ -202,6 +204,7 @@ def create_attribute_graph(output_sentiment, output_adj, output_images):
             ]
         }
         output.append(obj)
+    output.sort(key=lambda x: len(x['images']), reverse=True)
     return output
 
 '''
