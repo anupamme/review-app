@@ -28,6 +28,7 @@ a = reqparse.RequestParser()
 a.add_argument('search_str', type=str)
 a.add_argument('city', type=str)
 a.add_argument('hotel_id', type=str)
+a.add_argument('hash_tag', type=str)
 
 app.attr_seed = json.loads(open(attribute_seed_file, 'r').read())
 app.hotel_name_data = json.loads(open(city_hotel_id_file, 'r').read())
@@ -43,10 +44,9 @@ def do_location_query(loc_array):
             max_results = loc_results
     return max_results
 
-def do_attribute_query(city, attr_path):
-    if city == None or attr_path == None or len(attr_path) == 0:
+def do_attribute_query(city, attr):
+    if city == None or attr == None:
         return None
-    attr = attr_path[-1]
     image_result = finder.find_city_all_hotels_images(city)
     #print 'image_result: ' + str(image_result)
     review_result, output_sentiment, output_adj = finder.find_city_attribute_top_hotels(city, attr)
@@ -54,7 +54,7 @@ def do_attribute_query(city, attr_path):
     for hotel_id, hotel_score in review_result:
         #hotel_id_int = int(hotel_id)
         hotel_id_int = int(hotel_id)
-        print 'hotel_id: ' + hotel_id
+        #print 'hotel_id: ' + hotel_id
         output[hotel_id] = {}
         output[hotel_id]['score'] = hotel_score
         #output[hotel_id_int] = review_result[(hotel_id, hotel_score)]
@@ -162,7 +162,7 @@ def create_sentiment_graph(output_sentiment):
     return output
 
 def create_attribute_graph(output_sentiment, output_adj, output_images):
-    output = {}
+    output = []
     for path in output_sentiment:
         #print 'path: ' + str(path)
         attr = path
@@ -186,12 +186,15 @@ def create_attribute_graph(output_sentiment, output_adj, output_images):
         else:
             few = 'None'
         obj = {
+            "title": attr,
             "images": image_arr,
-            "detail_1": 'Most people had ' + most.lower() + ' experience.',
-            "detail_2": 'Some people had ' + few.lower() + ' experience.',
-            "detail_3": 'Less people had ' + less.lower() + ' experience.'
+            "details": [
+                'Most people had ' + most.lower() + ' experience.',
+                'Some people had ' + few.lower() + ' experience.',
+                'Less people had ' + less.lower() + ' experience.'
+            ]
         }
-        output[attr] = obj
+        output.append(obj)
     return output
 
 '''
@@ -250,6 +253,18 @@ possible outputs:
 5. [attribute -> [hash_tags]]
 '''
 
+class HashTagSearchHandler(restful.Resource):
+    def get(self):
+        args = a.parse_args()
+        search_city = args.get('city')
+        search_hash_tag = args.get('hash_tag')
+        search_attr = search_hash_tag[search_hash_tag.index(finder.hash_tag_delim) + 1:]
+        attr_results = do_attribute_query(search_city, search_attr)
+        insert_hotel_details(search_city, attr_results)
+        presentation_json = convert_into_presentation_format(attr_results, search_city, search_attr)
+        return presentation_json, 200
+        
+
 class HashTagHandler(restful.Resource):
     def get(self):
         args = a.parse_args()
@@ -305,7 +320,8 @@ class HelloHandler(restful.Resource):
             attr_path = result['attr']
             attr_path_pure = map(lambda x: x[0], attr_path)
             search_attr = attr_path_pure[len(attr_path_pure) - 1]
-            attr_results = do_attribute_query(search_city, attr_path_pure)
+            attr = attr_path_pure[-1]
+            attr_results = do_attribute_query(search_city, attr)
         #print 'loc_results: ' + str(loc_results)
         #print 'attr_results: ' + str(attr_results)
         #final_results = combine_results(attr_results, loc_results)
@@ -321,5 +337,6 @@ if __name__ == "__main__":
     api.add_resource(HelloHandler, '/listing')
     api.add_resource(DetailHandler, '/detail')
     api.add_resource(HashTagHandler, '/hashtag')
+    api.add_resource(HashTagSearchHandler, '/hashtag_listing')
     print 'running server...'
     app.run(debug=True, port=8080, host="0.0.0.0")

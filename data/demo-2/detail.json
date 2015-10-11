@@ -10,36 +10,31 @@
         "bad": 2,
         "worst": 4
     },
-    "attribute_graph": {
-        "pool": {
+    "attribute_graph": [
+        {
+            "title": "pool",
             "images": ["url", "url2"],
-            "detail_1": "most people said the pool was awesome",
-            "detail_2": "few people said the pool had expensive drinks",
-            "detail_3": "some peole said that the water in pool was cold"
+            "detail": ["most people said the pool was awesome", "few people said the pool had expensive drinks", "some peole said that the water in pool was cold"]
         },
-        "spa": {
+        {
+            "title": "spa",
             "images": ["url", "url2"],
-            "detail_1": "most people said the pool was awesome",
-            "detail_2": "few people said the pool had expensive drinks",
-            "detail_3": "some peole said that the water in pool was cold"
+            "detail": ["most people said the pool was awesome", "few people said the pool had expensive drinks", "some peole said that the water in pool was cold"]
         },
-        "view": {
+        {
+            "title": "view",
             "images": ["url", "url2"],
-            "detail_1": "most people said the pool was awesome",
-            "detail_2": "few people said the pool had expensive drinks",
-            "detail_3": "some peole said that the water in pool was cold"
+            "detail": ["most people said the pool was awesome", "few people said the pool had expensive drinks", "some peole said that the water in pool was cold"]
         },
-        "culture": {
+        {
+            "title": "culture",
             "images": ["url", "url2"],
-            "detail_1": "most people said the pool was awesome",
-            "detail_2": "few people said the pool had expensive drinks",
-            "detail_3": "some peole said that the water in pool was cold"
+            "detail": ["most people said the pool was awesome", "few people said the pool had expensive drinks", "some peole said that the water in pool was cold"]
         },
-        "service": {
+        {
+            "title": "service",
             "images": ["url", "url2"],
-            "detail_1": "most people said the pool was awesome",
-            "detail_2": "few people said the pool had expensive drinks",
-            "detail_3": "some peole said that the water in pool was cold"
-        }
-    }
+            "detail": ["most people said the pool was awesome", "few people said the pool had expensive drinks", "some peole said that the water in pool was cold"]
+        },
+    ]
 }

@@ -6,6 +6,13 @@
         "Address": "Hotel Address",
         "Lat/Long": "Latitude, Longitude",
         "attribute_summary": "summary of this attribute",
+        "sentiment_graph": {
+            "awesome": 5,
+            "good": 2,
+            "ok": 1,
+            "bad": 6,
+            "worst": 9
+        }
         "image": "image_url"
     },
     {
