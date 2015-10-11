@@ -232,12 +232,14 @@ def convert_into_presentation_format_hashtags(city, hash_tags_map, output_images
         adj = hash_tag[:first_index]
         hotel_results = hash_tags_map[hash_tag]
         out_hotel_list = []
+        sum_score = 0
         for hotel_id, hash_score in hotel_results:
             obj = {}
             hotel_id = str(hotel_id)
             #print 'hotel_id type: ' + str(type(hotel_id))
             obj['hotel_id'] = hotel_id
             obj['score'] = hash_score
+            sum_score += hash_score
             obj['name'] = app.hotel_name_data[city][hotel_id]['name']
             #print 'obj: ' + str(obj)
             if attr in output_images[hotel_id]:
@@ -250,11 +252,13 @@ def convert_into_presentation_format_hashtags(city, hash_tags_map, output_images
 #                    print 'error 10: image not found for hash_tag and hotel_id: ' + str(hash_tag) + ' ; ' + str(hotel_id) + ' ; ' + str(city)
                 obj['image'] = default_image
             out_hotel_list.append(obj)
+        out_hotel_list.sort(key=lambda x: x['score'], reverse=True)
         meta_obj = {}
         meta_obj['title'] = hash_tag
         meta_obj['hotels'] = out_hotel_list
+        meta_obj['sum_score'] = sum_score
         results.append(meta_obj)
-    results.sort(key=lambda x: x['score'], reverse=True)
+    results.sort(key=lambda x: x['sum_score'], reverse=True)
     output['results'] = results[:20]
     return output
         
