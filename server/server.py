@@ -242,6 +242,9 @@ def convert_into_presentation_format_hashtags(city, hash_tags_map, output_images
             sum_score += hash_score
             obj['name'] = app.hotel_name_data[city][hotel_id]['name']
             #print 'obj: ' + str(obj)
+            if hotel_id not in output_images:
+                print 'error 00: ' + str(hotel_id) + ' ; ' + str(city)
+                continue
             if attr in output_images[hotel_id]:
                 obj['image'] = output_images[hotel_id][attr][0][0]
             else:
