@@ -1,3 +1,4 @@
+from __future__ import division
 import flask
 from flask import Flask
 from flask.ext import restful
@@ -135,15 +136,18 @@ def convert_into_presentation_format(final_results, search_city, search_attr):
             image_arr = final_results[hotel_id]['attribute_details'][search_attr]['images']
             if len(image_arr) > 0:
                 obj['image'] = image_arr[0][0]
+                obj['score'] = len(image_arr) * 10
         else:
             for in_attr in final_results[hotel_id]['attribute_details']:
                 if 'images' in final_results[hotel_id]['attribute_details'][in_attr]:
                     image_arr = final_results[hotel_id]['attribute_details'][in_attr]['images']
                     if len(image_arr) > 0:
                         obj['image'] = image_arr[0][0]
+                        obj['score'] = len(image_arr)
             if 'image' not in obj:
                 print 'error 11: using default image for hotel: ' + str(obj['name'])
                 obj['image'] = default_image
+                obj['score'] = -1
         #attribute summary
         sentiment_arr = sentiment_graph.items()
         sentiment_arr.sort(key=lambda x: x[1], reverse=True)
@@ -152,6 +156,7 @@ def convert_into_presentation_format(final_results, search_city, search_attr):
         obj['sentiment_percent'] = round(popular_percent)
         obj['attribute_summary'] = 'Most popular sentiment about: ' + search_attr + ' is: ' + str(popular_sentiment)
         presentation_json.append(obj)
+    presentation_json.sort(lambda x: x['score'], reverse=True)
     return presentation_json
 
 def create_sentiment_graph(output_sentiment):
@@ -166,6 +171,61 @@ def create_sentiment_graph(output_sentiment):
         if max_sentiment not in output:
             output[max_sentiment] = 0
         output[max_sentiment] = output[max_sentiment] + 1
+    return output
+
+#def create_sentiment_graph(output_sentiment):
+#    output = {}
+#    total = 0
+#    for path in output_sentiment:
+#        max_sentiment = None
+#        max_val = -1
+#        for sentiment in output_sentiment[path]:
+#            if sentiment not in output:
+#                output[sentiment] = {}
+#                output[sentiment]['count'] = 0
+#                output[sentiment]['attributes'] = []
+#            output[sentiment]['count'] = output[sentiment]['count'] + output_sentiment[path][sentiment]
+#            total += output_sentiment[path][sentiment]
+#            if output_sentiment[path][sentiment] > max_val:
+#                max_sentiment = sentiment
+#                max_val = output_sentiment[path][sentiment]
+#            total += 1
+#        output[max_sentiment]['attributes'].append(path)
+#    for sentiment in output:
+#        output[sentiment]['count'] = round((output[sentiment]['count'] * 100) / total)
+#    return output
+
+def create_inner_sentiment_graph(attr, output_sentiment, output_adj):
+    #entry 1:
+    count_positive = 0
+    count_negative = 0
+    count_neutral = 0
+    total = 0
+    for sentiment in output_sentiment:
+        total += output_sentiment[sentiment]
+        if 'positive' in sentiment.lower():
+            count_positive += output_sentiment[sentiment]
+        else:
+            if 'negative' in sentiment.lower():
+                count_negative += output_sentiment[sentiment]
+            else:
+                count_neutral += output_sentiment[sentiment]
+    output = []
+    obj = {}
+    obj['status'] = 'awesome'
+    obj['description'] = str(round((count_positive * 100) / total )) + '% think the ' + str(attr) + ' is positive.'
+    obj['hash_tags'] = ['beautiful_pool', 'awesome_pool']
+    output.append(obj)
+    obj = {}
+    obj['status'] = 'ok'
+    obj['description'] = str(round((count_neutral * 100) / total )) + '% think the ' + str(attr) + ' is okay.'
+    obj['hash_tags'] = ['cold_water', 'little_crowded']
+    output.append(obj)
+    obj = {}
+    obj['status'] = 'bad'
+    obj['description'] = str(round((count_negative * 100) / total )) + '% think the ' + str(attr) + ' is bad.'
+    obj['hash_tags'] = ['expensive_drinks', 'rude_staff']
+    output.append(obj)
     return output
 
 def create_attribute_graph(output_sentiment, output_adj, output_images):
@@ -201,7 +261,8 @@ def create_attribute_graph(output_sentiment, output_adj, output_images):
                 'Most people had ' + most.lower() + ' experience.',
                 'Some people had ' + few.lower() + ' experience.',
                 'Less people had ' + less.lower() + ' experience.'
-            ]
+            ],
+            "sentiment_graph": create_inner_sentiment_graph(attr, output_sentiment[attr], output_adj[attr])
         }
         output.append(obj)
     output.sort(key=lambda x: len(x['images']), reverse=True)
@@ -309,6 +370,7 @@ class DetailHandler(restful.Resource):
         output_sentiment, output_adj, output_hashtags = finder.find_hotel_hashtags(search_city, search_hotel_id)
         sentiment_graph = create_sentiment_graph(output_sentiment)
         attribute_graph = create_attribute_graph(output_sentiment, output_adj, output_images)
+        
         obj = {
             'city': search_city,
             'hotel_id': search_hotel_id,
