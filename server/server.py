@@ -243,18 +243,19 @@ def convert_into_presentation_format_hashtags(city, hash_tags_map, output_images
             if attr in output_images[hotel_id]:
                 obj['image'] = output_images[hotel_id][attr][0][0]
             else:
-                for in_attr in output_images[hotel_id]:
-                    if len(output_images[hotel_id][in_attr]) > 0:
-                        obj['image'] = output_images[hotel_id][in_attr][0][0]
-                if 'image' not in obj:
-                    print 'error 10: image not found for hash_tag and hotel_id: ' + str(hash_tag) + ' ; ' + str(hotel_id) + ' ; ' + str(city)
-                    obj['image'] = default_image
+#                for in_attr in output_images[hotel_id]:
+#                    if len(output_images[hotel_id][in_attr]) > 0:
+#                        obj['image'] = output_images[hotel_id][in_attr][0][0]
+#                if 'image' not in obj:
+#                    print 'error 10: image not found for hash_tag and hotel_id: ' + str(hash_tag) + ' ; ' + str(hotel_id) + ' ; ' + str(city)
+                obj['image'] = default_image
             out_hotel_list.append(obj)
         meta_obj = {}
         meta_obj['title'] = hash_tag
         meta_obj['hotels'] = out_hotel_list
         results.append(meta_obj)
-    output['results'] = results
+    results.sort(key=lambda x: x['score'], reverse=True)
+    output['results'] = results[:20]
     return output
         
             
@@ -283,7 +284,7 @@ class HashTagSearchHandler(restful.Resource):
 class HashTagHandler(restful.Resource):
     def get(self):
         args = a.parse_args()
-        search_city = args.get('city')
+        search_city = args.get('city').lower()
         hash_tags = finder.find_city_hashtags(search_city)  # format is hash_tag -> [(hotel_id, score)]
         output_images = finder.find_city_all_hotels_images(search_city)
         output_format = convert_into_presentation_format_hashtags(search_city, hash_tags, output_images)
@@ -294,7 +295,7 @@ class HashTagHandler(restful.Resource):
 class DetailHandler(restful.Resource):
     def get(self):
         args = a.parse_args()
-        search_city = args.get('city')
+        search_city = args.get('city').lower()
         search_hotel_id = args.get('hotel_id')
         hotel_details = app.hotel_name_data[search_city][search_hotel_id]
         output_images = finder.find_city_hotel_images(search_city, search_hotel_id)
@@ -319,7 +320,7 @@ class DetailHandler(restful.Resource):
 class HelloHandler(restful.Resource):
     def get(self):
         args = a.parse_args()
-        search_city = args.get('city')
+        search_city = args.get('city').lower()
         #print 'city_parsed: ' + search_city
         search_criterion = args.get('search_str')
         result_1 = text_p.find_attribute_2(app.attr_seed['root'], search_criterion)
