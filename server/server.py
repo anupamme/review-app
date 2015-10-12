@@ -76,7 +76,7 @@ def do_attribute_query(city, attr):
                 if path not in map_to:
                     map_to[path] = {}
                 map_to[path]['images'] = image_result[hotel_id][path]    
-    return output
+    return output, output_adj
 
 def combine_results(attr_results, loc_results):
     if attr_results == None:
@@ -120,7 +120,7 @@ def merge_results(images, hashtags, sentiment, adjectives):
             out[attr]['adjectives'] = adjectives[attr]
     return out
  
-def convert_into_presentation_format(final_results, search_city, search_attr):
+def convert_into_presentation_format(final_results, search_city, search_attr, output_adj):
     presentation_json = []
     
     for hotel_id in final_results:
@@ -155,10 +155,45 @@ def convert_into_presentation_format(final_results, search_city, search_attr):
         #attribute summary
         sentiment_arr = sentiment_graph.items()
         sentiment_arr.sort(key=lambda x: x[1], reverse=True)
-        popular_sentiment = sentiment_arr[0][0]
+        popular_sentiment = sentiment_arr[0][0].lower()
+        #print 'popular sentiment: ' + str(popular_sentiment)
         popular_percent = (sentiment_arr[0][1]*100)/sum(sentiment_graph.values())
         obj['sentiment_percent'] = round(popular_percent)
-        obj['attribute_summary'] = 'Most popular sentiment about ' + search_attr + ' is ' + str(popular_sentiment)
+        adj_list = output_adj[hotel_id][search_attr].items()
+        #if len(adj_list) > 0:
+            #print 'length of adjectives is > 0: ' + str(hotel_id) + ' ; ' + str(obj['name'])
+        popular_adjective = None
+        if adj_list == None or len(adj_list) == 0:
+            popular_adjective = popular_sentiment.lower()  # XXX: Some handling here.
+            obj['attribute_summary'] = 'Most popular sentiment around ' + search_attr + ' is: ' + str(popular_adjective)
+            obj['score'] = 0
+        else:
+            positive, negative, neutral = filter_adjectives(adj_list)
+#            print 'negatives: ' + str(negative)
+#            print 'positives: ' + str(positive)
+#            print 'neutral: ' + str(neutral)
+
+            if 'positive' in popular_sentiment:
+                if len(positive) == 0:
+                    popular_adjective = finder.find_random_positive()
+                else:
+                    positive.sort(key=lambda x: x[1], reverse=True)
+                    popular_adjective = positive[0][0]
+            else:
+                if 'negative' in popular_sentiment:
+                    if len(negative) == 0:
+                        popular_adjective = finder.find_random_negative()
+                    else:
+                        negative.sort(key=lambda x: x[1], reverse=True)
+                        popular_adjective = negative[0][0]
+                else:
+                    if len(neutral) == 0:
+                        popular_adjective = finder.find_random_neutral()
+                    else:
+                        neutral.sort(key=lambda x: x[1], reverse=True)
+                        popular_adjective = neutral[0][0]
+        
+            obj['attribute_summary'] = 'Most popular sentiment around ' + search_attr + ' is: ' + str(finder.create_hash_tag(search_attr, popular_adjective))
         presentation_json.append(obj)
     presentation_json.sort(key=lambda x: x['score'], reverse=True)
     return presentation_json
@@ -181,14 +216,15 @@ def filter_adjectives(output_adj):
     positive_list = []
     negative_list = []
     neutral_list = []
-    for adj, adj_score in output_adj:
-        if adj in app.positives:
-            positive_list.append((adj, adj_score))
-        else:
-            if adj in app.negatives:
-                negative_list.append((adj, adj_score))
+    if output_adj != None:
+        for adj, adj_score in output_adj:
+            if adj in app.positives:
+                positive_list.append((adj, adj_score))
             else:
-                neutral_list.append((adj, adj_score))
+                if adj in app.negatives:
+                    negative_list.append((adj, adj_score))
+                else:
+                    neutral_list.append((adj, adj_score))
     return positive_list, negative_list, neutral_list
 
 #def create_sentiment_graph(output_sentiment):
@@ -342,6 +378,7 @@ def convert_into_presentation_format_hashtags(city, hash_tags_map, output_images
 #                if 'image' not in obj:
 #                    print 'error 10: image not found for hash_tag and hotel_id: ' + str(hash_tag) + ' ; ' + str(hotel_id) + ' ; ' + str(city)
                 obj['image'] = default_image
+                obj['score'] = -1
             out_hotel_list.append(obj)
         out_hotel_list.sort(key=lambda x: x['score'], reverse=True)
         meta_obj = {}
@@ -370,9 +407,9 @@ class HashTagSearchHandler(restful.Resource):
         search_city = args.get('city')
         search_hash_tag = args.get('hash_tag')
         search_attr = search_hash_tag[search_hash_tag.index(finder.hash_tag_delim) + 1:]
-        attr_results = do_attribute_query(search_city, search_attr)
+        attr_results, output_adj = do_attribute_query(search_city, search_attr)
         insert_hotel_details(search_city, attr_results)
-        presentation_json = convert_into_presentation_format(attr_results, search_city, search_attr)
+        presentation_json = convert_into_presentation_format(attr_results, search_city, search_attr, output_adj)
         return presentation_json, 200
         
 
@@ -429,18 +466,17 @@ class HelloHandler(restful.Resource):
             loc_results = do_location_query(loc_arr)
             search_attr = 'beach'
         attr_results = None
+        output_adj = None
         if 'attr' in result:
             attr_path = result['attr']
             attr_path_pure = map(lambda x: x[0], attr_path)
             search_attr = attr_path_pure[len(attr_path_pure) - 1]
             attr = attr_path_pure[-1]
-            attr_results = do_attribute_query(search_city, attr)
-        #print 'loc_results: ' + str(loc_results)
-        #print 'attr_results: ' + str(attr_results)
+            attr_results, output_adj = do_attribute_query(search_city, attr)
         #final_results = combine_results(attr_results, loc_results)
         final_results = attr_results
         insert_hotel_details(search_city, final_results)
-        presentation_json = convert_into_presentation_format(final_results, search_city, search_attr)
+        presentation_json = convert_into_presentation_format(final_results, search_city, search_attr, output_adj)
         return presentation_json, 200
         
 if __name__ == "__main__":

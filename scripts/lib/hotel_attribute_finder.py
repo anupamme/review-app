@@ -22,6 +22,7 @@ sys.path.insert(0, 'scripts/lib/')
 import pprint
 import operator
 import elastic_search as es
+from random import randint
 
 hash_tag_delim = '_'
 hash_tag_prefix = ''
@@ -29,11 +30,22 @@ hash_tag_prefix = ''
 def create_hash_tag(attr, adj):
     return hash_tag_prefix + adj.lower() + hash_tag_delim + attr.lower()
 
-negative_adjectives = ['bad', 'ugly', 'expensive']
-positive_adjectives = ['good', 'great', 'awesome', 'cheap']
+negative_adjectives = ['bad', 'ugly', 'expensive', 'unhelpful', 'unfriendly', 'unfree']
+positive_adjectives = ['good', 'great', 'awesome', 'cheap', 'helpful']
 neutral_adjectives = []
 
 attribute_seed = json.loads(open('data/tree-data/percolate_8.json', 'r').read())
+
+def find_random_negative():
+    index = randint(0, len(negative_adjectives) - 1)
+    return negative_adjectives[index]
+
+def find_random_positive():
+    index = randint(0, len(positive_adjectives) - 1)
+    return positive_adjectives[index]
+
+def find_random_neutral():
+    return 'so so'
 
 def find_abs_path(search_node):
 #    if root_node['next'] == {}:
