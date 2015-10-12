@@ -23,6 +23,8 @@ app = Flask(__name__)
 
 attribute_seed_file = 'data/tree-data/percolate_8.json'
 city_hotel_id_file = 'data/city_hotel_details.json'
+positive_file = 'data/antonyms/positives.json'
+negative_file = 'data/antonyms/negatives.json'
 default_image = 'https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11240355_1446634575634173_545669914_n.jpg'
 
 a = reqparse.RequestParser()
@@ -33,6 +35,8 @@ a.add_argument('hash_tag', type=str)
 
 app.attr_seed = json.loads(open(attribute_seed_file, 'r').read())
 app.hotel_name_data = json.loads(open(city_hotel_id_file, 'r').read())
+app.positives = json.loads(open(positive_file, 'r').read())
+app.negatives = json.loads(open(negative_file, 'r').read())
 text_p.load_model_files()
 
 def do_location_query(loc_array):
@@ -154,7 +158,7 @@ def convert_into_presentation_format(final_results, search_city, search_attr):
         popular_sentiment = sentiment_arr[0][0]
         popular_percent = (sentiment_arr[0][1]*100)/sum(sentiment_graph.values())
         obj['sentiment_percent'] = round(popular_percent)
-        obj['attribute_summary'] = 'Most popular sentiment about: ' + search_attr + ' is: ' + str(popular_sentiment)
+        obj['attribute_summary'] = 'Most popular sentiment about ' + search_attr + ' is ' + str(popular_sentiment)
         presentation_json.append(obj)
     presentation_json.sort(key=lambda x: x['score'], reverse=True)
     return presentation_json
@@ -172,6 +176,20 @@ def create_sentiment_graph(output_sentiment):
             output[max_sentiment] = 0
         output[max_sentiment] = output[max_sentiment] + 1
     return output
+
+def filter_adjectives(output_adj):
+    positive_list = []
+    negative_list = []
+    neutral_list = []
+    for adj, adj_score in output_adj:
+        if adj in app.positives:
+            positive_list.append((adj, adj_score))
+        else:
+            if adj in app.negatives:
+                negative_list.append((adj, adj_score))
+            else:
+                neutral_list.append((adj, adj_score))
+    return positive_list, negative_list, neutral_list
 
 #def create_sentiment_graph(output_sentiment):
 #    output = {}
@@ -210,21 +228,30 @@ def create_inner_sentiment_graph(attr, output_sentiment, output_adj):
                 count_negative += output_sentiment[sentiment]
             else:
                 count_neutral += output_sentiment[sentiment]
+    #print 'output_adj: ' + str(output_adj)
+    positive, negative, neutral = filter_adjectives(output_adj.items())
+    
     output = []
     obj = {}
     obj['status'] = 'awesome'
     obj['description'] = str(round((count_positive * 100) / total )) + '% think the ' + str(attr) + ' is positive.'
-    obj['hash_tags'] = ['beautiful_pool', 'awesome_pool']
+    obj['hash_tags'] = []
+    for adj, adj_score in positive:
+        obj['hash_tags'].append(finder.create_hash_tag(attr, adj))
     output.append(obj)
     obj = {}
     obj['status'] = 'ok'
     obj['description'] = str(round((count_neutral * 100) / total )) + '% think the ' + str(attr) + ' is okay.'
-    obj['hash_tags'] = ['cold_water', 'little_crowded']
+    obj['hash_tags'] = []
+    for adj, adj_score in neutral:
+        obj['hash_tags'].append(finder.create_hash_tag(attr, adj))
     output.append(obj)
     obj = {}
     obj['status'] = 'bad'
     obj['description'] = str(round((count_negative * 100) / total )) + '% think the ' + str(attr) + ' is bad.'
-    obj['hash_tags'] = ['expensive_drinks', 'rude_staff']
+    obj['hash_tags'] = []
+    for adj, adj_score in negative:
+        obj['hash_tags'].append(finder.create_hash_tag(attr, adj))
     output.append(obj)
     return output
 

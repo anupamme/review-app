@@ -24,7 +24,14 @@ import operator
 import elastic_search as es
 
 hash_tag_delim = '_'
-hash_tag_prefix = '#'
+hash_tag_prefix = ''
+
+def create_hash_tag(attr, adj):
+    return hash_tag_prefix + adj.lower() + hash_tag_delim + attr.lower()
+
+negative_adjectives = ['bad', 'ugly', 'expensive']
+positive_adjectives = ['good', 'great', 'awesome', 'cheap']
+neutral_adjectives = []
 
 attribute_seed = json.loads(open('data/tree-data/percolate_8.json', 'r').read())
 
@@ -253,6 +260,13 @@ def find_hotel_hashtags(city_name, hotel_id):
         output[attr].sort(key=lambda x: x[1], reverse=True)
     return output_sentiment, output_adjective, output
 
+def filter_adjective(adjective_values, negative_adjectives):
+    result = []
+    for adj, adj_score in adjective_values:
+        if adj not in negative_adjectives:
+            result.append((adj, adj_score))
+    return result
+
 '''
 input: city_name
 level 1: 
@@ -278,9 +292,13 @@ def find_city_hashtags(city_name):
         for attr, attr_score in most_talked_about_arr[hotel_id]:
             adjective_values = output_adjective[hotel_id][attr].items()
             if adjective_values == []:
-                print 'No adjective found for: ' + str(attr)
+                print 'No positive adjective found for: ' + str(attr)
                 continue
-            adj, adj_score = adjective_values[0]
+            filtered_adjectives = filter_adjective(adjective_values, negative_adjectives)    
+            if filtered_adjectives == []:
+                print 'No positive adjective found for: ' + str(attr)
+                continue
+            adj, adj_score = filtered_adjectives[0]
             # what is the sentiment of this adj.
             hash_tag = hash_tag_prefix + adj + hash_tag_delim + attr
             hash_score = attr_score * adj_score
