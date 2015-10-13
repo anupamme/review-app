@@ -275,21 +275,21 @@ def create_inner_sentiment_graph(attr, output_sentiment, output_adj):
     output = []
     obj = {}
     obj['status'] = 'awesome'
-    obj['description'] = str(round((count_positive * 100) / total )) + '% think the ' + str(attr) + ' is positive.'
+    obj['description'] = str(round((count_positive * 100) / total )) + '% had positive experience with ' + str(attr) + '.'
     obj['hash_tags'] = []
     for adj, adj_score in positive:
         obj['hash_tags'].append(finder.create_hash_tag(attr, adj))
     output.append(obj)
     obj = {}
     obj['status'] = 'ok'
-    obj['description'] = str(round((count_neutral * 100) / total )) + '% think the ' + str(attr) + ' is okay.'
+    obj['description'] = str(round((count_neutral * 100) / total )) + '% had so so experience with ' + str(attr) + '.'
     obj['hash_tags'] = []
     for adj, adj_score in neutral:
         obj['hash_tags'].append(finder.create_hash_tag(attr, adj))
     output.append(obj)
     obj = {}
     obj['status'] = 'bad'
-    obj['description'] = str(round((count_negative * 100) / total )) + '% think the ' + str(attr) + ' is bad.'
+    obj['description'] = str(round((count_negative * 100) / total )) + '% had bad experience with ' + str(attr) + '.'
     obj['hash_tags'] = []
     for adj, adj_score in negative:
         obj['hash_tags'].append(finder.create_hash_tag(attr, adj))
