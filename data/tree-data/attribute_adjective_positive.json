@@ -1,5 +1,5 @@
 {
-    "discount-rate": ["heavy", "steep", "significant"],
+    "discount_rate": ["heavy", "steep", "significant"],
     "cleanliness": ["super", "sparkling"],
     "aesthetics": ["beautiful", "mindblowing"],
     "safety": ["good", "fool-proof", "tight"],
