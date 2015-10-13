@@ -316,7 +316,7 @@ def find_city_hashtags(city_name):
                 continue
             adj, adj_score = filtered_adjectives[0]
             # what is the sentiment of this adj.
-            hash_tag = create_hash_tag(adj, attr)
+            hash_tag = create_hash_tag(attr, adj)
             hash_score = attr_score * adj_score
             if hash_tag not in output:
                 output[hash_tag] = []
