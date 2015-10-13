@@ -31,11 +31,14 @@ def create_hash_tag(attr, adj):
     return hash_tag_prefix + adj.lower() + hash_tag_delim + attr.lower()
 
 negative_adjectives = json.loads(open('data/tree-data/attribute_adjective_negative.json', 'r').read())
-#positive_adjectives = ['good', 'great', 'awesome', 'cheap', 'helpful']
+negative_adjectives_common = ['bad', 'ugly', 'expensive', 'unhelpful', 'unfriendly', 'unfree']
+positive_adjectives_common = ['good', 'great', 'awesome', 'cheap', 'helpful']
 neutral_adjectives = []
 
 attribute_seed = json.loads(open('data/tree-data/percolate_8.json', 'r').read())
 positive_adjectives = json.loads(open('data/tree-data/attribute_adjective_positive.json', 'r').read())
+
+
 
 def find_random_negative(attr):
     index = randint(0, len(negative_adjectives[attr]) - 1)
@@ -307,13 +310,13 @@ def find_city_hashtags(city_name):
             if adjective_values == []:
                 print 'No positive adjective found for: ' + str(attr)
                 continue
-            filtered_adjectives = filter_adjective(adjective_values, negative_adjectives)    
+            filtered_adjectives = filter_adjective(adjective_values, negative_adjectives_common)
             if filtered_adjectives == []:
                 print 'No positive adjective found for: ' + str(attr)
                 continue
             adj, adj_score = filtered_adjectives[0]
             # what is the sentiment of this adj.
-            hash_tag = hash_tag_prefix + adj + hash_tag_delim + attr
+            hash_tag = create_hash_tag(adj, attr)
             hash_score = attr_score * adj_score
             if hash_tag not in output:
                 output[hash_tag] = []
