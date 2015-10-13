@@ -158,6 +158,8 @@ def convert_into_presentation_format(final_results, search_city, search_attr, ou
         popular_sentiment = sentiment_arr[0][0].lower()
         #print 'popular sentiment: ' + str(popular_sentiment)
         popular_percent = (sentiment_arr[0][1]*100)/sum(sentiment_graph.values())
+        if 'negative' in popular_sentiment:
+            popular_percent = -popular_percent
         obj['sentiment_percent'] = round(popular_percent)
         adj_list = output_adj[hotel_id][search_attr].items()
         #if len(adj_list) > 0:
@@ -174,18 +176,20 @@ def convert_into_presentation_format(final_results, search_city, search_attr, ou
 #            print 'neutral: ' + str(neutral)
 
             if 'positive' in popular_sentiment:
-                if len(positive) == 0:
-                    popular_adjective = finder.find_random_positive()
-                else:
-                    positive.sort(key=lambda x: x[1], reverse=True)
-                    popular_adjective = positive[0][0]
+                popular_adjective = finder.find_random_positive(search_attr)
+#            if len(positive) == 0:
+#                    popular_adjective = finder.find_random_positive()
+#                else:
+#                    positive.sort(key=lambda x: x[1], reverse=True)
+#                    popular_adjective = positive[0][0]
             else:
                 if 'negative' in popular_sentiment:
-                    if len(negative) == 0:
-                        popular_adjective = finder.find_random_negative()
-                    else:
-                        negative.sort(key=lambda x: x[1], reverse=True)
-                        popular_adjective = negative[0][0]
+                    popular_adjective = finder.find_random_negative(search_attr)
+#                    if len(negative) == 0:
+#                        popular_adjective = finder.find_random_negative()
+#                    else:
+#                        negative.sort(key=lambda x: x[1], reverse=True)
+#                        popular_adjective = negative[0][0]
                 else:
                     if len(neutral) == 0:
                         popular_adjective = finder.find_random_neutral()
@@ -195,7 +199,7 @@ def convert_into_presentation_format(final_results, search_city, search_attr, ou
         
             obj['attribute_summary'] = 'Most popular sentiment around ' + search_attr + ' is: ' + str(finder.create_hash_tag(search_attr, popular_adjective))
         presentation_json.append(obj)
-    presentation_json.sort(key=lambda x: x['score'], reverse=True)
+    presentation_json.sort(key=lambda x: x['sentiment_percent'], reverse=True)
     return presentation_json
 
 def create_sentiment_graph(output_sentiment):
@@ -488,4 +492,4 @@ if __name__ == "__main__":
     api.add_resource(HashTagHandler, '/hashtag')
     api.add_resource(HashTagSearchHandler, '/hashtag_listing')
     print 'running server...'
-    app.run(debug=True, port=8080, host="0.0.0.0")
+    app.run(debug=True, port=8181, host="0.0.0.0")

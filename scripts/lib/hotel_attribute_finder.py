@@ -30,19 +30,20 @@ hash_tag_prefix = ''
 def create_hash_tag(attr, adj):
     return hash_tag_prefix + adj.lower() + hash_tag_delim + attr.lower()
 
-negative_adjectives = ['bad', 'ugly', 'expensive', 'unhelpful', 'unfriendly', 'unfree']
-positive_adjectives = ['good', 'great', 'awesome', 'cheap', 'helpful']
+negative_adjectives = json.loads(open('data/tree-data/attribute_adjective_negative.json', 'r').read())
+#positive_adjectives = ['good', 'great', 'awesome', 'cheap', 'helpful']
 neutral_adjectives = []
 
 attribute_seed = json.loads(open('data/tree-data/percolate_8.json', 'r').read())
+positive_adjectives = json.loads(open('data/tree-data/attribute_adjective_positive.json', 'r').read())
 
-def find_random_negative():
-    index = randint(0, len(negative_adjectives) - 1)
-    return negative_adjectives[index]
+def find_random_negative(attr):
+    index = randint(0, len(negative_adjectives[attr]) - 1)
+    return negative_adjectives[attr][index]
 
-def find_random_positive():
-    index = randint(0, len(positive_adjectives) - 1)
-    return positive_adjectives[index]
+def find_random_positive(attr):
+    index = randint(0, len(positive_adjectives[attr]) - 1)
+    return positive_adjectives[attr][index]
 
 def find_random_neutral():
     return 'so so'
