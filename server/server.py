@@ -21,7 +21,7 @@ client = Elasticsearch()
 
 app = Flask(__name__)
 
-attribute_seed_file = 'data/tree-data/percolate_8.json'
+attribute_seed_file = 'data/tree-data/percolate_9.json'
 city_hotel_id_file = 'data/city_hotel_details.json'
 positive_file = 'data/antonyms/positives.json'
 negative_file = 'data/antonyms/negatives.json'
@@ -128,6 +128,7 @@ def convert_into_presentation_format(final_results, search_city, search_attr, ou
         obj['hotel_id'] = hotel_id
         obj['city'] = search_city
         obj['name'] = final_results[hotel_id]['details']['name']
+        #if final_results[hotel_id]['details']['address']
         obj['address'] = final_results[hotel_id]['details']['address']
         if 'location' in final_results[hotel_id]['details']:
             obj['location'] = final_results[hotel_id]['details']['location']
@@ -199,7 +200,7 @@ def convert_into_presentation_format(final_results, search_city, search_attr, ou
         
             obj['attribute_summary'] = 'Most popular sentiment around ' + search_attr + ' is: ' + str(finder.create_hash_tag(search_attr, popular_adjective))
         presentation_json.append(obj)
-    presentation_json.sort(key=lambda x: x['sentiment_percent'], reverse=True)
+    presentation_json.sort(key=lambda x: x['sentiment_percent'] * x['score'], reverse=True)
     return presentation_json
 
 def create_sentiment_graph(output_sentiment):
@@ -386,7 +387,13 @@ def convert_into_presentation_format_hashtags(city, hash_tags_map, output_images
             out_hotel_list.append(obj)
         out_hotel_list.sort(key=lambda x: x['score'], reverse=True)
         meta_obj = {}
-        meta_obj['title'] = hash_tag
+        adj, attr = finder.break_hash_tag(hash_tag)
+        if attr not in finder.attr_title_map:
+            'error 21: ' + str(attr)
+            continue
+        title = finder.attr_title_map[attr]
+        meta_obj['title'] = title
+        meta_obj['hash_tag'] = hash_tag
         meta_obj['hotels'] = out_hotel_list
         meta_obj['sum_score'] = sum_score
         results.append(meta_obj)

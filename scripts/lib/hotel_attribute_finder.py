@@ -30,12 +30,35 @@ hash_tag_prefix = ''
 def create_hash_tag(attr, adj):
     return hash_tag_prefix + adj.lower() + hash_tag_delim + attr.lower()
 
+def break_hash_tag(hash_tag):
+    index = hash_tag.index(hash_tag_delim)
+    adj = hash_tag[index - 1]
+    attr = hash_tag[index + 1:]
+    return adj, attr
+
 negative_adjectives = json.loads(open('data/tree-data/attribute_adjective_negative.json', 'r').read())
 negative_adjectives_common = ['bad', 'ugly', 'expensive', 'unhelpful', 'unfriendly', 'unfree']
 positive_adjectives_common = ['good', 'great', 'awesome', 'cheap', 'helpful']
 neutral_adjectives = []
 
-attribute_seed = json.loads(open('data/tree-data/percolate_8.json', 'r').read())
+attr_title_map = {
+    'restaurant': 'Best Restaurants in the city',
+    'breakfast': 'Sumptuous Breakfast Places',
+    'swimming_pool': 'Views of gorgeous pools',
+    'boutique': 'Top 10 Boutique Hotels',
+    'family_friendly': 'Top 10 Family Friendly Hotels',
+    'forest': 'Top 10 hotels in the midst of forests',
+    'culture': 'Top 10 cultural hotels',
+    'patio': 'Best Patios to Relax',
+    'garden': 'Lush Green Gardens',
+    'aesthetics': 'Most Aesthetics Hotels',
+    'bar': 'Best Bars: Drink and Merry',
+    'spa': 'Earthy and Heavenly Spa',
+    'sea': 'Best Sea View Hotels'
+}
+
+
+attribute_seed = json.loads(open('data/tree-data/percolate_9.json', 'r').read())
 positive_adjectives = json.loads(open('data/tree-data/attribute_adjective_positive.json', 'r').read())
 
 
@@ -289,7 +312,6 @@ level 1:
 output: hashtag -> [hotel_id]
 '''
 def find_city_hashtags(city_name):
-    output = {} # hashtag -> [(hotel_id, score)]
     most_talked_about = {}
     most_talked_about_arr = {}
     output_sentiment, output_adjective = find_city_all_hotels_attributes(city_name)
@@ -303,6 +325,7 @@ def find_city_hashtags(city_name):
         #print 'most: ' + str(most_talked_about_arr[hotel_id])
         most_talked_about_arr[hotel_id].sort(key=lambda x: x[1], reverse=True)
     
+    output = {} # hashtag -> [(hotel_id, score)]
     for hotel_id in most_talked_about_arr:
         #print 'most: ' + str(most_talked_about_arr[hotel_id])
         for attr, attr_score in most_talked_about_arr[hotel_id]:
