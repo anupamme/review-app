@@ -417,7 +417,12 @@ class HashTagSearchHandler(restful.Resource):
         args = a.parse_args()
         search_city = args.get('city')
         search_hash_tag = args.get('hash_tag')
-        search_attr = search_hash_tag[search_hash_tag.index(finder.hash_tag_delim) + 1:]
+        search_title = args.get('title')
+        #print 'search_hash_tag: ' + str(search_hash_tag)
+        #print 'search_title: ' + str(search_title)
+        index = search_hash_tag.index(finder.hash_tag_delim)
+        #print 'index: ' + str(index)
+        search_attr = search_hash_tag[ index + 1:]
         attr_results, output_adj = do_attribute_query(search_city, search_attr)
         insert_hotel_details(search_city, attr_results)
         presentation_json = convert_into_presentation_format(attr_results, search_city, search_attr, output_adj)
