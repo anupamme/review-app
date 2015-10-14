@@ -1,7 +1,7 @@
 {
     "discount_rate": ["no", "expensive", "overpriced"],
     "cleanliness": ["not-impressed", "unclean", "not-pretty"],
-    "aesthetics": ["not-beautiful", "not-mindblowing"],
+    "aesthetics": ["repulsive", "functional", "ungainly", "unpolished", "ugly", "unattractive", "upsetting", "unstylish", "tasteless"],
     "safety": ["not-good", "felt-unsafe", "risky"],
     "culture": ["immature", "unstylish", "simplistic", "general", "familiar", "unsuccessful", "altered", "unpopular", "violent", "unexciting", "uninspiring", "spiritless", "unorthodox", "unmusical", "regressive"],
     "boutique": ["unromantic", "non-luxurious", "clumsy", "not-modern", "ugly"],
