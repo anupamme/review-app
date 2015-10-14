@@ -130,6 +130,10 @@ def convert_into_presentation_format(final_results, search_city, search_attr, ou
         obj['name'] = final_results[hotel_id]['details']['name']
         #if final_results[hotel_id]['details']['address']
         obj['address'] = final_results[hotel_id]['details']['address']
+        if obj['address']['country'] == None:
+            obj['address']['country'] = ''
+        if obj['address']['street'] == None:
+            obj['address']['street'] = ''
         if 'location' in final_results[hotel_id]['details']:
             obj['location'] = final_results[hotel_id]['details']['location']
         else:
@@ -168,7 +172,7 @@ def convert_into_presentation_format(final_results, search_city, search_attr, ou
         popular_adjective = None
         if adj_list == None or len(adj_list) == 0:
             popular_adjective = popular_sentiment.lower()  # XXX: Some handling here.
-            obj['attribute_summary'] = 'Most popular sentiment around ' + search_attr + ' is: ' + str(popular_adjective)
+            obj['attribute_summary'] = 'Most popular sentiment around ' + search_attr + ' is ' + str(popular_adjective)
             obj['score'] = 0
         else:
             positive, negative, neutral = filter_adjectives(adj_list)
@@ -198,7 +202,8 @@ def convert_into_presentation_format(final_results, search_city, search_attr, ou
                         neutral.sort(key=lambda x: x[1], reverse=True)
                         popular_adjective = neutral[0][0]
         
-            obj['attribute_summary'] = 'Most popular sentiment around ' + search_attr + ' is: ' + str(finder.create_hash_tag(search_attr, popular_adjective))
+#            obj['attribute_summary'] = 'Most popular sentiment around ' + search_attr + ' is: ' + str(finder.create_hash_tag(search_attr, popular_adjective))
+            obj['attribute_summary'] = 'Most popular sentiment around ' + search_attr + ' is ' + str(popular_adjective)
         presentation_json.append(obj)
     presentation_json.sort(key=lambda x: x['sentiment_percent'] * x['score'], reverse=True)
     return presentation_json
