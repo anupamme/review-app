@@ -468,7 +468,19 @@ class DetailHandler(restful.Resource):
 #        final_results_arr = final_results.items()
 #        final_results_arr.sort(key=lambda x: x[1]['sum_sentiment'], reverse=False)
         return obj, 200
-        
+ 
+base_questions = ['hotels with great food', 'hotels with wifi', 'hotels with swimmint pool', 'hotels near sea beach']
+specific_questions = {
+    'bali': ['hotels near nusa dua beach', 'best hotels in ubud'],
+    'marrakech': ['hotels near Bahia Palace', 'hotels near Menara Gardens']
+}    
+    
+class CityTagHandler(restful.Resource):
+    def get(self):
+        args = a.parse_args()
+        search_city = args.get('city').lower()
+        assert(search_city in specific_questions)
+        return base_questions + specific_questions[search_city], 200
         
 
 class HelloHandler(restful.Resource):
@@ -508,5 +520,6 @@ if __name__ == "__main__":
     api.add_resource(DetailHandler, '/detail')
     api.add_resource(HashTagHandler, '/hashtag')
     api.add_resource(HashTagSearchHandler, '/hashtag_listing')
+    api.add_resource(CityTagHandler, '/search_str')
     print 'running server...'
     app.run(debug=True, port=8181, host="0.0.0.0")
