@@ -83,6 +83,7 @@ def combine_results(attr_results, loc_results):
         return loc_results
     if loc_results == None:
         return attr_results
+    print 'length of attr and loc results: ' + str(len(attr_results)) + ' ; ' + str(len(loc_results))
     if len(attr_results) >  len(loc_results):
         return attr_results
     return loc_results
@@ -471,8 +472,8 @@ class DetailHandler(restful.Resource):
  
 base_questions = ['hotels with great food', 'hotels with wifi', 'hotels with swimmint pool', 'hotels near sea beach']
 specific_questions = {
-    'bali': ['hotels near nusa dua beach', 'best hotels in ubud'],
-    'marrakech': ['hotels near Bahia Palace', 'hotels near Menara Gardens']
+    'bali': [],
+    'marrakech': []
 }    
     
 class CityTagHandler(restful.Resource):
@@ -506,8 +507,8 @@ class HelloHandler(restful.Resource):
             search_attr = attr_path_pure[len(attr_path_pure) - 1]
             attr = attr_path_pure[-1]
             attr_results, output_adj = do_attribute_query(search_city, attr)
-        #final_results = combine_results(attr_results, loc_results)
-        final_results = attr_results
+        final_results = combine_results(attr_results, loc_results)
+        #final_results = attr_results
         insert_hotel_details(search_city, final_results)
         presentation_json = convert_into_presentation_format(final_results, search_city, search_attr, output_adj)
         return presentation_json, 200
