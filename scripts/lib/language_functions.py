@@ -101,11 +101,11 @@ def find_best_attribute_multi_2(data_map, map_val, path):
     for node in map_val['next']:
         score = find_score(data_map, map_val['next'][node])
         if score > max_score:
-            print 'win: max_score, new_score: ' + str(max_score) + ' ; ' + str(score) + ' ; ' + node
+            #print ('win: max_score, new_score: ' + str(max_score) + ' ; ' + str(score) + ' ; ' + node)
             max_score = score
             max_node = node
     if max_node == None:
-        print 'error 001: Time to update attribute tree.'
+        print ('error 001: Time to update attribute tree.')
         return
     else:
         assert(max_node != None)
@@ -144,8 +144,8 @@ def find_sub_obj(processed):
 def filter_array(processed, possibleTags):
     count = 0
     pos_count = len(processed['sentences'][0]['pos'])
-    print 'pos: ' + str(processed['sentences'][0]['pos'])
-    print 'tokens: ' + str(processed['sentences'][0]['tokens'])
+    #print 'pos: ' + str(processed['sentences'][0]['pos'])
+    #print 'tokens: ' + str(processed['sentences'][0]['tokens'])
     res_arr = []
     while count < pos_count:
         if processed['sentences'][0]['pos'][count] in possibleTags:
@@ -226,10 +226,10 @@ def find_attribute_2(attribute_seed, user_input, phrase_parsing=False):
                 data[n_obj] += 1.01
             else:
                 data[n_obj] = 1.01
-    print 'data: ' + str(data)
+    #print 'data: ' + str(data)
     path = []
     find_best_attribute_multi_2(data, attribute_seed, path)
-    print 'path: ' + str(path)
+    #print 'path: ' + str(path)
     result_np = []
     
     if phrase_parsing:
@@ -258,9 +258,9 @@ def find_max_adjective(adj, candidate_adjectives):
             if dist > max_distance:
                 max_adj = candidate
                 max_distance = dist
-                print 'possible correct adj item: ' + str(max_adj) + ' ; ' + str(max_distance)
+                #print 'possible correct adj item: ' + str(max_adj) + ' ; ' + str(max_distance)
         except KeyError:
-            print 'Key error for: ' + adj + '; ' + candidate
+            print ('Key error for: ', adj, candidate, sep = ' ')
     return max_adj, max_distance
 
 def convert_sentiment_to_int(sentiment):
@@ -299,7 +299,7 @@ def find_correct_adjective(adj_list, candidate_adjectives, sentiment):
     # figure whether positive or negative.
     #print 'sentiment: ' + sentiment
     if selected_adj == []:
-        print 'max adjective is none for adj_list: ' + str(adj_list)
+        print('max adjective is none for adj_list: ', adj_list)
         return None, -1
     
     if convert_sentiment_to_int(sentiment) >= 3:
@@ -314,9 +314,9 @@ def find_correct_adjective(adj_list, candidate_adjectives, sentiment):
                         #print 'returning antonym for: ' + max_adj
                         final_adj.append([antonym_map[max_adj], max_dist])
                     else:
-                        print 'error 00: ' + str(max_adj)
+                        print ('error 00: ', max_adj)
                 else:
-                    print 'error 01: ' + max_adj
+                    print ('error 01: ', max_adj)
     else:
         for max_adj, max_dist in selected_adj:
             if max_adj in negative_array:
@@ -327,9 +327,9 @@ def find_correct_adjective(adj_list, candidate_adjectives, sentiment):
                         #print 'returning antonym for: ' + max_adj
                         final_adj.append([antonym_map[max_adj], max_dist])
                     else:
-                        print 'error 11: ' + max_adj
+                        print('error 11: ', max_adj)
                 else:
-                    print 'error 10: ' + max_adj
+                    print('error 10: ', max_adj)
     final_adj.sort(key=lambda x: x[1], reverse=True)
     return final_adj    
     
@@ -345,7 +345,7 @@ def find_sentiment_adjective(attribute_adjective_map, attribute_path, user_input
             candidate_adjectives = attribute_adjective_map[str_path]
             correct_adjective_list = find_correct_adjective(adj_list, candidate_adjectives, sentiment)
         else:
-            print 'path Not found in path: ' + str_path
+            print('path Not found in path: ', str_path)
     return correct_adjective_list, sentiment
 
 def find_num_matches(classes, probs, keywords):

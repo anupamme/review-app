@@ -44,10 +44,16 @@ def do_location_query(loc_array):
     if loc_array == None:
         return None
     for loc in loc_array:
-        loc_results = finder.find_city_location_hotels(loc['lat'], loc['lng'])
+        print 'querying for: ' + str(loc)
+        loc_results = finder.find_city_location_hotels(loc['lat'], loc['lon'])
+        #print 'loc_results: ' + str(loc_results)
         if loc_results != None and len(loc_results) > len(max_results):
             max_results = loc_results
-    return max_results
+    max_results_obj = {}
+    for res in max_results:
+        res['type'] = 'loc'
+        max_results_obj[res['hotel_id']] = res
+    return max_results_obj
 
 def do_attribute_query(city, attr):
     if city == None or attr == None:
@@ -64,6 +70,7 @@ def do_attribute_query(city, attr):
         output[hotel_id]['score'] = hotel_score
         #output[hotel_id_int] = review_result[(hotel_id, hotel_score)]
         output[hotel_id]['attribute_details'] = {}
+        output[hotel_id]['type'] = 'attr'
         map_to = output[hotel_id]['attribute_details']
         for path in output_sentiment[hotel_id]:
             map_to[path] = {}
@@ -79,14 +86,30 @@ def do_attribute_query(city, attr):
     return output, output_adj
 
 def combine_results(attr_results, loc_results):
+#    if loc_results != None and len(loc_results) > 0:
+#        print 'returning loc results'
+#        return loc_results
+#    print 'returning attr results.'
+#    return attr_results
     if attr_results == None:
         return loc_results
     if loc_results == None:
         return attr_results
     print 'length of attr and loc results: ' + str(len(attr_results)) + ' ; ' + str(len(loc_results))
-    if len(attr_results) >  len(loc_results):
-        return attr_results
-    return loc_results
+    output = {}
+    for hotel_id in attr_results:
+        output[hotel_id] = attr_results[hotel_id]
+    for hotel_id in loc_results:
+        if hotel_id in output:
+            output[hotel_id]['type'] = 'both'
+        else:
+            print 'loc result not found in attr: ' + str(hotel_id)
+            output[hotel_id] = loc_results[hotel_id]
+#    if len(attr_results) >  len(loc_results):
+#        print 'returning attr results'
+#        return attr_results
+#    print 'returning loc results'
+    return output
 
 def insert_hotel_details(city, final_results):
     #output = []
@@ -102,6 +125,7 @@ def insert_hotel_details(city, final_results):
         obj['address'] = map_to[hotel_id]['address']
         if 'location' in map_to[hotel_id]:
             obj['location'] = map_to[hotel_id]['location']
+        obj['type'] = final_results[hotel_id]['type']
         final_results[hotel_id]['details'] = obj
 
 def merge_results(images, hashtags, sentiment, adjectives):
@@ -139,7 +163,13 @@ def convert_into_presentation_format(final_results, search_city, search_attr, ou
             obj['location'] = final_results[hotel_id]['details']['location']
         else:
             obj['location'] = None
-        assert(search_attr in final_results[hotel_id]['attribute_details'])
+        search_type = final_results[hotel_id]['details']['type']
+        if 'attribute_details' not in final_results[hotel_id]:
+            assert( search_type == 'loc')
+            continue
+        else:
+            assert(search_type == 'attr' or search_type == 'both')
+        #assert(search_attr in final_results[hotel_id]['attribute_details'])
         sentiment_graph = final_results[hotel_id]['attribute_details'][search_attr]['sentiment_graph']
         adjective_graph = final_results[hotel_id]['attribute_details'][search_attr]['adjective_graph']
         if 'images' in final_results[hotel_id]['attribute_details'][search_attr]:
@@ -205,6 +235,8 @@ def convert_into_presentation_format(final_results, search_city, search_attr, ou
         
 #            obj['attribute_summary'] = 'Most popular sentiment around ' + search_attr + ' is: ' + str(finder.create_hash_tag(search_attr, popular_adjective))
             obj['attribute_summary'] = 'Most popular sentiment around ' + search_attr + ' is ' + str(popular_adjective)
+        if final_results[hotel_id]['details']['type'] == 'both':
+            obj['score'] = 2 * obj['score']
         presentation_json.append(obj)
     presentation_json.sort(key=lambda x: x['sentiment_percent'] * x['score'], reverse=True)
     return presentation_json
@@ -371,7 +403,6 @@ def convert_into_presentation_format_hashtags(city, hash_tags_map, output_images
         for hotel_id, hash_score in hotel_results:
             obj = {}
             hotel_id = str(hotel_id)
-            #print 'hotel_id type: ' + str(type(hotel_id))
             obj['hotel_id'] = hotel_id
             obj['score'] = hash_score
             sum_score += hash_score
@@ -470,10 +501,10 @@ class DetailHandler(restful.Resource):
 #        final_results_arr.sort(key=lambda x: x[1]['sum_sentiment'], reverse=False)
         return obj, 200
  
-base_questions = ['hotels with great food', 'hotels with wifi', 'hotels with swimmint pool', 'hotels near sea beach']
+base_questions = ['hotels with great food', 'hotels with heavenly spa', 'hotels with awesome swimming pool']
 specific_questions = {
-    'bali': [],
-    'marrakech': []
+    'bali': ['hotels near sea beach', 'hotels with infinity pool'],
+    'marrakech': ['hotels with great aesthetics', 'hotels with great culture']
 }    
     
 class CityTagHandler(restful.Resource):
@@ -488,17 +519,15 @@ class HelloHandler(restful.Resource):
     def get(self):
         args = a.parse_args()
         search_city = args.get('city').lower()
-        #print 'city_parsed: ' + search_city
         search_criterion = args.get('search_str')
-        result_1 = text_p.find_attribute_2(app.attr_seed['root'], search_criterion)
-        result = qp.process_request(result_1, app.hotel_name_data.keys(), app.attr_seed, search_criterion)
-        #print 'processed results: ' + str(result)
+        result_1 = text_p.find_attribute_2(app.attr_seed['root'], search_criterion, True)
+        result = qp.process_request(result_1, app.attr_seed, search_city, search_criterion)
+        print 'processed results: ' + str(result)
         loc_results = None
         search_attr = None
         if 'loc' in result:
             loc_arr = result['loc'] # array of {lat, lng} objects
             loc_results = do_location_query(loc_arr)
-            search_attr = 'beach'
         attr_results = None
         output_adj = None
         if 'attr' in result:
@@ -508,7 +537,6 @@ class HelloHandler(restful.Resource):
             attr = attr_path_pure[-1]
             attr_results, output_adj = do_attribute_query(search_city, attr)
         final_results = combine_results(attr_results, loc_results)
-        #final_results = attr_results
         insert_hotel_details(search_city, final_results)
         presentation_json = convert_into_presentation_format(final_results, search_city, search_attr, output_adj)
         return presentation_json, 200
