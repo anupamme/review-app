@@ -16,7 +16,7 @@ review_count = 0
 output_hotel_id_review_id = {}      #hotel_id -> review_id -> review_object
 address_delim = ', '
 
-seed_file = 'data/tree-data/percolate_8.json'
+seed_file = 'data/tree-data/percolate_9.json'
 adjective_file = 'data/antonyms/reverse_adj_2.json'
 hotel_id_file = 'data/city_hotel_id.json'
 gmaps = googlemaps.Client(key='AIzaSyAXQ2pGkeUBhRZG4QNqy2t1AbzA6O3ToUU') 
@@ -89,7 +89,12 @@ def parse_review(attribute_seed, attribute_adjective_map, raw_review, city_id, h
             continue
     result = []
     for sent in review_sentences_encode:
-        result.append(get_review_details(attribute_seed, attribute_adjective_map, sent))
+        sent = sent.strip()
+        if sent == None or sent == '':
+            continue
+        else:
+            print '###looking for: ' + str(sent)
+            result.append(get_review_details(attribute_seed, attribute_adjective_map, sent))
     
     sentiment_map = {}
     adj_list_map = {}
@@ -179,7 +184,7 @@ if __name__ == "__main__":
     if len(sys.argv) == 1:
         user_input = raw_input("Some input please: ")
         while user_input != 'stop':
-            formed_object = parse_review(attribute_seed, attribute_adjective_map, user_input, 'NA', -1, -1)
+            formed_object = parse_review(attribute_seed, attribute_adjective_map, user_input, 'NA', -1, {})
             print 'elastic obj: ' + str(formed_object)
             user_input = raw_input("Some input please: ")
     else:
