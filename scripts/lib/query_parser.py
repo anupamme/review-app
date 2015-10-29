@@ -27,7 +27,8 @@ location_phrases = ['next', 'near', 'far', 'close', 'distance', 'walking', 'driv
 
 city_country_map = {
     'bali': 'indonesia',
-    'marrakech': 'morocco'
+    'marrakech': 'morocco',
+    'goa': 'india'
 }
 
 def find_city(noun_arr, city_list):
