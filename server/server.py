@@ -185,7 +185,10 @@ def convert_into_presentation_format(final_results, search_city, search_attr, ou
                         obj['image'] = image_arr[0][0]
                         obj['score'] = len(image_arr)
             if 'image' not in obj:
-                print 'error 11: using default image for hotel: ' + str(obj['name'])
+                try:
+                    print 'error 11: using default image for hotel: ' + obj['name'].encode('utf-8')
+                except UnicodeDecodeError:
+                    print 'UnicodeDecodeError for hotel_id: ' + str(hotel_id)
                 obj['image'] = default_image
                 obj['score'] = -1
         #attribute summary
@@ -521,6 +524,8 @@ class HelloHandler(restful.Resource):
         args = a.parse_args()
         search_city = args.get('city').lower()
         search_criterion = args.get('search_str')
+        assert(search_criterion != None)
+        print 'search_criterion: ' + search_criterion
         result_1 = text_p.find_attribute_2(app.attr_seed['root'], search_criterion, True)
         result = qp.process_request(result_1, app.attr_seed, search_city, search_criterion)
         print 'processed results: ' + str(result)

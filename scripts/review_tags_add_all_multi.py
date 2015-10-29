@@ -201,7 +201,6 @@ if __name__ == "__main__":
 
                 hotel_count += 1
                 hotel_name = val['name']
-                print 'hotel_name: ' + hotel_name
                 hotel_id = get_hotel_id(hotel_name, hotel_id_map[city_id])
                 if hotel_id == -1:
                     print 'error 11: hotel_id not found for ' + hotel_name

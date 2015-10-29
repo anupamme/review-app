@@ -9,6 +9,7 @@ from stanford_corenlp_pywrapper import CoreNLP
 from ast import literal_eval
 import operator
 import time
+import pdb
 
 model = None
 proc = None
@@ -260,7 +261,7 @@ def find_max_adjective(adj, candidate_adjectives):
                 max_distance = dist
                 #print 'possible correct adj item: ' + str(max_adj) + ' ; ' + str(max_distance)
         except KeyError:
-            print 'Key error for: ', adj + ' ; ' candidate
+            print 'Key error for: ' + adj + ' ; ' + candidate
     return max_adj, max_distance
 
 def convert_sentiment_to_int(sentiment):
