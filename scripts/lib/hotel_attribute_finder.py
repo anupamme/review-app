@@ -23,6 +23,7 @@ import pprint
 import operator
 import elastic_search as es
 from random import randint
+import re
 
 hash_tag_delim = '_'
 hash_tag_prefix = ''
@@ -132,6 +133,12 @@ def insert_or_increment_adjective(out, path_dict, adjective_dict):
             else:
                 out[path][adj] = adj_score
 
+def add_raw_review(out, attr_line_map, complete_review):
+    for attr in attr_line_map:
+        if attr not in out:
+            out[attr] = []
+        out[attr].append(complete_review[attr_line_map[attr]])
+
 '''
 input: city_name, hotel_id
 output: 
@@ -141,7 +148,8 @@ output:
 def find_city_hotel_attributes(city_name, hotel_id):
     elastic_results = es.find_city_hotel_reviews(city_name, hotel_id)
     output_sentiment = {}   # format is: 
-    output_adjective = {}   # format is: 
+    output_adjective = {}   # format is:
+    output_raw_review = {} # format is attr -> [review_sentences]
     for item in elastic_results['hits']['hits']:
         item = item['_source']
         path_dict = find_path(item)
@@ -150,10 +158,15 @@ def find_city_hotel_attributes(city_name, hotel_id):
         #print 'sentiment_dict: ' + str(sentiment_dict)
         adjective_dict = find_adjective(item)
         #print 'adjective_dict: ' + str(adjective_dict)
+        complete_review = filter(lambda x: x != None and x != '', 
+                                 map(lambda x: x.strip(), 
+                                     re.split('\.|\?| !', item['complete_review'])))
+        attribute_line = item['attribute_line']
         insert_or_increment(output_sentiment, path_dict, sentiment_dict)
         insert_or_increment_adjective(output_adjective, path_dict, adjective_dict)
+        add_raw_review(output_raw_review, attribute_line, complete_review)
         
-    return output_sentiment, output_adjective
+    return output_sentiment, output_adjective, output_raw_review
 
 def find_city_hotel_images(city_name, hotel_id):
     elastic_results = es.find_city_hotel_images(city_name, hotel_id)
@@ -173,7 +186,7 @@ def find_city_hotel_images(city_name, hotel_id):
     return output
 
 def find_city_all_hotels_reviews_images(city_name):
-    output_sentiment, output_adjective = find_city_all_hotels_attributes(city_name)
+    output_sentiment, output_adjective, output_raw_reviews = find_city_all_hotels_attributes(city_name)
     output_images = find_city_all_hotels_images(city_name)
     output_c = {}
     for hotel_id in output_sentiment:
@@ -192,6 +205,7 @@ def find_city_all_hotels_attributes(city_name):
     elastic_results = es.find_city_reviews(city_name)
     output_sentiment = {}   # format is: hotel_id -> path -> sentiment -> score
     output_adjective = {}   # format is: hotel_id -> path -> adjective -> score
+    output_raw_review = {}  # format is: hotel_id -> path -> [raw_reviews]
     for item in elastic_results['hits']['hits']:
         item = item['_source']
         hotel_id = item['hotel_id']
@@ -199,7 +213,13 @@ def find_city_all_hotels_attributes(city_name):
             output_sentiment[hotel_id] = {}
         if hotel_id not in output_adjective:
             output_adjective[hotel_id] = {}
+        if hotel_id not in output_raw_review:
+            output_raw_review[hotel_id] = {}
         path_dict = find_path(item)
+        complete_review = filter(lambda x: x != None and x != '', 
+                                 map(lambda x: x.strip(), 
+                                     re.split('\.|\?| !', item['complete_review'])))
+        attribute_line = item['attribute_line']
         #print 'path_dict: ' +  str(path_dict)
         sentiment_dict = find_sentiment(item)
         #print 'sentiment_dict: ' + str(sentiment_dict)
@@ -207,8 +227,9 @@ def find_city_all_hotels_attributes(city_name):
         #print 'adjective_dict: ' + str(adjective_dict)
         insert_or_increment(output_sentiment[hotel_id], path_dict, sentiment_dict)
         insert_or_increment_adjective(output_adjective[hotel_id], path_dict, adjective_dict)
+        add_raw_review(output_raw_review[hotel_id], attribute_line, complete_review)
 
-    return output_sentiment, output_adjective
+    return output_sentiment, output_adjective, output_raw_review
 
 def find_city_all_hotels_images(city_name):
     elastic_results = es.find_city_images(city_name)
@@ -253,7 +274,7 @@ def sort(output_sentiment_sum, candidate_attribute):
                 
 def find_city_attribute_top_hotels(city_name, attribute):
     print 'finder:: ' + city_name + ' ; ' + attribute
-    output_sentiment, output_adjective = find_city_all_hotels_attributes(city_name)
+    output_sentiment, output_adjective, output_raw_review = find_city_all_hotels_attributes(city_name)
     output_sentiment_sum = find_sum_over_sentiment(output_sentiment)
     output_sentiment_sort = sort(output_sentiment_sum, attribute)
     return output_sentiment_sort, output_sentiment, output_adjective
@@ -275,7 +296,7 @@ output:
 def find_hotel_hashtags(city_name, hotel_id):
     most_talked_about = {}
     most_talked_about_arr = {}
-    output_sentiment, output_adjective = find_city_hotel_attributes(city_name, hotel_id)
+    output_sentiment, output_adjective, output_raw_review = find_city_hotel_attributes(city_name, hotel_id)
     for path in output_sentiment:
         s = sum(output_sentiment[path].values())
         most_talked_about[path] = s
@@ -297,7 +318,7 @@ def find_hotel_hashtags(city_name, hotel_id):
         output[attr].append((hash_tag, hash_score))
     for attr in output:
         output[attr].sort(key=lambda x: x[1], reverse=True)
-    return output_sentiment, output_adjective, output
+    return output_sentiment, output_adjective, output, output_raw_review
 
 def filter_adjective(adjective_values, negative_adjectives):
     result = []
@@ -314,7 +335,7 @@ output: hashtag -> [hotel_id]
 def find_city_hashtags(city_name):
     most_talked_about = {}
     most_talked_about_arr = {}
-    output_sentiment, output_adjective = find_city_all_hotels_attributes(city_name)
+    output_sentiment, output_adjective, output_raw_reviews = find_city_all_hotels_attributes(city_name)
     for hotel_id in output_sentiment:
         if hotel_id not in most_talked_about:
             most_talked_about[hotel_id] = {}

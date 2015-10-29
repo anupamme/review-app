@@ -487,7 +487,7 @@ class DetailHandler(restful.Resource):
         search_hotel_id = args.get('hotel_id')
         hotel_details = app.hotel_name_data[search_city][search_hotel_id]
         output_images = finder.find_city_hotel_images(search_city, search_hotel_id)
-        output_sentiment, output_adj, output_hashtags = finder.find_hotel_hashtags(search_city, search_hotel_id)
+        output_sentiment, output_adj, output_hashtags, output_raw_reviews = finder.find_hotel_hashtags(search_city, search_hotel_id)
         sentiment_graph = create_sentiment_graph(output_sentiment)
         attribute_graph = create_attribute_graph(output_sentiment, output_adj, output_images)
         
@@ -497,7 +497,8 @@ class DetailHandler(restful.Resource):
             'name': hotel_details['name'],
             'address': hotel_details['address'],
             'sentiment_graph': sentiment_graph,
-            'attribute_graph': attribute_graph
+            'attribute_graph': attribute_graph,
+            'raw_reviews': output_raw_reviews
         }
 #        final_results = merge_results(output_images, output_hashtags, output_sentiment, output_adj)
 #        final_results_arr = final_results.items()
