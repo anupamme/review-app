@@ -137,7 +137,12 @@ def add_raw_review(out, attr_line_map, complete_review):
     for attr in attr_line_map:
         if attr not in out:
             out[attr] = []
-        out[attr].append(complete_review[attr_line_map[attr]])
+        index = attr_line_map[attr]
+        if index < len(complete_review):
+            out[attr].append(complete_review[index])
+        else:
+            print 'error 22: complete_review: ' + str(complete_review)
+            print 'error 22: invalid sentence id: ' + str(index)
 
 '''
 input: city_name, hotel_id
@@ -158,9 +163,13 @@ def find_city_hotel_attributes(city_name, hotel_id):
         #print 'sentiment_dict: ' + str(sentiment_dict)
         adjective_dict = find_adjective(item)
         #print 'adjective_dict: ' + str(adjective_dict)
-        complete_review = filter(lambda x: x != None and x != '', 
-                                 map(lambda x: x.strip(), 
-                                     re.split('\.|\?| !', item['complete_review'])))
+        if city == 'goa':
+            complete_review = filter(lambda x: x != None and x != '', 
+                                    map(lambda x: x.strip(), 
+                                        re.split('\.|\?| !', item['complete_review'])))
+        else:
+            complete_review = re.split('\.|\?| !', item['complete_review'])
+            
         attribute_line = item['attribute_line']
         insert_or_increment(output_sentiment, path_dict, sentiment_dict)
         insert_or_increment_adjective(output_adjective, path_dict, adjective_dict)
