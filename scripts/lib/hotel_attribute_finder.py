@@ -163,7 +163,7 @@ def find_city_hotel_attributes(city_name, hotel_id):
         #print 'sentiment_dict: ' + str(sentiment_dict)
         adjective_dict = find_adjective(item)
         #print 'adjective_dict: ' + str(adjective_dict)
-        if city == 'goa':
+        if city_name == 'goa':
             complete_review = filter(lambda x: x != None and x != '', 
                                     map(lambda x: x.strip(), 
                                         re.split('\.|\?| !', item['complete_review'])))
