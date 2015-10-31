@@ -140,9 +140,9 @@ def add_raw_review(out, attr_line_map, complete_review):
         index = attr_line_map[attr]
         if index < len(complete_review):
             out[attr].append(complete_review[index])
-        else:
+        #else:
             #print 'error 22: complete_review: ' + str(complete_review)
-            print 'error 22: invalid sentence id: ' + str(index)
+            #print 'error 22: invalid sentence id: ' + str(index)
 
 '''
 input: city_name, hotel_id
