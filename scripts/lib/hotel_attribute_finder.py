@@ -133,13 +133,14 @@ def insert_or_increment_adjective(out, path_dict, adjective_dict):
             else:
                 out[path][adj] = adj_score
 
-def add_raw_review(out, attr_line_map, complete_review):
+def add_raw_review(out, attr_line_map, attr_score, complete_review):
     for attr in attr_line_map:
         if attr not in out:
             out[attr] = []
+        score = attr_score[attr]
         index = attr_line_map[attr]
         if index < len(complete_review):
-            out[attr].append(complete_review[index])
+            out[attr].append((complete_review[index], score))
         #else:
             #print 'error 22: complete_review: ' + str(complete_review)
             #print 'error 22: invalid sentence id: ' + str(index)
@@ -169,11 +170,12 @@ def find_city_hotel_attributes(city_name, hotel_id):
                                         re.split('\.|\?| !', item['complete_review'])))
         else:
             complete_review = re.split('\.|\?| !', item['complete_review'])
+        attribute_score = item['score']
             
         attribute_line = item['attribute_line']
         insert_or_increment(output_sentiment, path_dict, sentiment_dict)
         insert_or_increment_adjective(output_adjective, path_dict, adjective_dict)
-        add_raw_review(output_raw_review, attribute_line, complete_review)
+        add_raw_review(output_raw_review, attribute_line, attribute_score, complete_review)
         
     return output_sentiment, output_adjective, output_raw_review
 
@@ -236,7 +238,7 @@ def find_city_all_hotels_attributes(city_name):
         #print 'adjective_dict: ' + str(adjective_dict)
         insert_or_increment(output_sentiment[hotel_id], path_dict, sentiment_dict)
         insert_or_increment_adjective(output_adjective[hotel_id], path_dict, adjective_dict)
-        add_raw_review(output_raw_review[hotel_id], attribute_line, complete_review)
+        add_raw_review(output_raw_review[hotel_id], attribute_line, item['score'], complete_review)
 
     return output_sentiment, output_adjective, output_raw_review
 

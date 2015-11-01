@@ -366,7 +366,9 @@ def create_attribute_graph(output_sentiment, output_adj, output_images, output_r
             less = 'None'
         raw_reviews = []
         if attr in output_raw_reviews:
-            raw_reviews = output_raw_reviews[attr]
+            raw_reviews_raw = output_raw_reviews[attr]
+            raw_reviews = map(lambda x: x[0], raw_reviews_raw.sort(key=lambda x: x[1], reverse=True))
+            
         obj = {
             "title": attr,
             "images": image_arr,
