@@ -10,6 +10,7 @@ from elasticsearch import Elasticsearch
 import re
 from os import path
 import sys
+import pdb
 
 sys.path.insert(0, 'scripts/lib/')
 
@@ -337,7 +338,7 @@ def create_inner_sentiment_graph(attr, output_sentiment, output_adj):
     output.append(obj)
     return output
 
-def create_attribute_graph(output_sentiment, output_adj, output_images):
+def create_attribute_graph(output_sentiment, output_adj, output_images, output_raw_reviews):
     output = []
     for path in output_sentiment:
         #print 'path: ' + str(path)
@@ -363,6 +364,9 @@ def create_attribute_graph(output_sentiment, output_adj, output_images):
             less = sentiment_arr[2][0]
         else:
             less = 'None'
+        raw_reviews = []
+        if attr in output_raw_reviews:
+            raw_reviews = output_raw_reviews[attr]
         obj = {
             "title": attr,
             "images": image_arr,
@@ -371,7 +375,8 @@ def create_attribute_graph(output_sentiment, output_adj, output_images):
                 'Some people had ' + few.lower() + ' experience.',
                 'Less people had ' + less.lower() + ' experience.'
             ],
-            "sentiment_graph": create_inner_sentiment_graph(attr, output_sentiment[attr], output_adj[attr])
+            "sentiment_graph": create_inner_sentiment_graph(attr, output_sentiment[attr], output_adj[attr]),
+            "raw_reviews": raw_reviews
         }
         output.append(obj)
     output.sort(key=lambda x: len(x['images']), reverse=True)
@@ -485,11 +490,12 @@ class DetailHandler(restful.Resource):
         args = a.parse_args()
         search_city = args.get('city').lower()
         search_hotel_id = args.get('hotel_id')
+        print 'search_criterion: ' + search_city + ' ; ' + search_hotel_id
         hotel_details = app.hotel_name_data[search_city][search_hotel_id]
         output_images = finder.find_city_hotel_images(search_city, search_hotel_id)
         output_sentiment, output_adj, output_hashtags, output_raw_reviews = finder.find_hotel_hashtags(search_city, search_hotel_id)
         sentiment_graph = create_sentiment_graph(output_sentiment)
-        attribute_graph = create_attribute_graph(output_sentiment, output_adj, output_images)
+        attribute_graph = create_attribute_graph(output_sentiment, output_adj, output_images, output_raw_reviews)
         
         obj = {
             'city': search_city,
@@ -497,8 +503,7 @@ class DetailHandler(restful.Resource):
             'name': hotel_details['name'],
             'address': hotel_details['address'],
             'sentiment_graph': sentiment_graph,
-            'attribute_graph': attribute_graph,
-            'raw_reviews': output_raw_reviews
+            'attribute_graph': attribute_graph
         }
 #        final_results = merge_results(output_images, output_hashtags, output_sentiment, output_adj)
 #        final_results_arr = final_results.items()
