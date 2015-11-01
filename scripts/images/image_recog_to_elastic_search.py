@@ -20,19 +20,21 @@ def write(data, file_name):
     f.write(json.dumps(data))
     f.close()
 
-def merge(count):
+def merge(city_name, count):
     output = {}
+    output[city_name] = {}
     while count < len(sys.argv):
         json_obj = json.loads(open(sys.argv[count], 'r').read())
-        for key in json_obj:
-            output[key] = json_obj[key]
+        for hotel_name in json_obj:
+            output[city_name][hotel_name] = json_obj[hotel_name]
         count += 1
     return output
 
 if __name__ == "__main__":
     i_map.load_model_files()
     attribute_seed = json.loads(open(sys.argv[1], 'r').read())
-    city_hotel_images_map = merge(2)
+    city_name = sys.argv[2]
+    city_hotel_images_map = merge(city_name, 3)
     hotel_attr_image = {}
     print 'finding hotel attribute image map...'
     for city_name in city_hotel_images_map:
@@ -95,5 +97,5 @@ if __name__ == "__main__":
                     output_arr.append(obj)
             hotel_id += 1
             
-    write(output_arr, 'data/images/hotel_image_elastic.json')
+    write(output_arr, 'data/images/' + city_name + '_elastic.json')
     write(output_hotel, 'data/images/hotel_id.json')

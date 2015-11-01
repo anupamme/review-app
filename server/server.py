@@ -197,7 +197,11 @@ def convert_into_presentation_format(final_results, search_city, search_attr, ou
         sentiment_arr.sort(key=lambda x: x[1], reverse=True)
         popular_sentiment = sentiment_arr[0][0].lower()
         #print 'popular sentiment: ' + str(popular_sentiment)
-        popular_percent = (sentiment_arr[0][1]*100)/sum(sentiment_graph.values())
+        sum_val = sum(sentiment_graph.values())
+        if sum_val == 0:
+            popular_percent = -1
+        else:
+            popular_percent = (sentiment_arr[0][1]*100)/sum_val
         if 'negative' in popular_sentiment:
             popular_percent = -popular_percent
         obj['sentiment_percent'] = round(popular_percent)
@@ -367,7 +371,8 @@ def create_attribute_graph(output_sentiment, output_adj, output_images, output_r
         raw_reviews = []
         if attr in output_raw_reviews:
             raw_reviews_raw = output_raw_reviews[attr]
-            raw_reviews = map(lambda x: x[0], raw_reviews_raw.sort(key=lambda x: x[1], reverse=True))
+            raw_reviews_raw.sort(key=lambda x: x[1], reverse=True)
+            raw_reviews = map(lambda x: x[0], raw_reviews_raw)
             
         obj = {
             "title": attr,
