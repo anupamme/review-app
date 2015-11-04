@@ -3,3 +3,4 @@ data-so-far/
 junk/
 out.txt
 *.pyc
+*.json

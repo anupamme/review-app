@@ -12,7 +12,7 @@ if __name__ == "__main__":
     hotel_name_data = json.loads(open(sys.argv[2], 'r').read())
     output = {}
     for hotel_item in crawler_data:
-        hotel_id = find_id(hotel_name_data['marrakech'], hotel_item['name'])
+        hotel_id = find_id(hotel_name_data['goa'], hotel_item['name'])
         obj = {}
         obj['name'] = hotel_item['name']
         obj['address'] = hotel_item['address']

@@ -2,7 +2,6 @@ import sys
 import json
 import ast
 sys.path.insert(0, 'scripts/lib/')
-
 import language_functions as i_map
 
 '''
@@ -97,5 +96,5 @@ if __name__ == "__main__":
                     output_arr.append(obj)
             hotel_id += 1
             
-    write(output_arr, 'data/images/' + city_name + '_elastic.json')
+    write(output_arr, 'data/images/' + city_name + '_image_elastic.json')
     write(output_hotel, 'data/images/hotel_id.json')
