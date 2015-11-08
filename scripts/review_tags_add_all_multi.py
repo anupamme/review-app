@@ -18,12 +18,12 @@ address_delim = ', '
 
 seed_file = 'data/tree-data/percolate_9.json'
 adjective_file = 'data/antonyms/reverse_adj_2.json'
-hotel_id_file = 'data/city_hotel_id.json'
+hotel_id_file = 'data/hotel/city_hotel_details.json'
 gmaps = googlemaps.Client(key='AIzaSyAXQ2pGkeUBhRZG4QNqy2t1AbzA6O3ToUU') 
 
 def get_hotel_id(hotel_name, hotel_id_map):
     for key in hotel_id_map:
-        if hotel_name == hotel_id_map[key]:
+        if hotel_name == hotel_id_map[key]['name']:
             return key
     return -1
 
