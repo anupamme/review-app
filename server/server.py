@@ -23,7 +23,7 @@ client = Elasticsearch()
 app = Flask(__name__)
 
 attribute_seed_file = 'data/tree-data/percolate_9.json'
-city_hotel_id_file = 'data/city_hotel_details.json'
+city_hotel_id_file = 'data/hotel/city_hotel_details.json'
 positive_file = 'data/antonyms/positives.json'
 negative_file = 'data/antonyms/negatives.json'
 default_image = 'https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11240355_1446634575634173_545669914_n.jpg'
@@ -465,7 +465,7 @@ possible outputs:
 '''
 
 class HashTagSearchHandler(restful.Resource):
-    def get(self):
+    def post(self):
         args = a.parse_args()
         search_city = args.get('city')
         search_hash_tag = args.get('hash_tag')
@@ -482,7 +482,7 @@ class HashTagSearchHandler(restful.Resource):
         
 
 class HashTagHandler(restful.Resource):
-    def get(self):
+    def post(self):
         args = a.parse_args()
         search_city = args.get('city').lower()
         hash_tags = finder.find_city_hashtags(search_city)  # format is hash_tag -> [(hotel_id, score)]
@@ -493,7 +493,7 @@ class HashTagHandler(restful.Resource):
         
 
 class DetailHandler(restful.Resource):
-    def get(self):
+    def post(self):
         args = a.parse_args()
         search_city = args.get('city').lower()
         search_hotel_id = args.get('hotel_id')
@@ -525,7 +525,7 @@ specific_questions = {
 }    
     
 class CityTagHandler(restful.Resource):
-    def get(self):
+    def post(self):
         args = a.parse_args()
         search_city = args.get('city').lower()
         assert(search_city in specific_questions)
@@ -533,7 +533,7 @@ class CityTagHandler(restful.Resource):
         
 
 class HelloHandler(restful.Resource):
-    def get(self):
+    def post(self):
         args = a.parse_args()
         search_city = args.get('city').lower()
         search_criterion = args.get('search_str')
