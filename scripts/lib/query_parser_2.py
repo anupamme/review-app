@@ -17,7 +17,7 @@ algorithm:
     7. do attribute search.
 '''
 
-city_hotel_id_file = 'data/city_hotel_id.json'
+city_hotel_id_file = 'data/hotel/city_hotel_details.json'
 attribute_file = 'data/tree-data/percolate_9.json'
 delim_address = ', '
 gmaps = googlemaps.Client(key='AIzaSyAXQ2pGkeUBhRZG4QNqy2t1AbzA6O3ToUU') 
