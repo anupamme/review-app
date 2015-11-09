@@ -520,8 +520,8 @@ class DetailHandler(restful.Resource):
 base_questions = ['hotels with great food', 'hotels with heavenly spa', 'hotels with awesome swimming pool']
 specific_questions = {
     'bali': ['hotels near sea beach', 'hotels with infinity pool'],
-    'marrakech': ['hotels with great aesthetics', 'hotels with great culture'],
-    'goa': ['hotels near sea beach', 'hotels with infinity pool']
+    'marrakech': ['hotels with great aesthetic', 'hotels with great culture'],
+    'goa': ['hotels near sea beach', 'family friendly hotels']
 }    
     
 class CityTagHandler(restful.Resource):
