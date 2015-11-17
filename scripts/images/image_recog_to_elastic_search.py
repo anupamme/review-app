@@ -23,7 +23,9 @@ def merge(city_name, count):
     output = {}
     output[city_name] = {}
     while count < len(sys.argv):
-        json_obj = json.loads(open(sys.argv[count], 'r').read())
+        file_name = sys.argv[count]
+        print 'opening file_name: ' + file_name
+        json_obj = json.loads(open(file_name, 'r').read())
         for hotel_name in json_obj:
             output[city_name][hotel_name] = json_obj[hotel_name]
         count += 1
@@ -31,9 +33,27 @@ def merge(city_name, count):
 
 city_hotel_details_map = {}
 
+def is_equal(name1, name2):
+    if name1.lower() == name2.lower():
+        return True
+    return False
+    
+def is_subset(name1, name2):
+    name1_lower = name1.lower()
+    name2_lower = name2.lower()
+    if name1_lower in name2_lower:
+        return True
+    if name2_lower in name1_lower:
+        return True
+    return False
+
 def get_hotel_id(name):
     for hotel_id in city_hotel_details_map:
-        if city_hotel_details_map[hotel_id]['name'] == name:
+        if is_equal(city_hotel_details_map[hotel_id]['name'], name):
+            return hotel_id
+    for hotel_id in city_hotel_details_map:
+        if is_subset(name, city_hotel_details_map[hotel_id]['name']):
+            print 'Approx Value: ' + city_hotel_details_map[hotel_id]['name']
             return hotel_id
     print 'warn: no hotel id found for: ' + name
     return -1
@@ -44,7 +64,7 @@ if __name__ == "__main__":
     city_name = sys.argv[2]
     global city_hotel_details_map
     city_hotel_details_map = json.loads(open(sys.argv[3], 'r').read())
-    city_hotel_images_map = merge(city_name, 3)
+    city_hotel_images_map = merge(city_name, 4)
     hotel_attr_image = {}
     print 'finding hotel attribute image map...'
     for city_name in city_hotel_images_map:

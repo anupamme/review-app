@@ -371,7 +371,8 @@ def create_attribute_graph(output_sentiment, output_adj, output_images, output_r
         raw_reviews = []
         if attr in output_raw_reviews:
             raw_reviews_raw = output_raw_reviews[attr]
-            raw_reviews_raw.sort(key=lambda x: (x[1], x[2]), reverse=True)
+            raw_reviews_raw.sort(key=lambda x: (x[1] * x[2]), reverse=True)
+            print 'sorted_raw_reviews: ' + str(raw_reviews_raw)
             raw_reviews = map(lambda x: x[0], raw_reviews_raw)
             
         obj = {
@@ -517,11 +518,11 @@ class DetailHandler(restful.Resource):
 #        final_results_arr.sort(key=lambda x: x[1]['sum_sentiment'], reverse=False)
         return obj, 200
  
-base_questions = ['hotels with great food', 'hotels with heavenly spa', 'hotels with awesome swimming pool']
+base_questions = ['hotels with good restaurants', 'hotels with sumptuous breakfast', 'hotels with awesome swimming pool']
 specific_questions = {
     'bali': ['hotels near sea beach', 'hotels with infinity pool'],
-    'marrakech': ['hotels with great aesthetic', 'hotels with great culture'],
-    'goa': ['hotels near sea beach', 'Lush Green Gardens']
+    'marrakech': ['hotels with great patios to relax', 'hotels with lush green gardens'],
+    'goa': ['hotels near sea beach', 'family friendly hotels']
 }    
     
 class CityTagHandler(restful.Resource):

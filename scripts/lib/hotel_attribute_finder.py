@@ -28,6 +28,8 @@ import re
 hash_tag_delim = '_'
 hash_tag_prefix = ''
 
+sentiment_factor = 10
+
 def extract_item(item):
     if '_source' in item:
         return item['_source']
@@ -143,15 +145,15 @@ def convert_sentiment_to_int(sentiment):
     sentiment_lower = sentiment.lower()
     if 'positive' in sentiment_lower:
         if 'very' in sentiment_lower:
-            return 5
+            return 5 * sentiment_factor
         else:
-            return 4
+            return 4 * sentiment_factor
     else:
         if 'negative' in sentiment_lower:
             if 'very' in sentiment_lower:
-                return 1
+                return 1 * sentiment_factor
             else:
-                return 2
+                return 2 * sentiment_factor
     return 3                
                 
 def add_raw_review(out, attr_line_map, attr_score, complete_review, sentiment_map):
