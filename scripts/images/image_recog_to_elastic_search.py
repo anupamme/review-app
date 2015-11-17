@@ -29,10 +29,21 @@ def merge(city_name, count):
         count += 1
     return output
 
+city_hotel_details_map = {}
+
+def get_hotel_id(name):
+    for hotel_id in city_hotel_details_map:
+        if city_hotel_details_map[hotel_id]['name'] == name:
+            return hotel_id
+    print 'warn: no hotel id found for: ' + name
+    return -1
+
 if __name__ == "__main__":
     i_map.load_model_files()
     attribute_seed = json.loads(open(sys.argv[1], 'r').read())
     city_name = sys.argv[2]
+    global city_hotel_details_map
+    city_hotel_details_map = json.loads(open(sys.argv[3], 'r').read())
     city_hotel_images_map = merge(city_name, 3)
     hotel_attr_image = {}
     print 'finding hotel attribute image map...'
@@ -69,13 +80,17 @@ if __name__ == "__main__":
     write(hotel_attr_image, 'data/images/hotel_attr_image.json')
     print 'converting the data to elastic search data format...'
     # convert this data into elastic search input format.
-    hotel_id = 0
     output_arr = []
     output_hotel = {}
     count = 0
     for city_name in hotel_attr_image:
         output_hotel[city_name] = {}
         for hotel_name in hotel_attr_image[city_name]:
+            try:
+                print 'searching for: ' + hotel_name.encode('utf-8')
+            except UnicodeEncodeError:
+                print 'unicode error.'
+            hotel_id = get_hotel_id(hotel_name)
             output_hotel[city_name][hotel_id] = hotel_name
             attr_url_map = hotel_attr_image[city_name][hotel_name]
             for attr_path_str in attr_url_map:
@@ -94,7 +109,6 @@ if __name__ == "__main__":
                     }
                     count += 1
                     output_arr.append(obj)
-            hotel_id += 1
             
     write(output_arr, 'data/images/' + city_name + '_image_elastic.json')
     write(output_hotel, 'data/images/hotel_id.json')

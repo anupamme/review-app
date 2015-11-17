@@ -28,6 +28,12 @@ import re
 hash_tag_delim = '_'
 hash_tag_prefix = ''
 
+def extract_item(item):
+    if '_source' in item:
+        return item['_source']
+    else:
+        return item
+
 def create_hash_tag(attr, adj):
     return hash_tag_prefix + adj.lower() + hash_tag_delim + attr.lower()
 
@@ -133,14 +139,30 @@ def insert_or_increment_adjective(out, path_dict, adjective_dict):
             else:
                 out[path][adj] = adj_score
 
-def add_raw_review(out, attr_line_map, attr_score, complete_review):
+def convert_sentiment_to_int(sentiment):
+    sentiment_lower = sentiment.lower()
+    if 'positive' in sentiment_lower:
+        if 'very' in sentiment_lower:
+            return 5
+        else:
+            return 4
+    else:
+        if 'negative' in sentiment_lower:
+            if 'very' in sentiment_lower:
+                return 1
+            else:
+                return 2
+    return 3                
+                
+def add_raw_review(out, attr_line_map, attr_score, complete_review, sentiment_map):
     for attr in attr_line_map:
         if attr not in out:
             out[attr] = []
         score = attr_score[attr]
         index = attr_line_map[attr]
+        sentiment = convert_sentiment_to_int(sentiment_map[attr])
         if index < len(complete_review):
-            out[attr].append((complete_review[index], score))
+            out[attr].append((complete_review[index], score, sentiment))
         #else:
             #print 'error 22: complete_review: ' + str(complete_review)
             #print 'error 22: invalid sentence id: ' + str(index)
@@ -157,7 +179,7 @@ def find_city_hotel_attributes(city_name, hotel_id):
     output_adjective = {}   # format is:
     output_raw_review = {} # format is attr -> [review_sentences]
     for item in elastic_results['hits']['hits']:
-        item = item['_source']
+        item = extract_item(item)
         path_dict = find_path(item)
         #print 'path_dict: ' +  str(path_dict)
         sentiment_dict = find_sentiment(item)
@@ -175,7 +197,7 @@ def find_city_hotel_attributes(city_name, hotel_id):
         attribute_line = item['attribute_line']
         insert_or_increment(output_sentiment, path_dict, sentiment_dict)
         insert_or_increment_adjective(output_adjective, path_dict, adjective_dict)
-        add_raw_review(output_raw_review, attribute_line, attribute_score, complete_review)
+        add_raw_review(output_raw_review, attribute_line, attribute_score, complete_review, sentiment_dict)
         
     return output_sentiment, output_adjective, output_raw_review
 
@@ -183,7 +205,7 @@ def find_city_hotel_images(city_name, hotel_id):
     elastic_results = es.find_city_hotel_images(city_name, hotel_id)
     output = {}   # format is: path -> [url, score]
     for item in elastic_results['hits']['hits']:
-        item = item['_source']
+        item = extract_item(item)
         url = item['url']
         score = item['score']
         path = map(lambda x: x['value'], item['attributes'])
@@ -218,7 +240,10 @@ def find_city_all_hotels_attributes(city_name):
     output_adjective = {}   # format is: hotel_id -> path -> adjective -> score
     output_raw_review = {}  # format is: hotel_id -> path -> [raw_reviews]
     for item in elastic_results['hits']['hits']:
-        item = item['_source']
+        item = extract_item(item)
+        if 'hotel_id' not in item:
+            #print 'No hotel_id: ' + str(item)
+            continue
         hotel_id = item['hotel_id']
         if hotel_id not in output_sentiment:
             output_sentiment[hotel_id] = {}
@@ -238,7 +263,7 @@ def find_city_all_hotels_attributes(city_name):
         #print 'adjective_dict: ' + str(adjective_dict)
         insert_or_increment(output_sentiment[hotel_id], path_dict, sentiment_dict)
         insert_or_increment_adjective(output_adjective[hotel_id], path_dict, adjective_dict)
-        add_raw_review(output_raw_review[hotel_id], attribute_line, item['score'], complete_review)
+        add_raw_review(output_raw_review[hotel_id], attribute_line, item['score'], complete_review, sentiment_dict)
 
     return output_sentiment, output_adjective, output_raw_review
 
@@ -246,7 +271,7 @@ def find_city_all_hotels_images(city_name):
     elastic_results = es.find_city_images(city_name)
     output = {}   # format is: hotel_id -> path -> [(url, score)]
     for item in elastic_results['hits']['hits']:
-        item = item['_source']
+        item = extract_item(item)
         hotel_id = str(item['hotel_id'])
         if hotel_id not in output:
             output[hotel_id] = {}
@@ -295,7 +320,7 @@ def find_city_location_hotels(lat, lon):
     elastic_results = es.find_location_hotels(lat, lon)
     output = []
     for item in elastic_results['hits']['hits']:
-        item = item['_source']
+        item = extract_item(item)
         output.append(item)
     return output
 
@@ -416,6 +441,6 @@ if __name__ == "__main__":
                     result = find_city_all_hotels_images(sys.argv[arg_count])
         else:
             if search_kind == 'both':
-                result = find_city_all_hotels_reviews_images(sys.argv[arg_count])
-    pp = pprint.PrettyPrinter(depth=4)
-    pp.pprint(result)
+                result = find_city_all_hotels_reviews_images(sys.argv[arg_count - 1])
+#    pp = pprint.PrettyPrinter(depth=4)
+#    pp.pprint(result)

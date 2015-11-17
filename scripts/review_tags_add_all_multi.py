@@ -89,7 +89,7 @@ def parse_review(attribute_seed, attribute_adjective_map, raw_review, city_id, h
             continue
     result = []
     for sent in review_sentences_encode:
-        sent = sent.strip()
+        sent = sent.strip().lower()
         if sent == None or sent == '':
             continue
         else:

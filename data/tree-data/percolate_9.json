@@ -1435,7 +1435,10 @@
                             "musical_performances": 1,
                             "disney_world": 1,
                             "dining_options": 1,
-                            "dance_performances": 1
+                            "dance_performances": 1,
+                            "family": 2,
+                            "family_friendly": 2,
+                            "family-friendly": 2
                         },
                         "next": {}
                     },
