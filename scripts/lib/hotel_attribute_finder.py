@@ -27,7 +27,7 @@ import re
 
 hash_tag_delim = '_'
 hash_tag_prefix = ''
-seed_file = 'data/tree-data/percolate_10.json'
+seed_file = 'data/tree-data/percolate_11.json'
 sentiment_factor = 10
 
 def extract_item(item):

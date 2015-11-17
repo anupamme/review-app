@@ -22,7 +22,7 @@ client = Elasticsearch()
 
 app = Flask(__name__)
 
-attribute_seed_file = 'data/tree-data/percolate_10.json'
+attribute_seed_file = 'data/tree-data/percolate_11.json'
 city_hotel_id_file = 'data/hotel/city_hotel_details.json'
 positive_file = 'data/antonyms/positives.json'
 negative_file = 'data/antonyms/negatives.json'

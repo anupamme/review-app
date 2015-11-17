@@ -70,28 +70,28 @@ def is_model_loaded():
     return model != None and proc != None
     #return proc != None
     
-#def find_best_score(word, keywords_map):
-#    best_score = -1
-#    for key in keywords_map:
-#        try:
-#            score = model.similarity(word, key) * keywords_map[key]
-#        except KeyError:
-#            #print 'word2vec error: word not found: ' + word + ' ; ' + key
-#            continue
-#        if score > best_score:
-#            best_score = score
-#    return best_score
+def find_best_score(word, keywords_map):
+    best_score = -1
+    for key in keywords_map:
+        try:
+            score = model.similarity(word, key) * keywords_map[key]
+        except KeyError:
+            #print 'word2vec error: word not found: ' + word + ' ; ' + key
+            continue
+        if score > best_score:
+            best_score = score
+    return best_score
     
 def find_score(data_map, map_val):
     score_sum = 0
     for key in data_map:
         if is_present(key, map_val['keywords']):
             score_sum += 1 * data_map[key]
-#        else:
-#            print 'error 001: ' + str(key.encode('utf-8'))
-#            best = find_best_score(key, map_val['keywords']) * data_map[key]
-#            if best > 0:
-#                score_sum += best
+        else:
+            #print 'error 001: ' + str(key.encode('utf-8'))
+            best = find_best_score(key, map_val['keywords']) * data_map[key]
+            if best > 0:
+                score_sum += best
     return score_sum
     
 def find_best_attribute_multi_2(data_map, map_val, path):
@@ -101,6 +101,7 @@ def find_best_attribute_multi_2(data_map, map_val, path):
     max_node = None
     for node in map_val['next']:
         score = find_score(data_map, map_val['next'][node])
+        print 'score: ' + str(score)
         if score > max_score:
             print ('win: max_score, new_score: ' + str(max_score) + ' ; ' + str(score) + ' ; ' + node)
             max_score = score
