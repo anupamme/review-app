@@ -184,7 +184,7 @@ def convert_into_presentation_format(final_results, search_city, search_attr, ou
                     image_arr = final_results[hotel_id]['attribute_details'][in_attr]['images']
                     if len(image_arr) > 0:
                         obj['image'] = image_arr[0][0]
-                        obj['score'] = len(image_arr)
+                        obj['score'] = len(image_arr) / 2
             if 'image' not in obj:
                 try:
                     print 'error 11: using default image for hotel: ' + obj['name'].encode('utf-8')
