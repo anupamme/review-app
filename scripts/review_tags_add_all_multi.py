@@ -16,7 +16,7 @@ review_count = 0
 output_hotel_id_review_id = {}      #hotel_id -> review_id -> review_object
 address_delim = ', '
 
-seed_file = 'data/tree-data/percolate_9.json'
+seed_file = 'data/tree-data/percolate_10.json'
 adjective_file = 'data/antonyms/reverse_adj_2.json'
 hotel_id_file = 'data/hotel/city_hotel_details.json'
 gmaps = googlemaps.Client(key='AIzaSyAXQ2pGkeUBhRZG4QNqy2t1AbzA6O3ToUU') 

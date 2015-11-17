@@ -18,7 +18,7 @@ algorithm:
 '''
 
 city_hotel_id_file = 'data/city_hotel_id.json'
-attribute_file = 'data/tree-data/percolate_9.json'
+attribute_file = 'data/tree-data/percolate_10.json'
 delim_address = ', '
 gmaps = googlemaps.Client(key='AIzaSyAXQ2pGkeUBhRZG4QNqy2t1AbzA6O3ToUU') 
 

@@ -27,7 +27,7 @@ import re
 
 hash_tag_delim = '_'
 hash_tag_prefix = ''
-
+seed_file = 'data/tree-data/percolate_10.json'
 sentiment_factor = 10
 
 def extract_item(item):
@@ -67,7 +67,7 @@ attr_title_map = {
 }
 
 
-attribute_seed = json.loads(open('data/tree-data/percolate_9.json', 'r').read())
+attribute_seed = json.loads(open(seed_file, 'r').read())
 positive_adjectives = json.loads(open('data/tree-data/attribute_adjective_positive.json', 'r').read())
 
 

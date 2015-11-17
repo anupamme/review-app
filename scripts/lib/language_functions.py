@@ -102,7 +102,7 @@ def find_best_attribute_multi_2(data_map, map_val, path):
     for node in map_val['next']:
         score = find_score(data_map, map_val['next'][node])
         if score > max_score:
-            #print ('win: max_score, new_score: ' + str(max_score) + ' ; ' + str(score) + ' ; ' + node)
+            print ('win: max_score, new_score: ' + str(max_score) + ' ; ' + str(score) + ' ; ' + node)
             max_score = score
             max_node = node
     if max_node == None:
@@ -128,7 +128,7 @@ def find_sub_obj(processed):
             obj_details = val
         if 'mod' in val[0]:
             mod_details = val
-    #print 'details: ' + str(subj_details) + ' ; ' + str(obj_details) + ' ; ' + str(mod_details)
+    print 'details: ' + str(subj_details) + ' ; ' + str(obj_details) + ' ; ' + str(mod_details)
     #pos_tags = parsed_c['sentences'][0]['pos']
     tokens = processed['sentences'][0]['tokens']
     obj = None
@@ -227,10 +227,10 @@ def find_attribute_2(attribute_seed, user_input, phrase_parsing=False):
                 data[n_obj] += 1.01
             else:
                 data[n_obj] = 1.01
-    #print 'data: ' + str(data)
+    print 'data: ' + str(data)
     path = []
     find_best_attribute_multi_2(data, attribute_seed, path)
-    #print 'path: ' + str(path)
+    print 'path: ' + str(path)
     result_np = []
     
     if phrase_parsing:
