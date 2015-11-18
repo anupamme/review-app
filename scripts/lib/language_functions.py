@@ -100,6 +100,7 @@ def find_best_attribute_multi_2(data_map, map_val, path):
     max_score = -1
     max_node = None
     for node in map_val['next']:
+        print 'checking for node: ' + str(node)
         score = find_score(data_map, map_val['next'][node])
         print 'score: ' + str(score)
         if score > max_score:

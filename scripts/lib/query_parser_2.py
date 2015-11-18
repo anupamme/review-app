@@ -23,7 +23,7 @@ delim_address = ', '
 gmaps = googlemaps.Client(key='AIzaSyAXQ2pGkeUBhRZG4QNqy2t1AbzA6O3ToUU') 
 
 #default_city = 'bali'
-location_phrases = ['next', 'near', 'far', 'close', 'distance', 'walking', 'drive', 'on']
+location_phrases = ['next', 'near', 'far', 'close', 'distance', 'walking', 'drive', 'on', 'stones_throw', 'minute', 'minutes', 'location']
 
 city_country_map = {
     'bali': 'indonesia',

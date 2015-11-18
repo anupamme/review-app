@@ -1367,7 +1367,7 @@
                     "firmdale": 1,
                     "chic": 1,
                     "upmarket": 1,
-                    "kids_activities": 1,
+                    "kids_activities": 2,
                     "wholesome": 1,
                     "vintage": 1,
                     "arcade_games": 1,
@@ -1387,7 +1387,7 @@
                         "keywords": {
                             "trendy": 1,
                             "super_chic": 1,
-                            "romantic": 1,
+                            "romantic": 2,
                             "boutique_hotel": 1,
                             "sloane_street": 1,
                             "boutique_style": 1,
@@ -1405,7 +1405,10 @@
                             "upmarket": 1,
                             "boutiques": 1,
                             "hostem": 1,
-                            "vintage_clothing": 1
+                            "vintage_clothing": 1,
+                            "suite": 1,
+                            "petals": 1,
+                            "flowers": 1
                         },
                         "next": {}
                     },
@@ -1416,9 +1419,9 @@
                             "kiddie": 1,
                             "jungle_themed": 1,
                             "amusement_park": 1,
-                            "family_oriented": 1,
+                            "family_oriented": 2,
                             "themed_rides": 1,
-                            "children": 1,
+                            "children": 2,
                             "kids_activities": 1,
                             "wholesome": 1,
                             "family": 2,
@@ -1428,15 +1431,15 @@
                             "friendly_amenities": 1,
                             "arcade_games": 1,
                             "adult_themed": 1,
-                            "waterslides": 1,
-                            "kid_friendly": 1,
-                            "walt_disney_world": 1,
+                            "waterslides": 2,
+                            "kid_friendly": 2,
+                            "walt_disney_world": 2,
                             "hayrides": 1,
                             "family_friendly": 2,
-                            "theme_parks": 1,
-                            "kids": 1,
-                            "theme_park": 1,
-                            "kids_programming": 1,
+                            "theme_parks": 2,
+                            "kids": 2,
+                            "theme_park": 2,
+                            "kids_programming": 2,
                             "offbeat": 1,
                             "slide": 1,
                             "family-friendly": 2,
@@ -1445,7 +1448,9 @@
                             "musical_performances": 1,
                             "disney_world": 1,
                             "dining_options": 1,
-                            "dance_performances": 1
+                            "dance_performances": 1,
+                            "birthday": 1,
+                            "celebration": 1
                         },
                         "next": {}
                     },
@@ -1481,7 +1486,8 @@
                             "mixes": 1,
                             "mash_up": 1,
                             "classics": 1,
-                            "musical": 1
+                            "musical": 1,
+                            "old": 1
                         },
                         "next": {}
                     }
@@ -1685,11 +1691,11 @@
                                     "showering": 1,
                                     "shower_stall": 1,
                                     "shower_room": 1,
-                                    "bath": 1,
+                                    "bath": 2,
                                     "lavatory": 1,
                                     "jacuzzi": 1,
                                     "soaking_tub": 1,
-                                    "showers": 1,
+                                    "showers": 2,
                                     "baths": 1,
                                     "whirlpool_tub": 1,
                                     "master_bath": 1,
@@ -1711,7 +1717,12 @@
                                     "bucket": 1,
                                     "bed": 0,
                                     "restroom": 1,
-                                    "tub": 1
+                                    "tub": 1,
+                                    "shower": 2,
+                                    "water": 1,
+                                    "flooded": 1,
+                                    "leak": 1,
+                                    "hot": 1
                                 },
                                 "next": {}
                             },
@@ -1740,7 +1751,12 @@
                                     "bed": 0,
                                     "shower": 1,
                                     "bath_tub": 1,
-                                    "backyard_swimming_pool": 1
+                                    "backyard_swimming_pool": 1,
+                                    "bathtub": 2,
+                                    "water": 1,
+                                    "flooded": 1,
+                                    "leak": 1,
+                                    "hot": 1
                                 },
                                 "next": {}
                             }
@@ -1752,20 +1768,20 @@
                             "upstairs": 1,
                             "thread_count": 1,
                             "comforters": 1,
-                            "bed_linens": 1,
+                            "bed_linens": 2,
                             "damask": 1,
                             "bedspreads": 1,
                             "paper": 1,
                             "egyptian_cotton": 1,
-                            "towels": 1,
+                            "towels": 2,
                             "pelmet": 1,
                             "pajamas": 1,
                             "balcony": 1,
                             "sweatpants": 1,
                             "seets": 1,
                             "molten_brown_toiletries": 1,
-                            "linen": 1,
-                            "bedding": 1,
+                            "linen": 2,
+                            "bedding": 2,
                             "shower_curtain": 1,
                             "pillowcases": 1,
                             "window_frames": 1,
@@ -1779,7 +1795,7 @@
                             "carpet": 1,
                             "table_linens": 1,
                             "nightdress": 1,
-                            "pillows": 1,
+                            "pillows": 2,
                             "pajama_pants": 1,
                             "robes": 1,
                             "wallpaper": 1,
@@ -1789,7 +1805,7 @@
                             "kimonos": 1,
                             "fairy_lights": 1,
                             "lamps": 1,
-                            "sheets": 1,
+                            "sheets": 2,
                             "safari_tents": 1,
                             "cotton_blend": 1,
                             "blinds": 1,
@@ -1804,15 +1820,15 @@
                             "walls": 1,
                             "nightgown": 1,
                             "pillow_menu": 1,
-                            "bedspread": 1,
+                            "bedspread": 2,
                             "drapes": 1,
                             "frosted_glass": 1,
-                            "bed_linen": 1,
+                            "bed_linen": 2,
                             "smelly": 1,
                             "dressing_gown": 1,
                             "heavy_drapes": 1,
                             "slippers": 1,
-                            "carpets": 1
+                            "carpets": 2
                         },
                         "next": {
                             "linens": {
@@ -1901,15 +1917,19 @@
                     },
                     "appliances": {
                         "keywords": {
-                            "television": 1,
-                            "stockpot": 1,
-                            "kettle": 1,
-                            "fridge": 1,
-                            "microwave": 1,
-                            "mini_fridge": 1,
+                            "television": 2,
+                            "stockpot": 2,
+                            "kettle": 2,
+                            "fridge": 2,
+                            "microwave": 2,
+                            "mini_fridge": 2,
                             "lamp": 1,
-                            "electrical_appliances": 1,
-                            "refrigerator": 1
+                            "electrical_appliances": 2,
+                            "refrigerator": 2,
+                            "ac": 2,
+                            "air_conditioner": 2,
+                            "mini_bar": 2,
+                            "minibar": 2
                         },
                         "next": {}
                     },
@@ -1917,17 +1937,17 @@
                         "keywords": {
                             "ceiling": 1,
                             "floor": 1,
-                            "carpet": 1,
+                            "carpet": 2,
                             "shelf": 1,
                             "indoor": 1,
-                            "rug": 1,
-                            "bed": 1,
+                            "rug": 2,
+                            "bed": 2,
                             "seat": 1,
                             "interior": 1,
                             "interior_design": 1,
                             "wood": 1,
                             "desk": 1,
-                            "mansion": 1,
+                            "mansion": 0,
                             "table": 1,
                             "furniture": 2,
                             "sofa": 1,
@@ -1971,7 +1991,7 @@
                     "guest_rooms": 1,
                     "noisy": 1,
                     "lounge_bar": 1,
-                    "room": 0,
+                    "room": 1,
                     "crowded": 1,
                     "mountain_views": 1,
                     "privacy": 1,
@@ -1989,17 +2009,23 @@
                         "keywords": {
                             "busy": 1,
                             "crowded": 1,
-                            "quiet": 1,
-                            "noise": 1,
-                            "loud": 1,
-                            "noisy": 1
+                            "quiet": 2,
+                            "noise": 2,
+                            "loud": 2,
+                            "noisy": 2,
+                            "room": 1,
+                            "music": 1,
+                            "drilling": 1,
+                            "trouble": 1,
+                            "roosters": 1,
+                            "night": 1
                         },
                         "next": {}
                     },
                     "view": {
                         "keywords": {
-                            "view": 1,
-                            "room": 0,
+                            "view": 2,
+                            "room": 1,
                             "hill": 1,
                             "balcony": 1
                         },
@@ -2017,7 +2043,8 @@
                             "solarium": 1,
                             "high_ceilings": 1,
                             "four_poster_beds": 1,
-                            "spacious": 1,
+                            "spacious": 2,
+                            "big": 2,
                             "outdoor_pool": 1,
                             "sun_deck": 1,
                             "chalet_style": 1,
@@ -2036,7 +2063,8 @@
                             "indoor_outdoor": 1,
                             "pool_spa": 1,
                             "marble_bathrooms": 1,
-                            "gas_fireplace": 1
+                            "gas_fireplace": 1,
+                            "room": 1
                         },
                         "next": {}
                     },
@@ -2244,7 +2272,7 @@
                             "attitudes": 1,
                             "artisan": 1,
                             "heritage": 1,
-                            "cultures": 1,
+                            "cultures": 2,
                             "bridal": 1,
                             "societies": 1,
                             "tolerance": 1,
@@ -2264,21 +2292,21 @@
                             "fame": 1,
                             "youth_culture": 1,
                             "stereotypes": 1,
-                            "tradition": 1,
+                            "tradition": 2,
                             "candle": 1,
                             "morality": 1,
                             "decoration": 1,
                             "consumerism": 1,
                             "loom": 1,
                             "thread": 1,
-                            "culture": 1,
-                            "diversity": 1,
+                            "culture": 2,
+                            "diversity": 2,
                             "colour": 1,
                             "groom": 1,
-                            "cultural_values": 1,
-                            "cultural": 1,
-                            "traditional": 1,
-                            "cultural_diversity": 1,
+                            "cultural_values": 2,
+                            "cultural": 2,
+                            "traditional": 2,
+                            "cultural_diversity": 2,
                             "ethos": 1,
                             "values": 1,
                             "social": 1,
@@ -2347,7 +2375,15 @@
                             "geometric_forms": 1,
                             "bamboo": 1,
                             "sculpture": 1,
-                            "artistically": 1
+                            "artistically": 1,
+                            "senses": 1,
+                            "attention": 1,
+                            "pearl": 1,
+                            "beautifully": 1,
+                            "decorated": 1,
+                            "mansion": 1,
+                            "sensitively": 1,
+                            "beautiful": 1
                         },
                         "next": {}
                     },
@@ -2649,7 +2685,8 @@
                             "booze": 1,
                             "beverage": 1,
                             "soda": 1,
-                            "wine": 1
+                            "wine": 1,
+                            "champagne": 1
                         },
                         "next": {}
                     },
@@ -2926,26 +2963,28 @@
                             "breakfast": {
                                 "keywords": {
                                     "coffee": 1,
-                                    "yoghurt": 1,
-                                    "cereals": 1,
+                                    "yoghurt": 2,
+                                    "cereals": 2,
                                     "apple": 1,
-                                    "eggs": 1,
+                                    "eggs": 2,
                                     "fruits": 1,
-                                    "bacon": 1,
-                                    "sausage": 1,
-                                    "buffet": 1,
+                                    "bacon": 2,
+                                    "sausage": 2,
+                                    "buffet": 2,
                                     "strawberry": 1,
                                     "produce": 1,
                                     "berry": 1,
                                     "cuts": 1,
                                     "vegetable": 1,
                                     "grape": 1,
-                                    "breakfast": 1,
-                                    "breads": 1,
+                                    "breakfast": 2,
+                                    "breads": 2,
                                     "sauce": 1,
                                     "banana": 1,
                                     "pot": 1,
-                                    "spread": 1
+                                    "spread": 1,
+                                    "fresh": 1,
+                                    "varied": 1
                                 },
                                 "next": {}
                             },
@@ -3043,17 +3082,17 @@
                             "menu": 1,
                             "cooking": 1,
                             "tapas_bar": 1,
-                            "dinner": 1,
-                            "dining": 1,
+                            "dinner": 2,
+                            "dining": 2,
                             "pizzeria": 1,
                             "pizza": 1,
                             "bistro": 1,
                             "seafood_restaurant": 1,
-                            "food": 1,
-                            "lunch": 1,
+                            "food": 2,
+                            "lunch": 2,
                             "eatery": 1,
                             "diners": 1,
-                            "kitchen": 1,
+                            "kitchen": 2,
                             "dishes": 1,
                             "restaurant": 1,
                             "waiter": 1,
@@ -3063,7 +3102,12 @@
                             "steakhouse": 1,
                             "osteria": 1,
                             "thai_restaurant": 1,
-                            "restaurants": 0
+                            "restaurants": 0,
+                            "mezze": 1,
+                            "course": 2,
+                            "reservation": 1,
+                            "lamb": 1,
+                            "cooked": 1
                         },
                         "next": {}
                     }
@@ -3260,7 +3304,10 @@
                             "class": 1,
                             "surfboard": 1,
                             "bondi_beach": 1,
-                            "tai_chi": 1
+                            "tai_chi": 1,
+                            "things": 1,
+                            "parks": 1,
+                            "activities": 2
                         },
                         "next": {
                             "bike-ride": {
@@ -3699,7 +3746,7 @@
                     },
                     "recreation": {
                         "keywords": {
-                            "recreation": 1,
+                            "recreation": 2,
                             "group": 1,
                             "concert": 1,
                             "crowd": 1,
@@ -3717,7 +3764,15 @@
                             "drum": 1,
                             "wedding": 1,
                             "clothing": 1,
-                            "women": 1
+                            "women": 1,
+                            "extravagantly": 1,
+                            "roses": 1,
+                            "birthday": 1,
+                            "party": 2,
+                            "singles": 1,
+                            "couples": 1,
+                            "contingent": 1,
+                            "guests": 1
                         },
                         "next": {}
                     },
@@ -3751,7 +3806,7 @@
                             "herb_gardens": 1,
                             "herbaceous_plans": 1,
                             "plant": 1,
-                            "garden": 1,
+                            "garden": 2,
                             "squirrel": 1,
                             "cottage_garden": 1,
                             "farm": 1,
@@ -3782,7 +3837,12 @@
                             "grass": 1,
                             "leaves": 1,
                             "ground": 1,
-                            "grounds": 1
+                            "grounds": 1,
+                            "roof": 1,
+                            "terrace": 1,
+                            "gardens": 2,
+                            "olive": 1,
+                            "groves": 1
                         },
                         "next": {}
                     },
@@ -3804,7 +3864,7 @@
                             "personal_trainer": 1,
                             "treadmills": 1,
                             "lift_weights": 1,
-                            "workout": 1,
+                            "workout": 2,
                             "cardio-machines": 1,
                             "sauna": 1,
                             "lifting_weights": 1,
@@ -3826,7 +3886,9 @@
                             "gym_equipment": 1,
                             "fitness_classes": 1,
                             "massage": 1,
-                            "swimming": 1
+                            "swimming": 1,
+                            "physically": 1,
+                            "exhausting": 1
                         },
                         "next": {}
                     },
@@ -3952,7 +4014,8 @@
                                     "infinity_pools": 1,
                                     "hot_tub": 1,
                                     "spa": 0,
-                                    "pool": 1
+                                    "pool": 1,
+                                    "pools": 1
                                 },
                                 "next": {}
                             },
@@ -3966,12 +4029,13 @@
                                     "duck": 1,
                                     "lake": 1,
                                     "water": 1,
-                                    "swimming_pool": 1,
+                                    "swimming_pool": 2,
                                     "poolside": 1,
                                     "pond": 1,
                                     "river": 1,
                                     "pool": 2,
-                                    "swimming": 1
+                                    "swimming": 2,
+                                    "pools": 2
                                 },
                                 "next": {}
                             },
@@ -4011,7 +4075,7 @@
                             "internet_connected": 1,
                             "world_wide_web": 1,
                             "blogging_platform": 1,
-                            "wifi": 1,
+                            "wifi": 2,
                             "computer": 1,
                             "messaging_service": 1,
                             "web_sites": 1,
@@ -4031,7 +4095,7 @@
                             "social_media_sites": 1,
                             "social_network": 1,
                             "social_networking": 1,
-                            "facebook": 1,
+                            "facebook": 2,
                             "online": 1,
                             "web_giants": 1,
                             "instant_messaging": 1,
@@ -4048,25 +4112,28 @@
                             "internet's": 1,
                             "file_sharing": 1,
                             "web_based": 1,
-                            "internet_access": 1
+                            "internet_access": 1,
+                            "strong": 1,
+                            "weak": 1,
+                            "connection": 2
                         },
                         "next": {}
                     },
                     "banquet": {
                         "keywords": {
                             "theater": 1,
-                            "luncheon": 1,
+                            "luncheon": 2,
                             "tableware": 1,
                             "seat": 1,
-                            "dining": 1,
-                            "dinner": 1,
-                            "champagne_reception": 1,
+                            "dining": 2,
+                            "dinner": 2,
+                            "champagne_reception": 2,
                             "gala-dinner": 1,
-                            "reception": 1,
+                            "reception": 2,
                             "carpet": 1,
-                            "banquet": 1,
-                            "cocktail_reception": 1,
-                            "banquets": 1
+                            "banquet": 2,
+                            "cocktail_reception": 2,
+                            "banquets": 2
                         },
                         "next": {}
                     },
@@ -4102,7 +4169,7 @@
                             "outdoor_space": 1,
                             "courtyard": 1,
                             "french_doors": 1,
-                            "front": 1,
+                            "front": 0,
                             "yard": 1,
                             "fireplace": 1,
                             "pool": 0,
@@ -4110,13 +4177,14 @@
                             "bar": 1,
                             "romantic": 1,
                             "log_fire": 1,
-                            "outdoor_seating": 1,
+                            "outdoor_seating": 2,
                             "roof": 1,
                             "picnic_tables": 1,
                             "private_terrace": 1,
                             "roof_deck": 1,
                             "dining_room": 1,
-                            "patio": 1
+                            "patio": 2,
+                            "sun": 1
                         },
                         "next": {}
                     }
@@ -4215,7 +4283,16 @@
                             "mountain_range": 1,
                             "foothills": 1,
                             "hill": 1,
-                            "adventure": 1
+                            "adventure": 1,
+                            "location": 2,
+                            "minute": 1,
+                            "close": 1,
+                            "distance": 1,
+                            "taxi": 1,
+                            "perfect": 1,
+                            "everything": 1,
+                            "front": 0,
+                            "traffic": 1
                         },
                         "next": {}
                     },
@@ -4226,7 +4303,16 @@
                             "terminal": 1,
                             "international_airport": 1,
                             "airport": 1,
-                            "shuttle": 1
+                            "shuttle": 1,
+                            "location": 2,
+                            "minute": 1,
+                            "close": 1,
+                            "distance": 1,
+                            "taxi": 1,
+                            "perfect": 1,
+                            "everything": 1,
+                            "front": 0,
+                            "traffic": 1
                         },
                         "next": {}
                     },
@@ -4236,7 +4322,16 @@
                             "bus": 1,
                             "train": 1,
                             "metro": 1,
-                            "stations": 1
+                            "stations": 1,
+                            "location": 2,
+                            "minute": 1,
+                            "close": 1,
+                            "distance": 1,
+                            "taxi": 1,
+                            "perfect": 1,
+                            "everything": 1,
+                            "front": 0,
+                            "traffic": 1
                         },
                         "next": {}
                     },
@@ -4259,7 +4354,16 @@
                             "animal": 1,
                             "outdoors": 1,
                             "scenic": 1,
-                            "lemur": 1
+                            "lemur": 1,
+                            "location": 2,
+                            "minute": 1,
+                            "close": 1,
+                            "distance": 1,
+                            "taxi": 1,
+                            "perfect": 1,
+                            "everything": 1,
+                            "front": 0,
+                            "traffic": 0
                         },
                         "next": {}
                     },
@@ -4272,13 +4376,25 @@
                             "sunshine": 1,
                             "aqua": 1,
                             "tree": 0,
-                            "ocean": 1,
+                            "ocean": 2,
                             "sand": 1,
                             "coastline": 1,
-                            "sea": 1,
+                            "sea": 2,
                             "coast": 1,
-                            "beach": 1,
-                            "wind": 1
+                            "beach": 2,
+                            "wind": 1,
+                            "location": 2,
+                            "minute": 1,
+                            "close": 1,
+                            "distance": 1,
+                            "taxi": 1,
+                            "perfect": 1,
+                            "everything": 1,
+                            "front": 0,
+                            "traffic": 0,
+                            "beaches": 2,
+                            "resort": 1,
+                            "sunset": 1
                         },
                         "next": {}
                     },
@@ -4319,7 +4435,30 @@
                             "trendy_bars": 1,
                             "shops": 1,
                             "road": 1,
-                            "restaurants": 1
+                            "restaurants": 1,
+                            "stones_throw": 2,
+                            "attractions": 1,
+                            "location": 2,
+                            "central": 1,
+                            "minute": 1,
+                            "market": 1,
+                            "markets": 1,
+                            "shop": 1,
+                            "close": 1,
+                            "merchants": 1,
+                            "busy": 1,
+                            "streets": 1,
+                            "traffic": 1,
+                            "narrow": 1,
+                            "distance": 1,
+                            "taxi": 1,
+                            "perfect": 1,
+                            "everything": 1,
+                            "party": 1,
+                            "clubs": 1,
+                            "stones": 1,
+                            "bars": 1,
+                            "nightlife": 1
                         },
                         "next": {}
                     }
@@ -4576,8 +4715,31 @@
                             "general-service": {
                                 "keywords": {
                                     "team": 2,
-                                    "service": 1,
-                                    "staff": 1
+                                    "service": 2,
+                                    "staff": 2,
+                                    "trips": 1,
+                                    "bookings": 1,
+                                    "everything": 1,
+                                    "helpful": 1,
+                                    "people": 1,
+                                    "desk": 1,
+                                    "concierge": 2,
+                                    "services": 2,
+                                    "front": 1,
+                                    "guided": 1,
+                                    "tour": 1,
+                                    "thoughtful": 1,
+                                    "happy": 1,
+                                    "hospitality": 1,
+                                    "experience": 1,
+                                    "escort": 1,
+                                    "reception": 2,
+                                    "friendliness": 1,
+                                    "friendly": 1,
+                                    "gladly": 1,
+                                    "stay": 1,
+                                    "special": 1,
+                                    "helpful": 1
                                 },
                                 "next": {}
                             },
@@ -4660,7 +4822,9 @@
                                     "housekeepers": 1,
                                     "cooking_cleaning": 1,
                                     "preparing_meals": 1,
-                                    "mini_bar": 1
+                                    "mini_bar": 1,
+                                    "housekeeping": 2,
+                                    "knocked": 1
                                 },
                                 "next": {}
                             }
@@ -4785,13 +4949,17 @@
                                     "ford": 1,
                                     "trucks": 1,
                                     "luggage": 1,
-                                    "pickups": 1,
+                                    "pickups": 2,
+                                    "pickup": 2,
                                     "car": 1,
                                     "nissan": 1,
                                     "toyota": 1,
                                     "truck": 1,
                                     "chrysler": 1,
-                                    "cab": 1
+                                    "cab": 1,
+                                    "shuttle": 1,
+                                    "town": 1,
+                                    "free": 1
                                 },
                                 "next": {}
                             },
@@ -4831,7 +4999,14 @@
                                     "look_forward": 1,
                                     "warm": 1,
                                     "hospitality": 1,
-                                    "invites": 1
+                                    "invites": 1,
+                                    "welcome": 2,
+                                    "reception": 2,
+                                    "home": 1,
+                                    "reservation": 1,
+                                    "personally": 1,
+                                    "met": 1,
+                                    "meet": 1
                                 },
                                 "next": {}
                             },
