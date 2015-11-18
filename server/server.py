@@ -15,7 +15,7 @@ import pdb
 sys.path.insert(0, 'scripts/lib/')
 
 import language_functions as text_p
-import query_parser as qp
+import query_parser_2 as qp
 import hotel_attribute_finder as finder
 
 client = Elasticsearch()
