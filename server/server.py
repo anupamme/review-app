@@ -353,7 +353,7 @@ def create_attribute_graph(output_sentiment, output_adj, output_images, output_r
             image_arr = output_images[attr]
         else:
             image_arr = []
-            image_arr.append(default_image)
+            image_arr.append([default_image])
         sentiment_map = output_sentiment[path]
         sentiment_arr = sentiment_map.items()
         sentiment_arr.sort(key=lambda x: x[1], reverse=True)
