@@ -240,9 +240,10 @@ def convert_into_presentation_format(final_results, search_city, search_attr, ou
                     else:
                         neutral.sort(key=lambda x: x[1], reverse=True)
                         popular_adjective = neutral[0][0]
-        
-#            obj['attribute_summary'] = 'Most popular sentiment around ' + search_attr + ' is: ' + str(finder.create_hash_tag(search_attr, popular_adjective))
-            obj['attribute_summary'] = 'Most popular sentiment around ' + search_attr + ' is ' + str(popular_adjective)
+            try:
+                obj['attribute_summary'] = 'Most popular sentiment around ' + search_attr + ' is ' + str(popular_adjective)
+            except UnicodeDecodeError:
+                print 'Encoding error for hotel_id: ' + str(hotel_id)
         if final_results[hotel_id]['details']['type'] == 'both':
             obj['score'] = 2 * obj['score']
         presentation_json.append(obj)
@@ -351,7 +352,8 @@ def create_attribute_graph(output_sentiment, output_adj, output_images, output_r
         if attr in output_images:
             image_arr = output_images[attr]
         else:
-            continue
+            image_arr = []
+            image_arr.append(default_image)
         sentiment_map = output_sentiment[path]
         sentiment_arr = sentiment_map.items()
         sentiment_arr.sort(key=lambda x: x[1], reverse=True)
@@ -470,11 +472,7 @@ class HashTagSearchHandler(restful.Resource):
         args = a.parse_args()
         search_city = args.get('city')
         search_hash_tag = args.get('hash_tag')
-        search_title = args.get('title')
-        #print 'search_hash_tag: ' + str(search_hash_tag)
-        #print 'search_title: ' + str(search_title)
         index = search_hash_tag.index(finder.hash_tag_delim)
-        #print 'index: ' + str(index)
         search_attr = search_hash_tag[ index + 1:]
         attr_results, output_adj = do_attribute_query(search_city, search_attr)
         insert_hotel_details(search_city, attr_results)

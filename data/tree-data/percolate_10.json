@@ -1254,7 +1254,10 @@
                     "inexpensive": 1,
                     "advertized_price": 1,
                     "heavily_discounted": 1,
-                    "discounting": 1
+                    "discounting": 2,
+                    "expensive": 1,
+                    "bit": 1,
+                    "slightly": 1
                 },
                 "next": {
                     "discount_rate": {
@@ -1948,7 +1951,11 @@
                             "player": 2,
                             "music": 1,
                             "jazz": 1,
-                            "machine": 1
+                            "machine": 1,
+                            "ceiling": 1,
+                            "fan": 1,
+                            "air": 1,
+                            "conditioned": 1
                         },
                         "next": {}
                     },
@@ -1976,7 +1983,10 @@
                             "pool_table": 1,
                             "room": 1,
                             "dining": 1,
-                            "table": 1
+                            "table": 1,
+                            "aircon": 1,
+                            "beds": 1,
+                            "solid": 1
                         },
                         "next": {}
                     }
