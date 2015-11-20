@@ -1408,7 +1408,9 @@
                             "vintage_clothing": 1,
                             "suite": 1,
                             "petals": 1,
-                            "flowers": 1
+                            "flowers": 1,
+                            "candle": 1,
+                            "dinner": 1
                         },
                         "next": {}
                     },
@@ -1450,7 +1452,11 @@
                             "dining_options": 1,
                             "dance_performances": 1,
                             "birthday": 1,
-                            "celebration": 1
+                            "celebration": 1,
+                            "oriented": 1,
+                            "quiet": 1,
+                            "peaceful": 1,
+                            "luxurious": 1
                         },
                         "next": {}
                     },
@@ -1684,22 +1690,28 @@
                             "backyard_swimming_pool": 1
                         },
                         "next": {
+                            "floor": {
+                                "keywords": {
+                                    
+                                },
+                                "next": {}
+                            },
                             "shower": {
                                 "keywords": {
                                     "toilet": 1,
                                     "bathing": 1,
-                                    "showering": 1,
-                                    "shower_stall": 1,
-                                    "shower_room": 1,
-                                    "bath": 2,
+                                    "showering": 2,
+                                    "shower_stall": 2,
+                                    "shower_room": 2,
+                                    "bath": 1,
                                     "lavatory": 1,
                                     "jacuzzi": 1,
                                     "soaking_tub": 1,
                                     "showers": 2,
                                     "baths": 1,
-                                    "whirlpool_tub": 1,
+                                    "whirlool_tub": 1,
                                     "master_bath": 1,
-                                    "showerhead": 1,
+                                    "showerhead": 2,
                                     "bathroom": 1,
                                     "heated_floors": 1,
                                     "loo": 1,
@@ -1722,7 +1734,8 @@
                                     "water": 1,
                                     "flooded": 1,
                                     "leak": 1,
-                                    "hot": 1
+                                    "hot": 1,
+                                    "paper": 1
                                 },
                                 "next": {}
                             },
@@ -1750,13 +1763,14 @@
                                     "marble_tiled": 1,
                                     "bed": 0,
                                     "shower": 1,
-                                    "bath_tub": 1,
+                                    "bath_tub": 2,
                                     "backyard_swimming_pool": 1,
                                     "bathtub": 2,
                                     "water": 1,
                                     "flooded": 1,
                                     "leak": 1,
-                                    "hot": 1
+                                    "hot": 1,
+                                    "paper": 1
                                 },
                                 "next": {}
                             }
@@ -1929,14 +1943,19 @@
                             "ac": 2,
                             "air_conditioner": 2,
                             "mini_bar": 2,
-                            "minibar": 2
+                            "minibar": 2,
+                            "cd": 1,
+                            "player": 2,
+                            "music": 1,
+                            "jazz": 1,
+                            "machine": 1
                         },
                         "next": {}
                     },
                     "furniture": {
                         "keywords": {
                             "ceiling": 1,
-                            "floor": 1,
+                            "floor": 0,
                             "carpet": 2,
                             "shelf": 1,
                             "indoor": 1,
@@ -1953,8 +1972,11 @@
                             "sofa": 1,
                             "headboard": 1,
                             "decor": 1,
-                            "pool": 1,
-                            "pool_table": 1
+                            "pool": 0,
+                            "pool_table": 1,
+                            "room": 1,
+                            "dining": 1,
+                            "table": 1
                         },
                         "next": {}
                     }
@@ -2018,7 +2040,8 @@
                             "drilling": 1,
                             "trouble": 1,
                             "roosters": 1,
-                            "night": 1
+                            "night": 1,
+                            "happy": 1
                         },
                         "next": {}
                     },
@@ -2027,7 +2050,8 @@
                             "view": 2,
                             "room": 1,
                             "hill": 1,
-                            "balcony": 1
+                            "balcony": 1,
+                            "happy": 1
                         },
                         "next": {}
                     },
@@ -2064,13 +2088,41 @@
                             "pool_spa": 1,
                             "marble_bathrooms": 1,
                             "gas_fireplace": 1,
-                            "room": 1
+                            "room": 1,
+                            "roof": 1,
+                            "walls": 1,
+                            "area": 1,
+                            "areas": 1,
+                            "happy": 1
                         },
                         "next": {}
                     },
                     "privacy": {
                         "keywords": {
-                            "privacy": 1
+                            "privacy": 2,
+                            "staring": 1,
+                            "private": 2,
+                            "stares": 1,
+                            "room": 1,
+                            "happy": 1,
+                            "door": 1,
+                            "padlock": 1,
+                            "lock": 1,
+                            "front": 1
+                        },
+                        "next": {}
+                    },
+                    "balcony": {
+                        "keywords": {
+                            "balcony": 2,
+                            "happy": 1
+                        },
+                        "next": {}
+                    },
+                    "smell": {
+                        "keywords": {
+                            "smell": 2,
+                            "happy": 1
                         },
                         "next": {}
                     }
@@ -2383,7 +2435,10 @@
                             "decorated": 1,
                             "mansion": 1,
                             "sensitively": 1,
-                            "beautiful": 1
+                            "beautiful": 1,
+                            "scenery": 1,
+                            "bamboos": 1,
+                            "bamboo": 1
                         },
                         "next": {}
                     },
@@ -2409,7 +2464,10 @@
                             "security": 1,
                             "reliability": 1,
                             "precautions": 1,
-                            "safely": 1
+                            "safely": 1,
+                            "detector": 1,
+                            "allowed": 1,
+                            "visitors": 1
                         },
                         "next": {}
                     }
@@ -2661,32 +2719,36 @@
                     },
                     "drinks": {
                         "keywords": {
-                            "vodka": 1,
-                            "iced_teas": 1,
+                            "vodka": 2,
+                            "iced_teas": 2,
                             "snacks": 1,
-                            "cocktails": 1,
+                            "cocktails": 2,
                             "mojito": 1,
                             "milk": 1,
                             "fruit_juice": 1,
                             "ounce_bottle": 1,
                             "cup": 1,
                             "smoothie": 1,
-                            "bloody_mary": 1,
-                            "beer": 1,
+                            "bloody_mary": 2,
+                            "beer": 2,
                             "soft_drinks": 1,
                             "vitamin_water": 1,
                             "mixed_drinks": 1,
                             "coffee": 1,
                             "jug": 1,
                             "porcelain": 1,
-                            "drink": 1,
+                            "drink": 2,
+                            "drinks": 2,
                             "vase": 1,
                             "free_refills": 1,
                             "booze": 1,
                             "beverage": 1,
                             "soda": 1,
-                            "wine": 1,
-                            "champagne": 1
+                            "wine": 2,
+                            "champagne": 2,
+                            "cocktail": 2,
+                            "tea": 2,
+                            "complementary": 1
                         },
                         "next": {}
                     },
@@ -2907,7 +2969,12 @@
                                     "shrimp": 1,
                                     "red_snaper": 1,
                                     "oysters": 1,
-                                    "locally_caught": 1
+                                    "locally_caught": 1,
+                                    "sea": 1,
+                                    "beach": 1,
+                                    "restaurants": 1,
+                                    "food": 1,
+                                    "freshly": 1
                                 },
                                 "next": {}
                             },
@@ -2984,7 +3051,14 @@
                                     "pot": 1,
                                     "spread": 1,
                                     "fresh": 1,
-                                    "varied": 1
+                                    "varied": 1,
+                                    "delicious": 1,
+                                    "tasty": 1,
+                                    "morning": 1,
+                                    "selection": 1,
+                                    "wide": 1,
+                                    "beach": 1,
+                                    "club": 1
                                 },
                                 "next": {}
                             },
@@ -3083,16 +3157,16 @@
                             "cooking": 1,
                             "tapas_bar": 1,
                             "dinner": 2,
-                            "dining": 2,
+                            "dining": 1,
                             "pizzeria": 1,
                             "pizza": 1,
                             "bistro": 1,
                             "seafood_restaurant": 1,
-                            "food": 2,
+                            "food": 1,
                             "lunch": 2,
                             "eatery": 1,
                             "diners": 1,
-                            "kitchen": 2,
+                            "kitchen": 1,
                             "dishes": 1,
                             "restaurant": 1,
                             "waiter": 1,
@@ -3104,10 +3178,13 @@
                             "thai_restaurant": 1,
                             "restaurants": 0,
                             "mezze": 1,
-                            "course": 2,
+                            "course": 1,
                             "reservation": 1,
                             "lamb": 1,
-                            "cooked": 1
+                            "cooked": 1,
+                            "tasty": 1,
+                            "breakfast": 0,
+                            "table": 1
                         },
                         "next": {}
                     }
@@ -3322,7 +3399,13 @@
                                     "jog": 1,
                                     "yomp": 1,
                                     "jaunt": 1,
-                                    "market": 1
+                                    "market": 1,
+                                    "reception": 1,
+                                    "outside": 1,
+                                    "reasonable": 1,
+                                    "tour": 1,
+                                    "morning": 1,
+                                    "fields": 1
                                 },
                                 "next": {}
                             },
@@ -3772,7 +3855,10 @@
                             "singles": 1,
                             "couples": 1,
                             "contingent": 1,
-                            "guests": 1
+                            "guests": 1,
+                            "cake": 1,
+                            "wedding_cake": 1,
+                            "anniversary": 1
                         },
                         "next": {}
                     },
@@ -3842,7 +3928,9 @@
                             "terrace": 1,
                             "gardens": 2,
                             "olive": 1,
-                            "groves": 1
+                            "groves": 1,
+                            "beach": 1,
+                            "club": 1
                         },
                         "next": {}
                     },
@@ -3855,7 +3943,7 @@
                             "spa": 0,
                             "cardio": 1,
                             "carpet": 1,
-                            "bathroom": 1,
+                            "bathroom": 0,
                             "pilates": 1,
                             "gym_sessions": 1,
                             "aerobic": 1,
@@ -3895,7 +3983,7 @@
                     "elevator": {
                         "keywords": {
                             "hallway": 1,
-                            "bathroom": 1,
+                            "bathroom": 0,
                             "door": 1,
                             "upstairs": 1,
                             "staircase": 1,
@@ -4015,7 +4103,9 @@
                                     "hot_tub": 1,
                                     "spa": 0,
                                     "pool": 1,
-                                    "pools": 1
+                                    "pools": 1,
+                                    "massage": 0,
+                                    "spa": 0
                                 },
                                 "next": {}
                             },
@@ -4035,7 +4125,16 @@
                                     "river": 1,
                                     "pool": 2,
                                     "swimming": 2,
-                                    "pools": 2
+                                    "pools": 2,
+                                    "clean": 1,
+                                    "private": 1,
+                                    "massage": 0,
+                                    "spa": 0,
+                                    "access": 1,
+                                    "stairs": 1,
+                                    "outdoor": 1,
+                                    "shower": 1,
+                                    "gazebo": 1
                                 },
                                 "next": {}
                             },
@@ -4063,7 +4162,13 @@
                                     "spa_treatment": 1,
                                     "wellness_centre": 1,
                                     "spa_treatments": 1,
-                                    "massage": 1
+                                    "massage": 2,
+                                    "complementary": 1,
+                                    "cost": 1,
+                                    "ambience": 1,
+                                    "expensive": 1,
+                                    "cheap": 1,
+                                    "beautifully": 1
                                 },
                                 "next": {}
                             }
@@ -4076,6 +4181,8 @@
                             "world_wide_web": 1,
                             "blogging_platform": 1,
                             "wifi": 2,
+                            "wi_fi": 2,
+                            "free": 1,
                             "computer": 1,
                             "messaging_service": 1,
                             "web_sites": 1,
@@ -4122,18 +4229,23 @@
                     "banquet": {
                         "keywords": {
                             "theater": 1,
-                            "luncheon": 2,
+                            "luncheon": 1,
                             "tableware": 1,
                             "seat": 1,
-                            "dining": 2,
-                            "dinner": 2,
+                            "dining": 1,
+                            "dinner": 1,
                             "champagne_reception": 2,
-                            "gala-dinner": 1,
+                            "gala-dinner": 2,
                             "reception": 2,
                             "carpet": 1,
                             "banquet": 2,
                             "cocktail_reception": 2,
-                            "banquets": 2
+                            "banquets": 2,
+                            "romantic": 1,
+                            "food": 1,
+                            "special": 1,
+                            "most": 1,
+                            "imaginable": 1
                         },
                         "next": {}
                     },
@@ -4172,19 +4284,21 @@
                             "front": 0,
                             "yard": 1,
                             "fireplace": 1,
-                            "pool": 0,
+                            "pool": 1,
                             "lawn": 1,
                             "bar": 1,
                             "romantic": 1,
                             "log_fire": 1,
-                            "outdoor_seating": 2,
+                            "outdoor_seating": 1,
                             "roof": 1,
                             "picnic_tables": 1,
                             "private_terrace": 1,
                             "roof_deck": 1,
                             "dining_room": 1,
                             "patio": 2,
-                            "sun": 1
+                            "sun": 1,
+                            "people": 1,
+                            "view": 1
                         },
                         "next": {}
                     }
@@ -4292,7 +4406,8 @@
                             "perfect": 1,
                             "everything": 1,
                             "front": 0,
-                            "traffic": 1
+                            "traffic": 1,
+                            "buggy": 1
                         },
                         "next": {}
                     },
@@ -4312,7 +4427,8 @@
                             "perfect": 1,
                             "everything": 1,
                             "front": 0,
-                            "traffic": 1
+                            "traffic": 1,
+                            "buggy": 1
                         },
                         "next": {}
                     },
@@ -4331,7 +4447,8 @@
                             "perfect": 1,
                             "everything": 1,
                             "front": 0,
-                            "traffic": 1
+                            "traffic": 1,
+                            "buggy": 1
                         },
                         "next": {}
                     },
@@ -4363,7 +4480,8 @@
                             "perfect": 1,
                             "everything": 1,
                             "front": 0,
-                            "traffic": 0
+                            "traffic": 0,
+                            "buggy": 1
                         },
                         "next": {}
                     },
@@ -4394,7 +4512,8 @@
                             "traffic": 0,
                             "beaches": 2,
                             "resort": 1,
-                            "sunset": 1
+                            "sunset": 1,
+                            "buggy": 1
                         },
                         "next": {}
                     },
@@ -4458,7 +4577,10 @@
                             "clubs": 1,
                             "stones": 1,
                             "bars": 1,
-                            "nightlife": 1
+                            "nightlife": 1,
+                            "mart": 1,
+                            "minimart": 1,
+                            "buggy": 1
                         },
                         "next": {}
                     }
@@ -4714,7 +4836,7 @@
                         "next": {
                             "general-service": {
                                 "keywords": {
-                                    "team": 2,
+                                    "team": 1,
                                     "service": 2,
                                     "staff": 2,
                                     "trips": 1,
@@ -4724,7 +4846,7 @@
                                     "people": 1,
                                     "desk": 1,
                                     "concierge": 2,
-                                    "services": 2,
+                                    "services": 1,
                                     "front": 1,
                                     "guided": 1,
                                     "tour": 1,
@@ -4733,13 +4855,25 @@
                                     "hospitality": 1,
                                     "experience": 1,
                                     "escort": 1,
-                                    "reception": 2,
+                                    "reception": 1,
                                     "friendliness": 1,
                                     "friendly": 1,
                                     "gladly": 1,
                                     "stay": 1,
                                     "special": 1,
-                                    "helpful": 1
+                                    "wonderful": 1,
+                                    "delightful": 1,
+                                    "everyone": 1,
+                                    "always": 1,
+                                    "polite": 1,
+                                    "cheerful": 1,
+                                    "advertising": 1,
+                                    "ring": 1,
+                                    "rung": 1,
+                                    "organised": 1,
+                                    "faces": 1,
+                                    "smiling": 1,
+                                    "smiley": 1
                                 },
                                 "next": {}
                             },
@@ -4763,14 +4897,14 @@
                             },
                             "laundry": {
                                 "keywords": {
-                                    "toilet": 1,
+                                    "toilet": 0,
                                     "cleaning_supplies": 1,
-                                    "desk": 1,
+                                    "desk": 0,
                                     "wash": 1,
                                     "towels": 1,
                                     "liquid_detergent": 1,
                                     "baby_wipes": 1,
-                                    "washrooms": 1,
+                                    "washrooms": 0,
                                     "nappies": 1,
                                     "dishwashing": 1,
                                     "linens": 1,
@@ -4824,7 +4958,15 @@
                                     "preparing_meals": 1,
                                     "mini_bar": 1,
                                     "housekeeping": 2,
-                                    "knocked": 1
+                                    "knocked": 1,
+                                    "clean": 1,
+                                    "cleaned": 1,
+                                    "room": 1,
+                                    "spotlessly": 1,
+                                    "everything": 1,
+                                    "excellent": 1,
+                                    "staff": 1,
+                                    "everyday": 1
                                 },
                                 "next": {}
                             }
@@ -4959,7 +5101,11 @@
                                     "cab": 1,
                                     "shuttle": 1,
                                     "town": 1,
-                                    "free": 1
+                                    "free": 1,
+                                    "arrival": 1,
+                                    "greeted": 1,
+                                    "smile": 1,
+                                    "nice": 1
                                 },
                                 "next": {}
                             },
@@ -5006,20 +5152,31 @@
                                     "reservation": 1,
                                     "personally": 1,
                                     "met": 1,
-                                    "meet": 1
+                                    "meet": 1,
+                                    "staff": 1,
+                                    "faces": 1
                                 },
                                 "next": {}
                             },
                             "checkin": {
                                 "keywords": {
-                                    "check_in": 1,
+                                    "check_in": 2,
                                     "procedures": 1,
                                     "counter": 1,
                                     "valet": 1,
                                     "concierge": 1,
                                     "receptionist": 1,
                                     "professional": 1,
-                                    "alloted": 1
+                                    "alloted": 1,
+                                    "upgrade": 1,
+                                    "upgraded": 1,
+                                    "welcoming": 1,
+                                    "level": 1,
+                                    "freebie": 1,
+                                    "room": 1,
+                                    "luggage": 1,
+                                    "front": 1,
+                                    "lobby": 1
                                 },
                                 "next": {}
                             },
