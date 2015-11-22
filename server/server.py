@@ -177,21 +177,21 @@ def convert_into_presentation_format(final_results, search_city, search_attr, ou
             image_arr = final_results[hotel_id]['attribute_details'][search_attr]['images']
             if len(image_arr) > 0:
                 obj['image'] = image_arr[0][0]
-                obj['score'] = len(image_arr) * 10
+                #obj['score'] = len(image_arr) * 10
         else:
             for in_attr in final_results[hotel_id]['attribute_details']:
                 if 'images' in final_results[hotel_id]['attribute_details'][in_attr]:
                     image_arr = final_results[hotel_id]['attribute_details'][in_attr]['images']
                     if len(image_arr) > 0:
                         obj['image'] = image_arr[0][0]
-                        obj['score'] = len(image_arr) / 2
+                        #obj['score'] = len(image_arr) / 2
             if 'image' not in obj:
                 try:
                     print 'error 11: using default image for hotel: ' + obj['name'].encode('utf-8')
                 except UnicodeDecodeError:
                     print 'UnicodeDecodeError for hotel_id: ' + str(hotel_id)
                 obj['image'] = default_image
-                obj['score'] = -1
+                #obj['score'] = -1
         #attribute summary
         sentiment_arr = sentiment_graph.items()
         sentiment_arr.sort(key=lambda x: x[1], reverse=True)
@@ -209,7 +209,10 @@ def convert_into_presentation_format(final_results, search_city, search_attr, ou
         popular_adjective = None
         if adj_list == None or len(adj_list) == 0:
             popular_adjective = popular_sentiment.lower()  # XXX: Some handling here.
-            #obj['attribute_summary'] = 'Most popular sentiment around ' + search_attr + ' is ' + str(popular_adjective)
+            try:
+                obj['attribute_summary'] = 'Most popular sentiment around ' + search_attr + ' is ' + str(popular_adjective)
+            except UnicodeDecodeError:
+                print 'UnicodeDecodeError error for hotel_id: ' + str(hotel_id)
             obj['score'] = 0
         else:
             positive, negative, neutral = filter_adjectives(adj_list)

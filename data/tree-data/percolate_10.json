@@ -3223,22 +3223,22 @@
                     },
                     "restaurant": {
                         "keywords": {
-                            "oyster_bar": 1,
-                            "indoor": 1,
+                            "oyster_bar": 0,
+                            "indoor": 0,
                             "chef": 1,
-                            "tapas_restaurant": 1,
+                            "tapas_restaurant": 0,
                             "cafe": 1,
                             "michelin_starrred_restaurant": 1,
                             "service": 0,
                             "menu": 1,
                             "cooking": 1,
-                            "tapas_bar": 1,
+                            "tapas_bar": 0,
                             "dinner": 2,
                             "dining": 1,
-                            "pizzeria": 1,
-                            "pizza": 1,
-                            "bistro": 1,
-                            "seafood_restaurant": 1,
+                            "pizzeria": 0,
+                            "pizza": 0,
+                            "bistro": 0,
+                            "seafood_restaurant": 0,
                             "food": 1,
                             "lunch": 2,
                             "eatery": 1,
@@ -3275,7 +3275,9 @@
                             "eating": 1,
                             "onsite": 1,
                             "local": 1,
-                            "options": 1
+                            "options": 1,
+                            "breakfast": 0,
+                            "sumptuous": 0
                         },
                         "next": {}
                     }
