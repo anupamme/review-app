@@ -3109,6 +3109,7 @@
                                     "vegetable": 1,
                                     "grape": 1,
                                     "breakfast": 2,
+                                    "breakfasts": 2,
                                     "breads": 2,
                                     "sauce": 1,
                                     "banana": 1,
@@ -3133,7 +3134,8 @@
                                     "variety": 1,
                                     "feast": 1,
                                     "lavish": 1,
-                                    "quantity": 1
+                                    "quantity": 1,
+                                    "sumptuous": 2
                                 },
                                 "next": {}
                             },
@@ -3251,14 +3253,13 @@
                             "steakhouse": 1,
                             "osteria": 1,
                             "thai_restaurant": 1,
-                            "restaurants": 0,
+                            "restaurants": 1,
                             "mezze": 1,
                             "course": 1,
                             "reservation": 1,
                             "lamb": 1,
                             "cooked": 1,
                             "tasty": 1,
-                            "breakfast": 0,
                             "table": 1,
                             "vegetarian": 1,
                             "indian": 1,
