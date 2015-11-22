@@ -206,8 +206,6 @@ def convert_into_presentation_format(final_results, search_city, search_attr, ou
             popular_percent = -popular_percent
         obj['sentiment_percent'] = round(popular_percent)
         adj_list = output_adj[hotel_id][search_attr].items()
-        #if len(adj_list) > 0:
-            #print 'length of adjectives is > 0: ' + str(hotel_id) + ' ; ' + str(obj['name'])
         popular_adjective = None
         if adj_list == None or len(adj_list) == 0:
             popular_adjective = popular_sentiment.lower()  # XXX: Some handling here.
@@ -215,25 +213,11 @@ def convert_into_presentation_format(final_results, search_city, search_attr, ou
             obj['score'] = 0
         else:
             positive, negative, neutral = filter_adjectives(adj_list)
-#            print 'negatives: ' + str(negative)
-#            print 'positives: ' + str(positive)
-#            print 'neutral: ' + str(neutral)
-
             if 'positive' in popular_sentiment:
                 popular_adjective = finder.find_random_positive(search_attr)
-#            if len(positive) == 0:
-#                    popular_adjective = finder.find_random_positive()
-#                else:
-#                    positive.sort(key=lambda x: x[1], reverse=True)
-#                    popular_adjective = positive[0][0]
             else:
                 if 'negative' in popular_sentiment:
                     popular_adjective = finder.find_random_negative(search_attr)
-#                    if len(negative) == 0:
-#                        popular_adjective = finder.find_random_negative()
-#                    else:
-#                        negative.sort(key=lambda x: x[1], reverse=True)
-#                        popular_adjective = negative[0][0]
                 else:
                     if len(neutral) == 0:
                         popular_adjective = finder.find_random_neutral()
@@ -279,28 +263,6 @@ def filter_adjectives(output_adj):
                     neutral_list.append((adj, adj_score))
     return positive_list, negative_list, neutral_list
 
-#def create_sentiment_graph(output_sentiment):
-#    output = {}
-#    total = 0
-#    for path in output_sentiment:
-#        max_sentiment = None
-#        max_val = -1
-#        for sentiment in output_sentiment[path]:
-#            if sentiment not in output:
-#                output[sentiment] = {}
-#                output[sentiment]['count'] = 0
-#                output[sentiment]['attributes'] = []
-#            output[sentiment]['count'] = output[sentiment]['count'] + output_sentiment[path][sentiment]
-#            total += output_sentiment[path][sentiment]
-#            if output_sentiment[path][sentiment] > max_val:
-#                max_sentiment = sentiment
-#                max_val = output_sentiment[path][sentiment]
-#            total += 1
-#        output[max_sentiment]['attributes'].append(path)
-#    for sentiment in output:
-#        output[sentiment]['count'] = round((output[sentiment]['count'] * 100) / total)
-#    return output
-
 def create_inner_sentiment_graph(attr, output_sentiment, output_adj):
     #entry 1:
     count_positive = 0
@@ -316,7 +278,6 @@ def create_inner_sentiment_graph(attr, output_sentiment, output_adj):
                 count_negative += output_sentiment[sentiment]
             else:
                 count_neutral += output_sentiment[sentiment]
-    #print 'output_adj: ' + str(output_adj)
     positive, negative, neutral = filter_adjectives(output_adj.items())
     
     output = []
@@ -348,10 +309,20 @@ def create_attribute_graph(output_sentiment, output_adj, output_images, output_r
     for path in output_sentiment:
         #print 'path: ' + str(path)
         attr = path
+        
+        raw_reviews = []
+        if attr in output_raw_reviews:
+            raw_reviews_raw = output_raw_reviews[attr]
+            raw_reviews_raw.sort(key=lambda x: (x[1] * x[2]), reverse=True)
+            raw_reviews = map(lambda x: x[0], raw_reviews_raw)
+            
         image_arr = None
         if attr in output_images:
             image_arr = output_images[attr]
         else:
+            if len(raw_reviews) == 0:
+                # no image and no raw reviews means pass.
+                continue
             image_arr = []
             image_arr.append([default_image])
         sentiment_map = output_sentiment[path]
@@ -370,12 +341,6 @@ def create_attribute_graph(output_sentiment, output_adj, output_images, output_r
             less = sentiment_arr[2][0]
         else:
             less = 'None'
-        raw_reviews = []
-        if attr in output_raw_reviews:
-            raw_reviews_raw = output_raw_reviews[attr]
-            raw_reviews_raw.sort(key=lambda x: (x[1] * x[2]), reverse=True)
-            raw_reviews = map(lambda x: x[0], raw_reviews_raw)
-            
         obj = {
             "title": attr,
             "images": image_arr,
