@@ -211,7 +211,7 @@ def convert_into_presentation_format(final_results, search_city, search_attr, ou
             popular_adjective = popular_sentiment.lower()  # XXX: Some handling here.
             try:
                 obj['attribute_summary'] = 'Most popular sentiment around ' + search_attr + ' is ' + str(popular_adjective)
-            except UnicodeDecodeError:
+            except UnicodeEncodeError:
                 print 'UnicodeDecodeError error for hotel_id: ' + str(hotel_id)
             obj['score'] = 0
         else:
@@ -229,7 +229,7 @@ def convert_into_presentation_format(final_results, search_city, search_attr, ou
                         popular_adjective = neutral[0][0]
             try:
                 obj['attribute_summary'] = 'Most popular sentiment around ' + search_attr + ' is ' + str(popular_adjective)
-            except UnicodeDecodeError:
+            except UnicodeEncodeError:
                 print 'Encoding error for hotel_id: ' + str(hotel_id)
         if final_results[hotel_id]['details']['type'] == 'both':
             obj['score'] = 2 * obj['score']
