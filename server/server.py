@@ -320,7 +320,7 @@ def create_attribute_graph(output_sentiment, output_adj, output_images, output_r
         if attr in output_images:
             image_arr = output_images[attr]
         else:
-            if len(raw_reviews) == 0:
+            if len(raw_reviews) < 5:
                 # no image and no raw reviews means pass.
                 continue
             image_arr = []

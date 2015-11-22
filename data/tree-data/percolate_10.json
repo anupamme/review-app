@@ -1781,7 +1781,12 @@
                                     "flooded": 1,
                                     "leak": 1,
                                     "hot": 1,
-                                    "paper": 1
+                                    "paper": 1,
+                                    "hook": 1,
+                                    "sprayer": 1,
+                                    "bath": 1,
+                                    "shower": 1,
+                                    "tub": 1
                                 },
                                 "next": {}
                             }
@@ -1998,7 +2003,13 @@
                             "table": 1,
                             "aircon": 1,
                             "beds": 1,
-                            "solid": 1
+                            "solid": 1,
+                            "comfy": 1,
+                            "sheets": 1,
+                            "fireplace": 1,
+                            "decorated": 1,
+                            "rose": 1,
+                            "petals": 1
                         },
                         "next": {}
                     }
@@ -2115,7 +2126,8 @@
                             "walls": 1,
                             "area": 1,
                             "areas": 1,
-                            "happy": 1
+                            "happy": 1,
+                            "large": 2
                         },
                         "next": {}
                     },
@@ -2495,7 +2507,7 @@
                             "safety_procedures": 1,
                             "safety_precautions": 1,
                             "safety_standards": 1,
-                            "safe": 1,
+                            "safe": 2,
                             "unsafe": 1,
                             "emergency_exits": 1,
                             "safety_administration": 1,
@@ -2513,7 +2525,10 @@
                             "safely": 1,
                             "detector": 1,
                             "allowed": 1,
-                            "visitors": 1
+                            "visitors": 1,
+                            "night": 1,
+                            "trouble": 1,
+                            "felt": 1
                         },
                         "next": {}
                     }
@@ -2766,7 +2781,7 @@
                     "drinks": {
                         "keywords": {
                             "vodka": 2,
-                            "iced_teas": 2,
+                            "iced_teas": 1,
                             "snacks": 1,
                             "cocktails": 2,
                             "mojito": 1,
@@ -2793,7 +2808,7 @@
                             "wine": 2,
                             "champagne": 2,
                             "cocktail": 2,
-                            "tea": 2,
+                            "tea": 1,
                             "complementary": 1
                         },
                         "next": {}
@@ -3113,7 +3128,12 @@
                                     "functional": 1,
                                     "side": 1,
                                     "tasty": 1,
-                                    "available": 1
+                                    "available": 1,
+                                    "huge": 1,
+                                    "variety": 1,
+                                    "feast": 1,
+                                    "lavish": 1,
+                                    "quantity": 1
                                 },
                                 "next": {}
                             },
@@ -3247,7 +3267,14 @@
                             "side": 1,
                             "clean": 1,
                             "large": 1,
-                            "variety": 1
+                            "variety": 1,
+                            "smell": 1,
+                            "kitchen": 1,
+                            "conversation": 1,
+                            "eating": 1,
+                            "onsite": 1,
+                            "local": 1,
+                            "options": 1
                         },
                         "next": {}
                     }
@@ -4248,7 +4275,8 @@
                                     "parlour": 1,
                                     "quality": 1,
                                     "service": 1,
-                                    "cheap": 1
+                                    "cheap": 1,
+                                    "carefree": 1
                                 },
                                 "next": {}
                             }
@@ -4306,7 +4334,10 @@
                             "wireless": 2,
                             "reception": 1,
                             "available": 1,
-                            "average": 1
+                            "average": 1,
+                            "wi_fi": 1,
+                            "spot": 1,
+                            "charge": 1
                         },
                         "next": {}
                     },
@@ -4382,7 +4413,9 @@
                             "patio": 2,
                             "sun": 1,
                             "people": 1,
-                            "view": 1
+                            "view": 1,
+                            "relaxing": 1,
+                            "deck": 1
                         },
                         "next": {}
                     }
@@ -4684,7 +4717,8 @@
                             "regular": 1,
                             "bus": 1,
                             "shuttle": 1,
-                            "square": 1
+                            "square": 1,
+                            "short": 1
                         },
                         "next": {}
                     }
@@ -4991,7 +5025,10 @@
                                     "cake": 1,
                                     "just": 1,
                                     "fun": 1,
-                                    "servers": 1
+                                    "servers": 1,
+                                    "care": 1,
+                                    "warm": 1,
+                                    "detail": 1
                                 },
                                 "next": {}
                             },
@@ -5223,7 +5260,8 @@
                                     "arrival": 1,
                                     "greeted": 1,
                                     "smile": 1,
-                                    "nice": 1
+                                    "nice": 1,
+                                    "transfers": 1
                                 },
                                 "next": {}
                             },
