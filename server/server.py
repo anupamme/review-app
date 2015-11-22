@@ -209,7 +209,7 @@ def convert_into_presentation_format(final_results, search_city, search_attr, ou
         popular_adjective = None
         if adj_list == None or len(adj_list) == 0:
             popular_adjective = popular_sentiment.lower()  # XXX: Some handling here.
-            obj['attribute_summary'] = 'Most popular sentiment around ' + search_attr + ' is ' + str(popular_adjective)
+            #obj['attribute_summary'] = 'Most popular sentiment around ' + search_attr + ' is ' + str(popular_adjective)
             obj['score'] = 0
         else:
             positive, negative, neutral = filter_adjectives(adj_list)
