@@ -148,7 +148,6 @@ def merge_results(images, hashtags, sentiment, adjectives):
  
 def convert_into_presentation_format(final_results, search_city, search_attr, output_adj):
     presentation_json = []
-    
     for hotel_id in final_results:
         obj = {}
         obj['hotel_id'] = hotel_id
@@ -210,7 +209,7 @@ def convert_into_presentation_format(final_results, search_city, search_attr, ou
         if adj_list == None or len(adj_list) == 0:
             popular_adjective = popular_sentiment.lower()  # XXX: Some handling here.
             try:
-                obj['attribute_summary'] = 'Most popular sentiment around ' + search_attr + ' is ' + str(popular_adjective)
+                #obj['attribute_summary'] = 'Most popular sentiment around ' + search_attr + ' is ' + str(popular_adjective)
             except UnicodeEncodeError:
                 print 'UnicodeDecodeError error for hotel_id: ' + str(hotel_id)
             obj['score'] = 0
@@ -228,13 +227,14 @@ def convert_into_presentation_format(final_results, search_city, search_attr, ou
                         neutral.sort(key=lambda x: x[1], reverse=True)
                         popular_adjective = neutral[0][0]
             try:
-                obj['attribute_summary'] = 'Most popular sentiment around ' + search_attr + ' is ' + str(popular_adjective)
+                #obj['attribute_summary'] = 'Most popular sentiment around ' + search_attr + ' is ' + str(popular_adjective)
             except UnicodeEncodeError:
                 print 'Encoding error for hotel_id: ' + str(hotel_id)
         if final_results[hotel_id]['details']['type'] == 'both':
             obj['score'] = 2 * obj['score']
         presentation_json.append(obj)
-    presentation_json.sort(key=lambda x: x['sentiment_percent'] * x['score'], reverse=True)
+#    presentation_json.sort(key=lambda x: x['sentiment_percent'] * x['score'], reverse=True)
+    presentation_json.sort(key=lambda x: x['sentiment_percent'], reverse=True)
     return presentation_json
 
 def create_sentiment_graph(output_sentiment):
@@ -323,7 +323,7 @@ def create_attribute_graph(output_sentiment, output_adj, output_images, output_r
         if attr in output_images:
             image_arr = output_images[attr]
         else:
-            if len(raw_reviews) < 5:
+            if len(raw_reviews) == 0:
                 # no image and no raw reviews means pass.
                 continue
             image_arr = []

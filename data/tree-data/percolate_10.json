@@ -1295,7 +1295,9 @@
                             "heavily_discounted": 1,
                             "discounting": 1,
                             "money": 1,
-                            "exorbitant": 1
+                            "exorbitant": 1,
+                            "cheap": 1,
+                            "bargain": 2
                         },
                         "next": {}
                     }
@@ -2180,7 +2182,8 @@
                             "infested": 1,
                             "clean": 1,
                             "room": 1,
-                            "cleanliness": 1
+                            "cleanliness": 1,
+                            "overall": 1
                         },
                         "next": {}
                     }
@@ -3072,17 +3075,17 @@
                                     "veg": 1,
                                     "raw_food": 1,
                                     "samosas": 1,
-                                    "vegan_options": 1,
-                                    "vegan_dishes": 1,
+                                    "vegan_options": 2,
+                                    "vegan_dishes": 2,
                                     "paneer": 1,
-                                    "vegan": 1,
+                                    "vegan": 2,
                                     "veggie_burgers": 1,
                                     "gluten_free": 1,
                                     "vegetarian_food": 1,
-                                    "vegetarians": 1,
+                                    "vegetarians": 2,
                                     "meals": 1,
                                     "gluten_intolerant": 1,
-                                    "vegetarian": 1,
+                                    "vegetarian": 2,
                                     "macrobiotic": 1,
                                     "aloo": 1,
                                     "cooked": 1,
