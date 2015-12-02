@@ -28,22 +28,21 @@ def get_hotel_id(hotel_name, hotel_id_map):
     return -1
 
 def get_review_details(attribute_seed, attribute_adjective_map, sent):
+    
     try:
         res_obj = text_p.find_attribute_2(attribute_seed['root'], sent)
         path_with_score = res_obj['path']
         if path_with_score == None or path_with_score == []:
             'path is none for line: ' + str(sent)
             return None
-        #print 'path_with_score: ' + str(path_with_score)
         path = map(lambda x: x[0], path_with_score)
         score = map(lambda x: x[1], path_with_score)
-        #print 'score: ' + str(score)
         cumulative_score = reduce(lambda x, y: x * y, score, 1.0)
         adj_list, sentiment = text_p.find_sentiment_adjective(attribute_adjective_map, path, sent)
+        return {'path': path, 'sentiment': sentiment, 'adj_list': adj_list, 'cumulative_score': cumulative_score}
     except TypeError:
         print 'Type Error in attribute_adjective_finder for line: ' + str(sent)
         return None
-    return {'path': path, 'sentiment': sentiment, 'adj_list': adj_list, 'cumulative_score': cumulative_score}
 
 def load_json(file_name):
     return json.loads(open(file_name, 'r').read())

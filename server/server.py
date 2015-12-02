@@ -40,6 +40,11 @@ app.positives = json.loads(open(positive_file, 'r').read())
 app.negatives = json.loads(open(negative_file, 'r').read())
 text_p.load_model_files()
 
+def is_greater(x, val):
+    if x > val:
+        return True
+    return False
+
 def do_location_query(loc_array):
     max_results = []
     if loc_array == None:
@@ -317,7 +322,8 @@ def create_attribute_graph(output_sentiment, output_adj, output_images, output_r
         if attr in output_raw_reviews:
             raw_reviews_raw = output_raw_reviews[attr]
             raw_reviews_raw.sort(key=lambda x: (x[1] * x[2]), reverse=True)
-            raw_reviews = map(lambda x: x[0], raw_reviews_raw)
+            raw_reviews_filter = filter(lambda x: is_greater(x, 2), raw_reviews_raw)
+            raw_reviews = map(lambda x: x[0], raw_reviews_filter)
             
         image_arr = None
         if attr in output_images:

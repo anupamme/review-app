@@ -1867,20 +1867,20 @@
                                 "keywords": {
                                     "percale": 1,
                                     "thread_count": 1,
-                                    "comforters": 1,
-                                    "bed_linens": 1,
-                                    "bedspreads": 1,
+                                    "comforters": 2,
+                                    "bed_linens": 2,
+                                    "bedspreads": 2,
                                     "egyptian_cotton": 1,
-                                    "towels": 1,
+                                    "towels": 2,
                                     "seets": 1,
                                     "molten_brown_toiletries": 1,
-                                    "linen": 1,
-                                    "bedding": 1,
+                                    "linen": 2,
+                                    "bedding": 2,
                                     "pillowcases": 1,
                                     "tablecloths": 1,
                                     "robe": 1,
-                                    "table_linens": 1,
-                                    "pillows": 1,
+                                    "table_linens": 2,
+                                    "pillows": 2,
                                     "robes": 1,
                                     "frette": 1,
                                     "faboo": 1,
@@ -1892,7 +1892,8 @@
                                     "pillow_menu": 1,
                                     "bedspread": 1,
                                     "bed_linen": 1,
-                                    "smelly": 1
+                                    "smelly": 1,
+                                    "clean": 1
                                 },
                                 "next": {}
                             },
@@ -1911,7 +1912,8 @@
                                     "robe": 1,
                                     "pajamas": 1,
                                     "dressing_gown": 1,
-                                    "slippers": 1
+                                    "slippers": 1,
+                                    "clean": 1
                                 },
                                 "next": {}
                             },
@@ -1974,7 +1976,13 @@
                             "a/c": 2,
                             "ton": 1,
                             "split": 1,
-                            "fingertips": 1
+                            "fingertips": 1,
+                            "toilet": 1,
+                            "clean": 1,
+                            "shower": 1,
+                            "sink": 1,
+                            "toilet": 1
+                            
                         },
                         "next": {}
                     },
@@ -2129,7 +2137,8 @@
                             "area": 1,
                             "areas": 1,
                             "happy": 1,
-                            "large": 2
+                            "large": 2,
+                            "suite": 1
                         },
                         "next": {}
                     },
@@ -2180,9 +2189,9 @@
                             "feast": 1,
                             "mosses": 1,
                             "infested": 1,
-                            "clean": 1,
+                            "clean": 2,
                             "room": 1,
-                            "cleanliness": 1,
+                            "cleanliness": 2,
                             "overall": 1
                         },
                         "next": {}
@@ -3138,7 +3147,7 @@
                                     "feast": 1,
                                     "lavish": 1,
                                     "quantity": 1,
-                                    "sumptuous": 2
+                                    "sumptuous": 1
                                 },
                                 "next": {}
                             },
@@ -3242,13 +3251,13 @@
                             "pizza": 0,
                             "bistro": 0,
                             "seafood_restaurant": 0,
-                            "food": 1,
+                            "food": 2,
                             "lunch": 2,
                             "eatery": 1,
                             "diners": 1,
                             "kitchen": 1,
                             "dishes": 1,
-                            "restaurant": 1,
+                            "restaurant": 2,
                             "waiter": 1,
                             "trattoria": 1,
                             "italian_restaurant": 1,
@@ -3256,7 +3265,7 @@
                             "steakhouse": 1,
                             "osteria": 1,
                             "thai_restaurant": 1,
-                            "restaurants": 1,
+                            "restaurants": 2,
                             "mezze": 1,
                             "course": 1,
                             "reservation": 1,
@@ -3279,8 +3288,8 @@
                             "onsite": 1,
                             "local": 1,
                             "options": 1,
-                            "breakfast": 0,
-                            "sumptuous": 0
+                            "prepared": 1,
+                            "hygiene": 1
                         },
                         "next": {}
                     }
@@ -4724,7 +4733,16 @@
                             "bus": 1,
                             "shuttle": 1,
                             "square": 1,
-                            "short": 1
+                            "short": 1,
+                            "center": 2,
+                            "touristic": 1,
+                            "markets": 1,
+                            "souvenirs": 1,
+                            "access": 1,
+                            "nearby": 1,
+                            "easy": 1,
+                            "locality": 1,
+                            "exactly": 1
                         },
                         "next": {}
                     }
@@ -5034,7 +5052,8 @@
                                     "servers": 1,
                                     "care": 1,
                                     "warm": 1,
-                                    "detail": 1
+                                    "detail": 1,
+                                    "boys": 1
                                 },
                                 "next": {}
                             },
@@ -5316,7 +5335,12 @@
                                     "met": 1,
                                     "meet": 1,
                                     "staff": 1,
-                                    "faces": 1
+                                    "faces": 1,
+                                    "arrival": 1,
+                                    "tea": 1,
+                                    "shown": 1,
+                                    "room": 1,
+                                    "freshly": 1
                                 },
                                 "next": {}
                             },
