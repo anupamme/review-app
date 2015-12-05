@@ -269,12 +269,22 @@ def find_city_all_hotels_attributes(city_name):
 
     return output_sentiment, output_adjective, output_raw_review
 
-def find_global_images(current_count):
-    attr_list = []
-    while current_count < len(sys.argv):
-        attr_list.append(sys.argv[current_count])
-        current_count += 1
-    
+def find_global_images(attribute):
+    assert(attribute != None)
+    elastic_results = es.find_images_for_attribute(attribute)
+    output = {} # city_id -> hotel_id -> [image]
+    for item in elastic_results['hits']['hits']:
+        _src = item['_source']
+        city_id = _src['city_id'].encode('utf-8')
+        if city_id not in output:
+            output[city_id] = []
+        output[city_id].append(_src)
+    output_sort = {}
+    for city_id in output:
+        image_list = output[city_id]
+        image_list.sort(key=lambda x: x['score'], reverse=True)
+        output_sort[city_id] = image_list
+    return output_sort
 
 def find_city_all_hotels_images(city_name):
     elastic_results = es.find_city_images(city_name)
@@ -448,8 +458,9 @@ if __name__ == "__main__":
                 if search_type == 'city':
                     assert(len(sys.argv) >= 4)
                     result = find_city_all_hotels_images(sys.argv[arg_count])
-                else search_type = 'global':
-                    result = find_global_images(arg_count)
+                else:
+                    if search_type == 'global':
+                        result = find_global_images(sys.argv[arg_count])
         else:
             if search_kind == 'both':
                 result = find_city_all_hotels_reviews_images(sys.argv[arg_count - 1])

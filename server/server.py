@@ -11,8 +11,17 @@ import re
 from os import path
 import sys
 import pdb
+import requests
+import urllib2
 
 sys.path.insert(0, 'scripts/lib/')
+sys.path.insert(0, '/Volumes/anupam_work/code/showup-code/instagram/scripts/')
+
+import search_users_2 as search
+import clarifai
+import socket
+from clarifai.client import ClarifaiApi
+clarifai_api = ClarifaiApi()
 
 import language_functions as text_p
 import query_parser_2 as qp
@@ -33,6 +42,7 @@ a.add_argument('search_str', type=str)
 a.add_argument('city', type=str)
 a.add_argument('hotel_id', type=str)
 a.add_argument('hash_tag', type=str)
+a.add_argument('code', type=str)
 
 app.attr_seed = json.loads(open(attribute_seed_file, 'r').read())
 app.hotel_name_data = json.loads(open(city_hotel_id_file, 'r').read())
@@ -428,7 +438,94 @@ def convert_into_presentation_format_hashtags(city, hash_tags_map, output_images
     results.sort(key=lambda x: x['sum_score'], reverse=True)
     output['results'] = results[:20]
     return output
-        
+
+
+def parse_more_data(next_obj):
+    return search.crawl_results(next_obj['next_url'])
+
+def filter_data(data, allowed_usernames):
+    return filter(lambda x: x['user']['username'] in allowed_usernames, data)
+
+def call_clarifai(image_arr):
+    global api
+    func = lambda x: x['images']['standard_resolution']['url']
+    filtered_arr = map(func, image_arr)
+    capped_images_arr = filtered_arr[:100]
+    print 'size of request: ' + str(len(capped_images_arr))
+    try:
+        #pdb.set_trace()
+        resp = clarifai_api.tag_image_urls(capped_images_arr)
+        print 'clarifai output: '
+        print str(resp)
+        return resp['results']
+    except clarifai.client.client.ApiError:
+        print 'error while querying: ' + str(filtered_arr)
+        return None
+    except clarifai.client.client.ApiThrottledError:
+        print 'throttle error while trying: ' + str(filtered_arr)
+        return None
+    except socket.error,v:
+        print 'socket error: ' + str(v)
+        return None
+    except urllib2.URLError:
+        print 'url lib error for: ' + str(filtered_arr)
+        return None
+
+def call_classifier(image_recog_arr):
+    path_with_score = []
+    output = {}
+    for image in image_recog_arr:
+        print 'image: ' + str(image)
+        text_p.findBestCategory_2(image['result']['tag']['classes'], image['result']['tag']['probs'], app.attr_seed['root'], path_with_score)
+        assert(path_with_score != None)
+        assert(path_with_score != [])
+        print 'path_with_score: ' + str(path_with_score)
+        path = path_with_score[len(path_with_score) - 1][0]
+        print 'path: ' + str(path)
+        str_path = str(path)
+        if str_path in output:
+            output[str_path].append(image['url'].encode('utf-8'))
+        else:
+            output[str_path] = [image['url'].encode('utf-8')]
+    return output
+    
+def wrapper(input_data):
+    output_1 = []
+    for key in input_data:
+        if 'pagination'  == key:
+            print 'pagination'
+            output_1 = output_1 + parse_more_data(input_data[key])
+        if 'data' == key:
+            output_1 = output_1 + input_data[key]
+    
+    # step 1 (filtered data):
+    hotel_usernames = ['beautifulhotels', 'beautifuldestinations']
+    output = []
+    output_2 = filter_data(output_1, hotel_usernames)
+    
+#    print 'output_2: ' + str(output_2)
+#    print 'output_2_len: ' + str(len(output_2))
+    
+    # step 2: (call clarifai):
+    output_3 = []
+    output_3 = call_clarifai(output_2)
+    
+#    print 'output_3: ' + str(output_3)
+#    print 'output_3_len: ' + str(len(output_3))
+    
+    # step 3 (call classifier)
+    output_4 = {}   # attribute -> count
+    output_4 = call_classifier(output_3)
+    
+    #print 'output_4: ' + str(output_4)
+    
+    # step 4 (spit out the data)
+    # sort output_4 in the order of values.
+    attrs = output_4.items()
+    attrs.sort(key=lambda x: len(x[1]), reverse=True)
+    
+    #print 'sorted_output_4: ' + str(output_4)
+    return attrs
             
 
 '''
@@ -502,7 +599,11 @@ class CityTagHandler(restful.Resource):
         search_city = args.get('city').lower()
         assert(search_city in specific_questions)
         return base_questions + specific_questions[search_city], 200
-        
+    
+class AttributeTagHandler(restful.Resource):
+    def post(self):
+        search_attr = args.get('search_str')
+        image_map = finder.find_global_images(search_attr)
 
 class HelloHandler(restful.Resource):
     def post(self):
@@ -531,6 +632,40 @@ class HelloHandler(restful.Resource):
         insert_hotel_details(search_city, final_results)
         presentation_json = convert_into_presentation_format(final_results, search_city, search_attr, output_adj)
         return presentation_json, 200
+    
+class InstagramHandler(restful.Resource):
+    def post(self):
+        args = a.parse_args()
+        instagram_code = args.get('code')
+        print 'insta code: ' + str(instagram_code)
+        # do post call to insagram.
+        payload = {
+            'client_id':'b847ab59b9c4487097277ada24a975bc',   
+            'client_secret':'c0f815c620004a09a5b5dff64512c3e9', 
+            'code': instagram_code, 
+            'grant_type':'authorization_code', 
+            'redirect_uri': 'http://showuphotels.com'
+        }
+        res = requests.post("https://api.instagram.com/oauth/access_token", data=payload)
+        obj = json.loads(res.text.encode('utf-8'))
+        print 'obj: ' + str(obj)
+        access_token = obj['access_token']
+        user_id = obj['user']['id']
+        like_json = json.loads(urllib2.urlopen('https://api.instagram.com/v1/users/self/media/liked?access_token=' + access_token).read())
+        inter_ = wrapper(like_json)
+        output = {}
+        output['instagramData'] = []
+        for item in inter_:
+            attr = item[0]
+            images = item[1]
+            obj = {}
+            obj['hashTag'] = attr
+            obj['imageUrl'] = images[0]
+            obj['likes'] = len(images)
+            obj['keywords'] = ['Irrestible', 'Breathtaking']
+            output['instagramData'].append(obj)
+        return output, 200
+        
         
 if __name__ == "__main__":
     cors = CORS(app)
@@ -541,5 +676,7 @@ if __name__ == "__main__":
     api.add_resource(HashTagHandler, '/hashtag')
     api.add_resource(HashTagSearchHandler, '/hashtag_listing')
     api.add_resource(CityTagHandler, '/search_str')
+    api.add_resource(AttributeTagHandler, '/search_attr')
+    api.add_resource(InstagramHandler, '/insta')
     print 'running server...'
     app.run(debug=True, port=8181, host="0.0.0.0")
