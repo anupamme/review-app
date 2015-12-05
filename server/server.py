@@ -602,8 +602,13 @@ class CityTagHandler(restful.Resource):
     
 class AttributeTagHandler(restful.Resource):
     def post(self):
+        args = a.parse_args()
         search_attr = args.get('search_str')
         image_map = finder.find_global_images(search_attr)
+        output = []
+        for city_id in image_map:
+            output = output + image_map[city_id]
+        return output, 200
 
 class HelloHandler(restful.Resource):
     def post(self):
