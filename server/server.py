@@ -607,7 +607,9 @@ class AttributeTagHandler(restful.Resource):
         image_map = finder.find_global_images(search_attr)
         output = []
         for city_id in image_map:
+            insert_hotel_details(city_id, image_map[city_id])
             output = output + image_map[city_id]
+        output.sort(key=lambda x: x['score'], reverse=True)
         return output, 200
 
 class HelloHandler(restful.Resource):
@@ -670,6 +672,10 @@ class InstagramHandler(restful.Resource):
             obj['keywords'] = ['Irrestible', 'Breathtaking']
             output['instagramData'].append(obj)
         return output, 200
+
+class InstaLoginHandler(restful.Resource):
+    def get(self):
+        html = open('html/index_insta.html', 'r').read()
         
         
 if __name__ == "__main__":
