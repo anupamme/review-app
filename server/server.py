@@ -132,17 +132,39 @@ def insert_hotel_details(city, final_results):
     #print 'city: ' + str(city)
     map_to = app.hotel_name_data[city]
     for hotel_id in final_results:
-        assert(hotel_id in app.hotel_name_data[city])
-        hotel_name = map_to[hotel_id]['name']
+        #assert(hotel_id in app.hotel_name_data[city])
         obj = {}
         obj['id'] = hotel_id
+        if hotel_id in app.hotel_name_data[city]:
+            print '###hotel id found $$$: ' + str(hotel_id)
+            hotel_name = map_to[hotel_id]['name']
+            obj['address'] = map_to[hotel_id]['address']
+            if 'location' in map_to[hotel_id]:
+                obj['location'] = map_to[hotel_id]['location']
+        else:
+            hotel_name = 'Default Name'
+        
         obj['name'] = hotel_name
         obj['score'] = final_results[hotel_id]['score']
-        obj['address'] = map_to[hotel_id]['address']
-        if 'location' in map_to[hotel_id]:
-            obj['location'] = map_to[hotel_id]['location']
+        
         obj['type'] = final_results[hotel_id]['type']
         final_results[hotel_id]['details'] = obj
+        
+def insert_hotel_details_hack(city, final_results):
+    map_to = app.hotel_name_data[city]
+    output = []
+    for item in final_results:
+        #assert(hotel_id in app.hotel_name_data[city])
+        hotel_id = item['hotel_id']
+        if hotel_id in app.hotel_name_data[city]:
+            item['name'] = map_to[hotel_id]['name']
+            
+            item['address'] = map_to[hotel_id]['address']
+            if 'location' in map_to[hotel_id]:
+                item['location'] = map_to[hotel_id]['location']
+        else:
+            item['name'] = 'Default Name'
+        
 
 def merge_results(images, hashtags, sentiment, adjectives):
     out = {}
@@ -607,7 +629,7 @@ class AttributeTagHandler(restful.Resource):
         image_map = finder.find_global_images(search_attr)
         output = []
         for city_id in image_map:
-            insert_hotel_details(city_id, image_map[city_id])
+            insert_hotel_details_hack(city_id, image_map[city_id])
             output = output + image_map[city_id]
         output.sort(key=lambda x: x['score'], reverse=True)
         return output, 200

@@ -276,15 +276,19 @@ def find_global_images(attribute):
     for item in elastic_results['hits']['hits']:
         _src = item['_source']
         city_id = _src['city_id'].encode('utf-8')
+        hotel_id = _src['hotel_id']
         if city_id not in output:
             output[city_id] = []
+#        if hotel_id not in output[city_id]:
+#            output[city_id][hotel_id] = []
+        
         output[city_id].append(_src)
-    output_sort = {}
-    for city_id in output:
-        image_list = output[city_id]
-        image_list.sort(key=lambda x: x['score'], reverse=True)
-        output_sort[city_id] = image_list
-    return output_sort
+#    output_sort = {}
+#    for city_id in output:
+#        image_list = output[city_id]
+#        image_list.sort(key=lambda x: x['score'], reverse=True)
+#        output_sort[city_id] = image_list
+    return output
 
 def find_city_all_hotels_images(city_name):
     elastic_results = es.find_city_images(city_name)
