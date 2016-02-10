@@ -177,11 +177,13 @@ output:
 '''
 def find_city_hotel_attributes(city_name, hotel_id):
     elastic_results = es.find_city_hotel_reviews(city_name, hotel_id)
+    print 'elastic_results: ' + str(elastic_results)
     output_sentiment = {}   # format is: 
     output_adjective = {}   # format is:
     output_raw_review = {} # format is attr -> [review_sentences]
     for item in elastic_results['hits']['hits']:
         item = extract_item(item)
+        print 'item: ' + str(item)
         path_dict = find_path(item)
         #print 'path_dict: ' +  str(path_dict)
         sentiment_dict = find_sentiment(item)

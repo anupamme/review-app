@@ -1,12 +1,12 @@
 import json
 import sys
 import re
-sys.path.insert(0, 'scripts/lib/')
 import multiprocessing as mp
 import random
 import googlemaps
 import gc
 
+sys.path.insert(0, '/Volumes/anupam_work/code/nlp-code/scripts/lib/')
 import language_functions as text_p
 
 count_so_far = -1
@@ -76,7 +76,7 @@ def parse_review(attribute_seed, attribute_adjective_map, raw_review, city_id, h
 #        return None
     try:
         complete_review = raw_review
-        review_sentences = re.split('\.|\?| !', complete_review)
+        review_sentences = re.split('\.|\?|!|\\r|\\n', complete_review)
     except Exception, e:
         print 'exception: ' + str(e)
     review_sentences_encode = []
@@ -200,7 +200,8 @@ if __name__ == "__main__":
 
                 hotel_count += 1
                 hotel_name = val['name']
-                hotel_id = get_hotel_id(hotel_name, hotel_id_map[city_id])
+#                hotel_id = get_hotel_id(hotel_name, hotel_id_map[city_id])
+                hotel_id = hotel_count
                 if hotel_id == -1:
                     print 'error 11: hotel_id not found for ' + hotel_name
                     continue

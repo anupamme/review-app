@@ -1,0 +1,74 @@
+value for money: discount_rate
+style:
+	boutique
+	family_friendly
+	classic
+bathroom:
+	shower
+	bathtub
+	floor
+	general
+room:
+	linens
+	bathrobe
+	curtains
+	appliances
+	furniture
+room_experience:
+	noise
+	privacy
+	cleanliness
+	spacious
+	balcony
+	smell
+	view
+hotel:
+	cleanliness
+	culture
+	aesthetics
+	safety
+food:
+	food-decor
+	drinks
+	bar
+	seafood
+	french
+	vegetarian
+	breakfast
+	thai
+	italian
+	restaurant
+activities:
+	bike-ride
+	water_activities
+	yoga
+	others
+amenities:
+	conference
+	recreation
+	garden
+	gym
+	elevator
+	internet
+	banquet
+	patio
+pool:	
+	infinity_pool
+	swimming_pool
+	spa
+proximitey:
+	mountains
+	airport
+	station
+	forest
+	sea
+	city_centre
+general-service (room service)
+medical_facilities
+laundry
+housekeeping
+pickup
+welcome
+checkin
+reception_desk
+checkout
