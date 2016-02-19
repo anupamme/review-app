@@ -6,7 +6,7 @@ import random
 import googlemaps
 import gc
 
-sys.path.insert(0, '/Volumes/anupam_work/code/nlp-code/scripts/lib/')
+sys.path.insert(0, '/Volumes/anupam_work/code/nlp-code/scripts/')
 import language_functions as text_p
 
 count_so_far = -1
@@ -37,7 +37,8 @@ def get_review_details(attribute_seed, attribute_adjective_map, sent):
             return None
         path = map(lambda x: x[0], path_with_score)
         score = map(lambda x: x[1], path_with_score)
-        cumulative_score = reduce(lambda x, y: x * y, score, 1.0)
+        #cumulative_score = reduce(lambda x, y: x * y, score, 1.0)
+        cumulative_score = score[-1]
         adj_list, sentiment = text_p.find_sentiment_adjective(attribute_adjective_map, path, sent)
         return {'path': path, 'sentiment': sentiment, 'adj_list': adj_list, 'cumulative_score': cumulative_score}
     except TypeError:
@@ -92,7 +93,7 @@ def parse_review(attribute_seed, attribute_adjective_map, raw_review, city_id, h
         if sent == None or sent == '':
             continue
         else:
-            print '###looking for: ' + str(sent)
+            #print '###looking for: ' + str(sent)
             result.append(get_review_details(attribute_seed, attribute_adjective_map, sent))
     
     sentiment_map = {}

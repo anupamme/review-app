@@ -1444,66 +1444,6 @@
                         },
                         "next": {}
                     },
-                    "family_friendly": {
-                        "keywords": {
-                            "nature_trails": 1,
-                            "themed": 1,
-                            "kiddie": 1,
-                            "jungle_themed": 1,
-                            "amusement_park": 1,
-                            "family_oriented": 1,
-                            "themed_rides": 1,
-                            "children": 2,
-                            "kids_activities": 1,
-                            "wholesome": 1,
-                            "family": 3,
-                            "entertainment": 1,
-                            "movie_screenings": 1,
-                            "all_inclusive_resort": 1,
-                            "friendly_amenities": 1,
-                            "arcade_games": 1,
-                            "adult_themed": 1,
-                            "waterslides": 1,
-                            "kid_friendly": 1,
-                            "walt_disney_world": 1,
-                            "hayrides": 1,
-                            "family_friendly": 1,
-                            "theme_parks": 1,
-                            "kids": 2,
-                            "theme_park": 1,
-                            "kids_programming": 1,
-                            "offbeat": 1,
-                            "slide": 1,
-                            "family-friendly": 1,
-                            "snallygaster": 1,
-                            "youth_oriented": 1,
-                            "musical_performances": 1,
-                            "disney_world": 1,
-                            "dining_options": 1,
-                            "dance_performances": 1,
-                            "birthday": 1,
-                            "celebration": 1,
-                            "oriented": 1,
-                            "quiet": 1,
-                            "peaceful": 1,
-                            "luxurious": 1,
-                            "baby": 2,
-                            "group": 1,
-                            "children_friendly": 1,
-                            "daughters": 2,
-                            "son": 2,
-                            "kids'": 2,
-                            "kid": 2,
-                            "zone": 1,
-                            "activities": 1,
-                            "toddler": 2,
-                            "friends": 1,
-                            "pool": 1,
-                            "park": 1,
-                            "area": 1
-                        },
-                        "next": {}
-                    },
                     "classic": {
                         "keywords": {
                             "whimsical": 1,
@@ -1541,6 +1481,167 @@
                             "classic": 3
                         },
                         "next": {}
+                    },
+                    "rustic": {
+                        "next": {},
+                        "keywords": {
+                            "farm": 3,
+                            "nature": 2,
+                            "lake": 2,
+                            "greenery": 2
+                        }
+                    }
+                }
+            },
+            "friendly": {
+                "keywords": {},
+                "next": {
+                    "family": {
+                        "next": {},
+                        "keywords": {
+                            "nature_trails": 1,
+                            "themed": 1,
+                            "jungle_themed": 1,
+                            "amusement_park": 1,
+                            "family_oriented": 1,
+                            "themed_rides": 1,
+                            "children": 1.5,
+                            "kids_activities": 1,
+                            "wholesome": 1,
+                            "family": 3,
+                            "entertainment": 1,
+                            "movie_screenings": 1,
+                            "all_inclusive_resort": 1,
+                            "friendly_amenities": 1,
+                            "arcade_games": 1,
+                            "adult_themed": 1,
+                            "waterslides": 1,
+                            "kid_friendly": 1,
+                            "walt_disney_world": 1,
+                            "hayrides": 1,
+                            "family_friendly": 1,
+                            "theme_parks": 1,
+                            "kids": 1.5,
+                            "theme_park": 1,
+                            "kids_programming": 1,
+                            "offbeat": 1,
+                            "slide": 1,
+                            "family-friendly": 1,
+                            "snallygaster": 1,
+                            "youth_oriented": 1,
+                            "musical_performances": 1,
+                            "disney_world": 1,
+                            "dining_options": 1,
+                            "dance_performances": 1,
+                            "birthday": 1,
+                            "celebration": 1,
+                            "oriented": 1,
+                            "quiet": 1,
+                            "peaceful": 1,
+                            "luxurious": 1,
+                            "baby": 1.5,
+                            "group": 1,
+                            "children_friendly": 1,
+                            "daughters": 1.5,
+                            "son": 1.5,
+                            "kids'": 1.5,
+                            "kid": 1.5,
+                            "zone": 1,
+                            "activities": 1,
+                            "toddler": 1.5,
+                            "friends": 1,
+                            "pool": 1,
+                            "park": 1,
+                            "area": 1,
+                            "friendly": 1.5,
+                            "activity": 1,
+                            "fishing": 1,
+                            "goose": 1,
+                            "horse": 1,
+                            "ride": 1,
+                            "lake": 1
+                        }
+                    },
+                    "kids": {
+                        "next": {},
+                        "keywords": {
+                            "nature_trails": 1,
+                            "themed": 1,
+                            "kiddie": 1,
+                            "jungle_themed": 1,
+                            "amusement_park": 1,
+                            "family_oriented": 1,
+                            "themed_rides": 1,
+                            "kid": 3,
+                            "kids_activities": 1,
+                            "wholesome": 1,
+                            "family": 1,
+                            "entertainment": 1,
+                            "movie_screenings": 1,
+                            "all_inclusive_resort": 1,
+                            "friendly_amenities": 1,
+                            "arcade_games": 1,
+                            "adult_themed": 1,
+                            "waterslides": 1,
+                            "kid_friendly": 1,
+                            "walt_disney_world": 1,
+                            "hayrides": 1,
+                            "family_friendly": 1,
+                            "theme_parks": 1,
+                            "kids": 1.5,
+                            "theme_park": 1,
+                            "kids_programming": 1,
+                            "offbeat": 1,
+                            "slide": 1,
+                            "family-friendly": 1,
+                            "snallygaster": 1,
+                            "youth_oriented": 1,
+                            "musical_performances": 1,
+                            "disney_world": 1,
+                            "dining_options": 1,
+                            "dance_performances": 1,
+                            "birthday": 1,
+                            "celebration": 1,
+                            "oriented": 1,
+                            "quiet": 1,
+                            "peaceful": 1,
+                            "luxurious": 1,
+                            "baby": 1.5,
+                            "group": 1,
+                            "children_friendly": 1,
+                            "daughters": 1.5,
+                            "son": 1.5,
+                            "kids'": 1.5,
+                            "kid": 1.5,
+                            "zone": 1,
+                            "activities": 1,
+                            "toddler": 1.5,
+                            "friends": 1,
+                            "pool": 1,
+                            "park": 1,
+                            "area": 1,
+                            "friendly": 1.5,
+                            "activity": 1,
+                            "fishing": 1,
+                            "goose": 1,
+                            "horse": 1,
+                            "ride": 1,
+                            "lake": 1
+                        }
+                    },
+                    "elderly": {
+                        "next": {},
+                        "keywords": {
+                            "elder": 3,
+                            "friendly": 2
+                        }
+                    },
+                    "couple": {
+                        "next": {},
+                        "keywords": {
+                            "couple": 3,
+                            "friendly": 2
+                        }
                     }
                 }
             },
@@ -1832,9 +1933,9 @@
                                 "keywords": {
                                     "bathroom": 3,
                                     "bath": 2,
-                                    "hot_water": 2,
-                                    "hot": 1,
-                                    "water": 1,
+                                    "hot_water": 1,
+                                    "hot": 2,
+                                    "water": 2,
                                     "cold": 1,
                                     "geyser": 1
                                 },
@@ -2054,7 +2155,7 @@
                             "desk": 1,
                             "mansion": 0,
                             "table": 1,
-                            "furniture": 2,
+                            "furniture": 3,
                             "sofa": 1,
                             "headboard": 1,
                             "decor": 1,
@@ -2071,7 +2172,11 @@
                             "fireplace": 1,
                             "decorated": 1,
                             "rose": 1,
-                            "petals": 1
+                            "petals": 1,
+                            "cot": 2,
+                            "single": 1,
+                            "couple": 1,
+                            "large": 1
                         },
                         "next": {}
                     }
@@ -2153,7 +2258,10 @@
                             "happy": 1,
                             "awesome": 1,
                             "valley": 1,
-                            "fascinating": 1
+                            "fascinating": 1,
+                            "sea_view": 2,
+                            "mountain_view": 2,
+                            "ocean_view": 2
                         },
                         "next": {}
                     },
@@ -3381,7 +3489,13 @@
                             "mouth": 1,
                             "watering": 1,
                             "desserts": 1,
-                            "dessert": 1
+                            "dessert": 1,
+                            "butter": 1,
+                            "nan": 1,
+                            "melt_in_the_mouth": 1,
+                            "tava": 1,
+                            "phulka": 1,
+                            "chapati": 1
                         },
                         "next": {}
                     }
@@ -3581,7 +3695,10 @@
                             "tai_chi": 1,
                             "things": 1,
                             "parks": 1,
-                            "activities": 2
+                            "activities": 2,
+                            "classes": 2,
+                            "class": 2,
+                            "salsa": 1
                         },
                         "next": {
                             "water_activities": {
@@ -4053,7 +4170,7 @@
                             "music": 1,
                             "performance": 1,
                             "drum": 1,
-                            "wedding": 2,
+                            "wedding": 1,
                             "clothing": 1,
                             "women": 1,
                             "extravagantly": 1,
@@ -4077,7 +4194,13 @@
                             "staff": 1,
                             "centre": 1,
                             "disco": 1,
-                            "activity": 1
+                            "activity": 1,
+                            "play": 3,
+                            "kid": 1,
+                            "game": 2,
+                            "room": 1,
+                            "entertaining": 1,
+                            "entertain": 1
                         },
                         "next": {}
                     },
@@ -4417,7 +4540,11 @@
                                     "special": 0,
                                     "star": 0,
                                     "facilities": 1,
-                                    "divine": 1
+                                    "divine": 1,
+                                    "reflexology": 1,
+                                    "manicures": 1,
+                                    "full_body": 1,
+                                    "scrubs": 1
                                 },
                                 "next": {}
                             }
@@ -5275,7 +5402,7 @@
                                     "toilet": 0,
                                     "cleaning_supplies": 1,
                                     "desk": 0,
-                                    "wash": 1,
+                                    "wash": 2,
                                     "towels": 1,
                                     "liquid_detergent": 1,
                                     "baby_wipes": 1,
@@ -5287,7 +5414,7 @@
                                     "washing_dishes": 1,
                                     "detergent": 1,
                                     "washer": 1,
-                                    "laundry": 2,
+                                    "laundry": 3,
                                     "washing_machine": 1,
                                     "wash_dishes": 1,
                                     "kitchen_utencils": 1,
@@ -5297,7 +5424,9 @@
                                     "dishwasher": 1,
                                     "washing": 1,
                                     "dirty_dishes": 1,
-                                    "doing_laundry": 1
+                                    "doing_laundry": 1,
+                                    "service": 2,
+                                    "clothes": 2
                                 },
                                 "next": {}
                             },
