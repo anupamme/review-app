@@ -7,6 +7,7 @@ import googlemaps
 import gc
 
 sys.path.insert(0, '/Volumes/anupam_work/code/nlp-code/scripts/')
+#sys.path.insert(0, '/home/mediratta/nlp-code/scripts/')
 import language_functions as text_p
 
 count_so_far = -1
