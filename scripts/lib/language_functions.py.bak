@@ -10,7 +10,6 @@ from ast import literal_eval
 import operator
 import time
 import pdb
-from functools import reduce
 
 model = None
 proc = None
@@ -64,7 +63,7 @@ def load_model_files():
     global model_file
     global proc
     global stanford_jars
-#    model = word2vec.Word2Vec.load_word2vec_format(model_file, binary=True)
+    model = word2vec.Word2Vec.load_word2vec_format(model_file, binary=True)
     proc = CoreNLP("parse", corenlp_jars=[stanford_jars])
     
 def is_model_loaded():
@@ -101,11 +100,11 @@ def find_best_attribute_multi_2(data_map, map_val, path):
     max_score = -1
     max_node = None
     for node in map_val['next']:
-        print('checking for node: ' + str(node))
+        print 'checking for node: ' + str(node)
         score = find_score(data_map, map_val['next'][node])
-        print('score: ' + str(score))
+        print 'score: ' + str(score)
         if score > max_score:
-            print(('win: max_score, new_score: ' + str(max_score) + ' ; ' + str(score) + ' ; ' + node))
+            print ('win: max_score, new_score: ' + str(max_score) + ' ; ' + str(score) + ' ; ' + node)
             max_score = score
             max_node = node
     if max_node == None:
@@ -131,7 +130,7 @@ def find_sub_obj(processed):
             obj_details = val
         if 'mod' in val[0]:
             mod_details = val
-    print('details: ' + str(subj_details) + ' ; ' + str(obj_details) + ' ; ' + str(mod_details))
+    print 'details: ' + str(subj_details) + ' ; ' + str(obj_details) + ' ; ' + str(mod_details)
     #pos_tags = parsed_c['sentences'][0]['pos']
     tokens = processed['sentences'][0]['tokens']
     obj = None
@@ -200,7 +199,6 @@ def find_attribute_2(attribute_seed, user_input, phrase_parsing=False):
     processed = proc.parse_doc(user_input)
     if len(processed['sentences']) == 0:
         return None
-    sentiment = processed['sentences'][0]['sentiment']
     nouns = filter_array(processed, possibleNounTags)
     adjectives = filter_array(processed, possibleAdjTags)
     sub, obj = find_sub_obj(processed)
@@ -231,7 +229,7 @@ def find_attribute_2(attribute_seed, user_input, phrase_parsing=False):
                 data[n_obj] += 1.01
             else:
                 data[n_obj] = 1.01
-    print('data: ' + str(data))
+    print 'data: ' + str(data)
     path = None
     if attribute_seed != None:
         find_best_attribute_multi_2(data, attribute_seed, path)
@@ -252,7 +250,6 @@ def find_attribute_2(attribute_seed, user_input, phrase_parsing=False):
     obj['path'] = path
     obj['tokens'] = processed['sentences'][0]['tokens']
     obj['NP'] = result_np
-    obj['sentiment'] = sentiment
     return obj
 
 def find_max_adjective(adj, candidate_adjectives):
@@ -266,7 +263,7 @@ def find_max_adjective(adj, candidate_adjectives):
                 max_distance = dist
                 #print 'possible correct adj item: ' + str(max_adj) + ' ; ' + str(max_distance)
         except KeyError:
-            print('Key error for: ' + adj + ' ; ' + candidate)
+            print 'Key error for: ' + adj + ' ; ' + candidate
     return max_adj, max_distance
 
 def convert_sentiment_to_int(sentiment):
@@ -305,7 +302,7 @@ def find_correct_adjective(adj_list, candidate_adjectives, sentiment):
     # figure whether positive or negative.
     #print 'sentiment: ' + sentiment
     if selected_adj == []:
-        print(('max adjective is none for adj_list: ', adj_list))
+        print('max adjective is none for adj_list: ', adj_list)
         return None, -1
     
     if convert_sentiment_to_int(sentiment) >= 3:
@@ -320,9 +317,9 @@ def find_correct_adjective(adj_list, candidate_adjectives, sentiment):
                         #print 'returning antonym for: ' + max_adj
                         final_adj.append([antonym_map[max_adj], max_dist])
                     else:
-                        print(('error 00: ', max_adj))
+                        print ('error 00: ', max_adj)
                 else:
-                    print(('error 01: ', max_adj))
+                    print ('error 01: ', max_adj)
     else:
         for max_adj, max_dist in selected_adj:
             if max_adj in negative_array:
@@ -333,9 +330,9 @@ def find_correct_adjective(adj_list, candidate_adjectives, sentiment):
                         #print 'returning antonym for: ' + max_adj
                         final_adj.append([antonym_map[max_adj], max_dist])
                     else:
-                        print(('error 11: ', max_adj))
+                        print('error 11: ', max_adj)
                 else:
-                    print(('error 10: ', max_adj))
+                    print('error 10: ', max_adj)
     final_adj.sort(key=lambda x: x[1], reverse=True)
     return final_adj    
     
@@ -351,7 +348,7 @@ def find_sentiment_adjective(attribute_adjective_map, attribute_path, user_input
             candidate_adjectives = attribute_adjective_map[str_path]
             correct_adjective_list = find_correct_adjective(adj_list, candidate_adjectives, sentiment)
         else:
-            print(('path Not found in path: ', str_path))
+            print('path Not found in path: ', str_path)
     return correct_adjective_list, sentiment
 
 def find_num_matches(classes, probs, keywords):
@@ -377,7 +374,7 @@ def findBestCategory_2(classes, probs, map_val, path):
         result = find_num_matches(classes, probs, keywords)
         total_sum = reduce(lambda x, y: x+y, result, 0.0)
         result_node[key] = total_sum
-    result_items = list(result_node.items())
+    result_items = result_node.items()
     result_items.sort(key=lambda k: k[1], reverse=True)
     
     index = 0

@@ -56,13 +56,17 @@ def findBestCategory(classes, probs, attribute_seed, path):
     for key in nextNode:
         keywords = nextNode[key]['keywords']
         source_max = findMaxForEachSource(classes, probs, keywords)
+        #print 'source_max: ' + str(source_max)
         source_max.sort(key=lambda k: k[1], reverse=True)
         sum_val = sum(map(lambda x: x[1], source_max[:top_number_of_items]))
         result_node[key] = sum_val
     result_items = result_node.items()
     result_items.sort(key=lambda k: k[1], reverse=True)
+    print 'result_items: ' + str(result_items[:3])
+    
     index = 0
     winner_node, winner_val = result_items[index]
+    print 'winner node val: ' + str(winner_node) + ' ; ' + str(winner_val)
     while winner_node in excludedCategories:
         index += 1
         winner_node, winner_val = result_items[index]
