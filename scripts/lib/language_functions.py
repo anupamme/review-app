@@ -64,7 +64,7 @@ def load_model_files():
     global model_file
     global proc
     global stanford_jars
-#    model = word2vec.Word2Vec.load_word2vec_format(model_file, binary=True)
+    model = word2vec.Word2Vec.load_word2vec_format(model_file, binary=True)
     proc = CoreNLP("parse", corenlp_jars=[stanford_jars])
     
 def is_model_loaded():
@@ -232,7 +232,7 @@ def find_attribute_2(attribute_seed, user_input, phrase_parsing=False):
             else:
                 data[n_obj] = 1.01
     print('data: ' + str(data))
-    path = None
+    path = []
     if attribute_seed != None:
         find_best_attribute_multi_2(data, attribute_seed, path)
     result_np = []
