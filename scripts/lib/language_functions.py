@@ -1,16 +1,17 @@
 import nltk
-from gensim.models import word2vec
+#from gensim.models import word2vec
 import json
 import sys
 from nltk import word_tokenize
 import re
 #from stanford_corenlp_pywrapper import sockwrap
-from stanford_corenlp_pywrapper import CoreNLP
+#from stanford_corenlp_pywrapper import CoreNLP
 from ast import literal_eval
 import operator
 import time
 import pdb
 from functools import reduce
+from pycorenlp import StanfordCoreNLP
 
 model = None
 proc = None
@@ -64,8 +65,8 @@ def load_model_files():
     global model_file
     global proc
     global stanford_jars
-    model = word2vec.Word2Vec.load_word2vec_format(model_file, binary=True)
-    proc = CoreNLP("parse", corenlp_jars=[stanford_jars])
+#    model = word2vec.Word2Vec.load_word2vec_format(model_file, binary=True)
+    proc = StanfordCoreNLP('http://localhost:9000')
     
 def is_model_loaded():
     return model != None and proc != None

@@ -1,0 +1,5 @@
+sudo apt-get install python3-flask
+sudo pip3 install flask
+sudo pip3 install nltk
+sudo apt-get instlal python3-numpy
+sudo pip3 install gensim
